@@ -1,0 +1,30 @@
+.location-list {
+  @apply pb-3 mb-10 lg:flex-1 lg:px-16 lg:flex lg:flex-row lg:w-full lg:items-center xl:px-36 2xl:px-64;
+  &__button {
+    @apply cursor-pointer border-b border-gray-300  py-2.5 flex flex-row flex-wrap justify-between lg:flex-col lg:border-none;
+
+    &-heading {
+      @apply text-[14px] font-bold text-black h-min;
+    }
+
+    &__icon {
+      @apply lg:hidden;
+
+      &-up {
+        @apply rotate-180 duration-300 lg:hidden;
+      }
+
+      &-down {
+        @apply duration-300 lg:hidden;
+      }
+    }
+  }
+
+  &__details {
+    @apply py-4 text-mediumGray text-[14px] font-medium w-full;
+  }
+
+  &__hours {
+    @apply whitespace-pre-line;
+  }
+}
