@@ -1,0 +1,59 @@
+import Image from 'next/image';
+
+import HeaderImageDesktop from '@/../public/assets/images/general/headerIndexPageDesktop.png';
+import HeaderImageMobile from '@/../public/assets/images/general/headerIndexPageMobile.png';
+import LocationItem from '@/components/LocationItem/LocationItem';
+
+import styles from './HomeHeader.module.scss';
+
+const locations = [
+  {
+    heading: 'Świętochłowice',
+    heading2: '',
+    details: ['Stacja Kontroli Pojazdów', 'Warsztat Samochodowy'],
+  },
+  {
+    heading: 'Ruda Śląska',
+    heading2: 'Godula',
+    details: ['Okręgowa Stacja Kontroli Pojazdów', 'Myjnia bezdotykowa'],
+  },
+  {
+    heading: 'Ruda Śląska',
+    heading2: 'Bykowina',
+    details: ['Stacja Kontroli Pojazdów'],
+  },
+];
+
+const HomeHeader = () => {
+  return (
+    <div className={styles.container}>
+      <Image className={styles.image} src={HeaderImageMobile} alt="header" />
+      <Image
+        className={styles.imageDesktop}
+        src={HeaderImageDesktop}
+        alt="header"
+      />
+
+      <h1 className={styles.heading}>
+        Autoryzowany
+        <br /> Bosch Car Service
+      </h1>
+
+      <div className={styles.location__container}>
+        <p className={styles.location__text}>Wybierz miejsce</p>
+        <div className={styles.location__wrapper}>
+          {locations.map((location, index) => (
+            <LocationItem
+              key={index}
+              heading={location.heading}
+              heading2={location.heading2}
+              details={location.details}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default HomeHeader;

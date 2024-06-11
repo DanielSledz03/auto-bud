@@ -1,5 +1,5 @@
 .location-list {
-  @apply pb-3 mb-10 lg:flex-1 lg:px-16 lg:flex lg:flex-row lg:w-full lg:items-center xl:px-36 2xl:px-64;
+  @apply pb-3 mb-10 lg:pl-16 lg:flex-1 lg:flex lg:flex-row lg:w-full lg:items-center xl:pl-24 2xl:pl-32;
   &__button {
     @apply cursor-pointer border-b border-gray-300  py-2.5 flex flex-row flex-wrap justify-between lg:flex-col lg:border-none;
 

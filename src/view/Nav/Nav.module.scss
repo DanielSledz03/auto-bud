@@ -1,0 +1,118 @@
+.nav {
+  @apply bg-white h-[64px] w-full fixed top-0 left-0 z-50  transition-colors duration-300 md:h-[90px] lg:h-[80px] shadow-xl;
+
+  &__wrapper {
+    @apply flex h-full items-center justify-between max-w-[1920px] py-2.5 lg:py-0 px-4 mx-auto lg:px-20 xl:px-48  2xl:px-64;
+  }
+
+  &__logo {
+    @apply w-[42px] md:w-[55px] lg:mr-16;
+  }
+
+  &__buttonsMobile {
+    @apply flex justify-between items-center h-full md:h-3/4 lg:hidden;
+  }
+
+  &__buttonCall {
+    @apply bg-lightGray h-full text-red rounded-[5px] p-3 flex justify-between items-center md:p-4 lg:bg-white;
+  }
+
+  &__buttonText {
+    @apply ml-3 lg:hidden;
+  }
+
+  &__buttonBar {
+    @apply bg-lightGray h-full text-red rounded-[5px] p-3 ml-5 flex justify-center items-center md:p-4;
+  }
+
+  &__navDesktop {
+    @apply hidden lg:flex justify-between items-center h-full lg:min-w-[40%] lg:-ml-16 xl:-ml-20 2xl:-ml-[150px] 2xl:max-w-[30%];
+  }
+
+  &__listItem {
+    @apply text-darkGray font-semibold cursor-pointer duration-300 transition-colors relative h-full  flex items-center px-4;
+
+    &:hover {
+      .nav__link {
+        @apply text-red;
+      }
+    }
+
+    .navScrolled & {
+      @apply text-black;
+    }
+  }
+
+  &__link {
+    @apply text-inherit no-underline font-medium duration-300 transition-colors;
+
+    &:hover {
+      @apply text-red;
+    }
+
+    .navScrolled & {
+      @apply text-white;
+    }
+  }
+
+  &__buttonsDesktop {
+
+    @apply hidden lg:flex justify-between items-center h-full;
+
+    .nav__buttonCall {
+      @apply duration-300 h-[50px] border border-white transition-colors;
+
+      .navScrolled & {
+        @apply text-white bg-transparent;
+      }
+    }
+  }
+
+  &__appointmentButton {
+    @apply bg-blue rounded-[5px] py-3 px-6 flex justify-center items-center text-white w-[173px] ml-5 duration-300 h-[50px] transition-colors;
+
+    .navScrolled & {
+      @apply text-red bg-white;
+    }
+  }
+
+  &__buttonNumber {
+    @apply ml-2 font-medium duration-300 transition-colors;
+  }
+}
+
+.navScrolled {
+  @apply bg-black bg-opacity-40 backdrop-blur-md duration-300 transition-colors;
+}
+
+.dropdown {
+  @apply absolute w-[380px] top-[101%] left-0 bg-white shadow-xl z-50 rounded-[10px];
+}
+
+.dropdownItem {
+  @apply px-4 py-6 border-b border-gray-300 flex justify-start items-center last:border-none;
+}
+
+.dropdownItem span {
+  @apply block;
+}
+
+.dropdownItemCity {
+  @apply font-semibold text-[18px];
+}
+
+.dropdownItemDistrict {
+  @apply font-semibold text-[14px];
+}
+
+.dropdownItemaAddress {
+  @apply text-[14px] text-mediumGray;
+}
+
+.dropdownItemIcon {
+  @apply flex justify-center items-center h-full pr-4;
+}
+
+.dropdownItemIconWrapper {
+  @apply p-2 rounded-[10px] flex justify-center items-center border border-gray-300 w-[40px] h-[40px];
+}

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 
 import './globals.css';
 import Footer from '@/view/Footer/Footer';
+import Nav from '@/view/Nav/Nav';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -22,7 +23,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
-      <body className={poppins.variable}>
+      <body className={`mx-auto max-w-[1920px] ${poppins.variable}`}>
+        <Nav />
         {children}
         <Footer />
       </body>

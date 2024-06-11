@@ -1,0 +1,29 @@
+.container {
+  @apply h-[100vh] w-full relative flex flex-col justify-end lg:px-20 xl:px-48  2xl:px-64 lg:pt-0 lg:h-[80vh];
+}
+
+.image {
+  @apply object-cover bg-bottom w-full h-full absolute top-[64px] left-0 z-[-300] lg:hidden md:top-[90px];
+}
+
+.imageDesktop {
+  @apply hidden object-cover bg-bottom w-full h-full absolute top-[80px] left-0 z-[-300] md:block;
+}
+
+.heading {
+  @apply text-white text-[26px] font-[600] px-4 mb-16 lg:text-[48px];
+}
+
+.location {
+  &__container {
+    @apply flex items-start flex-col justify-start w-full lg:flex-row lg:flex-wrap;
+  }
+
+  &__text {
+    @apply text-white font-semibold pl-4 mb-3;
+  }
+
+  &__wrapper {
+    @apply flex flex-col w-full lg:h-[230px] lg:flex-row;
+  }
+}
