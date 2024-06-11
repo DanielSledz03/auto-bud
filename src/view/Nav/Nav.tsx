@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import LocationPin from '@/../public/assets/icons/redLocationPin.svg';
 import Logo from '@/../public/assets/images/general/bosch-logo.png';
@@ -15,33 +15,28 @@ const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
 
-  const handleMouseEnter = () => {
-    setShowDropdown(true);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleDropdownToggle = (isOpen: boolean) => {
+    setShowDropdown(isOpen);
   };
 
-  const handleMouseLeave = () => {
-    setShowDropdown(false);
+  const getPhoneIconColor = () => {
+    return scrolled ? 'white' : window.innerHeight > 1024 ? 'black' : 'red';
   };
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 0) {
-  //       setScrolled(true);
-  //       console.log('Scrolled: true');
-  //     } else {
-  //       setScrolled(false);
-  //       console.log('Scrolled: false');
-  //     }
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
 
   return (
     <nav
-      onMouseLeave={handleMouseLeave}
+      onMouseLeave={() => handleDropdownToggle(false)}
       className={`${styles.nav} ${scrolled ? styles.navScrolled : ''}`}
     >
       <div className={styles.nav__wrapper}>
@@ -55,12 +50,7 @@ const Nav = () => {
 
         <div className={styles.nav__buttonsMobile}>
           <div className={styles.nav__buttonCall}>
-            <PhoneIcon
-              color={
-                scrolled ? 'white' : window.innerHeight > 1024 ? 'black' : 'red'
-              }
-            />
-
+            <PhoneIcon color={getPhoneIconColor()} />
             <p className={styles.nav__buttonText}>Zadzwoń</p>
           </div>
 
@@ -68,15 +58,16 @@ const Nav = () => {
             <Hamburger />
           </div>
         </div>
+
         <ul className={styles.nav__navDesktop}>
-          <li onMouseEnter={handleMouseLeave} className={styles.nav__listItem}>
+          <li className={styles.nav__listItem}>
             <Link href="/#o-nas" className={styles.nav__link}>
               O nas
             </Link>
           </li>
           <li
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={() => handleDropdownToggle(true)}
+            onMouseLeave={() => handleDropdownToggle(false)}
             className={styles.nav__listItem}
           >
             <Link href="/#miasta" className={styles.nav__link}>
@@ -84,61 +75,50 @@ const Nav = () => {
             </Link>
             {showDropdown && (
               <ul className={styles.dropdown}>
-                <li className={styles.dropdownItem}>
-                  <div className={styles.dropdownItemIcon}>
-                    <div className={styles.dropdownItemIconWrapper}>
-                      <Image src={LocationPin} alt="Pin" />
+                {[
+                  {
+                    city: 'Świętochłowice',
+                    address: 'ul. Katowicka 73, 41-600 Świętochłowice',
+                  },
+                  {
+                    city: 'Ruda Śląska',
+                    district: 'Godula',
+                    address: 'ul. Szpaków 51, 41-705 Ruda Śląska',
+                  },
+                  {
+                    city: 'Ruda Śląska',
+                    district: 'Bykowina',
+                    address: 'ul. Szpaków 51, 41-705 Ruda Śląska',
+                  },
+                ].map(({ city, district, address }) => (
+                  <li key={city + address} className={styles.dropdownItem}>
+                    <div className={styles.dropdownItemIcon}>
+                      <div className={styles.dropdownItemIconWrapper}>
+                        <Image src={LocationPin} alt="Pin" />
+                      </div>
                     </div>
-                  </div>
-
-                  <div>
-                    <span className={styles.dropdownItemCity}>
-                      Świętochłowice
-                    </span>
-                    <span className={styles.dropdownItemaAddress}>
-                      ul. Katowicka 73, 41-600 Świętochłowice
-                    </span>
-                  </div>
-                </li>
-                <li className={styles.dropdownItem}>
-                  <div className={styles.dropdownItemIcon}>
-                    <div className={styles.dropdownItemIconWrapper}>
-                      <Image src={LocationPin} alt="Pin" />
+                    <div>
+                      <span className={styles.dropdownItemCity}>{city}</span>
+                      {district && (
+                        <span className={styles.dropdownItemDistrict}>
+                          {district}
+                        </span>
+                      )}
+                      <span className={styles.dropdownItemAddress}>
+                        {address}
+                      </span>
                     </div>
-                  </div>
-                  <div>
-                    <span className={styles.dropdownItemCity}>Ruda Śląska</span>
-                    <span className={styles.dropdownItemDistrict}>Godula</span>
-                    <span className={styles.dropdownItemaAddress}>
-                      ul. Szpaków 51, 41-705 Ruda Śląska
-                    </span>
-                  </div>
-                </li>
-                <li className={styles.dropdownItem}>
-                  <div className={styles.dropdownItemIcon}>
-                    <div className={styles.dropdownItemIconWrapper}>
-                      <Image src={LocationPin} alt="Pin" />
-                    </div>
-                  </div>
-                  <div>
-                    <span className={styles.dropdownItemCity}>Ruda Śląska</span>
-                    <span className={styles.dropdownItemDistrict}>
-                      Bykowina
-                    </span>
-                    <span className={styles.dropdownItemaAddress}>
-                      ul. Szpaków 51, 41-705 Ruda Śląska
-                    </span>
-                  </div>
-                </li>
+                  </li>
+                ))}
               </ul>
             )}
           </li>
-          <li onMouseEnter={handleMouseLeave} className={styles.nav__listItem}>
+          <li className={styles.nav__listItem}>
             <Link href="/#uslugi" className={styles.nav__link}>
               Usługi
             </Link>
           </li>
-          <li onMouseEnter={handleMouseLeave} className={styles.nav__listItem}>
+          <li className={styles.nav__listItem}>
             <Link href="/#kontakt" className={styles.nav__link}>
               Kontakt
             </Link>
@@ -147,12 +127,7 @@ const Nav = () => {
 
         <div className={styles.nav__buttonsDesktop}>
           <div className={styles.nav__buttonCall}>
-            <PhoneIcon
-              color={
-                scrolled ? 'white' : window.innerHeight > 1024 ? 'black' : 'red'
-              }
-            />
-
+            <PhoneIcon color={getPhoneIconColor()} />
             <p className={styles.nav__buttonNumber}>+48 500 234 333</p>
           </div>
 
