@@ -31,7 +31,10 @@ const Nav = () => {
   };
 
   const getPhoneIconColor = () => {
-    return scrolled ? 'white' : window.innerHeight > 1024 ? 'black' : 'red';
+    if (typeof window !== 'undefined') {
+      return scrolled ? 'white' : window.innerHeight > 1024 ? 'black' : 'red';
+    }
+    return 'black'; // default color if window is not defined
   };
 
   return (
