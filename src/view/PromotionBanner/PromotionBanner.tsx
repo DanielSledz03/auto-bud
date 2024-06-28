@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
 
-import RedArrowTopRight from '@/../public/assets/icons/redArrowTopRight.svg';
 import PromotionBannerImage from '@/../public/assets/images/general/index/promotionBanner.png';
 import PromotionBannerImageMobile from '@/../public/assets/images/general/index/promotionBannerMobile.png';
+import WhiteButton from '@/components/WhiteButton/WhiteButton';
 
 import styles from './PromotionBanner.module.scss';
 
@@ -44,10 +44,7 @@ const PromotionsBanner = () => {
             komfortową jazdą. Oferta ważna tylko przez ograniczony czas!
           </p>
         </div>
-        <button className={styles.promotionsBanner__button}>
-          <Image src={RedArrowTopRight} alt="red arrow" />
-          Umów wizytę
-        </button>
+        <WhiteButton title="Umów wizytę" />
       </div>
     </div>
   );

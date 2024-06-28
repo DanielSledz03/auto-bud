@@ -1,0 +1,51 @@
+.aboutUs {
+  @apply relative w-full xl:px-52 px-5 md:px-10 lg:px-20 2xl:px-72 mb-36 overflow-hidden py-6;
+
+  &__background {
+    @apply absolute top-0 left-0 right-0 bottom-0 bg-cover bg-center z-[-1];
+  }
+
+  &__content {
+    @apply w-full z-10;
+  }
+
+  &__title {
+    @apply text-xl font-semibold text-darkGray z-10;
+  }
+
+  &__line {
+    @apply border-[1px] border-darkGray w-[100px] mt-2 mb-5;
+  }
+
+  &__text {
+    @apply text-left text-[12px] text-darkGray w-[90%] mb-10;
+
+    &__bold {
+      @apply font-semibold text-[12px] w-[90%] mb-5;
+    }
+  }
+
+  &__images {
+    @apply w-full flex flex-col items-center justify-center mt-16 pb-48;
+  }
+
+  &__image {
+    @apply w-[48%];
+
+    &__second {
+      @apply w-[48%] absolute right-0 -mt-12;
+    }
+  }
+
+  &__image__wrapper {
+    @apply w-[100%] relative;
+  }
+
+  &__image__title {
+    @apply absolute w-[200px] bg-white text-red p-4 text-sm text-center rounded-md right-20 top-1/2 -translate-y-1/2 h-[80px] flex items-center justify-center;
+
+    &__second {
+      @apply absolute w-[200px] bg-white text-red p-4 text-sm text-center rounded-md top-1/2 translate-y-1/2 left-20 z-10 h-[80px] flex items-center justify-center;
+    }
+  }
+}

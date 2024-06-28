@@ -44,8 +44,4 @@
   &__description {
     @apply text-white mb-6 text-xs leading-5 font-normal md:text-sm lg:w-3/5;
   }
-
-  &__button {
-    @apply bg-white text-black py-3 px-4 hover:bg-gray-300 transition duration-300 min-w-[180px] font-semibold flex justify-around items-center;
-  }
 }
