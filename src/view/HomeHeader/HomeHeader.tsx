@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
-import HeaderImageDesktop from '@/../public/assets/images/general/headerIndexPageDesktop.png';
-import HeaderImageMobile from '@/../public/assets/images/general/headerIndexPageMobile.png';
+import HeaderImageDesktop from '@/../public/assets/images/general/index/headerIndexPageDesktop.png';
+import HeaderImageMobile from '@/../public/assets/images/general/index/headerIndexPageMobile.png';
 import LocationItem from '@/components/LocationItem/LocationItem';
 
 import styles from './HomeHeader.module.scss';
@@ -40,7 +40,7 @@ const HomeHeader = () => {
       </h1>
 
       <div className={styles.location__container}>
-        <p className={styles.location__text}>Wybierz miejsce</p>
+        <p className={styles.location__text}>Wybierz lokalizację</p>
         <div className={styles.location__wrapper}>
           {locations.map((location, index) => (
             <LocationItem

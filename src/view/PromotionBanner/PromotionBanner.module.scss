@@ -1,0 +1,51 @@
+.promotionsBanner {
+  @apply w-full xl:px-52 px-5 md:px-10 lg:px-20 2xl:px-72 rounded-lg overflow-hidden min-h-[380px] mb-16;
+
+  &__wrapper {
+    @apply relative w-full h-full  px-5 py-6 lg:px-10 rounded-lg overflow-hidden min-h-[380px] flex flex-col justify-center items-start;
+  }
+
+  &__image__wrapper {
+    @apply absolute top-0 left-0 right-0 w-full h-full overflow-hidden z-[-1];
+  }
+
+  &__image {
+    @apply hidden w-full h-full object-cover rounded-lg lg:block;
+
+    &__mobile {
+      @apply block lg:hidden w-full h-full object-cover rounded-l;
+    }
+  }
+
+  &__content {
+    @apply w-full h-full flex flex-col justify-center items-start;
+  }
+
+  &__heading__wrapper {
+    @apply flex flex-col items-start lg:items-end justify-start lg:flex-row lg:flex-wrap;
+  }
+
+  &__heading {
+    @apply text-red font-semibold text-sm lg:text-lg lg:mb-1;
+  }
+
+  &__title {
+    @apply text-xl font-semibold text-white lg:text-[32px] lg:pb-2.5;
+  }
+
+  &__price {
+    @apply text-xl font-semibold text-white border-[2px] border-white py-2 px-4 rounded-md mb-8 mt-6 lg:ml-5 lg:mb-0 lg:mt-0;
+  }
+
+  &__separator {
+    @apply hidden bg-white h-[2px] w-[135px] mb-5 mt-3 lg:block;
+  }
+
+  &__description {
+    @apply text-white mb-6 text-xs leading-5 font-normal md:text-sm lg:w-3/5;
+  }
+
+  &__button {
+    @apply bg-white text-black py-3 px-4 hover:bg-gray-300 transition duration-300 min-w-[180px] font-semibold flex justify-around items-center;
+  }
+}
