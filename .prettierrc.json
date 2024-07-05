@@ -5,5 +5,7 @@
   "printWidth": 80,
   "tabWidth": 2,
   "semi": true,
-  "endOfLine": "auto"
+  "endOfLine": "auto",
+  "tailwindConfig": "./tailwind.config.ts",
+  "plugins": ["prettier-plugin-tailwindcss"]
 }
