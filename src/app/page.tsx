@@ -1,4 +1,5 @@
 import HomeAboutUs from '@/view/HomeAboutUs/HomeAboutUs';
+import HomeAdditionalServices from '@/view/HomeAdditionalOffers/HomeAdditionalServices';
 import HomeHeader from '@/view/HomeHeader/HomeHeader';
 import PromotionBanner from '@/view/PromotionBanner/PromotionBanner';
 
@@ -8,6 +9,7 @@ export default function Home() {
       <HomeHeader />
       <PromotionBanner />
       <HomeAboutUs />
+      <HomeAdditionalServices />
     </main>
   );
 }

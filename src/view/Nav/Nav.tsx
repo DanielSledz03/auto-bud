@@ -30,13 +30,6 @@ const Nav = () => {
     setShowDropdown(isOpen);
   };
 
-  const getPhoneIconColor = () => {
-    if (typeof window !== 'undefined') {
-      return scrolled ? 'white' : window.innerHeight > 1024 ? 'black' : 'red';
-    }
-    return 'black'; // default color if window is not defined
-  };
-
   return (
     <nav
       onMouseLeave={() => handleDropdownToggle(false)}
@@ -53,7 +46,7 @@ const Nav = () => {
 
         <div className={styles.nav__buttonsMobile}>
           <div className={styles.nav__buttonCall}>
-            <PhoneIcon color={getPhoneIconColor()} />
+            <PhoneIcon color={'red'} />
             <p className={styles.nav__buttonText}>Zadzwoń</p>
           </div>
 
@@ -130,7 +123,7 @@ const Nav = () => {
 
         <div className={styles.nav__buttonsDesktop}>
           <div className={styles.nav__buttonCall}>
-            <PhoneIcon color={getPhoneIconColor()} />
+            <PhoneIcon color={'red'} />
             <p className={styles.nav__buttonNumber}>+48 500 234 333</p>
           </div>
 

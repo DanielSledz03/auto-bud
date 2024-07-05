@@ -1,3 +1,61 @@
-.container {
-  @apply;
+.home-additional-services {
+  @apply mt-20 flex flex-col items-center px-5 pb-12 md:px-10 lg:mb-20 lg:flex-row lg:flex-wrap lg:justify-between lg:px-20 xl:px-48 2xl:px-64;
+
+  &__header {
+    @apply flex w-full flex-col items-center justify-center;
+  }
+
+  &__title {
+    @apply text-[12px] text-red lg:text-[14px];
+  }
+
+  &__subtitle {
+    @apply text-[20px] font-semibold text-darkGray lg:text-[32px];
+  }
+
+  &__divider {
+    @apply mb-8 mt-6 w-[100px] border-[1px] border-darkGray lg:mt-4 lg:w-[130px] lg:border-[1px];
+  }
+
+  &__section {
+    @apply flex w-full flex-col items-center rounded-[5px] p-5 shadow-[5px_5px_5px_5px_rgba(0,0,0,0.05)] even:mb-10 lg:min-h-[200px] lg:w-[48%] lg:justify-center lg:even:mb-0;
+  }
+
+  &__item {
+    @apply flex w-full lg:items-center;
+  }
+
+  &__icon {
+    @apply flex h-[56px] w-[56px] items-center justify-center rounded-[10px] border border-lightGray2 lg:h-[100px] lg:w-[100px];
+
+    img {
+      @apply h-[30px] w-[30px] lg:h-[50px] lg:w-[50px];
+    }
+  }
+
+  &__details {
+    @apply ml-3 flex flex-1 flex-col items-start justify-center border-lightGray2 lg:ml-6 lg:border-l-[1px] lg:pl-6;
+  }
+
+  &__service {
+    &-title {
+      @apply font-semibold text-red lg:text-[20px];
+    }
+
+    &-description {
+      @apply text-[12px] text-mediumGray lg:text-[12px];
+    }
+  }
+
+  &__button {
+    @apply h-[45px] min-w-[220px] bg-lightGray lg:hidden;
+  }
+
+  &__button-desktop {
+    @apply mt-5 hidden h-[45px] min-w-[220px] bg-lightGray lg:flex;
+  }
+
+  &__item-divider {
+    @apply mb-6 mt-4 w-full border-[0.5px] border-lightGray2 lg:hidden;
+  }
 }
