@@ -12,19 +12,7 @@ import PhoneIcon from '@/components/PhoneIcon/PhoneIcon';
 import styles from './Nav.module.scss';
 
 const Nav = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setScrolled(window.scrollY > 0);
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
 
   const handleDropdownToggle = (isOpen: boolean) => {
     setShowDropdown(isOpen);
@@ -33,7 +21,7 @@ const Nav = () => {
   return (
     <nav
       onMouseLeave={() => handleDropdownToggle(false)}
-      className={`${styles.nav} ${scrolled ? styles.navScrolled : ''}`}
+      className={styles.nav}
     >
       <div className={styles.nav__wrapper}>
         <Image
@@ -45,10 +33,15 @@ const Nav = () => {
         />
 
         <div className={styles.nav__buttonsMobile}>
-          <div className={styles.nav__buttonCall}>
+          <Link
+            href="tel:+48500234333"
+            aria-label="Zadzwoń do nas"
+            title="Zadzwoń do nas"
+            className={styles.nav__buttonCall}
+          >
             <PhoneIcon color={'red'} />
             <p className={styles.nav__buttonText}>Zadzwoń</p>
-          </div>
+          </Link>
 
           <div className={styles.nav__buttonBar}>
             <Hamburger />

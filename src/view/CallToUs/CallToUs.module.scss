@@ -1,0 +1,60 @@
+.call-to-us {
+  @apply w-full px-5 pb-12 pt-12 md:px-10 lg:mb-32 lg:border-t-[1px] lg:border-lightGray2 lg:px-20 xl:px-48 2xl:px-64;
+
+  &__title {
+    @apply mb-2 text-[14px] text-red;
+  }
+
+  &__subtitle {
+    @apply mb-3 text-[20px] font-semibold text-darkGray;
+  }
+
+  &__divider {
+    @apply mb-8 w-[100px] border-[1px] border-darkGray;
+  }
+
+  &__grids {
+    @apply grid gap-20 lg:grid-cols-3;
+  }
+
+  &__card {
+    @apply border-b-[1px] border-lightGray2 last:border-none lg:border-b-0 lg:border-r-[1px] lg:last:border-none;
+  }
+
+  &__location {
+    @apply text-[18px] font-semibold;
+  }
+
+  &__address {
+    @apply text-[14px] text-darkGray;
+
+    &--bold {
+      @apply font-semibold;
+    }
+  }
+
+  &__branch {
+    @apply text-[14px] font-semibold text-darkGray;
+  }
+
+  &__contact {
+    @apply mb-6 flex items-start justify-start;
+  }
+
+  &__contact-info {
+    @apply mb-4;
+  }
+
+  &__icon {
+    @apply mr-5 flex h-[40px] w-[40px] items-center justify-center rounded-[10px] border-[1px] border-lightGray2;
+  }
+
+  &__phone-icon,
+  &__mobile-icon {
+    @apply mr-2 text-red;
+  }
+
+  &__hours {
+    @apply text-gray-600;
+  }
+}

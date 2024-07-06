@@ -75,7 +75,8 @@ const ContactWithUs = () => {
           </div>
 
           <label className={styles['form__statue-text']} htmlFor="statue">
-            Akceptuję regulamin oraz politykę prywatności strony*
+            Akceptuję regulamin oraz politykę prywatności strony
+            <span className={styles['form__label-required']}>*</span>
           </label>
         </div>
 

@@ -1,4 +1,5 @@
 import ContactWithUs from '@/form/ContactWithUs/ContactWithUs';
+import CallToUs from '@/view/CallToUs/CallToUs';
 import HomeAboutUs from '@/view/HomeAboutUs/HomeAboutUs';
 import HomeAdditionalServices from '@/view/HomeAdditionalOffers/HomeAdditionalServices';
 import HomeHeader from '@/view/HomeHeader/HomeHeader';
@@ -14,6 +15,7 @@ export default function Home() {
       <HomeAdditionalServices />
       <HomeOpinions />
       <ContactWithUs />
+      <CallToUs />
     </main>
   );
 }
