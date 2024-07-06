@@ -1,8 +1,8 @@
 .nav {
-  @apply bg-white h-[64px] w-full fixed top-0 left-0 z-50  transition-colors duration-300 md:h-[90px] lg:h-[80px] shadow-xl;
+  @apply fixed left-0 top-0 z-50 h-[64px] w-full bg-white shadow-xl transition-colors duration-300 md:h-[90px] lg:h-[80px];
 
   &__wrapper {
-    @apply flex h-full items-center justify-between max-w-[1920px] py-2.5 lg:py-0 px-4 mx-auto lg:px-20 xl:px-48  2xl:px-64;
+    @apply mx-auto flex h-full max-w-[1920px] items-center justify-between px-4 py-2.5 lg:px-20 lg:py-0 xl:px-48 2xl:px-64;
   }
 
   &__logo {
@@ -10,11 +10,11 @@
   }
 
   &__buttonsMobile {
-    @apply flex justify-between items-center h-full md:h-3/4 lg:hidden;
+    @apply flex h-full items-center justify-between md:h-3/4 lg:hidden;
   }
 
   &__buttonCall {
-    @apply bg-lightGray h-full text-red rounded-[5px] p-3 flex justify-between items-center md:p-4 lg:bg-white;
+    @apply flex h-full items-center justify-between rounded-[5px] bg-lightGray p-3 text-red md:p-4 lg:bg-white;
   }
 
   &__buttonText {
@@ -22,15 +22,15 @@
   }
 
   &__buttonBar {
-    @apply bg-lightGray h-full text-red rounded-[5px] p-3 ml-5 flex justify-center items-center md:p-4;
+    @apply ml-5 flex h-full items-center justify-center rounded-[5px] bg-lightGray p-3 text-red md:p-4;
   }
 
   &__navDesktop {
-    @apply hidden lg:flex justify-between items-center h-full lg:min-w-[40%] lg:-ml-16 xl:-ml-20 2xl:-ml-[150px] 2xl:max-w-[30%];
+    @apply hidden h-full items-center justify-between lg:-ml-16 lg:flex lg:min-w-[40%] xl:-ml-20 2xl:-ml-[150px] 2xl:max-w-[30%];
   }
 
   &__listItem {
-    @apply text-darkGray font-semibold cursor-pointer duration-300 transition-colors relative h-full  flex items-center px-4;
+    @apply relative flex h-full cursor-pointer items-center px-4 font-semibold text-darkGray transition-colors duration-300;
 
     &:hover {
       .nav__link {
@@ -44,7 +44,7 @@
   }
 
   &__link {
-    @apply text-inherit no-underline font-medium duration-300 transition-colors;
+    @apply font-medium text-inherit no-underline transition-colors duration-300;
 
     &:hover {
       @apply text-red;
@@ -56,41 +56,40 @@
   }
 
   &__buttonsDesktop {
-
-    @apply hidden lg:flex justify-between items-center h-full;
+    @apply hidden h-full items-center justify-between lg:flex;
 
     .nav__buttonCall {
-      @apply duration-300 h-[50px] border border-white transition-colors;
+      @apply h-[50px] border border-white transition-colors duration-300;
 
       .navScrolled & {
-        @apply text-white bg-transparent;
+        @apply bg-transparent text-white;
       }
     }
   }
 
   &__appointmentButton {
-    @apply bg-blue rounded-[5px] py-3 px-6 flex justify-center items-center text-white w-[173px] ml-5 duration-300 h-[50px] transition-colors;
+    @apply ml-5 flex h-[50px] w-[173px] items-center justify-center rounded-[5px] bg-blue px-6 py-3 text-white transition-colors duration-300;
 
     .navScrolled & {
-      @apply text-red bg-white;
+      @apply bg-white text-red;
     }
   }
 
   &__buttonNumber {
-    @apply ml-2 font-medium duration-300 transition-colors;
+    @apply ml-2 font-medium transition-colors duration-300;
   }
 }
 
 .navScrolled {
-  @apply bg-black bg-opacity-40 backdrop-blur-md duration-300 transition-colors;
+  @apply bg-black bg-opacity-40 backdrop-blur-md transition-colors duration-300;
 }
 
 .dropdown {
-  @apply absolute w-[380px] top-[101%] left-0 bg-white shadow-xl z-50 rounded-[10px];
+  @apply absolute left-0 top-[101%] z-50 w-[380px] rounded-[10px] bg-white shadow-xl;
 }
 
 .dropdownItem {
-  @apply px-4 py-6 border-b border-gray-300 flex justify-start items-center last:border-none;
+  @apply flex items-center justify-start border-b border-gray-300 px-4 py-6 last:border-none;
 }
 
 .dropdownItem span {
@@ -98,11 +97,11 @@
 }
 
 .dropdownItemCity {
-  @apply font-semibold text-[18px];
+  @apply text-[18px] font-semibold;
 }
 
 .dropdownItemDistrict {
-  @apply font-semibold text-[14px];
+  @apply text-[14px] font-semibold;
 }
 
 .dropdownItemaAddress {
@@ -110,9 +109,9 @@
 }
 
 .dropdownItemIcon {
-  @apply flex justify-center items-center h-full pr-4;
+  @apply flex h-full items-center justify-center pr-4;
 }
 
 .dropdownItemIconWrapper {
-  @apply p-2 rounded-[10px] flex justify-center items-center border border-gray-300 w-[40px] h-[40px];
+  @apply flex h-[40px] w-[40px] items-center justify-center rounded-[10px] border border-gray-300 p-2;
 }

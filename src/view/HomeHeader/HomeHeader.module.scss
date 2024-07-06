@@ -1,5 +1,5 @@
 .container {
-  @apply relative mb-24 flex h-[100vh] w-full flex-col justify-end md:mb-36 lg:h-[80vh] lg:px-20 lg:pt-0 xl:px-48 2xl:px-64;
+  @apply relative mb-12 flex h-[100vh] w-full flex-col justify-end overflow-hidden md:mb-36 lg:h-[85vh] lg:px-20 lg:pt-0 xl:px-48 2xl:px-64;
 }
 
 .image {
