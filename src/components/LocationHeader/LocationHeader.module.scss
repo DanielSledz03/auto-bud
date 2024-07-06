@@ -1,0 +1,41 @@
+.location-header {
+  @apply relative mb-10 mt-[100px] min-h-[410px] w-full overflow-hidden rounded-[10px] px-10 py-6 md:mt-[120px] md:px-20 lg:mb-0 lg:mt-[50px] lg:min-h-[300px] lg:px-32 lg:py-24 xl:px-64 2xl:px-80;
+
+  &__background {
+    @apply absolute bottom-0 left-0 right-0 top-0 z-[-1] h-full w-full overflow-hidden rounded-[10px] bg-cover bg-center bg-no-repeat px-5 md:px-10 lg:px-20 lg:py-16 xl:px-48 2xl:px-64;
+
+    &--mobile {
+      @apply h-full w-full lg:hidden;
+    }
+
+    &--desktop {
+      @apply hidden w-full bg-cover lg:block;
+    }
+  }
+
+  &__title {
+    @apply z-[10] text-[30px] font-semibold text-darkGray lg:text-[45px];
+  }
+
+  &__subtitle {
+    @apply z-[10] text-[20px] font-semibold text-red lg:text-[32px];
+  }
+
+  &__address {
+    @apply z-[10] mt-4 flex w-full;
+
+    &--icon {
+      @apply mr-4 flex h-[40px] w-[40px] items-center justify-center rounded-[10px] border-[1px] border-lightGray2 bg-white;
+    }
+
+    &--text {
+      &--bold {
+        @apply text-base font-medium text-darkGray;
+      }
+    }
+  }
+
+  &__button {
+    @apply z-[10] mt-6 w-[220px] bg-darkGray text-white;
+  }
+}

@@ -1,0 +1,57 @@
+.serviceCard {
+  @apply mt-20 px-5 md:px-10 lg:flex lg:justify-between lg:px-20 lg:py-16 xl:px-48 2xl:px-64;
+
+  &__content {
+    @apply w-full lg:w-[50%];
+  }
+
+  &__image {
+    @apply relative w-full lg:min-h-[500px] lg:flex-1 xl:-ml-48;
+
+    &__mobile {
+      @apply lg:hidden;
+    }
+
+    &__desktop {
+      @apply absolute bottom-0 left-0 right-0 top-0 hidden h-[470px] w-full object-contain lg:-left-10 lg:block xl:-left-12 2xl:-left-12;
+    }
+  }
+
+  &__title {
+    @apply mt-10 text-[14px] text-red lg:mt-0;
+  }
+
+  &__subtitle {
+    @apply mt-1 text-[20px] font-semibold text-darkGray lg:text-[32px];
+  }
+
+  &__divider {
+    @apply mb-8 mt-4 w-[100px] border-[1px] border-darkGray;
+  }
+
+  &__hours {
+    &__container {
+      @apply flex items-center;
+    }
+
+    &__icon {
+      @apply mr-6 flex h-[40px] w-[40px] items-center justify-center rounded-[10px] border-[1px] border-lightGray2;
+    }
+
+    &__open {
+      @apply text-[14px] text-mediumGray last:mt-1;
+
+      &__time {
+        @apply text-darkGray;
+      }
+    }
+  }
+
+  &__description {
+    @apply mt-8 text-[12px] text-mediumGray2 lg:text-[14px];
+  }
+
+  &__button {
+    @apply mt-8 bg-lightGray;
+  }
+}

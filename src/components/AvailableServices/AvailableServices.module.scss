@@ -1,0 +1,33 @@
+.availableServices {
+  @apply px-5 md:px-10 lg:px-20 lg:py-16 xl:px-48 2xl:px-64;
+
+  &__title {
+    @apply flex items-center text-[20px] font-semibold text-darkGray lg:text-[32px];
+  }
+
+  &__arrow {
+    @apply mr-2 h-[11px] w-[11px] lg:mr-4 lg:h-[20px] lg:w-[20px];
+  }
+
+  &__services {
+    &__grid {
+      @apply mt-6 lg:flex;
+    }
+  }
+
+  &__service {
+    @apply mb-5 flex min-h-[120px] w-full items-center rounded-[10px] border-[1px] px-7 py-4 shadow-md last:mb-0 lg:mr-[1vw] lg:h-[120px] lg:w-[33%] lg:last:mr-0;
+
+    &__icon {
+      @apply mr-4 flex h-[60px] w-[60px] items-center justify-center rounded-[10px] border-[1px] border-lightGray2;
+
+      img {
+        @apply h-[40px] w-[40px];
+      }
+    }
+
+    &__text {
+      @apply ml-3 flex h-full w-[70%] items-center justify-center border-l-[1px] border-lightGray2 pl-6 text-[18px] font-semibold text-darkGray;
+    }
+  }
+}

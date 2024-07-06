@@ -2,6 +2,8 @@ import { Poppins } from '@next/font/google';
 import type { Metadata } from 'next';
 
 import './globals.css';
+import ContactWithUs from '@/form/ContactWithUs/ContactWithUs';
+import CallToUs from '@/view/CallToUs/CallToUs';
 import Footer from '@/view/Footer/Footer';
 import Nav from '@/view/Nav/Nav';
 
@@ -31,6 +33,8 @@ export default function RootLayout({
       <body className={`mx-auto max-w-[1920px] ${poppins.variable}`}>
         <Nav />
         {children}
+        <ContactWithUs />
+        <CallToUs />
         <Footer />
       </body>
     </html>
