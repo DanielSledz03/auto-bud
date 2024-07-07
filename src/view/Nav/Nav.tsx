@@ -24,13 +24,15 @@ const Nav = () => {
       className={styles.nav}
     >
       <div className={styles.nav__wrapper}>
-        <Image
-          src={Logo}
-          alt="logo"
-          width={400}
-          height={400}
-          className={styles.nav__logo}
-        />
+        <Link href="/" className={styles.nav__logoLink}>
+          <Image
+            src={Logo}
+            alt="logo"
+            width={400}
+            height={400}
+            className={styles.nav__logo}
+          />
+        </Link>
 
         <div className={styles.nav__buttonsMobile}>
           <Link
@@ -68,35 +70,40 @@ const Nav = () => {
                   {
                     city: 'Świętochłowice',
                     address: 'ul. Katowicka 73, 41-600 Świętochłowice',
+                    url: '/swietochlowice',
                   },
                   {
                     city: 'Ruda Śląska',
                     district: 'Godula',
                     address: 'ul. Szpaków 51, 41-705 Ruda Śląska',
+                    url: '/godula',
                   },
                   {
                     city: 'Ruda Śląska',
                     district: 'Bykowina',
                     address: 'ul. Szpaków 51, 41-705 Ruda Śląska',
+                    url: '/bykowina',
                   },
-                ].map(({ city, district, address }) => (
+                ].map(({ city, district, address, url }) => (
                   <li key={city + address} className={styles.dropdownItem}>
-                    <div className={styles.dropdownItemIcon}>
-                      <div className={styles.dropdownItemIconWrapper}>
-                        <Image src={LocationPin} alt="Pin" />
+                    <Link href={url} className={styles.dropdownItemLink}>
+                      <div className={styles.dropdownItemIcon}>
+                        <div className={styles.dropdownItemIconWrapper}>
+                          <Image src={LocationPin} alt="Pin" />
+                        </div>
                       </div>
-                    </div>
-                    <div>
-                      <span className={styles.dropdownItemCity}>{city}</span>
-                      {district && (
-                        <span className={styles.dropdownItemDistrict}>
-                          {district}
+                      <div>
+                        <span className={styles.dropdownItemCity}>{city}</span>
+                        {district && (
+                          <span className={styles.dropdownItemDistrict}>
+                            {district}
+                          </span>
+                        )}
+                        <span className={styles.dropdownItemAddress}>
+                          {address}
                         </span>
-                      )}
-                      <span className={styles.dropdownItemAddress}>
-                        {address}
-                      </span>
-                    </div>
+                      </div>
+                    </Link>
                   </li>
                 ))}
               </ul>

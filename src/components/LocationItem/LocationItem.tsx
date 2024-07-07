@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import RedArrowTopRight from '@/../public/assets/icons/redArrowTopRight.svg';
 
@@ -8,11 +9,17 @@ interface LocationItemProps {
   heading: string;
   heading2: string;
   details: string[];
+  url: string;
 }
 
-const LocationItem = ({ heading, heading2, details }: LocationItemProps) => {
+const LocationItem = ({
+  heading,
+  heading2,
+  details,
+  url,
+}: LocationItemProps) => {
   return (
-    <div className={styles.location__item__container}>
+    <Link href={url} className={styles.location__item__container}>
       <h5 className={styles.location__item__heading}>
         {heading}{' '}
         <span className={styles.location__item__heading__span}>{heading2}</span>
@@ -32,7 +39,7 @@ const LocationItem = ({ heading, heading2, details }: LocationItemProps) => {
         />
         <span>Przejdź</span>
       </div>
-    </div>
+    </Link>
   );
 };
 

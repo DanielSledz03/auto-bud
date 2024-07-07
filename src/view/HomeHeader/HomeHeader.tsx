@@ -11,16 +11,19 @@ const locations = [
     heading: 'Świętochłowice',
     heading2: '',
     details: ['Stacja Kontroli Pojazdów', 'Warsztat Samochodowy'],
+    url: '/swietochlowice',
   },
   {
     heading: 'Ruda Śląska',
     heading2: 'Godula',
     details: ['Okręgowa Stacja Kontroli Pojazdów', 'Myjnia bezdotykowa'],
+    url: '/godula',
   },
   {
     heading: 'Ruda Śląska',
     heading2: 'Bykowina',
     details: ['Stacja Kontroli Pojazdów'],
+    url: '/bykowina',
   },
 ];
 
@@ -48,6 +51,7 @@ const HomeHeader = () => {
               heading={location.heading}
               heading2={location.heading2}
               details={location.details}
+              url={location.url}
             />
           ))}
         </div>
