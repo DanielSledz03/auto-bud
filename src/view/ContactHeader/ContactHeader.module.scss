@@ -1,0 +1,11 @@
+.contact-header {
+  @apply w-full px-5 pt-[110px] md:px-10 md:pt-[130px] lg:px-20 xl:px-48 2xl:px-64;
+
+  &__title {
+    @apply mb-6 text-center text-[24px] font-semibold text-darkGray lg:text-[48px];
+  }
+
+  &__description {
+    @apply mb-10 text-center text-[14px] text-darkGray lg:text-[18px];
+  }
+}

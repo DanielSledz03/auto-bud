@@ -52,7 +52,7 @@ const Nav = () => {
 
         <ul className={styles.nav__navDesktop}>
           <li className={styles.nav__listItem}>
-            <Link href="/#o-nas" className={styles.nav__link}>
+            <Link href="/o-nas" className={styles.nav__link}>
               O nas
             </Link>
           </li>
@@ -61,7 +61,7 @@ const Nav = () => {
             onMouseLeave={() => handleDropdownToggle(false)}
             className={styles.nav__listItem}
           >
-            <Link href="/#miasta" className={styles.nav__link}>
+            <Link href="" className={styles.nav__link}>
               Miasta
             </Link>
             {showDropdown && (
@@ -110,12 +110,12 @@ const Nav = () => {
             )}
           </li>
           <li className={styles.nav__listItem}>
-            <Link href="/#uslugi" className={styles.nav__link}>
+            <Link href="/uslugi" className={styles.nav__link}>
               Usługi
             </Link>
           </li>
           <li className={styles.nav__listItem}>
-            <Link href="/#kontakt" className={styles.nav__link}>
+            <Link href="/kontakt" className={styles.nav__link}>
               Kontakt
             </Link>
           </li>

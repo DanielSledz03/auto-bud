@@ -1,8 +1,16 @@
 .promotionsBanner {
   @apply mb-16 min-h-[380px] w-full overflow-hidden rounded-lg px-5 md:px-10 lg:px-20 xl:px-52 2xl:px-72;
 
+  &-shorter {
+    @apply -mb-12;
+  }
+
   &__wrapper {
     @apply relative flex h-full min-h-[380px] w-full flex-col items-start justify-center overflow-hidden rounded-lg px-5 py-6 lg:px-10;
+
+    &-shorter {
+      @apply min-h-[360px] justify-start lg:justify-center;
+    }
   }
 
   &__image__wrapper {
@@ -39,6 +47,10 @@
 
   &__separator {
     @apply mb-5 mt-3 hidden h-[2px] w-[135px] bg-white lg:block;
+
+    &-shorter {
+      @apply block lg:block;
+    }
   }
 
   &__description {
