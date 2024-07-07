@@ -5,6 +5,7 @@ import ImageDekstop from '@/../public/assets/images/swietochlowice/Group 94 (1).
 import AvailableServices from '@/components/AvailableServices/AvailableServices';
 import LocationHeader from '@/components/LocationHeader/LocationHeader';
 import ServiceCard from '@/components/ServiceCard/ServiceCard';
+import Packages from '@/view/Packages/Packages';
 
 const SwietochlowicePage = () => {
   return (
@@ -37,6 +38,7 @@ const SwietochlowicePage = () => {
         imageMobile={ImageMobile}
         imageDesktop={ImageDekstop}
       />
+      <Packages />
     </main>
   );
 };
