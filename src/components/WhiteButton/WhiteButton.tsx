@@ -8,7 +8,7 @@ import styles from './WhiteButton.module.scss';
 interface WhiteButtonProps {
   title: string;
   buttonStyles?: string;
-  href: string;
+  href?: string;
 }
 
 const WhiteButton = ({

@@ -46,7 +46,7 @@
   }
 
   &__button {
-    @apply min-w-[230px] max-w-[250px] bg-lightGray;
+    @apply min-w-[230px] max-w-[250px] bg-red;
   }
 
   &__checkbox {
@@ -57,13 +57,17 @@
     }
 
     &-inner {
-      @apply h-full w-full rounded-[2px] bg-red;
+      @apply h-0 w-0 rounded-[2px] bg-red opacity-0 duration-200;
+    }
+
+    &-checked {
+      @apply h-full w-full opacity-100;
     }
   }
 
   &__statue {
     &-text {
-      @apply text-[12px];
+      @apply text-[12px] hover:cursor-pointer;
     }
   }
 

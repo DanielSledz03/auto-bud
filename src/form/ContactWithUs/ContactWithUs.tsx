@@ -1,8 +1,12 @@
+'use client';
+import { useState } from 'react';
+
 import WhiteButton from '@/components/WhiteButton/WhiteButton';
 
 import styles from './ContactWithUs.module.scss';
 
 const ContactWithUs = () => {
+  const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
   return (
     <div className={styles['form']}>
       <h4 className={styles['form__title']}>Masz pytania?</h4>
@@ -69,9 +73,17 @@ const ContactWithUs = () => {
             </p>
           </div>
         </div>
-        <div className={styles['form__checkbox-container']}>
+        <div
+          onClick={() => setIsCheckboxChecked(!isCheckboxChecked)}
+          onKeyDown={() => setIsCheckboxChecked(!isCheckboxChecked)}
+          role="button"
+          tabIndex={0}
+          className={styles['form__checkbox-container']}
+        >
           <div className={styles['form__checkbox']}>
-            <div className={styles['form__checkbox-inner']} />
+            <div
+              className={`${styles['form__checkbox-inner']} ${isCheckboxChecked ? styles['form__checkbox-checked'] : ''}`}
+            />
           </div>
 
           <label className={styles['form__statue-text']} htmlFor="statue">

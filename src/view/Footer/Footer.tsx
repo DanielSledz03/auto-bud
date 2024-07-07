@@ -19,25 +19,25 @@ const Footer = () => {
               <Link href="/">Strona Główna</Link>
             </li>
             <li>
-              <Link href="/">O nas</Link>
+              <Link href="/o-nas">O nas</Link>
             </li>
             <li>
-              <Link href="/">Świętochłowice</Link>
+              <Link href="/swietochlowice">Świętochłowice</Link>
             </li>
             <li>
-              <Link href="/">Ruda Śląska - Godula</Link>
+              <Link href="/godula">Ruda Śląska - Godula</Link>
             </li>
             <li>
-              <Link href="/">Ruda Śląska - Bykowina</Link>
+              <Link href="/bykowina">Ruda Śląska - Bykowina</Link>
             </li>
             <li>
-              <Link href="/">Usługi</Link>
+              <Link href="/uslugi">Usługi</Link>
             </li>
             <li>
-              <Link href="/">Kontakt</Link>
+              <Link href="/kontakt">Kontakt</Link>
             </li>
             <li>
-              <Link href="/">Umów wizytę</Link>
+              <Link href="/wizyta">Umów wizytę</Link>
             </li>
           </ul>
         </nav>
