@@ -46,7 +46,7 @@
   }
 
   &__button {
-    @apply w-[220px] bg-lightGray;
+    @apply min-w-[230px] max-w-[250px] bg-lightGray;
   }
 
   &__checkbox {

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import RedArrowTopRight from '@/../public/assets/icons/redArrowTopRight.svg';
 
@@ -7,14 +8,24 @@ import styles from './WhiteButton.module.scss';
 interface WhiteButtonProps {
   title: string;
   buttonStyles?: string;
+  href: string;
 }
 
-const WhiteButton = ({ title, buttonStyles = '' }: WhiteButtonProps) => {
+const WhiteButton = ({
+  title,
+  buttonStyles = '',
+  href = '#',
+}: WhiteButtonProps) => {
   return (
-    <button className={`${styles.button} ${buttonStyles}`}>
+    <Link
+      target="_blank"
+      rel="noreferrer"
+      href={href}
+      className={`${styles.button} ${buttonStyles}`}
+    >
       <Image src={RedArrowTopRight} alt="red arrow" />
       {title}
-    </button>
+    </Link>
   );
 };
 

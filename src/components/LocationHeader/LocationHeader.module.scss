@@ -5,7 +5,7 @@
     @apply absolute bottom-0 left-0 right-0 top-0 z-[-1] h-full w-full overflow-hidden rounded-[10px] bg-cover bg-center bg-no-repeat px-5 md:px-10 lg:px-20 lg:py-16 xl:px-48 2xl:px-64;
 
     &--mobile {
-      @apply h-full w-full lg:hidden;
+      @apply h-full w-full overflow-hidden rounded-[10px] object-cover lg:hidden;
     }
 
     &--desktop {
@@ -36,6 +36,6 @@
   }
 
   &__button {
-    @apply z-[10] mt-6 w-[220px] bg-darkGray text-white;
+    @apply z-[10] mt-6 max-w-[220px] bg-darkGray text-white;
   }
 }

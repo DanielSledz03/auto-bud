@@ -1,5 +1,5 @@
 .accordion {
-  @apply mt-12 flex flex-col justify-start px-5 md:px-10 lg:px-20 lg:py-16 xl:px-48 2xl:px-64;
+  @apply mt-12 flex flex-col justify-start px-5 md:px-10 lg:mt-0 lg:px-20 lg:pb-16 lg:pt-8 xl:px-48 2xl:px-64;
 
   &__title {
     @apply mb-1 text-[14px] text-red;
@@ -10,26 +10,23 @@
   }
 
   &__sections {
-    @apply flex flex-col gap-3;
+    @apply flex flex-col gap-3 lg:flex-row lg:justify-between lg:gap-5;
   }
 
   &__section {
-    @apply flex flex-col items-start justify-center rounded-md bg-lightGray7 px-6 py-6;
-    transition: all 0.3s ease;
-    max-height: 80px; // Height of closed section
-    overflow: hidden;
+    @apply flex max-h-[80px] flex-col items-start justify-center overflow-hidden rounded-md bg-lightGray7 px-6 py-6 duration-300 lg:max-h-none lg:w-full;
 
     &.accordion__section_open {
-      max-height: 300px; // Adjust this height as necessary to fit content
+      @apply max-h-[300px] lg:max-h-none;
     }
   }
 
   &__sectionTitle {
-    @apply flex w-full items-center justify-start text-[20px] font-semibold text-darkGray;
+    @apply flex w-full items-center justify-start text-[20px] font-semibold text-darkGray lg:text-[24px];
   }
 
   &__header {
-    @apply flex w-full cursor-pointer items-center justify-start text-[20px] font-semibold text-darkGray;
+    @apply flex w-full cursor-pointer items-center justify-start text-[20px] font-semibold text-darkGray lg:cursor-default;
   }
 
   &__arrow {
@@ -38,7 +35,7 @@
 
   &__arrowContainer {
     .accordion__arrowBlack {
-      @apply w-[20px] rotate-0 transform duration-300;
+      @apply w-[20px] rotate-0 transform duration-300 lg:hidden;
     }
 
     &.accordion__arrowContainer_active .accordion__arrowBlack {
@@ -47,14 +44,13 @@
   }
 
   &__content {
+    @apply max-h-0 opacity-0;
     transition:
       opacity 0.3s ease,
       max-height 0.3s ease;
-    max-height: 0;
-    opacity: 0;
 
     &.accordion__content_open {
-      max-height: 200px; // Adjust this height as necessary to fit content
+      @apply max-h-[200px] lg:max-h-none;
       opacity: 1;
     }
 
@@ -63,13 +59,11 @@
     }
 
     li {
-      @apply relative mb-2 pl-6 text-[12px] text-gray-700 last:mb-0;
+      @apply relative mb-2 pl-6 text-[12px] text-gray-700 last:mb-0 lg:text-sm;
     }
 
     li::before {
-      content: '';
-      @apply absolute left-0 top-1/2 h-[6px] w-[6px] -translate-y-1/2 transform bg-red;
-      border-radius: 0;
+      @apply absolute left-0 top-1/2 h-[6px] w-[6px] -translate-y-1/2 transform rounded-none bg-red content-[''];
     }
   }
 }

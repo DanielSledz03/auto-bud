@@ -14,6 +14,7 @@ interface LocationHeaderProps {
   district?: string;
   street: string;
   postalCode: string;
+  googleMapsLink: string;
 }
 
 const LocationHeader = ({
@@ -23,6 +24,7 @@ const LocationHeader = ({
   district,
   street,
   postalCode,
+  googleMapsLink,
 }: LocationHeaderProps) => {
   return (
     <div className={styles['location-header']}>
@@ -58,6 +60,7 @@ const LocationHeader = ({
       </div>
 
       <WhiteButton
+        href={googleMapsLink}
         title="Zobacz na mapie"
         buttonStyles={styles['location-header__button']}
       />

@@ -69,6 +69,7 @@ const ServiceCard = ({
         <WhiteButton
           title="Umów wizytę"
           buttonStyles={styles.serviceCard__button}
+          href="#"
         />
       </div>
     </div>

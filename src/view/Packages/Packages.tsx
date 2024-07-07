@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import ArrowDownIcon from '@/../public/assets/icons/arrowDown.svg';
 import RedArrowIcon from '@/../public/assets/icons/redArrowTopRight.svg';
@@ -48,10 +48,33 @@ const packages = [
 ];
 
 const Packages = () => {
-  const [openSection, setOpenSection] = useState<null | string>(null);
+  const [openSections, setOpenSections] = useState<string[]>([]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setOpenSections(packages.map(pkg => pkg.title));
+      } else {
+        setOpenSections([]);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const toggleSection = (section: string) => {
-    setOpenSection(openSection === section ? null : section);
+    if (window.innerWidth < 1024) {
+      setOpenSections(prevOpenSections =>
+        prevOpenSections.includes(section)
+          ? prevOpenSections.filter(title => title !== section)
+          : [...prevOpenSections, section],
+      );
+    }
   };
 
   return (
@@ -64,7 +87,7 @@ const Packages = () => {
           <div
             key={section.title}
             className={`${styles.accordion__section} ${
-              openSection === section.title
+              openSections.includes(section.title)
                 ? styles.accordion__section_open
                 : ''
             }`}
@@ -76,7 +99,7 @@ const Packages = () => {
             <button className={styles.accordion__header}>
               <div
                 className={`${styles.accordion__sectionTitle} ${
-                  openSection === section.title
+                  openSections.includes(section.title)
                     ? styles.accordion__sectionTitle_active
                     : ''
                 }`}
@@ -91,7 +114,7 @@ const Packages = () => {
 
               <div
                 className={`${styles.accordion__arrowContainer} ${
-                  openSection === section.title
+                  openSections.includes(section.title)
                     ? styles.accordion__arrowContainer_active
                     : ''
                 }`}
@@ -105,7 +128,7 @@ const Packages = () => {
             </button>
             <div
               className={`${styles.accordion__content} ${
-                openSection === section.title
+                openSections.includes(section.title)
                   ? styles.accordion__content_open
                   : ''
               }`}

@@ -9,12 +9,13 @@ const contacts = [
   {
     location: 'Ruda Śląska',
     branch: 'Godula',
-    address: 'ul. Szpaków 51, 41-705 Ruda Śląska',
-    phone: '32 74 09 221',
-    mobile: '510 049 787',
+    address: 'ul. Stara 1, 41-703 Ruda Śląska',
+    phone: '32 72 55 888',
+    mobile: '500 097 840',
+
     hours: {
-      weekdays: '7.00 – 18.30',
-      saturday: '8:00 – 14:00',
+      weekdays: '7.00 – 19.00',
+      saturday: '7:00 – 14:00',
     },
   },
   {
@@ -24,18 +25,19 @@ const contacts = [
     phone: '32 74 09 221',
     mobile: '510 049 787',
     hours: {
-      weekdays: '7.00 – 18.30',
+      weekdays: '7.00 – 19.00',
       saturday: '8:00 – 14:00',
     },
   },
   {
     location: 'Świętochłowice',
-    address: 'ul. Szpaków 51, 41-705 Ruda Śląska',
-    phone: '32 74 09 221',
-    mobile: '510 049 787',
+    branch: 'Centrum',
+    address: 'ul. Katowicka 73, 41-600 Świętochłowice',
+    phone: '32 245 28 91',
+    mobile: '500 097 840',
     hours: {
-      weekdays: '7.00 – 18.30',
-      saturday: '8:00 – 14:00',
+      weekdays: '7.00 – 19.00',
+      saturday: '7:00 – 14:00',
     },
   },
 ];
@@ -80,11 +82,16 @@ const CallToUs = () => {
                     {contact.phone}
                   </span>
                 </p>
+
                 <p className={styles['call-to-us__address']}>
-                  kom.{' '}
-                  <span className={styles['call-to-us__address--bold']}>
-                    {contact.mobile}
-                  </span>
+                  {contact.mobile && (
+                    <>
+                      kom.{' '}
+                      <span className={styles['call-to-us__address--bold']}>
+                        {contact.mobile}
+                      </span>
+                    </>
+                  )}
                 </p>
 
                 <br />
