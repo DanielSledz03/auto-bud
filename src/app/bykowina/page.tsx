@@ -37,9 +37,23 @@ const BykowinaPage = () => {
             hours: '08:00 - 14:00',
           },
         ]}
-        description={`KOD STACJI: SRS/005<br /><br />Oferuje Dynamiczną wymianę oleju w automatycznych skrzyniach biegu. <br />
-  Co to takiego ?<br /><br />
-  Dynamiczna wymiana oleju w automatycznej skrzyni biegów jest procesem, który umożliwia wymianę CAŁEGO oleju w układzie. Przy wymianie metodami tradycyjnymi (grawitacyjnie) wymieniane jest zaledwie 40-60% płynów. Reszta pozostaje w przewodach, sterowniku, konwerterze. Tak naprawdę, wymiana tradycyjna to rozmieszanie nowego oleju w starym.`}
+        description={
+          <>
+            KOD STACJI: SRS/005
+            <br />
+            <br />
+            Oferuje Dynamiczną wymianę oleju w automatycznych skrzyniach biegu.{' '}
+            <br />
+            Co to takiego ?<br />
+            <br />
+            Dynamiczna wymiana oleju w automatycznej skrzyni biegów jest
+            procesem, który umożliwia wymianę CAŁEGO oleju w układzie. Przy
+            wymianie metodami tradycyjnymi (grawitacyjnie) wymieniane jest
+            zaledwie 40-60% płynów. Reszta pozostaje w przewodach, sterowniku,
+            konwerterze. Tak naprawdę, wymiana tradycyjna to rozmieszanie nowego
+            oleju w starym.
+          </>
+        }
         imageMobile={ImageMobile}
         imageDesktop={ImageDekstop}
       />

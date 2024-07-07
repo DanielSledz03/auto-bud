@@ -44,7 +44,11 @@ const PromotionsBanner = () => {
             komfortową jazdą. Oferta ważna tylko przez ograniczony czas!
           </p>
         </div>
-        <WhiteButton title="Umów wizytę" />
+        <WhiteButton
+          title="Umów wizytę"
+          href="#"
+          buttonStyles={styles.promotionsBanner__button}
+        />
       </div>
     </div>
   );

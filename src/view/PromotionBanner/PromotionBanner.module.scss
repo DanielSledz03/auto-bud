@@ -1,47 +1,51 @@
 .promotionsBanner {
-  @apply w-full xl:px-52 px-5 md:px-10 lg:px-20 2xl:px-72 rounded-lg overflow-hidden min-h-[380px] mb-16;
+  @apply mb-16 min-h-[380px] w-full overflow-hidden rounded-lg px-5 md:px-10 lg:px-20 xl:px-52 2xl:px-72;
 
   &__wrapper {
-    @apply relative w-full h-full  px-5 py-6 lg:px-10 rounded-lg overflow-hidden min-h-[380px] flex flex-col justify-center items-start;
+    @apply relative flex h-full min-h-[380px] w-full flex-col items-start justify-center overflow-hidden rounded-lg px-5 py-6 lg:px-10;
   }
 
   &__image__wrapper {
-    @apply absolute top-0 left-0 right-0 w-full h-full overflow-hidden z-[-1];
+    @apply absolute left-0 right-0 top-0 z-[-1] h-full w-full overflow-hidden;
   }
 
   &__image {
-    @apply hidden w-full h-full object-cover rounded-lg lg:block;
+    @apply hidden h-full w-full rounded-lg object-cover lg:block;
 
     &__mobile {
-      @apply block lg:hidden w-full h-full object-cover rounded-l;
+      @apply block h-full w-full rounded-l object-cover lg:hidden;
     }
   }
 
   &__content {
-    @apply w-full h-full flex flex-col justify-center items-start;
+    @apply flex h-full w-full flex-col items-start justify-center;
   }
 
   &__heading__wrapper {
-    @apply flex flex-col items-start lg:items-end justify-start lg:flex-row lg:flex-wrap;
+    @apply flex flex-col items-start justify-start lg:flex-row lg:flex-wrap lg:items-end;
   }
 
   &__heading {
-    @apply text-red font-semibold text-sm lg:text-lg lg:mb-1;
+    @apply text-sm font-semibold text-red lg:mb-1 lg:text-lg;
   }
 
   &__title {
-    @apply text-xl font-semibold text-white lg:text-[32px] lg:pb-2.5;
+    @apply text-xl font-semibold text-white lg:pb-2.5 lg:text-[32px];
   }
 
   &__price {
-    @apply text-xl font-semibold text-white border-[2px] border-white py-2 px-4 rounded-md mb-8 mt-6 lg:ml-5 lg:mb-0 lg:mt-0;
+    @apply mb-8 mt-6 rounded-md border-[2px] border-white px-4 py-2 text-xl font-semibold text-white lg:mb-0 lg:ml-5 lg:mt-0;
   }
 
   &__separator {
-    @apply hidden bg-white h-[2px] w-[135px] mb-5 mt-3 lg:block;
+    @apply mb-5 mt-3 hidden h-[2px] w-[135px] bg-white lg:block;
   }
 
   &__description {
-    @apply text-white mb-6 text-xs leading-5 font-normal md:text-sm lg:w-3/5;
+    @apply mb-6 text-xs font-normal leading-5 text-white md:text-sm lg:w-3/5;
+  }
+
+  &__button {
+    @apply min-w-[200px];
   }
 }

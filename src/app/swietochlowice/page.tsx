@@ -37,9 +37,23 @@ const SwietochlowicePage = () => {
             hours: '08:00 - 14:00',
           },
         ]}
-        description={`KOD STACJI: SRS/005<br /><br />Oferuje Dynamiczną wymianę oleju w automatycznych skrzyniach biegu. <br />
-  Co to takiego ?<br /><br />
-  Dynamiczna wymiana oleju w automatycznej skrzyni biegów jest procesem, który umożliwia wymianę CAŁEGO oleju w układzie. Przy wymianie metodami tradycyjnymi (grawitacyjnie) wymieniane jest zaledwie 40-60% płynów. Reszta pozostaje w przewodach, sterowniku, konwerterze. Tak naprawdę, wymiana tradycyjna to rozmieszanie nowego oleju w starym.`}
+        description={
+          <>
+            KOD STACJI: SRS/005
+            <br />
+            <br />
+            Oferuje Dynamiczną wymianę oleju w automatycznych skrzyniach biegu.{' '}
+            <br />
+            Co to takiego ?<br />
+            <br />
+            Dynamiczna wymiana oleju w automatycznej skrzyni biegów jest
+            procesem, który umożliwia wymianę CAŁEGO oleju w układzie. Przy
+            wymianie metodami tradycyjnymi (grawitacyjnie) wymieniane jest
+            zaledwie 40-60% płynów. Reszta pozostaje w przewodach, sterowniku,
+            konwerterze. Tak naprawdę, wymiana tradycyjna to rozmieszanie nowego
+            oleju w starym.
+          </>
+        }
         imageMobile={ImageMobile}
         imageDesktop={ImageDekstop}
       />
@@ -57,9 +71,21 @@ const SwietochlowicePage = () => {
             hours: '08:00 - 14:00',
           },
         ]}
-        description={`Oferuje Dynamiczną wymianę oleju w automatycznych skrzyniach biegów.<br />
-  Co to takiego?<br /><br />
-  Dynamiczna wymiana oleju w automatycznej skrzyni biegów jest procesem, który umożliwia wymianę CAŁEGO oleju w układzie. Przy wymianie metodami tradycyjnymi (grawitacyjnie) wymieniane jest zaledwie 40-60% płynów. Reszta pozostaje w przewodach, sterowniku, konwerterze. Tak naprawdę, wymiana tradycyjna to rozmieszanie nowego oleju w starym.`}
+        description={
+          <>
+            Oferuje Dynamiczną wymianę oleju w automatycznych skrzyniach biegów.
+            <br />
+            Co to takiego?
+            <br />
+            <br />
+            Dynamiczna wymiana oleju w automatycznej skrzyni biegów jest
+            procesem, który umożliwia wymianę CAŁEGO oleju w układzie. Przy
+            wymianie metodami tradycyjnymi (grawitacyjnie) wymieniane jest
+            zaledwie 40-60% płynów. Reszta pozostaje w przewodach, sterowniku,
+            konwerterze. Tak naprawdę, wymiana tradycyjna to rozmieszanie nowego
+            oleju w starym.
+          </>
+        }
         imageDesktop={CarRepairDesktop}
         imageMobile={CarRepairMobile}
       />
@@ -78,7 +104,15 @@ const SwietochlowicePage = () => {
           },
         ]}
         description={
-          'Centrum motoryzacyjne Grupy AUTO-BUD w Świętochłowicach wyposażone jest także w nowoczesne Biuro Obsługi Klienta, które koordynuje pracę całego centrum zapewniając najwyższą jakość obsługi, wygodę i szybkość działania. Podczas oczekiwania na odbiór samochodu klient może skorzystać z drobnego poczęstunku, gorących lub zimnych napoi oraz oglądać, co się dzieje z jego samochodem, dzięki podglądowi na żywo warsztatu. Goście BOK mają także bezpłatny dostęp do Wi-Fi.'
+          <>
+            Centrum motoryzacyjne Grupy AUTO-BUD w Świętochłowicach wyposażone
+            jest także w nowoczesne Biuro Obsługi Klienta, które koordynuje
+            pracę całego centrum zapewniając najwyższą jakość obsługi, wygodę i
+            szybkość działania. Podczas oczekiwania na odbiór samochodu klient
+            może skorzystać z drobnego poczęstunku, gorących lub zimnych napoi
+            oraz oglądać, co się dzieje z jego samochodem, dzięki podglądowi na
+            żywo warsztatu. Goście BOK mają także bezpłatny dostęp do Wi-Fi.
+          </>
         }
         imageDesktop={OfficeDesktop}
         imageMobile={OfficeMobile}

@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from 'next/image';
+import { ReactNode } from 'react';
 
 import ClockIcon from '@/../public/assets/icons/clock.svg';
 
@@ -13,7 +14,7 @@ interface ServiceCardProps {
     day: string;
     hours: string;
   }[];
-  description: string;
+  description: ReactNode;
   imageMobile: StaticImageData;
   imageDesktop: StaticImageData;
 }
@@ -61,10 +62,7 @@ const ServiceCard = ({
             ))}
           </div>
         </div>
-        <p
-          dangerouslySetInnerHTML={{ __html: description }}
-          className={styles.serviceCard__description}
-        />
+        <p className={styles.serviceCard__description}>{description}</p>
 
         <WhiteButton
           title="Umów wizytę"
