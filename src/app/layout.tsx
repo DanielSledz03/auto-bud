@@ -5,7 +5,7 @@ import './globals.css';
 import ContactWithUs from '@/form/ContactWithUs/ContactWithUs';
 import CallToUs from '@/view/CallToUs/CallToUs';
 import Footer from '@/view/Footer/Footer';
-import Nav from '@/view/Nav/Nav';
+import Menus from '@/view/Menus/Menus';
 
 export const metadata: Metadata = {
   title: 'Auto-Bud - Bosch Car Service',
@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body className={`mx-auto max-w-[1920px] ${poppins.variable}`}>
-        <Nav />
+        <Menus />
         {children}
         <ContactWithUs />
         <CallToUs />

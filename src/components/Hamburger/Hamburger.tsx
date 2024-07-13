@@ -1,20 +1,20 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+
 import './Hamburger.css';
+import { useMenu } from '@/providers/menuProvider';
 
 const Hamburger = () => {
-  const [open, setOpen] = useState(false);
-
-  const toggleOpen = () => setOpen(!open);
+  const { toggleMenu, isMenuOpen } = useMenu();
 
   return (
     <div
       id="nav-icon2"
-      className={open ? 'open' : ''}
+      className={isMenuOpen ? 'open' : ''}
       role="button"
-      onClick={toggleOpen}
-      onKeyDown={toggleOpen}
+      onClick={toggleMenu}
+      onKeyDown={toggleMenu}
       tabIndex={0}
     >
       {Array.from({ length: 6 }).map((_, index) => (
