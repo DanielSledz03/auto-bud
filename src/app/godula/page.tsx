@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import DesktopBackground from '@/../public/assets/images/godula/BackgroundDesktop.png';
 import MobileBackground from '@/../public/assets/images/godula/BackgroundMobile.png';
 import CarWashDesktop from '@/../public/assets/images/godula/CarWashDesktop.png';
@@ -5,6 +7,7 @@ import CarWashMobile from '@/../public/assets/images/godula/CarWashMobile.png';
 import GalleryImage1 from '@/../public/assets/images/godula/gallery/1.jpg';
 import GalleryImage2 from '@/../public/assets/images/godula/gallery/2.jpg';
 import GalleryImage3 from '@/../public/assets/images/godula/gallery/3.jpg';
+import UEGraphic from '@/../public/assets/images/godula/ue.png';
 import ImageDekstop from '@/../public/assets/images/swietochlowice/MechanicDesktop.png';
 import ImageMobile from '@/../public/assets/images/swietochlowice/MechanicMobile.png';
 import AvailableServices from '@/components/AvailableServices/AvailableServices';
@@ -12,7 +15,6 @@ import LocationHeader from '@/components/LocationHeader/LocationHeader';
 import ServiceCard from '@/components/ServiceCard/ServiceCard';
 import LocationGallery from '@/view/LocationGallery/LocationGallery';
 import Packages from '@/view/Packages/Packages';
-
 const SwietochlowicePage = () => {
   return (
     <main className="">
@@ -48,16 +50,10 @@ const SwietochlowicePage = () => {
             KOD STACJI: SRS/005
             <br />
             <br />
-            Oferuje Dynamiczną wymianę oleju w automatycznych skrzyniach biegu.{' '}
-            <br />
-            Co to takiego ?<br />
-            <br />
-            Dynamiczna wymiana oleju w automatycznej skrzyni biegów jest
-            procesem, który umożliwia wymianę CAŁEGO oleju w układzie. Przy
-            wymianie metodami tradycyjnymi (grawitacyjnie) wymieniane jest
-            zaledwie 40-60% płynów. Reszta pozostaje w przewodach, sterowniku,
-            konwerterze. Tak naprawdę, wymiana tradycyjna to rozmieszanie nowego
-            oleju w starym.
+            Nasza Stacja Kontroli Pojazdów oferuje kompleksowe przeglądy
+            techniczne, które zapewniają, że Twój pojazd jest w pełni sprawny i
+            bezpieczny do jazdy. Profesjonalizm, precyzja i nowoczesne
+            technologie to nasze atuty.
           </>
         }
         imageMobile={ImageMobile}
@@ -76,22 +72,40 @@ const SwietochlowicePage = () => {
         ]}
         description={
           <>
-            To jedna z najnowocześniejszych myjni bezdotykowych na Śląsku.
-            Została skonstruowana w taki sposób aby zapewnić najlepszą jakość
-            mycia w możliwie najkrótszym czasie. Jednocześnie zastosowanie
-            nowatorskich rozwiązań gwarantuje ochronę środowiska oraz możliwość
-            zmniejszenia kosztów utrzymania myjni, co za tym idzie szansę
-            zaoferowania niższej ceny mycia dla klienta.
+            Nasza myjnia bezdotykowa na Śląsku oferuje najwyższą jakość mycia w
+            krótkim czasie, z wykorzystaniem nowoczesnych technologii
+            chroniących środowisko i obniżających koszty. Dzięki temu możemy
+            zaoferować konkurencyjne ceny dla naszych klientów.
             <br />
             <br />
-            Ponadto myjnia została zaprogramowana z 5 zoptymalizowanych
-            programów, które gwarantują nie tylko dokładne umycie samochodu, ale
-            także zabezpieczenie karoserii przed ponownym zabrudzeniem.
-            Szczegółowy opis programów dostępny poniżej.
+            Myjnia oferuje 5 zoptymalizowanych programów, które zapewniają
+            dokładne umycie i ochronę karoserii przed zabrudzeniem. Szczegóły
+            dotyczące programów znajdziesz poniżej.
             <br />
             <br />
-            Przed pierwszym myciem samochodu zachęcamy do zapoznania się z
-            Regulaminem.
+            Przed pierwszym myciem zapoznaj się z Regulaminem.
+            <br />
+            <br />
+            <p className="text-[10px] italic">
+              PROJEKT WSPÓŁFINANSOWANY PRZEZ UNIĘ EUROPEJSKĄ Z EUROPEJSKIEGO
+              FUNDUSZU ROZWOJU REGIONALNEGO W RAMACH REGIONALNEGO PROGRAMU
+              OPERACYJNEGO WOJEWODZTWA ŚLĄSKIEGO NA LATA 2007-2013. Regionalny
+              Program Operacyjny Województwa Śląskiego – realna odpowiedź na
+              realne potrzeby Firma „AUTO-BUD” Spółka z o.o. jest beneficjentem
+              projektu „Budowa myjni bezdotykowej TechWash w wersji solarnej,
+              tj. z kolektorami słonecznymi wspomagającymi pracę układu
+              grzewczego przy Okręgowej Stacji Kontroli Pojazdów w Rudzie
+              Śląskiej, ul. Stara 1.” Wartość projektu: 1 207 800,00 zł Wartość
+              dofinansowania: 200 000 zł Informacje źródłowe na temat
+              Regionalnego Programu Operacyjnego Województwa Śląskiego na lata
+              2007-2013 znajdują się na stronie www.rpo.silesia-region.pl
+            </p>
+            <Image
+              src={UEGraphic}
+              alt=" PROJEKT WSPÓŁFINANSOWANY PRZEZ UNIĘ EUROPEJSKĄ Z EUROPEJSKIEGO
+              FUNDUSZU ROZWOJU REGIONALNEGO W RAMACH REGIONALNEGO PROGRAMU
+              OPERACYJNEGO WOJEWODZTWA ŚLĄSKIEGO NA LATA 2007-2013."
+            />
           </>
         }
         imageDesktop={CarWashDesktop}

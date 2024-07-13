@@ -1,14 +1,19 @@
 import PromotionsBanner from '@/components/PromotionBanner/PromotionBanner';
-import ContactHeader from '@/view/ContactHeader/ContactHeader';
+import TextHeader from '@/components/TextHeader/TextHeader';
 
 const KontaktPage = () => {
   return (
     <main>
-      <ContactHeader />
+      <TextHeader title="Kontakt">
+        Jesteśmy tu, aby Ci pomóc! Skontaktuj się z nami w sprawie wszelkich
+        pytań, problemów czy sugestii. <br />
+        Nasz zespół jest zawsze gotowy, aby zapewnić Ci najlepszą obsługę.
+      </TextHeader>
       <PromotionsBanner
         title="Umów wizytę"
         shorter
-        description="Skorzystaj z naszej sezonowej promocji na naprawę klimatyzacji! Przy zakupie filtra kabinowego Bosch zapewniamy pełną diagnostykę i naprawę klimatyzacji w Twoim aucie. Umów wizytę i ciesz się komfortową jazdą. Oferta ważna tylko przez ograniczony czas!"
+        href="/wizyta"
+        description="Zarezerwuj termin już teraz i skorzystaj z naszych wyjątkowych usług. Kliknij tutaj, aby umówić wizytę i cieszyć się profesjonalną obsługą bez czekania."
       />
     </main>
   );

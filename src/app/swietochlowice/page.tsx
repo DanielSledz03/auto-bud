@@ -39,19 +39,10 @@ const SwietochlowicePage = () => {
         ]}
         description={
           <>
-            KOD STACJI: SRS/005
-            <br />
-            <br />
-            Oferuje Dynamiczną wymianę oleju w automatycznych skrzyniach biegu.{' '}
-            <br />
-            Co to takiego ?<br />
-            <br />
-            Dynamiczna wymiana oleju w automatycznej skrzyni biegów jest
-            procesem, który umożliwia wymianę CAŁEGO oleju w układzie. Przy
-            wymianie metodami tradycyjnymi (grawitacyjnie) wymieniane jest
-            zaledwie 40-60% płynów. Reszta pozostaje w przewodach, sterowniku,
-            konwerterze. Tak naprawdę, wymiana tradycyjna to rozmieszanie nowego
-            oleju w starym.
+            Nasza Stacja Kontroli Pojazdów oferuje kompleksowe przeglądy
+            techniczne, które zapewniają, że Twój pojazd jest w pełni sprawny i
+            bezpieczny do jazdy. Profesjonalizm, precyzja i nowoczesne
+            technologie to nasze atuty.
           </>
         }
         imageMobile={ImageMobile}
@@ -73,17 +64,11 @@ const SwietochlowicePage = () => {
         ]}
         description={
           <>
-            Oferuje Dynamiczną wymianę oleju w automatycznych skrzyniach biegów.
-            <br />
-            Co to takiego?
-            <br />
-            <br />
-            Dynamiczna wymiana oleju w automatycznej skrzyni biegów jest
-            procesem, który umożliwia wymianę CAŁEGO oleju w układzie. Przy
-            wymianie metodami tradycyjnymi (grawitacyjnie) wymieniane jest
-            zaledwie 40-60% płynów. Reszta pozostaje w przewodach, sterowniku,
-            konwerterze. Tak naprawdę, wymiana tradycyjna to rozmieszanie nowego
-            oleju w starym.
+            Nasz warsztat samochodowy to miejsce, gdzie pasja do motoryzacji
+            łączy się z najnowszymi technologiami. Oferujemy szeroki zakres
+            usług, od przeglądów technicznych po skomplikowane naprawy
+            mechaniczne. Nasz zespół doświadczonych mechaników gwarantuje, że
+            każda naprawa będzie wykonana profesjonalnie i terminowo.
           </>
         }
         imageDesktop={CarRepairDesktop}
@@ -105,13 +90,15 @@ const SwietochlowicePage = () => {
         ]}
         description={
           <>
-            Centrum motoryzacyjne Grupy AUTO-BUD w Świętochłowicach wyposażone
-            jest także w nowoczesne Biuro Obsługi Klienta, które koordynuje
-            pracę całego centrum zapewniając najwyższą jakość obsługi, wygodę i
-            szybkość działania. Podczas oczekiwania na odbiór samochodu klient
-            może skorzystać z drobnego poczęstunku, gorących lub zimnych napoi
-            oraz oglądać, co się dzieje z jego samochodem, dzięki podglądowi na
-            żywo warsztatu. Goście BOK mają także bezpłatny dostęp do Wi-Fi.
+            Nasze nowoczesne Biuro Obsługi Klienta w centrum motoryzacyjnym
+            Grupy AUTO-BUD w Świętochłowicach to miejsce, gdzie najwyższa jakość
+            obsługi łączy się z wygodą i szybkością działania. Nasz zespół
+            koordynuje pracę całego centrum, zapewniając, że każda wizyta
+            przebiega sprawnie i komfortowo. <br />
+            <br /> Podczas oczekiwania na odbiór samochodu, możesz skorzystać z
+            naszego kawomatu. Dodatkowo, nasi goście mają dostęp do bezpłatnego
+            Wi-Fi, co pozwala na wygodne korzystanie z internetu w trakcie
+            oczekiwania.
           </>
         }
         imageDesktop={OfficeDesktop}

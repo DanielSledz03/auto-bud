@@ -13,6 +13,7 @@ interface Props {
   price?: string;
   description: string;
   shorter?: boolean;
+  href?: string;
 }
 
 const PromotionsBanner = ({
@@ -21,6 +22,7 @@ const PromotionsBanner = ({
   price,
   description,
   shorter = false,
+  href = '#',
 }: Props) => {
   return (
     <div
@@ -63,7 +65,7 @@ const PromotionsBanner = ({
         </div>
         <WhiteButton
           title="Umów wizytę"
-          href="#"
+          href={href}
           buttonStyles={styles.promotionsBanner__button}
         />
       </div>

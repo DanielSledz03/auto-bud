@@ -1,0 +1,77 @@
+.object {
+  @apply mt-12 w-full px-5 md:px-10 lg:mt-16 lg:px-20 xl:px-48 2xl:px-64;
+
+  &__info {
+    @apply h-full w-full rounded-[10px] bg-lightGray5 p-4 lg:flex lg:flex-row lg:items-center lg:px-10 lg:py-6;
+
+    &__mobile {
+      &__header {
+        @apply flex items-center justify-start lg:hidden;
+
+        &__title {
+          @apply ml-6 w-[60%] text-[20px] font-semibold leading-[30px] text-darkGray;
+        }
+
+        &__icon {
+          @apply flex h-[60px] w-[60px] items-center justify-center rounded-[10px] border-[1px] border-lightGray2 bg-white;
+        }
+      }
+    }
+
+    &__title {
+      @apply hidden text-[32px] font-semibold text-darkGray lg:block;
+    }
+
+    &__icon {
+      @apply hidden h-[120px] w-[120px] items-center justify-center rounded-[10px] border-[1px] border-lightGray2 bg-white lg:flex;
+
+      &__container {
+        @apply lg:flex lg:h-max lg:items-center lg:justify-center lg:pr-10;
+      }
+    }
+
+    &__divider {
+      @apply my-4 w-[100px] border-[1px] border-darkGray lg:w-[130px];
+    }
+
+    &__location-list {
+      @apply flex flex-col flex-wrap items-start justify-start lg:flex-row;
+
+      &__item {
+        @apply mt-2 flex w-[100%] items-center justify-start lg:mr-6 lg:w-auto;
+
+        &__icon {
+          @apply mr-4 flex h-[40px] w-[40px] items-center justify-center rounded-[10px] border-[1px] border-lightGray2 bg-white;
+        }
+
+        &__title {
+          @apply text-[14px] text-darkGray;
+        }
+      }
+    }
+
+    &__description {
+      @apply mt-6 text-[12px] text-darkGray lg:w-[100%] lg:text-[14px];
+    }
+  }
+
+  &__price__list {
+    @apply flex flex-col flex-wrap items-start justify-start duration-300 lg:mt-6;
+
+    &__item {
+      @apply mb-1 mt-2 flex w-[100%] items-center justify-between rounded-[10px] bg-lightGray5 px-3 py-2 lg:px-5 lg:py-4;
+
+      &__title {
+        @apply text-[14px] font-semibold text-darkGray;
+      }
+
+      &__price {
+        @apply text-[18px] font-semibold text-red;
+      }
+    }
+
+    &__button {
+      @apply mt-4 flex h-[50px] w-[100%] items-center justify-center rounded-[10px] bg-darkGray py-2 text-[18px] font-semibold text-white;
+    }
+  }
+}
