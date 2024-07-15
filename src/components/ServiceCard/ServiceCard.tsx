@@ -17,6 +17,7 @@ interface ServiceCardProps {
   description: ReactNode;
   imageMobile: StaticImageData;
   imageDesktop: StaticImageData;
+  button?: boolean;
 }
 
 const ServiceCard = ({
@@ -26,6 +27,7 @@ const ServiceCard = ({
   description,
   imageMobile,
   imageDesktop,
+  button = false,
 }: ServiceCardProps) => {
   return (
     <div className={styles.serviceCard}>
@@ -63,12 +65,13 @@ const ServiceCard = ({
           </div>
         </div>
         <p className={styles.serviceCard__description}>{description}</p>
-
-        <WhiteButton
-          title="Umów wizytę"
-          buttonStyles={styles.serviceCard__button}
-          href="#"
-        />
+        {button && (
+          <WhiteButton
+            title="Umów wizytę"
+            buttonStyles={styles.serviceCard__button}
+            href="#"
+          />
+        )}
       </div>
     </div>
   );

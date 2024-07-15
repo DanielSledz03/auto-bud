@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import React, { useEffect, useState, useRef } from 'react';
 
 import OpinionsBackgroundDesktopImage from '@/../public/assets/images/general/index/opinionsBackgroundDesktop.png';
 import OpinionsBackgroundImage from '@/../public/assets/images/general/index/opinionsBackgroundMobile.png';
@@ -27,16 +30,26 @@ const reviews = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis quam in purus pharetra dictum. Donec semper mattis magna, sit amet scelerisque eros tristique eget. In auctor nunc nisl, at dapibus velit lacinia non.',
     department: 'Myjnia bezdotykowa',
   },
-  {
-    name: 'Marek',
-    rating: 5,
-    review:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis quam in purus pharetra dictum. Donec semper mattis magna, sit amet scelerisque eros tristique eget. In auctor nunc nisl, at dapibus velit lacinia non.',
-    department: 'Myjnia bezdotykowa',
-  },
 ];
 
 const HomeOpinions = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const opinionsRef = useRef<HTMLDivElement>(null);
+  const reviewRefs = useRef<HTMLDivElement[] | null[]>([]);
+
+  useEffect(() => {
+    if (reviewRefs.current[activeIndex] && opinionsRef.current) {
+      opinionsRef.current.scrollTo({
+        left: reviewRefs!.current[activeIndex]!.clientWidth * activeIndex,
+        behavior: 'smooth',
+      });
+    }
+  }, [activeIndex]);
+
+  const handleDotClick = (index: number) => {
+    setActiveIndex(index);
+  };
+
   return (
     <div className={styles['home-opinions']}>
       <div className={styles['home-opinions__background']}>
@@ -52,14 +65,11 @@ const HomeOpinions = () => {
         />
       </div>
       <h5 className={styles['home-opinions__title']}>Opinie klientów</h5>
-
       <h4 className={styles['home-opinions__subtitle']}>
         Co klienci mówią o nas?
       </h4>
-
       <hr className={styles['home-opinions__divider']} />
-
-      <div className={styles['opinions']}>
+      <div className={styles['opinions']} ref={opinionsRef}>
         {reviews.map((review, index) => (
           <div key={index} className={styles['opinions__item']}>
             <div className={styles['opinions__rating-container']}>
@@ -72,27 +82,30 @@ const HomeOpinions = () => {
                 ))}
               </div>
             </div>
-
             <div className={styles['opinions__department-container']}>
               <p className={styles['opinions__department']}>
                 Opinia dotycząca:
               </p>
-
               <p className={styles['opinions__department-bold']}>
                 {review.department}
               </p>
             </div>
-
             <p className={styles['opinions__review']}>{review.review}</p>
           </div>
         ))}
       </div>
-
-      <div className={styles['opinions__pagination']}>
+      {/* <div className={styles['opinions__pagination']}>
         {reviews.map((review, index) => (
-          <div key={index} className={styles['opinions__pagination-dot']}></div>
+          <div
+            key={index}
+            className={`${styles['opinions__pagination-dot']} ${index === activeIndex ? styles['active-dot'] : ''}`}
+            onClick={() => handleDotClick(index)}
+            onKeyDown={() => handleDotClick(index)}
+            role="button"
+            tabIndex={index}
+          ></div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

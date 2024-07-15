@@ -5,6 +5,10 @@
     @apply left-0 lg:hidden;
   }
 
+  &__title {
+    @apply w-full py-4 text-center text-[24px];
+  }
+
   &__nav {
     @apply w-[80%];
   }

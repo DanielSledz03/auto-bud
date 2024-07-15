@@ -7,7 +7,7 @@ import { useMenu } from '@/providers/menuProvider';
 import styles from './MobileMenu.module.scss';
 
 const MobileMenu = () => {
-  const { isMenuOpen, toggleMenu } = useMenu();
+  const { isMenuOpen, toggleMenu, toggleMenuLocation } = useMenu();
 
   return (
     <div
@@ -23,7 +23,7 @@ const MobileMenu = () => {
             </Link>
           </li>
           <li className={styles.menu__item}>
-            <Link href="/o-nas">Miasta</Link>
+            <p onClick={toggleMenuLocation}>Miasta</p>
           </li>
           <li className={styles.menu__item}>
             <Link onClick={toggleMenu} href="/uslugi">

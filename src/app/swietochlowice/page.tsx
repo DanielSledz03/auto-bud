@@ -73,6 +73,7 @@ const SwietochlowicePage = () => {
         }
         imageDesktop={CarRepairDesktop}
         imageMobile={CarRepairMobile}
+        button
       />
 
       <ServiceCard

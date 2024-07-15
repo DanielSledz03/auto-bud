@@ -8,6 +8,7 @@ import LocationPin from '@/../public/assets/icons/redLocationPin.svg';
 import Logo from '@/../public/assets/images/general/bosch-logo.png';
 import Hamburger from '@/components/Hamburger/Hamburger';
 import PhoneIcon from '@/components/PhoneIcon/PhoneIcon';
+import { useMenu } from '@/providers/menuProvider';
 
 import styles from './Nav.module.scss';
 
@@ -17,6 +18,8 @@ const Nav = () => {
   const handleDropdownToggle = (isOpen: boolean) => {
     setShowDropdown(isOpen);
   };
+
+  const { toggleMenu } = useMenu();
 
   return (
     <nav
@@ -45,7 +48,13 @@ const Nav = () => {
             <p className={styles.nav__buttonText}>Zadzwoń</p>
           </Link>
 
-          <div className={styles.nav__buttonBar}>
+          <div
+            onClick={toggleMenu}
+            onKeyDown={toggleMenu}
+            role="button"
+            tabIndex={0}
+            className={styles.nav__buttonBar}
+          >
             <Hamburger />
           </div>
         </div>

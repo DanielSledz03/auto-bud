@@ -2,6 +2,7 @@
 import { MenuProvider } from '@/providers/menuProvider';
 
 import MobileMenu from '../MobileMenu/MobileMenu';
+import MobileMenuLocations from '../MobileMenu/MobileMenuLocations/MobileMenuLocations';
 import Nav from '../Nav/Nav';
 
 const Menus = () => {
@@ -9,6 +10,7 @@ const Menus = () => {
     <MenuProvider>
       <Nav />
       <MobileMenu />
+      <MobileMenuLocations />
     </MenuProvider>
   );
 };

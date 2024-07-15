@@ -15,7 +15,9 @@ import LocationHeader from '@/components/LocationHeader/LocationHeader';
 import ServiceCard from '@/components/ServiceCard/ServiceCard';
 import LocationGallery from '@/view/LocationGallery/LocationGallery';
 import Packages from '@/view/Packages/Packages';
-const SwietochlowicePage = () => {
+import 'lightbox.js-react/dist/index.css';
+
+const GodulaPage = () => {
   return (
     <main className="">
       <LocationHeader
@@ -102,7 +104,7 @@ const SwietochlowicePage = () => {
             </p>
             <Image
               src={UEGraphic}
-              alt=" PROJEKT WSPÓŁFINANSOWANY PRZEZ UNIĘ EUROPEJSKĄ Z EUROPEJSKIEGO
+              alt="PROJEKT WSPÓŁFINANSOWANY PRZEZ UNIĘ EUROPEJSKĄ Z EUROPEJSKIEGO
               FUNDUSZU ROZWOJU REGIONALNEGO W RAMACH REGIONALNEGO PROGRAMU
               OPERACYJNEGO WOJEWODZTWA ŚLĄSKIEGO NA LATA 2007-2013."
             />
@@ -112,9 +114,18 @@ const SwietochlowicePage = () => {
         imageMobile={CarWashMobile}
       />
 
-      <LocationGallery images={[GalleryImage1, GalleryImage2, GalleryImage3]} />
+      <LocationGallery
+        images={[
+          GalleryImage1,
+          GalleryImage2,
+          GalleryImage3,
+          GalleryImage1,
+          GalleryImage2,
+          GalleryImage3,
+        ]}
+      />
     </main>
   );
 };
 
-export default SwietochlowicePage;
+export default GodulaPage;
