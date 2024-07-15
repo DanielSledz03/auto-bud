@@ -23,7 +23,16 @@ const MobileMenu = () => {
             </Link>
           </li>
           <li className={styles.menu__item}>
-            <p onClick={toggleMenuLocation}>Miasta</p>
+            <div
+              onClick={toggleMenuLocation}
+              onKeyDown={toggleMenuLocation}
+              role="button"
+              tabIndex={0}
+              aria-label="Miasta"
+              title="Miasta"
+            >
+              Miasta
+            </div>
           </li>
           <li className={styles.menu__item}>
             <Link onClick={toggleMenu} href="/uslugi">
