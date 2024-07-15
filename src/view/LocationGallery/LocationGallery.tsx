@@ -8,6 +8,8 @@ import styles from './LocationGalleru.module.scss';
 
 interface LocationGalleryProps {
   images: StaticImageData[];
+  title: string;
+  description: string;
 }
 
 const SlideshowLightbox = dynamic(
@@ -17,7 +19,11 @@ const SlideshowLightbox = dynamic(
   },
 );
 
-const LocationGallery = ({ images }: LocationGalleryProps) => {
+const LocationGallery = ({
+  images,
+  title,
+  description,
+}: LocationGalleryProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const refs = useRef<(HTMLDivElement | null)[]>([]); // Initialize refs as an array
 
@@ -33,10 +39,8 @@ const LocationGallery = ({ images }: LocationGalleryProps) => {
 
   return (
     <div className={styles['location-gallery']}>
-      <h5 className={styles['location-gallery__title']}>Galeria zdjęć</h5>
-      <h4 className={styles['location-gallery__subtitle']}>
-        Zobacz jak wygląda obiekt
-      </h4>
+      <h5 className={styles['location-gallery__title']}>{title}</h5>
+      <h4 className={styles['location-gallery__subtitle']}>{description}</h4>
       <hr className={styles['location-gallery__divider']} />
 
       <div className={styles['location-gallery__gallery']}>

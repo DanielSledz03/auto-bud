@@ -10,7 +10,7 @@ import styles from './ServiceCard.module.scss';
 interface ServiceCardProps {
   title: string;
   subtitle: string;
-  openHours: {
+  openHours?: {
     day: string;
     hours: string;
   }[];
@@ -49,21 +49,27 @@ const ServiceCard = ({
 
         <hr className={styles.serviceCard__divider} />
 
-        <div className={styles.serviceCard__hours__container}>
-          <div className={styles.serviceCard__hours__icon}>
-            <Image src={ClockIcon} alt="Zegar" />
+        {openHours && (
+          <div className={styles.serviceCard__hours__container}>
+            <div className={styles.serviceCard__hours__icon}>
+              <Image src={ClockIcon} alt="Zegar" />
+            </div>
+
+            <div className={styles.serviceCard__hours}>
+              {openHours.map(openHour => (
+                <p
+                  key={openHour.day}
+                  className={styles.serviceCard__hours__open}
+                >
+                  {openHour.day}{' '}
+                  <span className={styles.serviceCard__hours__open__time}>
+                    {openHour.hours}
+                  </span>
+                </p>
+              ))}
+            </div>
           </div>
-          <div className={styles.serviceCard__hours}>
-            {openHours.map(openHour => (
-              <p key={openHour.day} className={styles.serviceCard__hours__open}>
-                {openHour.day}{' '}
-                <span className={styles.serviceCard__hours__open__time}>
-                  {openHour.hours}
-                </span>
-              </p>
-            ))}
-          </div>
-        </div>
+        )}
         <p className={styles.serviceCard__description}>{description}</p>
         {button && (
           <WhiteButton

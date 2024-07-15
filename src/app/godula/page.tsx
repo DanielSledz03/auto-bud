@@ -115,6 +115,8 @@ const GodulaPage = () => {
       />
 
       <LocationGallery
+        title="Galeria zdjęć"
+        description="Zobacz jak wygląda obiekt"
         images={[
           GalleryImage1,
           GalleryImage2,
