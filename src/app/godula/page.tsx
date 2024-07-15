@@ -15,7 +15,6 @@ import LocationHeader from '@/components/LocationHeader/LocationHeader';
 import ServiceCard from '@/components/ServiceCard/ServiceCard';
 import LocationGallery from '@/view/LocationGallery/LocationGallery';
 import Packages from '@/view/Packages/Packages';
-import 'lightbox.js-react/dist/index.css';
 
 const GodulaPage = () => {
   return (

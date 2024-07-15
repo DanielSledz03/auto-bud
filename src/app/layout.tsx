@@ -6,6 +6,7 @@ import ContactWithUs from '@/form/ContactWithUs/ContactWithUs';
 import CallToUs from '@/view/CallToUs/CallToUs';
 import Footer from '@/view/Footer/Footer';
 import Menus from '@/view/Menus/Menus';
+import 'lightbox.js-react/dist/index.css';
 
 export const metadata: Metadata = {
   title: 'Auto-Bud - Bosch Car Service',

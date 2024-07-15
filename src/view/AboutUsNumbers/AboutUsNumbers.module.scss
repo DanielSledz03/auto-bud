@@ -1,0 +1,35 @@
+.about-us-numbers {
+  @apply w-full px-5 md:px-10 lg:px-20 xl:px-48 2xl:px-64;
+
+  &__header {
+    @apply mb-8 overflow-hidden rounded-[10px];
+
+    &-mobile {
+      @apply block lg:hidden;
+    }
+
+    &-desktop {
+      @apply hidden h-[411px] object-cover lg:block;
+    }
+  }
+
+  &__content {
+    @apply flex w-full flex-col lg:mt-6 lg:flex-row lg:justify-between;
+  }
+
+  &__item {
+    @apply mb-8 flex w-full flex-col items-start justify-start lg:w-[30%];
+  }
+
+  &__number {
+    @apply mb-0 pt-0 text-[60px] font-semibold leading-[75px] text-darkGray lg:text-[80px] lg:leading-[105px];
+  }
+
+  &__line {
+    @apply mb-3 w-full border-[1px] border-lightGray2 lg:mb-5;
+  }
+
+  &__text {
+    @apply text-[14px] text-red;
+  }
+}

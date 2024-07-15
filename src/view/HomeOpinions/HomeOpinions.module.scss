@@ -31,7 +31,7 @@
 
   &__item {
     @apply mr-8 min-w-[270px] rounded-[5px] bg-white p-4 pb-8 shadow-md last:mr-0 lg:flex lg:flex-col;
-    flex: 0 0 30%; /* Każdy element zajmuje 100% szerokości kontenera */
+    flex: 0 0 31%; /* Każdy element zajmuje 100% szerokości kontenera */
     box-sizing: border-box;
   }
 
