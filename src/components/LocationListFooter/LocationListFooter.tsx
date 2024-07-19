@@ -61,9 +61,6 @@ const LocationList = () => {
               <div className={styles['location-list__details']}>
                 <div>{location.address}</div>
                 <div>{location.zipCode}</div>
-                <div className={styles['location-list__hours']}>
-                  {location.hours}
-                </div>
               </div>
             </div>
           ) : (
@@ -93,9 +90,6 @@ const LocationList = () => {
                 <div className={styles['location-list__details']}>
                   <div>{location.address}</div>
                   <div>{location.zipCode}</div>
-                  <div className={styles['location-list__hours']}>
-                    {location.hours}
-                  </div>
                 </div>
               )}
             </div>

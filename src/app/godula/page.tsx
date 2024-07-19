@@ -35,7 +35,7 @@ const GodulaPage = () => {
       />
       <ServiceCard
         title="Omega"
-        subtitle="Stacja Kontroli Pojazdów"
+        subtitle="Okręgowa Stacja Kontroli Pojazdów"
         openHours={[
           {
             day: 'Pn - Pt',
@@ -48,13 +48,15 @@ const GodulaPage = () => {
         ]}
         description={
           <>
-            KOD STACJI: SRS/005
+            Okręgowa Stacja Kontroli Pojazdów Omega przeprowadza badania
+            techniczne wszystkich pojazdów zarejestrowanych.
             <br />
-            <br />
-            Nasza Stacja Kontroli Pojazdów oferuje kompleksowe przeglądy
-            techniczne, które zapewniają, że Twój pojazd jest w pełni sprawny i
-            bezpieczny do jazdy. Profesjonalizm, precyzja i nowoczesne
-            technologie to nasze atuty.
+            <br /> SPRAWDZAMY WSZYSTKO, CO JEŹDZI! <br />
+            <br /> Stacja Kontroli Pojazdów obsługuje także pojazdy wyposażone w
+            instalacje LPG. Ponadto Okręgowa Stacja Kontroli Pojazdów Omega
+            stanowi gratkę dla fanów Agenta 007. We wnętrzu stacji można
+            zobaczyć przekrój plakatów promujących poszczególne filmy ze słynnym
+            agentem
           </>
         }
         imageMobile={ImageMobile}
@@ -68,7 +70,7 @@ const GodulaPage = () => {
         openHours={[
           {
             day: 'Codziennie',
-            hours: '08:00 - 22:00',
+            hours: '07:00 - 22:00',
           },
         ]}
         description={

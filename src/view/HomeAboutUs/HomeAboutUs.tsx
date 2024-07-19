@@ -28,14 +28,19 @@ const HomeAboutUs = () => {
           </p>
 
           <p className={styles.aboutUs__text}>
-            Jako pierwsza powstała okręgowa Stacja Kontroli Pojazdów Omega,
-            która już od 8 lat sprawdza sprawność techniczną rudzkich pojazdów.
-            W późniejszych latach obiekt na Goduli rozwinął się o stację LPG
-            oraz mały warsztat samochodowy specjalizujący się w zakładaniu i
-            serwisowaniu instalacji LPG.
+            Nasza firma działa na rynku od 2006 roku i obecnie posiadamy obiekty
+            w trzech różnych lokalizacjach. W naszej ofercie znajdziesz stacje
+            diagnostyczne w Rudzie Śląskiej - Goduli oraz Bykowinie, a także
+            centrum motoryzacyjne w Świętochłowicach.
+            <br />
+            <br /> W Świętochłowicach mamy dwanaście bogato wyposażonych
+            stanowisk, stację diagnostyczną oraz Biuro Obsługi Klienta, gdzie
+            zawsze możesz liczyć na pomoc naszych pracowników oraz napić się
+            kawy, oczekując na swoje auto. Dostępny jest również dostęp do
+            bezpłatnej sieci Wi-Fi.
           </p>
 
-          <WhiteButton title="Czytaj więcej" />
+          <WhiteButton title="Czytaj więcej" href="/o-nas" />
         </div>
 
         <div className={styles.aboutUs__images}>

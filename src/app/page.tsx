@@ -9,10 +9,10 @@ export default function Home() {
     <main className="">
       <HomeHeader />
       <PromotionBanner
-        title="Naprawa klimatyzacji"
+        title="Serwis klimatyzacji"
         heading="Oferty sezonowe"
         price="99 zł"
-        description="Skorzystaj z naszej sezonowej promocji na naprawę klimatyzacji! Przy zakupie filtra kabinowego Bosch zapewniamy pełną diagnostykę i naprawę klimatyzacji w Twoim aucie. Umów wizytę i ciesz się komfortową jazdą. Oferta ważna tylko przez ograniczony czas!"
+        description="Skorzystaj z naszej sezonowej promocji na serwis klimatyzacji! Przy zakupie filtra kabinowego Bosch zapewniamy pełną diagnostykę i serwis klimatyzacji w Twoim aucie. Umów wizytę i ciesz się komfortową jazdą. Oferta ważna tylko przez ograniczony czas!"
       />
       <HomeAboutUs />
       <HomeAdditionalServices />

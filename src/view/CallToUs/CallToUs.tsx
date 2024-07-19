@@ -11,9 +11,8 @@ const contacts = [
     branch: 'Godula',
     address: 'ul. Stara 1, 41-703 Ruda Śląska',
     phone: '32 72 55 888',
-    mobile: '500 097 840',
 
-    hours: {
+    hoursStation: {
       weekdays: '7.00 – 19.00',
       saturday: '7:00 – 14:00',
     },
@@ -24,7 +23,7 @@ const contacts = [
     address: 'ul. Szpaków 51, 41-705 Ruda Śląska',
     phone: '32 74 09 221',
     mobile: '510 049 787',
-    hours: {
+    hoursStation: {
       weekdays: '7.00 – 19.00',
       saturday: '8:00 – 14:00',
     },
@@ -34,10 +33,14 @@ const contacts = [
     branch: 'Centrum',
     address: 'ul. Katowicka 73, 41-600 Świętochłowice',
     phone: '32 245 28 91',
-    mobile: '500 097 840',
-    hours: {
+    mobile: '502 567 630',
+    hoursStation: {
       weekdays: '7.00 – 19.00',
       saturday: '7:00 – 14:00',
+    },
+    hoursMechanic: {
+      weekdays: '8.00 – 16.00',
+      saturday: 'Nieczynne',
     },
   },
 ];
@@ -96,19 +99,45 @@ const CallToUs = () => {
 
                 <br />
 
+                {contact.hoursMechanic && (
+                  <p className={styles['call-to-us__branch']}>
+                    Stacja Kontroli Pojazdów
+                  </p>
+                )}
+
                 <p className={styles['call-to-us__address']}>
                   Pn-Pt.{' '}
                   <span className={styles['call-to-us__address--bold']}>
-                    {contact.hours.weekdays}
+                    {contact.hoursStation.weekdays}
                   </span>
                 </p>
 
                 <p className={styles['call-to-us__address']}>
                   Sobota.{' '}
                   <span className={styles['call-to-us__address--bold']}>
-                    {contact.hours.saturday}
+                    {contact.hoursStation.saturday}
                   </span>
                 </p>
+
+                {contact.hoursMechanic && (
+                  <>
+                    <br />
+                    <p className={styles['call-to-us__branch']}>Warsztat</p>
+                    <p className={styles['call-to-us__address']}>
+                      Pn-Pt.{' '}
+                      <span className={styles['call-to-us__address--bold']}>
+                        {contact.hoursMechanic.weekdays}
+                      </span>
+                    </p>
+
+                    <p className={styles['call-to-us__address']}>
+                      Sobota.{' '}
+                      <span className={styles['call-to-us__address--bold']}>
+                        {contact.hoursMechanic.saturday}
+                      </span>
+                    </p>
+                  </>
+                )}
               </div>
             </div>
           </div>

@@ -21,22 +21,22 @@ const AboutUsNumbers = () => {
       </div>
       <div className={styles['about-us-numbers__content']}>
         <div className={styles['about-us-numbers__item']}>
-          <span className={styles['about-us-numbers__number']}>15 lat</span>
+          <span className={styles['about-us-numbers__number']}>18 lat</span>
           <hr className={styles['about-us-numbers__line']} />
           <span className={styles['about-us-numbers__text']}>
             Doświadczenia w branży
           </span>
         </div>
         <div className={styles['about-us-numbers__item']}>
-          <span className={styles['about-us-numbers__number']}>5000+</span>
+          <span className={styles['about-us-numbers__number']}>25000+</span>
           <hr className={styles['about-us-numbers__line']} />
 
           <span className={styles['about-us-numbers__text']}>
-            Zadowolonych klientów
+            Zadowolonych klientów rocznie
           </span>
         </div>
         <div className={styles['about-us-numbers__item']}>
-          <span className={styles['about-us-numbers__number']}>30+</span>
+          <span className={styles['about-us-numbers__number']}>20+</span>
           <hr className={styles['about-us-numbers__line']} />
 
           <span className={styles['about-us-numbers__text']}>

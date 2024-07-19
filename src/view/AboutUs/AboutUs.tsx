@@ -29,19 +29,25 @@ const AboutUs = () => {
         </h5>
 
         <p className={styles.aboutUs__text}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at est
-          sodales, iaculis tortor et, pharetra justo. Class aptent taciti
-          sociosqu ad litora torquent per conubia nostra, per inceptos
-          himenaeos. Nulla vehicula dignissim ipsum vel venenatis. Fusce
-          lobortis nibh vel nulla consequat semper.
+          Nasza firma działa na rynku od 2006 roku i obecnie posiadamy obiekty w
+          trzech różnych lokalizacjach. W naszej ofercie znajdziesz stacje
+          diagnostyczne w Rudzie Śląskiej - Goduli oraz Bykowinie, a także
+          centrum motoryzacyjne w Świętochłowicach.
+          <br />
+          <br /> W Świętochłowicach mamy dwanaście bogato wyposażonych
+          stanowisk, stację diagnostyczną oraz Biuro Obsługi Klienta, gdzie
+          zawsze możesz liczyć na pomoc naszych pracowników oraz napić się kawy,
+          oczekując na swoje auto. Dostępny jest również dostęp do bezpłatnej
+          sieci Wi-Fi.
         </p>
 
         <p className={styles.aboutUs__text}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at est
-          sodales, iaculis tortor et, pharetra justo. Class aptent taciti
-          sociosqu ad litora torquent per conubia nostra, per inceptos
-          himenaeos. Nulla vehicula dignissim ipsum vel venenatis. Fusce
-          lobortis nibh vel nulla consequat semper.
+          Kompleksowo naprawiamy auta wszystkich marek, na gwarancji jak i po
+          niej. Od 2017 roku należymy do sieci Bosch Car Service. Autoryzacja
+          potwierdza, że świadczymy profesjonalne usługi i spełniamy standardy
+          najwyższej jakości. Dokładamy wszelkich starań, by auta naprawiane w
+          naszym serwisie były precyzyjnie diagnozowane i naprawiane. Zapraszamy
+          do skorzystania z naszych usług.
         </p>
       </div>
     </div>

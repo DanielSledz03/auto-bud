@@ -39,10 +39,20 @@ const SwietochlowicePage = () => {
         ]}
         description={
           <>
-            Nasza Stacja Kontroli Pojazdów oferuje kompleksowe przeglądy
-            techniczne, które zapewniają, że Twój pojazd jest w pełni sprawny i
-            bezpieczny do jazdy. Profesjonalizm, precyzja i nowoczesne
-            technologie to nasze atuty.
+            Podstawowa Stacja Kontroli Pojazdów Gamma działa w zakresie
+            sprawdzenia oraz oceny prawidłowości działania poszczególnych
+            zespołów i układów pojazdu w szczególności pod względem
+            bezpieczeństwa jazdy i ochrony środowiska. Stacja jest również
+            upoważniona do umieszczenia nadanych cech identyfikacyjnych pojazdu.
+            <br />
+            <br />
+            Stacja Kontroli Pojazdów Gamma prowadzi również liczne akcje
+            zapewniające możliwość bezpłatnego sprawdzenia samochodu. Dbamy
+            bowiem o bezpieczeństwo naszych klientów przez cały rok, a nie tylko
+            pordczas obowiązkowego przeglądu technicznego wpisywanego do dowodu.
+            Podczas naszych akcji wielu kierowców uniknęło poważnych awarii
+            dzięki wczesnemu zdiagnozowaniu usterki, tym samym zapewniając sobie
+            i innym większe bezpieczeństwo podczas jazdy.
           </>
         }
         imageMobile={ImageMobile}
@@ -55,11 +65,11 @@ const SwietochlowicePage = () => {
         openHours={[
           {
             day: 'Pn - Pt',
-            hours: '07:00 - 18:30',
+            hours: '08:00 - 16:00',
           },
           {
             day: 'Sobota',
-            hours: '08:00 - 14:00',
+            hours: 'Nieczynne',
           },
         ]}
         description={
@@ -82,24 +92,22 @@ const SwietochlowicePage = () => {
         openHours={[
           {
             day: 'Pn - Pt',
-            hours: '07:00 - 18:30',
+            hours: '07:00 - 16:00',
           },
           {
             day: 'Sobota',
-            hours: '08:00 - 14:00',
+            hours: 'Nieczynne',
           },
         ]}
         description={
           <>
-            Nasze nowoczesne Biuro Obsługi Klienta w centrum motoryzacyjnym
-            Grupy AUTO-BUD w Świętochłowicach to miejsce, gdzie najwyższa jakość
-            obsługi łączy się z wygodą i szybkością działania. Nasz zespół
-            koordynuje pracę całego centrum, zapewniając, że każda wizyta
-            przebiega sprawnie i komfortowo. <br />
-            <br /> Podczas oczekiwania na odbiór samochodu, możesz skorzystać z
-            naszego kawomatu. Dodatkowo, nasi goście mają dostęp do bezpłatnego
-            Wi-Fi, co pozwala na wygodne korzystanie z internetu w trakcie
-            oczekiwania.
+            Centrum motoryzacyjne Grupy AUTO-BUD w Świętochłowicach wyposażone
+            jest także w nowoczesne Biuro Obsługi Klienta, które koordynuje
+            pracę całego centrum zapewniając najwyższą jakość obsługi, wygodę i
+            szybkość działania. <br />
+            <br />
+            Podczas oczekiwania na odbiór samochodu klient może skorzystać z
+            bezpłatnego kawomatu, a także bezpłatnego dostępu do Wi-Fi.
           </>
         }
         imageDesktop={OfficeDesktop}
