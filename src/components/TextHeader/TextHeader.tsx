@@ -7,7 +7,7 @@ interface TextHeaderProps {
   children: ReactNode;
 }
 
-const TextHeader = ({ title, children }: TextHeaderProps) => {
+export const TextHeader = ({ title, children }: TextHeaderProps) => {
   return (
     <header className={styles['text-header']}>
       <h1 className={styles['text-header__title']}>{title}</h1>
@@ -15,5 +15,3 @@ const TextHeader = ({ title, children }: TextHeaderProps) => {
     </header>
   );
 };
-
-export default TextHeader;

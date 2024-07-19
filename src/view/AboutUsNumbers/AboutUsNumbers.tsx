@@ -1,10 +1,11 @@
 import Image from 'next/image';
 
-import HeaderImgDesktop from '@/../public/assets/images/general/about/HeaderDesktop.png';
-import HeaderImgMobile from '@/../public/assets/images/general/about/headerMobile.png';
+import HeaderImgDesktop from '@/images/general/about/HeaderDesktop.png';
+import HeaderImgMobile from '@/images/general/about/headerMobile.png';
 
 import styles from './AboutUsNumbers.module.scss';
-const AboutUsNumbers = () => {
+
+export const AboutUsNumbers = () => {
   return (
     <div className={styles['about-us-numbers']}>
       <div className={styles['about-us-numbers__header']}>
@@ -47,5 +48,3 @@ const AboutUsNumbers = () => {
     </div>
   );
 };
-
-export default AboutUsNumbers;

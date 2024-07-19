@@ -11,7 +11,7 @@ interface WhiteButtonProps {
   href?: string;
 }
 
-const WhiteButton = ({
+export const WhiteButton = ({
   title,
   buttonStyles = '',
   href = '#',
@@ -28,5 +28,3 @@ const WhiteButton = ({
     </Link>
   );
 };
-
-export default WhiteButton;

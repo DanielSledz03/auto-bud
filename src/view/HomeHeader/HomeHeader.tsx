@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
-import HeaderImageDesktop from '@/../public/assets/images/general/index/headerIndexPageDesktop.png';
-import HeaderImageMobile from '@/../public/assets/images/general/index/headerIndexPageMobile.png';
 import LocationItem from '@/components/LocationItem/LocationItem';
+import HeaderImageDesktop from '@/images/general/index/headerIndexPageDesktop.png';
+import HeaderImageMobile from '@/images/general/index/headerIndexPageMobile.png';
 
 import styles from './HomeHeader.module.scss';
 
@@ -27,7 +27,7 @@ const locations = [
   },
 ];
 
-const HomeHeader = () => {
+export const HomeHeader = () => {
   return (
     <div className={styles.container}>
       <Image className={styles.image} src={HeaderImageMobile} alt="header" />
@@ -59,5 +59,3 @@ const HomeHeader = () => {
     </div>
   );
 };
-
-export default HomeHeader;

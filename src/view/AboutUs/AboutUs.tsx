@@ -5,7 +5,7 @@ import AboutUsImgMobile from '@/../public/assets/images/general/about/aboutUsMob
 
 import styles from './AboutUs.module.scss';
 
-const AboutUs = () => {
+export const AboutUs = () => {
   return (
     <div className={styles.aboutUs}>
       <div className={styles.aboutUs__image}>
@@ -53,5 +53,3 @@ const AboutUs = () => {
     </div>
   );
 };
-
-export default AboutUs;

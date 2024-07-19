@@ -1,14 +1,16 @@
-import PromotionBanner from '@/components/PromotionBanner/PromotionBanner';
-import HomeAboutUs from '@/view/HomeAboutUs/HomeAboutUs';
-import HomeAdditionalServices from '@/view/HomeAdditionalOffers/HomeAdditionalServices';
-import HomeHeader from '@/view/HomeHeader/HomeHeader';
-import HomeOpinions from '@/view/HomeOpinions/HomeOpinions';
+import { PromotionsBanner } from '@/components';
+import {
+  HomeAboutUs,
+  HomeAdditionalServices,
+  HomeHeader,
+  HomeOpinions,
+} from '@/view';
 
 export default function Home() {
   return (
-    <main className="">
+    <>
       <HomeHeader />
-      <PromotionBanner
+      <PromotionsBanner
         title="Serwis klimatyzacji"
         heading="Oferty sezonowe"
         price="99 zł"
@@ -17,6 +19,6 @@ export default function Home() {
       <HomeAboutUs />
       <HomeAdditionalServices />
       <HomeOpinions />
-    </main>
+    </>
   );
 }

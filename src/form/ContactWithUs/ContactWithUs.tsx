@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-import WhiteButton from '@/components/WhiteButton/WhiteButton';
+import { WhiteButton } from '@/components';
 
 import styles from './ContactWithUs.module.scss';
 

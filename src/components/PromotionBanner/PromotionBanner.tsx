@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import React from 'react';
 
-import PromotionBannerImage from '@/../public/assets/images/general/index/promotionBanner.png';
-import PromotionBannerImageMobile from '@/../public/assets/images/general/index/promotionBannerMobile.png';
-import WhiteButton from '@/components/WhiteButton/WhiteButton';
+import PromotionBannerImage from '@/images/general/index/promotionBanner.png';
+import PromotionBannerImageMobile from '@/images/general/index/promotionBannerMobile.png';
+
+import { WhiteButton } from '../WhiteButton/WhiteButton';
 
 import styles from './PromotionBanner.module.scss';
 
@@ -16,7 +17,7 @@ interface Props {
   href?: string;
 }
 
-const PromotionsBanner = ({
+export const PromotionsBanner = ({
   title,
   heading,
   price,
@@ -72,5 +73,3 @@ const PromotionsBanner = ({
     </div>
   );
 };
-
-export default PromotionsBanner;

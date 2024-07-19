@@ -3,7 +3,7 @@ import React from 'react';
 
 import RedLocationPinIcon from '@/../public/assets/icons/redLocationPin.svg';
 
-import WhiteButton from '../WhiteButton/WhiteButton';
+import { WhiteButton } from '../WhiteButton/WhiteButton';
 
 import styles from './LocationHeader.module.scss';
 
@@ -17,7 +17,7 @@ interface LocationHeaderProps {
   googleMapsLink: string;
 }
 
-const LocationHeader = ({
+export const LocationHeader = ({
   mobileBackgroundUrl,
   desktopBackgroundUrl,
   city,
@@ -67,5 +67,3 @@ const LocationHeader = ({
     </div>
   );
 };
-
-export default LocationHeader;

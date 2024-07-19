@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
-import CarIcon from '@/../public/assets/icons/carIcon.svg';
-import RoadsideAssistIcon from '@/../public/assets/icons/roadsideAssits.svg';
-import WhiteButton from '@/components/WhiteButton/WhiteButton';
+import { WhiteButton } from '@/components';
+import CarIcon from '@/icons/carIcon.svg';
+import RoadsideAssistIcon from '@/icons/roadsideAssits.svg';
 
 import styles from './HomeAdditionalServices.module.scss';
 
-const HomeAdditionalServices = () => {
+export const HomeAdditionalServices = () => {
   return (
     <div className={styles['home-additional-services']}>
       <div className={styles['home-additional-services__header']}>
@@ -78,5 +78,3 @@ const HomeAdditionalServices = () => {
     </div>
   );
 };
-
-export default HomeAdditionalServices;

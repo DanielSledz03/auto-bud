@@ -33,9 +33,11 @@ export default function RootLayout({
     <html lang="pl">
       <body className={`mx-auto max-w-[1920px] ${poppins.variable}`}>
         <Menus />
-        {children}
-        <ContactWithUs />
-        <CallToUs />
+        <main>
+          {children}
+          <ContactWithUs />
+          <CallToUs />
+        </main>
         <Footer />
       </body>
     </html>

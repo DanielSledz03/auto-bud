@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 
 import ClockIcon from '@/../public/assets/icons/clock.svg';
 
-import WhiteButton from '../WhiteButton/WhiteButton';
+import { WhiteButton } from '../WhiteButton/WhiteButton';
 
 import styles from './ServiceCard.module.scss';
 
@@ -83,4 +83,4 @@ const ServiceCard = ({
   );
 };
 
-export default ServiceCard;
+export { ServiceCard };

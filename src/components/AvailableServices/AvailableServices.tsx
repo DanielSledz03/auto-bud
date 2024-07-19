@@ -68,4 +68,4 @@ const AvailableServices = ({
   );
 };
 
-export default AvailableServices;
+export { AvailableServices };

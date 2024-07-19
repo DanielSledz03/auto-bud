@@ -106,4 +106,4 @@ const ObjectInfoCard = ({
   );
 };
 
-export default ObjectInfoCard;
+export { ObjectInfoCard };

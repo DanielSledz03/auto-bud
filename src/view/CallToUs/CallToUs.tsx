@@ -11,6 +11,7 @@ const contacts = [
     branch: 'Godula',
     address: 'ul. Stara 1, 41-703 Ruda Śląska',
     phone: '32 72 55 888',
+    mobile: '570 190 829',
 
     hoursStation: {
       weekdays: '7.00 – 19.00',

@@ -1,9 +1,8 @@
-import PromotionsBanner from '@/components/PromotionBanner/PromotionBanner';
-import TextHeader from '@/components/TextHeader/TextHeader';
+import { PromotionsBanner, TextHeader } from '@/components';
 
 const KontaktPage = () => {
   return (
-    <main>
+    <>
       <TextHeader title="Kontakt">
         Jesteśmy tu, aby Ci pomóc! Skontaktuj się z nami w sprawie wszelkich
         pytań, problemów czy sugestii. <br />
@@ -15,7 +14,7 @@ const KontaktPage = () => {
         href="/wizyta"
         description="Zarezerwuj termin już teraz i skorzystaj z naszych wyjątkowych usług. Kliknij tutaj, aby umówić wizytę i cieszyć się profesjonalną obsługą bez czekania."
       />
-    </main>
+    </>
   );
 };
 

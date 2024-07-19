@@ -3,8 +3,8 @@
 import Image from 'next/image';
 import React, { useEffect, useState, useRef } from 'react';
 
-import OpinionsBackgroundDesktopImage from '@/../public/assets/images/general/index/opinionsBackgroundDesktop.png';
-import OpinionsBackgroundImage from '@/../public/assets/images/general/index/opinionsBackgroundMobile.png';
+import OpinionsBackgroundDesktopImage from '@/images/general/index/opinionsBackgroundDesktop.png';
+import OpinionsBackgroundImage from '@/images/general/index/opinionsBackgroundMobile.png';
 
 import styles from './HomeOpinions.module.scss';
 
@@ -13,26 +13,26 @@ const reviews = [
     name: 'Adam',
     rating: 5,
     review:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis quam in purus pharetra dictum. Donec semper mattis magna, sit amet scelerisque eros tristique eget. In auctor nunc nisl, at dapibus velit lacinia non.',
+      'Stacja diagnostyczna Omega to profesjonalne miejsce z miłą obsługą. Szybka diagnoza i solidne naprawy w przystępnych cenach. Polecam każdemu kierowcy.',
     department: 'Okręgowa Stacja Kontroli Pojazdów',
   },
   {
     name: 'Monika',
     rating: 5,
     review:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis quam in purus pharetra dictum. Donec semper mattis magna, sit amet scelerisque eros tristique eget. In auctor nunc nisl, at dapibus velit lacinia non.',
-    department: 'Samochód zastępczy',
+      'Lambda to najlepszy warsztat, z jakim miałem do czynienia. Fachowa diagnoza, ekspresowe naprawy i konkurencyjne ceny. Zawsze wracam zadowolony.',
+    department: 'Warsztat samochodowy',
   },
   {
     name: 'Marek',
     rating: 5,
     review:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis quam in purus pharetra dictum. Donec semper mattis magna, sit amet scelerisque eros tristique eget. In auctor nunc nisl, at dapibus velit lacinia non.',
-    department: 'Myjnia bezdotykowa',
+      'Firma Auto-Bud jest naprawdę godna polecenia. Fachowa obsługa, terminowe naprawy i uczciwe ceny. Zawsze wracam zadowolony.',
+    department: 'Warsztat samochodowy',
   },
 ];
 
-const HomeOpinions = () => {
+export const HomeOpinions = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const opinionsRef = useRef<HTMLDivElement>(null);
   const reviewRefs = useRef<HTMLDivElement[] | null[]>([]);
@@ -109,5 +109,3 @@ const HomeOpinions = () => {
     </div>
   );
 };
-
-export default HomeOpinions;

@@ -19,7 +19,7 @@ const SlideshowLightbox = dynamic(
   },
 );
 
-const LocationGallery = ({
+export const LocationGallery = ({
   images,
   title,
   description,
@@ -101,5 +101,3 @@ const LocationGallery = ({
     </div>
   );
 };
-
-export default LocationGallery;

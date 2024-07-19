@@ -1,13 +1,13 @@
 import Image from 'next/image';
 
-import BackgroundImage from '@/../public/assets/images/general/index/aboutUsBackground.png';
-import AboutUsImages from '@/../public/assets/images/general/index/aboutUsImages.png';
-import AboutUsImagesDesktop from '@/../public/assets/images/general/index/aboutUsImagesDesktop.png';
-import WhiteButton from '@/components/WhiteButton/WhiteButton';
+import { WhiteButton } from '@/components';
+import BackgroundImage from '@/images/general/index/aboutUsBackground.png';
+import AboutUsImages from '@/images/general/index/aboutUsImages.png';
+import AboutUsImagesDesktop from '@/images/general/index/aboutUsImagesDesktop.png';
 
 import styles from './HomeAboutUs.module.scss';
 
-const HomeAboutUs = () => {
+export const HomeAboutUs = () => {
   return (
     <div className={styles.aboutUs}>
       <Image
@@ -60,5 +60,3 @@ const HomeAboutUs = () => {
     </div>
   );
 };
-
-export default HomeAboutUs;

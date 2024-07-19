@@ -3,8 +3,8 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
-import ArrowDownIcon from '@/../public/assets/icons/arrowDown.svg';
-import RedArrowIcon from '@/../public/assets/icons/redArrowTopRight.svg';
+import ArrowDownIcon from '@/icons/arrowDown.svg';
+import RedArrowIcon from '@/icons/redArrowTopRight.svg';
 
 import styles from './Packages.module.scss';
 
@@ -41,7 +41,7 @@ const packages = [
   },
 ];
 
-const Packages = () => {
+export const Packages = () => {
   const [openSections, setOpenSections] = useState<string[]>([]);
 
   useEffect(() => {
@@ -139,5 +139,3 @@ const Packages = () => {
     </div>
   );
 };
-
-export default Packages;
