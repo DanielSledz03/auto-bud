@@ -83,10 +83,8 @@ export const HomeOpinions = () => {
               </div>
             </div>
             <div className={styles['opinions__department-container']}>
-              <h5>
-                <p className={styles['opinions__department']}>
-                  Opinia dotycząca:
-                </p>
+              <h5 className={styles['opinions__department']}>
+                Opinia dotycząca:
                 <p className={styles['opinions__department-bold']}>
                   {review.department}
                 </p>
