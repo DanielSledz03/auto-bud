@@ -10,13 +10,13 @@ export const HomeAdditionalServices = () => {
   return (
     <div className={styles['home-additional-services']}>
       <div className={styles['home-additional-services__header']}>
-        <h5 className={styles['home-additional-services__title']}>
+        <p className={styles['home-additional-services__title']}>
           Co jeszcze oferujemy?
-        </h5>
+        </p>
 
-        <h4 className={styles['home-additional-services__subtitle']}>
+        <h2 className={styles['home-additional-services__subtitle']}>
           Usługi Dodatkowe
-        </h4>
+        </h2>
         <hr className={styles['home-additional-services__divider']} />
       </div>
       <div className={styles['home-additional-services__section']}>
@@ -25,9 +25,9 @@ export const HomeAdditionalServices = () => {
             <Image src={CarIcon} alt="Car Icon" />
           </div>
           <div className={styles['home-additional-services__details']}>
-            <p className={styles['home-additional-services__service-title']}>
+            <h4 className={styles['home-additional-services__service-title']}>
               Samochód zastępczy
-            </p>
+            </h4>
             <p
               className={
                 styles['home-additional-services__service-description']
@@ -53,9 +53,9 @@ export const HomeAdditionalServices = () => {
             <Image src={RoadsideAssistIcon} alt="Car Icon" />
           </div>
           <div className={styles['home-additional-services__details']}>
-            <p className={styles['home-additional-services__service-title']}>
+            <h4 className={styles['home-additional-services__service-title']}>
               Pomoc drogowa
-            </p>
+            </h4>
             <p
               className={
                 styles['home-additional-services__service-description']

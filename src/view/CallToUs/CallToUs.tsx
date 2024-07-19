@@ -49,8 +49,8 @@ const contacts = [
 const CallToUs = () => {
   return (
     <div className={styles['call-to-us']}>
-      <h2 className={styles['call-to-us__title']}>Masz pytania?</h2>
-      <h3 className={styles['call-to-us__subtitle']}>Skontaktuj się z nami</h3>
+      <p className={styles['call-to-us__title']}>Masz pytania?</p>
+      <h2 className={styles['call-to-us__subtitle']}>Skontaktuj się z nami</h2>
 
       <hr className={styles['call-to-us__divider']} />
 
@@ -70,9 +70,9 @@ const CallToUs = () => {
                     {contact.branch}
                   </p>
                 )}
-                <p className={styles['call-to-us__address']}>
+                <h6 className={styles['call-to-us__address']}>
                   {contact.address}
-                </p>
+                </h6>
               </div>
             </div>
             <div className={styles['call-to-us__contact']}>
@@ -80,14 +80,14 @@ const CallToUs = () => {
                 <Image src={PhoneRed} alt={contact.phone} />
               </div>
               <div className={styles['call-to-us__location-info']}>
-                <p className={styles['call-to-us__address']}>
+                <h6 className={styles['call-to-us__address']}>
                   tel.{' '}
                   <span className={styles['call-to-us__address--bold']}>
                     {contact.phone}
                   </span>
-                </p>
+                </h6>
 
-                <p className={styles['call-to-us__address']}>
+                <h6 className={styles['call-to-us__address']}>
                   {contact.mobile && (
                     <>
                       kom.{' '}
@@ -96,7 +96,7 @@ const CallToUs = () => {
                       </span>
                     </>
                   )}
-                </p>
+                </h6>
 
                 <br />
 

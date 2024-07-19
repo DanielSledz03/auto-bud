@@ -50,10 +50,12 @@ export const PromotionsBanner = ({
             <div>
               {heading && (
                 <div className={styles.promotionsBanner__heading}>
-                  {heading}
+                  <h2>{heading}</h2>
                 </div>
               )}
-              <div className={styles.promotionsBanner__title}>{title}</div>
+              <div className={styles.promotionsBanner__title}>
+                <h4>{title}</h4>
+              </div>
             </div>
             {price && (
               <div className={styles.promotionsBanner__price}>{price}</div>

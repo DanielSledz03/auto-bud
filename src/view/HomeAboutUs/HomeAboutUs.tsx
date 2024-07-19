@@ -18,14 +18,14 @@ export const HomeAboutUs = () => {
 
       <div className={styles.aboutUs__content}>
         <div className={styles.aboutUs__text__wrapper}>
-          <h3 className={styles.aboutUs__title}>O nas</h3>
+          <h2 className={styles.aboutUs__title}>O nas</h2>
 
           <hr className={styles.aboutUs__line} />
 
-          <p className={styles.aboutUs__text__bold}>
+          <h4 className={styles.aboutUs__text__bold}>
             Grupa AUTO-BUD to kompleks obiektów motoryzacyjnych mieszczących się
             w Rudzie Śląskiej i Świętochłowicach.
-          </p>
+          </h4>
 
           <p className={styles.aboutUs__text}>
             Nasza firma działa na rynku od 2006 roku i obecnie posiadamy obiekty

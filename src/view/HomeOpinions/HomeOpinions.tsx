@@ -64,10 +64,10 @@ export const HomeOpinions = () => {
           alt="Opinie klientów"
         />
       </div>
-      <h5 className={styles['home-opinions__title']}>Opinie klientów</h5>
-      <h4 className={styles['home-opinions__subtitle']}>
+      <h2 className={styles['home-opinions__title']}>Opinie klientów</h2>
+      <p className={styles['home-opinions__subtitle']}>
         Co klienci mówią o nas?
-      </h4>
+      </p>
       <hr className={styles['home-opinions__divider']} />
       <div className={styles['opinions']} ref={opinionsRef}>
         {reviews.map((review, index) => (
@@ -90,7 +90,7 @@ export const HomeOpinions = () => {
                 {review.department}
               </p>
             </div>
-            <p className={styles['opinions__review']}>{review.review}</p>
+            <h5 className={styles['opinions__review']}>{review.review}</h5>
           </div>
         ))}
       </div>
