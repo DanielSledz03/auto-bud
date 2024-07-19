@@ -62,9 +62,9 @@ const CallToUs = () => {
                 <Image src={LocationPin} alt={contact.address} />
               </div>
               <div className={styles['call-to-us__location-info']}>
-                <h3 className={styles['call-to-us__location']}>
+                <p className={styles['call-to-us__location']}>
                   {contact.location}
-                </h3>
+                </p>
                 {contact.branch && (
                   <p className={styles['call-to-us__branch']}>
                     {contact.branch}

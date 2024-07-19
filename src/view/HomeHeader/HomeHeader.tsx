@@ -9,7 +9,7 @@ import styles from './HomeHeader.module.scss';
 const locations = [
   {
     heading: 'Świętochłowice',
-    heading2: '',
+    heading2: 'Centrum',
     details: ['Stacja Kontroli Pojazdów', 'Warsztat Samochodowy'],
     url: '/swietochlowice',
   },
