@@ -18,6 +18,22 @@ export const metadata: Metadata = {
       url: './assets/images/general/bosch-logo.png',
     },
   ],
+  keywords: [
+    'auto-bud',
+    'serwis samochodowy',
+    'naprawa samochodów',
+    'auto serwis',
+    'auto serwis bosch',
+  ],
+  openGraph: {
+    title: 'Auto-Bud - Bosch Car Service',
+    description: 'Stacje Kontroli Pojadów, Warsztat Samochodowy, Myjnia',
+    images: [
+      {
+        url: './assets/images/general/bosch-logo.png',
+      },
+    ],
+  },
 };
 
 const poppins = Poppins({
