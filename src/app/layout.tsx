@@ -42,9 +42,7 @@ export default function RootLayout({
         </main>
         <Footer />
       </body>
-      <GoogleAnalytics
-        gaId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID || ''}
-      />
+      <GoogleAnalytics gaId={'GTM-MHHH4XVH'} />
     </html>
   );
 }
