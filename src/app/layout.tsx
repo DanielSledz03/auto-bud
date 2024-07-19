@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 
@@ -6,6 +7,7 @@ import ContactWithUs from '@/form/ContactWithUs/ContactWithUs';
 import CallToUs from '@/view/CallToUs/CallToUs';
 import Footer from '@/view/Footer/Footer';
 import Menus from '@/view/Menus/Menus';
+
 import 'lightbox.js-react/dist/index.css';
 
 export const metadata: Metadata = {
@@ -40,6 +42,7 @@ export default function RootLayout({
         </main>
         <Footer />
       </body>
+      <GoogleAnalytics gaId={process.env.GOOGLE_TAG_MANAGER_ID || ''} />
     </html>
   );
 }
