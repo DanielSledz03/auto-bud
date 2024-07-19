@@ -83,14 +83,16 @@ export const HomeOpinions = () => {
               </div>
             </div>
             <div className={styles['opinions__department-container']}>
-              <p className={styles['opinions__department']}>
-                Opinia dotycząca:
-              </p>
-              <p className={styles['opinions__department-bold']}>
-                {review.department}
-              </p>
+              <h5>
+                <p className={styles['opinions__department']}>
+                  Opinia dotycząca:
+                </p>
+                <p className={styles['opinions__department-bold']}>
+                  {review.department}
+                </p>
+              </h5>
             </div>
-            <h5 className={styles['opinions__review']}>{review.review}</h5>
+            <p className={styles['opinions__review']}>{review.review}</p>
           </div>
         ))}
       </div>
