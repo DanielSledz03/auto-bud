@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   themeColor: 'white',
   icons: [
     {
-      url: './assets/images/general/bosch-logo.png',
+      url: './assets/images/general/icon.png',
       sizes: '512x512', // Specify the size for clarity
       type: 'image/png', // Specify the file type
     },
@@ -50,12 +50,13 @@ export const metadata: Metadata = {
     title: 'Auto-Bud - Bosch Car Service',
     description: 'Stacje Kontroli Pojadów, Warsztat Samochodowy, Myjnia',
     type: 'website',
-    url: 'auto-bud.com.pl',
+    siteName: 'Auto-Bud - Bosch Car Service',
+    url: 'https://www.auto-bud.com.pl',
     images: [
       {
-        url: './assets/images/general/bosch-logo.png',
-        width: 800,
-        height: 600,
+        url: './assets/images/general/icon.png',
+        width: 500,
+        height: 500,
         alt: 'Bosch Service Logo',
         type: 'image/png',
       },
