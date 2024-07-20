@@ -11,6 +11,8 @@ const locationHeaderProps = {
   street: 'ul. Szpaków 51',
   postalCode: 'Ruda Śląska 41-705',
   googleMapsLink: 'https://maps.app.goo.gl/UFvFUSnpor4dTKHd6',
+  imageAlt:
+    'Mechanik w niebieskim kombinezonie pracuje nad silnikiem samochodu w nowoczesnym warsztacie',
 };
 
 const availableServicesProps = {
@@ -34,21 +36,16 @@ const serviceCardProps = {
   ],
   description: (
     <>
-      KOD STACJI: SRS/005
+      Stacja Kontroli Pojazdów Alfa przeprowadza badania techniczne wszystkich
+      pojazdów zarejestrowanych do 3,5 tony.
       <br />
-      <br />
-      Oferuje Dynamiczną wymianę oleju w automatycznych skrzyniach biegu. <br />
-      Co to takiego ?<br />
-      <br />
-      Dynamiczna wymiana oleju w automatycznej skrzyni biegów jest procesem,
-      który umożliwia wymianę CAŁEGO oleju w układzie. Przy wymianie metodami
-      tradycyjnymi (grawitacyjnie) wymieniane jest zaledwie 40-60% płynów.
-      Reszta pozostaje w przewodach, sterowniku, konwerterze. Tak naprawdę,
-      wymiana tradycyjna to rozmieszanie nowego oleju w starym.
+      <br /> Stacja Kontroli Pojazdów obsługuje także pojazdy wyposażone w
+      instalacje LPG.
     </>
   ),
   imageMobile: ImageMobile,
   imageDesktop: ImageDekstop,
+  imageAlt: 'Stacja Kontroli Pojazdów - Alfa',
 };
 
 export { locationHeaderProps, availableServicesProps, serviceCardProps };

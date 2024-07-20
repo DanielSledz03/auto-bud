@@ -49,7 +49,7 @@ const LocationList = () => {
 
               <Image
                 src={ArrowDown}
-                alt="arrow"
+                alt="Strzałka wskazująca w dół"
                 width={12}
                 className={
                   openIndex === index
@@ -77,7 +77,7 @@ const LocationList = () => {
 
               <Image
                 src={ArrowDown}
-                alt="arrow"
+                alt="Strzałka wskazująca w dół"
                 width={12}
                 className={
                   openIndex === index

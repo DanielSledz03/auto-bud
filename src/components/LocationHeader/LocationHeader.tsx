@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 
-import RedLocationPinIcon from '@/../public/assets/icons/redLocationPin.svg';
+import RedLocationPinIcon from '@/icons/redLocationPin.svg';
 
 import { WhiteButton } from '../WhiteButton/WhiteButton';
 
@@ -15,6 +15,7 @@ interface LocationHeaderProps {
   street: string;
   postalCode: string;
   googleMapsLink: string;
+  imageAlt: string;
 }
 
 export const LocationHeader = ({
@@ -25,6 +26,7 @@ export const LocationHeader = ({
   street,
   postalCode,
   googleMapsLink,
+  imageAlt,
 }: LocationHeaderProps) => {
   return (
     <div className={styles['location-header']}>
@@ -32,12 +34,12 @@ export const LocationHeader = ({
         <Image
           className={styles['location-header__background--mobile']}
           src={mobileBackgroundUrl}
-          alt="As"
+          alt={imageAlt}
         />
         <Image
           className={styles['location-header__background--desktop']}
           src={desktopBackgroundUrl}
-          alt="As"
+          alt={imageAlt}
         />
       </div>
       <h1 className={styles['location-header__title']}>{city}</h1>

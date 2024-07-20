@@ -12,12 +12,12 @@ export const AboutUsNumbers = () => {
         <Image
           className={styles['about-us-numbers__header-mobile']}
           src={HeaderImgMobile}
-          alt="Auto-Bud"
+          alt="Mechanik w ciemnym kombinezonie i żółtych rękawiczkach naprawia silnik samochodu, używając przenośnej lampy do oświetlenia wnętrza komory silnika"
         />
         <Image
           className={styles['about-us-numbers__header-desktop']}
           src={HeaderImgDesktop}
-          alt="Auto-Bud"
+          alt="Mechanik w ciemnym kombinezonie i żółtych rękawiczkach naprawia silnik samochodu, używając przenośnej lampy do oświetlenia wnętrza komory silnika"
         />
       </div>
       <div className={styles['about-us-numbers__content']}>

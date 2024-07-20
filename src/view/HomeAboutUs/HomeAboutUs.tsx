@@ -13,7 +13,7 @@ export const HomeAboutUs = () => {
       <Image
         className={styles.aboutUs__background}
         src={BackgroundImage}
-        alt="Zdjęcie tła"
+        alt="Subtelne graficzne tło z poziomymi liniami"
       />
 
       <div className={styles.aboutUs__content}>
@@ -47,13 +47,13 @@ export const HomeAboutUs = () => {
           <Image
             src={AboutUsImages}
             className={styles.aboutUs__images__image}
-            alt="Stacja Diagnostyczna oraz Myjnia Samochodowa"
+            alt="Okręgowa Stacja Diagnostyczna oraz Myjnia Samochodowa"
           />
 
           <Image
             src={AboutUsImagesDesktop}
             className={styles.aboutUs__images__image__desktop}
-            alt="Stacja Diagnostyczna oraz Myjnia Samochodowa"
+            alt="Okręgowa Stacja Diagnostyczna oraz Myjnia Samochodowa"
           />
         </div>
       </div>

@@ -59,7 +59,7 @@ const CallToUs = () => {
           <div key={index} className={styles['call-to-us__card']}>
             <div className={styles['call-to-us__contact']}>
               <div className={styles['call-to-us__icon']}>
-                <Image src={LocationPin} alt={contact.address} />
+                <Image src={LocationPin} alt="Ikona lokalizacji" />
               </div>
               <div className={styles['call-to-us__location-info']}>
                 <p className={styles['call-to-us__location']}>
@@ -77,7 +77,7 @@ const CallToUs = () => {
             </div>
             <div className={styles['call-to-us__contact']}>
               <div className={styles['call-to-us__icon']}>
-                <Image src={PhoneRed} alt={contact.phone} />
+                <Image src={PhoneRed} alt="Ikona telefonu" />
               </div>
               <div className={styles['call-to-us__location-info']}>
                 <h6 className={styles['call-to-us__address']}>

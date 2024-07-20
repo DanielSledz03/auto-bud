@@ -73,7 +73,7 @@ export const LocationGallery = ({
                       height: '100%',
                     }}
                     src={image.src}
-                    alt={image.src}
+                    alt="Jeden z naszych obiektów"
                     data-lightboxjs={'lightbox' + images.length}
                   />
                 </div>

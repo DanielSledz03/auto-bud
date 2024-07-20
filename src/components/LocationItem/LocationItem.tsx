@@ -24,7 +24,7 @@ const LocationItem = ({
         {heading}{' '}
         <span className={styles.location__item__heading__span}>{heading2}</span>
       </h5>
-      <h3 className={styles.location__item__heading2}>{heading2}</h3>
+      <h4 className={styles.location__item__heading2}>{heading2}</h4>
 
       {details.map((detail, index) => (
         <p key={index} className={styles.location__item__text}>

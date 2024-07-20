@@ -56,12 +56,12 @@ export const HomeOpinions = () => {
         <Image
           className={styles['home-opinions__background-mobile']}
           src={OpinionsBackgroundImage}
-          alt="Opinie klientów"
+          alt="Subtelne graficzne tło z poziomymi liniami"
         />
         <Image
           className={styles['home-opinions__background-desktop']}
           src={OpinionsBackgroundDesktopImage}
-          alt="Opinie klientów"
+          alt="Subtelne graficzne tło z poziomymi liniami"
         />
       </div>
       <h2 className={styles['home-opinions__title']}>Opinie klientów</h2>

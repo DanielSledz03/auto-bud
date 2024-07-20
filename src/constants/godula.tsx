@@ -19,6 +19,7 @@ const locationHeaderProps = {
   street: 'ul. Stara 1',
   postalCode: 'Ruda Śląska 41-703',
   googleMapsLink: 'https://maps.app.goo.gl/uevhCXnHGWYJm6NX8',
+  imageAlt: 'Samochód myjący się w myjni bezdotykowej',
 };
 
 const availableServicesProps = {
@@ -54,6 +55,7 @@ const serviceCardOmegaProps = {
   ),
   imageMobile: StationMobile,
   imageDesktop: StationDesktop,
+  imageAlt: 'Okręgowa Stacja Kontroli Pojazdów - Omega',
 };
 
 const serviceCardBetaProps = {
@@ -104,6 +106,7 @@ const serviceCardBetaProps = {
   ),
   imageDesktop: CarWashDesktop,
   imageMobile: CarWashMobile,
+  imageAlt: 'Myjnia bezdotykowa Beta',
 };
 
 const locationGalleryProps = {

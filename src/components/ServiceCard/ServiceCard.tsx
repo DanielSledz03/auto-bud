@@ -1,7 +1,9 @@
-import Image, { StaticImageData } from 'next/image';
-import { ReactNode } from 'react';
+'use client';
 
-import ClockIcon from '@/../public/assets/icons/clock.svg';
+import Image, { StaticImageData } from 'next/image';
+import { ReactNode, useState, useEffect } from 'react';
+
+import ClockIcon from '@/icons/clock.svg';
 
 import { WhiteButton } from '../WhiteButton/WhiteButton';
 
@@ -17,6 +19,7 @@ interface ServiceCardProps {
   description: ReactNode;
   imageMobile: StaticImageData;
   imageDesktop: StaticImageData;
+  imageAlt: string;
   button?: boolean;
 }
 
@@ -27,20 +30,30 @@ const ServiceCard = ({
   description,
   imageMobile,
   imageDesktop,
+  imageAlt,
   button = false,
 }: ServiceCardProps) => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className={styles.serviceCard}>
       <div className={styles.serviceCard__image}>
         <Image
-          className={styles.serviceCard__image__mobile}
-          src={imageMobile}
-          alt="sdsd"
-        />
-        <Image
-          className={styles.serviceCard__image__desktop}
-          src={imageDesktop}
-          alt="sdsd"
+          className={
+            isDesktop
+              ? styles.serviceCard__image__desktop
+              : styles.serviceCard__image__mobile
+          }
+          src={isDesktop ? imageDesktop : imageMobile}
+          alt={imageAlt}
+          layout="responsive"
         />
       </div>
       <div className={styles.serviceCard__content}>
@@ -52,7 +65,7 @@ const ServiceCard = ({
         {openHours && (
           <div className={styles.serviceCard__hours__container}>
             <div className={styles.serviceCard__hours__icon}>
-              <Image src={ClockIcon} alt="Zegar" />
+              <Image src={ClockIcon} alt="Zegar" layout="fixed" />
             </div>
 
             <div className={styles.serviceCard__hours}>

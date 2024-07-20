@@ -96,6 +96,7 @@ const roadAssistanceProps = {
   ),
   imageMobile: RoadAssitanceDesktop,
   imageDesktop: RoadAssitanceDesktop,
+  imageAlt: 'Laweta w drodze, z samochodem na platformie',
 };
 
 export {

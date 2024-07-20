@@ -15,6 +15,8 @@ const locationHeaderProps = {
   street: 'ul. Katowicka 73',
   postalCode: 'Świętochłowice 41-600',
   googleMapsLink: 'https://maps.app.goo.gl/PQVm43rL5RzVfys77',
+  imageAlt:
+    'Mechanik w niebieskim kombinezonie pracuje nad silnikiem samochodu w nowoczesnym warsztacie',
 };
 
 const serviceCardGammaProps = {
@@ -50,6 +52,7 @@ const serviceCardGammaProps = {
   ),
   imageMobile: ImageMobile,
   imageDesktop: ImageDekstop,
+  imageAlt: 'Stacja Kontroli Pojazdów - Bosch Car Service',
 };
 
 const serviceCardLambdaProps = {
@@ -76,6 +79,7 @@ const serviceCardLambdaProps = {
   ),
   imageDesktop: CarRepairDesktop,
   imageMobile: CarRepairMobile,
+  imageAlt: 'Warsztat samochodowy - Lambda',
   button: true,
 };
 
@@ -105,6 +109,7 @@ const serviceCardOfficeProps = {
   ),
   imageDesktop: OfficeDesktop,
   imageMobile: OfficeMobile,
+  imageAlt: 'Przytulne, nowoczesne Biuro Obsługi Klienta firmy Auto-Bud',
 };
 
 export {

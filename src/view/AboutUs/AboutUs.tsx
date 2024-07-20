@@ -12,12 +12,12 @@ export const AboutUs = () => {
         <Image
           className={styles.aboutUs__image__mobile}
           src={AboutUsImgMobile}
-          alt="Ruda Śląska, Świętochłowice"
+          alt="Mechanik pracuje pod podniesionym czerwonym samochodem w warsztacie, widok zza kolumn serwisowych"
         />
         <Image
           className={styles.aboutUs__image__desktop}
           src={AboutUsImgDesktop}
-          alt="Ruda Śląska, Świętochłowice"
+          alt="Mechanik pracuje pod podniesionym czerwonym samochodem w warsztacie, widok zza kolumn serwisowych"
         />
       </div>
       <div className={styles.aboutUs__content}>

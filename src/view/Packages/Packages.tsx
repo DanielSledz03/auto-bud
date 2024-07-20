@@ -100,7 +100,7 @@ export const Packages = () => {
               >
                 <Image
                   src={RedArrowIcon}
-                  alt="arrow"
+                  alt="Czerwona strzałka w prawo"
                   className={styles.accordion__arrow}
                 />{' '}
                 {section.title}
@@ -115,7 +115,7 @@ export const Packages = () => {
               >
                 <Image
                   src={ArrowDownIcon}
-                  alt="^"
+                  alt="Strzałka w dół"
                   className={styles.accordion__arrowBlack}
                 />
               </div>

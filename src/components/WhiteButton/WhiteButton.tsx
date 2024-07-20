@@ -23,7 +23,7 @@ export const WhiteButton = ({
       href={href}
       className={`${styles.button} ${buttonStyles}`}
     >
-      <Image src={RedArrowTopRight} alt="red arrow" />
+      <Image src={RedArrowTopRight} alt="Czerwona strzałka" />
       {title}
     </Link>
   );

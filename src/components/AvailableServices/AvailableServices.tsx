@@ -24,7 +24,7 @@ const AvailableServices = ({
         <Image
           className={styles.availableServices__arrow}
           src={RedArrow}
-          alt="arrow"
+          alt="Czerwona strzałka"
         />
         Dostępne usługi
       </h2>
@@ -33,7 +33,10 @@ const AvailableServices = ({
         {isOffice && (
           <div className={styles.availableServices__service}>
             <div className={styles.availableServices__service__icon}>
-              <Image src={OfficeIcon} alt="Profesjonalna Obsługa Klienta" />
+              <Image
+                src={OfficeIcon}
+                alt="Ikona przedstawiająca profesjonalną obsługę klienta"
+              />
             </div>
 
             <div className={styles.availableServices__service__text}>

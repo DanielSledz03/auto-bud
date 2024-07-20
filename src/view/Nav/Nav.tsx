@@ -30,7 +30,7 @@ const Nav = () => {
         <Link href="/" className={styles.nav__logoLink}>
           <Image
             src={Logo}
-            alt="logo"
+            alt="Logo Bosch Car Service"
             width={400}
             height={400}
             className={styles.nav__logo}
@@ -98,7 +98,7 @@ const Nav = () => {
                     <Link href={url} className={styles.dropdownItemLink}>
                       <div className={styles.dropdownItemIcon}>
                         <div className={styles.dropdownItemIconWrapper}>
-                          <Image src={LocationPin} alt="Pin" />
+                          <Image src={LocationPin} alt="Ikona lokalizacji" />
                         </div>
                       </div>
                       <div>

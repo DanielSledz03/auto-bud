@@ -10,7 +10,12 @@ const Footer = () => {
   return (
     <footer className={styles['footer']}>
       <div>
-        <Image src={BoschLogo} alt="logo" width={64} height={64} />
+        <Image
+          src={BoschLogo}
+          alt="Logo Bosch Car Sevice"
+          width={64}
+          height={64}
+        />
         <h4 className={styles['footer__title']}>Autoryzowany Serwis Bosch</h4>
 
         <nav className={styles['footer__nav']}>

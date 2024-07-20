@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 import LocationItem from '@/components/LocationItem/LocationItem';
 import HeaderImageDesktop from '@/images/general/index/headerIndexPageDesktop.png';
@@ -28,13 +31,22 @@ const locations = [
 ];
 
 export const HomeHeader = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className={styles.container}>
-      <Image className={styles.image} src={HeaderImageMobile} alt="header" />
       <Image
-        className={styles.imageDesktop}
-        src={HeaderImageDesktop}
-        alt="header"
+        priority
+        className={isDesktop ? styles.imageDesktop : styles.image}
+        src={isDesktop ? HeaderImageDesktop : HeaderImageMobile}
+        alt="Mechanik w niebieskim kombinezonie pracuje nad silnikiem samochodu w nowoczesnym warsztacie"
       />
 
       <h1 className={styles.heading}>
