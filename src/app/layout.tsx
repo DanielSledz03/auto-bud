@@ -15,9 +15,13 @@ import 'lightbox.js-react/dist/index.css';
 export const metadata: Metadata = {
   title: 'Auto-Bud - Bosch Car Service',
   description: 'Serwis samochodowy Auto-Bud - Bosch Car Service',
+  viewport: 'width=device-width, initial-scale=1',
+  themeColor: 'white',
   icons: [
     {
       url: './assets/images/general/bosch-logo.png',
+      sizes: '512x512', // Specify the size for clarity
+      type: 'image/png', // Specify the file type
     },
   ],
   keywords: [
@@ -45,11 +49,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Auto-Bud - Bosch Car Service',
     description: 'Stacje Kontroli Pojadów, Warsztat Samochodowy, Myjnia',
+    type: 'website',
+    url: 'auto-bud.com.pl',
     images: [
       {
         url: './assets/images/general/bosch-logo.png',
+        width: 800,
+        height: 600,
+        alt: 'Bosch Service Logo',
+        type: 'image/png',
       },
     ],
+    locale: 'pl_PL',
   },
 };
 
