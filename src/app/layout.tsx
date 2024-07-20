@@ -1,4 +1,5 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 
@@ -74,6 +75,7 @@ export default function RootLayout({
         <Footer />
       </body>
       <GoogleAnalytics gaId={'GTM-MHHH4XVH'} />
+      <Analytics />
     </html>
   );
 }
