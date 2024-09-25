@@ -35,6 +35,9 @@ const config: Config = {
       fontFamily: {
         poppins: ['var(--font-poppins)', 'sans-serif'],
       },
+      screens: {
+        '3xl': '1920px',
+      },
     },
   },
   plugins: [],

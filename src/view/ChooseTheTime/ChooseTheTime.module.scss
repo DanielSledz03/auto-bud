@@ -1,0 +1,54 @@
+.datePicker {
+  @apply mt-8 w-screen border-y-[1px] border-y-lightGray2 px-5 py-12 text-center md:px-10 lg:mb-20 lg:px-20 xl:px-48 2xl:px-64;
+
+  &__heading {
+    @apply mb-5 text-[24px] font-semibold text-blue lg:text-[32px];
+  }
+
+  &__navigation {
+    @apply flex w-full items-center justify-start overflow-x-auto lg:justify-center; /* Justify-start zamiast center dla lepszego przewijania */
+    scroll-snap-type: x mandatory; /* Dodaje wsparcie dla scroll-snap */
+    -webkit-overflow-scrolling: touch; /* Płynne przewijanie na iOS */
+  }
+
+  &__button {
+    @apply hidden h-[100px] w-[50px] cursor-pointer items-center justify-center border-none bg-[#F4F4F4] text-2xl duration-200 first:mr-3 hover:bg-lightGray2 lg:flex lg:rounded-[5px];
+
+    &__image {
+      @apply -rotate-90;
+
+      &__first {
+        @apply rotate-90;
+      }
+    }
+  }
+
+  &__day {
+    @apply mr-3 flex min-h-[100px] min-w-[90px] cursor-pointer flex-col items-center justify-center rounded-md border border-lightGray4 bg-white p-2.5 duration-200 hover:bg-lightGray4 lg:min-w-[80px] xl:min-w-[90px];
+    scroll-snap-align: start;
+
+    &__first {
+      @apply ml-10 lg:ml-0;
+    }
+  }
+
+  &__dayOfWeek {
+    @apply text-sm font-semibold text-mediumGray;
+  }
+
+  &__dayNumber {
+    @apply text-[32px] font-semibold text-darkGray;
+  }
+
+  &__daySelected {
+    @apply border-red bg-lightGray;
+  }
+
+  &__month {
+    @apply mt-5 hidden text-lg font-semibold text-darkGray lg:block lg:text-[18px];
+  }
+
+  &__monthMobile {
+    @apply text-sm font-semibold text-mediumGray lg:hidden;
+  }
+}

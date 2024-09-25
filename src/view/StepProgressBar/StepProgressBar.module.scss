@@ -1,0 +1,37 @@
+.stepProgressBar {
+  @apply mt-24 px-5 pb-12 md:px-10 lg:mb-20 lg:mt-36 lg:px-20 xl:px-48 2xl:px-64;
+
+  &__title {
+    @apply text-center text-[24px] font-semibold text-darkGray lg:text-[48px];
+  }
+
+  &__progress {
+    @apply mt-8 flex flex-col px-2 lg:flex-row lg:items-center lg:justify-between lg:px-12 xl:px-20 2xl:px-36 3xl:px-60;
+
+    &__step {
+      @apply flex w-full items-center lg:w-auto;
+
+      &__active {
+        .stepProgressBar__progress__step__square {
+          @apply bg-red;
+        }
+
+        .stepProgressBar__progress__step__text {
+          @apply text-darkGray;
+        }
+      }
+
+      &__square {
+        @apply mr-3 h-[14px] w-[14px] rounded-[2px] bg-lightGray4 lg:h-[20px] lg:w-[20px];
+      }
+
+      &__text {
+        @apply text-[14px] text-[400] text-lightGray4 lg:text-[18px];
+      }
+    }
+
+    &__separator {
+      @apply my-1 ml-[7px] h-[10px] w-[1px] bg-darkGray lg:ml-0 lg:h-[1px] lg:w-[80px];
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.select {
+  @apply relative mb-7 w-full lg:w-[570px];
+  position: relative;
+
+  &__box {
+    @apply relative z-[1] mt-1 flex min-h-[60px] w-full appearance-none items-center justify-between rounded-md border border-lightGray4 bg-lightGray5 px-4 py-2 text-[#969696] shadow-sm focus:outline-none focus:ring-2;
+  }
+
+  &__box-icon {
+    @apply z-[2] flex h-full items-center justify-center text-[red] transition-transform duration-[0.3s] ease-[ease];
+
+    img {
+      @apply h-full w-full object-contain;
+    }
+
+    &--open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__label {
+    @apply block pl-2 text-[14px];
+  }
+
+  &__dropdown {
+    @apply absolute top-full z-10 mt-1 max-h-[200px] w-full overflow-y-auto rounded border border-solid border-[#ccc] bg-white shadow-lg;
+  }
+
+  &__option {
+    @apply cursor-pointer px-4 py-2 hover:bg-lightGray5;
+
+    &__placeholder {
+      @apply text-[#969696];
+    }
+
+    &__value {
+      @apply text-[#292929];
+    }
+  }
+
+  &__container {
+    @apply relative;
+  }
+}
