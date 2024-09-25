@@ -24,7 +24,7 @@
   }
 
   &__day {
-    @apply mr-3 flex min-h-[100px] min-w-[90px] cursor-pointer flex-col items-center justify-center rounded-md border border-lightGray4 bg-white p-2.5 duration-200 hover:bg-lightGray4 lg:min-w-[80px] xl:min-w-[90px];
+    @apply mr-3 flex min-h-[100px] min-w-[90px] cursor-pointer flex-col items-center justify-center rounded-md border border-lightGray4 bg-white p-2.5 duration-200 hover:bg-lightGray4 lg:w-[125px] xl:min-w-[90px];
     scroll-snap-align: start;
 
     &__first {
