@@ -4,7 +4,7 @@ import { useController, Control, FieldValues, Path } from 'react-hook-form';
 
 import RedArrow from '@/icons/redArrowDown.svg'; // Strzałka w prawo
 
-import styles from './ChooseTheTime.module.scss'; // Stylizacja komponentu
+import styles from './ChooseTheDate.module.scss'; // Stylizacja komponentu
 
 const holidays = [
   '2024-01-01', // Nowy Rok
@@ -36,7 +36,7 @@ interface DatePickerProps<T extends FieldValues> {
   name: Path<T>;
   control: Control<T>;
 }
-const ChooseTheTime = <T extends FieldValues>({
+const ChooseTheDate = <T extends FieldValues>({
   name,
   control,
 }: DatePickerProps<T>) => {
@@ -184,4 +184,4 @@ const ChooseTheTime = <T extends FieldValues>({
   );
 };
 
-export default ChooseTheTime;
+export default ChooseTheDate;

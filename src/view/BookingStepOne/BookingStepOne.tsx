@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 
 import Select from '@/components/Select/Select';
 
-import ChooseTheTime from '../ChooseTheTime/ChooseTheTime';
+import ChooseTheDate from '../ChooseTheTime/ChooseTheDate';
 
 import styles from './BookingStepOne.module.scss';
 
@@ -46,7 +46,7 @@ const BookingStepOne = () => {
         control={control}
       />
 
-      <ChooseTheTime name="visitDate" control={control} />
+      <ChooseTheDate name="visitDate" control={control} />
     </form>
   );
 };
