@@ -1,0 +1,27 @@
+.datePicker {
+  @apply mt-8 w-screen border-y-[1px] border-y-lightGray2 px-5 py-12 text-center md:px-10 lg:mb-20 lg:px-20 xl:px-48 2xl:px-64;
+
+  &__heading {
+    @apply mb-5 text-[24px] font-semibold text-blue lg:text-[32px];
+  }
+
+  &__item {
+    @apply flex min-w-[30%] cursor-pointer items-center justify-center rounded-lg border border-[#E0E0E0] py-5 font-semibold transition-colors;
+  }
+}
+
+.tabs {
+  //   @apply py-2;
+
+  &__list {
+    @apply h-[55px] w-full lg:w-[600px];
+  }
+
+  &__trigger {
+    @apply w-1/2 cursor-pointer text-lg font-medium text-gray-600 transition-colors;
+  }
+
+  &__content {
+    @apply mt-4 flex flex-wrap justify-around text-left;
+  }
+}
