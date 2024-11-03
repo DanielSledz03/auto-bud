@@ -49,13 +49,13 @@ const MobileMenu = () => {
 
       <div className={styles.menu__buttons}>
         <Link
-          href="tel:+48500234333"
+          href="tel:+48502567630"
           aria-label="Zadzwoń do nas"
           title="Zadzwoń do nas"
           className={styles.menu__buttonCall}
         >
           <PhoneIcon color={'red'} width={24} height={24} />
-          <p className={styles.menu__buttonCall__text}>+48 500 234 333</p>
+          <p className={styles.menu__buttonCall__text}>+48 502 567 630</p>
         </Link>
 
         <div className={styles.menu__appointmentButton}>

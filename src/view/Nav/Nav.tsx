@@ -39,7 +39,7 @@ const Nav = () => {
 
         <div className={styles.nav__buttonsMobile}>
           <Link
-            href="tel:+48500234333"
+            href="tel:+48502567630"
             aria-label="Zadzwoń do nas"
             title="Zadzwoń do nas"
             className={styles.nav__buttonCall}
@@ -133,7 +133,7 @@ const Nav = () => {
         <div className={styles.nav__buttonsDesktop}>
           <div className={styles.nav__buttonCall}>
             <PhoneIcon color={'red'} />
-            <p className={styles.nav__buttonNumber}>+48 500 234 333</p>
+            <p className={styles.nav__buttonNumber}>+48 502 567 630</p>
           </div>
 
           <div className={styles.nav__appointmentButton}>
