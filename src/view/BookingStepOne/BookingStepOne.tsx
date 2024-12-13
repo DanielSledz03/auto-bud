@@ -4,7 +4,8 @@ import { useForm } from 'react-hook-form';
 
 import Select from '@/components/Select/Select';
 
-import ChooseTheDate from '../ChooseTheTime/ChooseTheDate';
+import ChooseTheDate from '../ChooseTheDate/ChooseTheDate';
+import ChooseTheTime from '../ChooseTheTime/ChooseTheTime';
 
 import styles from './BookingStepOne.module.scss';
 
@@ -12,6 +13,7 @@ interface BookingFormData {
   location: string;
   service: string;
   visitDate: Date;
+  visitTime: string;
   // Dodaj inne pola formularza, jeśli są
 }
 
@@ -47,6 +49,7 @@ const BookingStepOne = () => {
       />
 
       <ChooseTheDate name="visitDate" control={control} />
+      <ChooseTheTime name="visitTime" control={control} />
     </form>
   );
 };

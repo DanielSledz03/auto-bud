@@ -1,0 +1,59 @@
+.datePicker {
+    @apply border-y-[1px] border-y-lightGray2 mt-8 lg:mb-20 px-5 md:px-10 lg:px-20 xl:px-48 2xl:px-64 py-12 w-screen text-center;
+  
+    &__heading {
+      @apply mb-5 font-semibold text-[24px] text-blue lg:text-[32px];
+    }
+  
+    &__timePeriod {
+      @apply flex justify-center gap-5 mb-6; /* Space out the periods (Rano, Południe, Wieczór) */
+    }
+  
+    &__periodTitle {
+      @apply font-semibold text-darkGray text-lg; /* Title for each period (morning, afternoon, evening) */
+    }
+  
+    &__timeGroup {
+      @apply flex justify-center gap-4; /* Container for time slots */
+    }
+  
+    &__timeSlot {
+      @apply flex justify-center items-center bg-white hover:bg-lightGray4 border border-lightGray4 rounded-md w-[70px] h-[70px] font-semibold text-darkGray text-lg duration-200 cursor-pointer;
+      &.selected {
+        @apply bg-lightGray border-red text-red; /* Selected time slot */
+      }
+    }
+  
+    &__timeSlotText {
+      @apply text-center text-darkGray; /* Style for the text inside the time slot button */
+    }
+  
+    &__marker {
+      @apply top-[-8px] right-[-8px] absolute flex justify-center items-center bg-red rounded-full w-[20px] h-[20px] text-sm text-white;
+    }
+  
+    &__activeSlot {
+      @apply bg-red text-white; /* Highlighted active time slot */
+    }
+  
+    &__dayOfWeek {
+      @apply font-semibold text-mediumGray text-sm;
+    }
+  
+    &__dayNumber {
+      @apply font-semibold text-[32px] text-darkGray;
+    }
+  
+    &__daySelected {
+      @apply bg-lightGray border-red;
+    }
+  
+    &__month {
+      @apply lg:block hidden mt-5 font-semibold text-darkGray text-lg lg:text-[18px];
+    }
+  
+    &__monthMobile {
+      @apply lg:hidden font-semibold text-mediumGray text-sm;
+    }
+  }
+  
