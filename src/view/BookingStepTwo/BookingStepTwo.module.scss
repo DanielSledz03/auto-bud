@@ -1,0 +1,33 @@
+.bookingStepTwo {
+    @apply flex xl:flex-row flex-col xl:flex-wrap xl:justify-between lg:mb-20 px-5 md:px-10 lg:px-20 xl:px-48 2xl:px-64 pb-12;
+
+    &__heading {
+        @apply mb-5 w-full font-semibold text-[24px] text-blue text-center lg:text-[32px];
+    }
+
+    &__info {
+        @apply xl:w-[48%] mb-5 xl:mb-10
+    }
+
+    &__label {
+        @apply font-[400] text-[14px] text-darkGray;
+
+        span {
+            @apply text-[#E20015]
+        }
+    }
+
+    &__input {
+        @apply border-[1px] bg-lightGray5 mt-1 px-5 border-lightGray4 rounded-lg w-full h-[50px] xl:h-[60px] text-[14px] text-darkGray xl:text-[18px];
+    }
+
+    &__wrapper {
+        @apply w-full;
+    }
+
+    &__textarea {
+        @apply border-[1px] bg-lightGray5 px-5 p-3 border-lightGray4 rounded-lg w-full h-[100px] xl:h-[160px] text-[14px] text-darkGray xl:text-[18px];
+    }
+
+
+}

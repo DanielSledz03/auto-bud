@@ -1,12 +1,12 @@
 .datePicker {
-  @apply mt-8 w-screen border-y-[1px] border-y-lightGray2 px-5 py-12 text-center md:px-10 lg:mb-20 lg:px-20 xl:px-48 2xl:px-64;
+  @apply border-y-[1px] border-y-lightGray2 mt-8 lg:mb-20 px-5 md:px-10 lg:px-20 xl:px-48 2xl:px-64 py-12 w-screen text-center;
 
   &__heading {
-    @apply mb-5 text-[24px] font-semibold text-blue lg:text-[32px];
+    @apply mb-5 font-semibold text-[24px] text-blue lg:text-[32px];
   }
 
   &__item {
-    @apply flex min-w-[30%] cursor-pointer items-center justify-center rounded-lg border border-[#E0E0E0] py-5 font-semibold transition-colors;
+    @apply flex justify-center items-center border-[#E0E0E0] mb-1 ml-1 py-5 border rounded-lg min-w-[30%] font-semibold transition-colors cursor-pointer;
   }
 }
 
@@ -14,7 +14,7 @@
   //   @apply py-2;
 
   &__list {
-    @apply h-[55px] w-full lg:w-[600px];
+    @apply w-full lg:w-[600px] h-[55px];
   }
 
   &__trigger {
@@ -22,6 +22,6 @@
   }
 
   &__content {
-    @apply mt-4 flex flex-wrap justify-around text-left;
+    @apply flex flex-wrap justify-center mt-4 text-left;
   }
 }

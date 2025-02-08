@@ -2,6 +2,7 @@
 import { useState } from 'react';
 
 import BookingStepOne from '@/view/BookingStepOne/BookingStepOne';
+import BookingStepTwo from '@/view/BookingStepTwo/BookingStepTwo';
 import StepProgressBar from '@/view/StepProgressBar/StepProgressBar';
 
 const WizytaPage = () => {
@@ -9,7 +10,8 @@ const WizytaPage = () => {
   return (
     <>
       <StepProgressBar activeStep={activeStep} />
-      <BookingStepOne />
+      {activeStep === 1 && <BookingStepOne setActiveStep={setActiveStep} />}
+      {activeStep === 2 && <BookingStepTwo setActiveStep={setActiveStep} />}
     </>
   );
 };

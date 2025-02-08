@@ -16,7 +16,11 @@ interface BookingFormData {
   visitTime: string;
 }
 
-const BookingStepOne = () => {
+interface BookingStepOneProps {
+  setActiveStep: (step: number) => void;
+}
+
+const BookingStepOne = ({ setActiveStep }: BookingStepOneProps) => {
   const { control, handleSubmit } = useForm<BookingFormData>();
 
   const onSubmit = (data: BookingFormData) => {
@@ -49,6 +53,15 @@ const BookingStepOne = () => {
 
       <ChooseTheDate name="visitDate" control={control} />
       <ChooseTheTime name="visitTime" control={control} />
+
+      <button
+        onClick={() => {
+          setActiveStep(2);
+        }}
+        className="mt-12"
+      >
+        Przejdź dalej
+      </button>
     </form>
   );
 };
