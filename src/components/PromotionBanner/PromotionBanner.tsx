@@ -1,10 +1,9 @@
 import Image from 'next/image';
-import React from 'react';
+import Link from 'next/link';
 
+import RedArrowTopRight from '@/../public/assets/icons/redArrowTopRight.svg';
 import PromotionBannerImage from '@/images/general/index/promotionBanner.png';
 import PromotionBannerImageMobile from '@/images/general/index/promotionBannerMobile.png';
-
-import { WhiteButton } from '../WhiteButton/WhiteButton';
 
 import styles from './PromotionBanner.module.scss';
 
@@ -27,10 +26,14 @@ export const PromotionsBanner = ({
 }: Props) => {
   return (
     <div
-      className={`${styles.promotionsBanner} ${shorter ? styles['promotionsBanner-shorter'] : ''}`}
+      className={`${styles.promotionsBanner} ${
+        shorter ? styles['promotionsBanner-shorter'] : ''
+      }`}
     >
       <div
-        className={`${styles.promotionsBanner__wrapper} ${shorter ? styles['promotionsBanner__wrapper-shorter'] : ''}`}
+        className={`${styles.promotionsBanner__wrapper} ${
+          shorter ? styles['promotionsBanner__wrapper-shorter'] : ''
+        }`}
       >
         <div className={styles.promotionsBanner__image__wrapper}>
           <Image
@@ -38,7 +41,6 @@ export const PromotionsBanner = ({
             alt="Mechanik przegląda samochód od spodu"
             className={styles.promotionsBanner__image}
           />
-
           <Image
             src={PromotionBannerImageMobile}
             alt="Mechanik przegląda samochód od spodu"
@@ -62,15 +64,32 @@ export const PromotionsBanner = ({
             )}
           </div>
           <hr
-            className={`${styles.promotionsBanner__separator} ${shorter ? styles['promotionsBanner__separator-shorter'] : ''} `}
+            className={`${styles.promotionsBanner__separator} ${
+              shorter ? styles['promotionsBanner__separator-shorter'] : ''
+            } `}
           />
           <p className={styles.promotionsBanner__description}>{description}</p>
         </div>
-        <WhiteButton
-          title="Umów wizytę"
-          href={href}
-          buttonStyles={styles.promotionsBanner__button}
-        />
+        <Link
+          target="_blank"
+          rel="noreferrer"
+          href={
+            'https://play.google.com/store/apps/details?id=com.companyname.icmobile'
+          }
+          className={styles.promotionsBanner__button}
+        >
+          <Image
+            src={RedArrowTopRight}
+            alt="Czerwona strzałka"
+            className="xl:w-[14px]"
+          />
+          <p className="ml-4 flex-1 text-center font-bold">
+            Zarezerwuj wizytę <br />
+            <span>
+              (w aplikacji <b>Bosch Auto Planer</b>)
+            </span>
+          </p>
+        </Link>
       </div>
     </div>
   );
