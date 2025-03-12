@@ -58,6 +58,6 @@
   }
 
   &__button {
-    @apply min-w-[200px];
+    @apply w-auto min-w-[600px] max-w-[1000px] bg-red;
   }
 }

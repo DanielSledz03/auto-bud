@@ -67,7 +67,7 @@ export const PromotionsBanner = ({
           <p className={styles.promotionsBanner__description}>{description}</p>
         </div>
         <WhiteButton
-          title="Umów wizytę"
+          title="Zarezerwuj wizytę (w aplikacji Bosch Auto Planer)"
           href={href}
           buttonStyles={styles.promotionsBanner__button}
         />

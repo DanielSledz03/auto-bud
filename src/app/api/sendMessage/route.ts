@@ -1,32 +1,32 @@
-import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
-  const { name, email, tel, message } = await req.json();
-
-  // Walidacja danych
-  if (!name || !email || !message) {
-    return NextResponse.json(
-      { message: 'Wymagane pola są puste' },
-      { status: 400 },
-    );
-  }
-
   try {
-    // Konfiguracja transportera dla nodemailer
+    const { name, email, tel, message } = await req.json();
+
+    // Walidacja pól
+    if (!name || !email || !message) {
+      return NextResponse.json(
+        { message: 'Wymagane pola są puste' },
+        { status: 400 },
+      );
+    }
+
+    // Konfiguracja transportera dla SMTP Gmail
     const transporter = nodemailer.createTransport({
-      service: 'gmail', // Użyj np. 'gmail' lub skonfiguruj SMTP swojego serwera pocztowego
+      service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER, // Twój e-mail
-        pass: process.env.EMAIL_PASS, // Hasło lub kod aplikacji
+        user: process.env.EMAIL_USER, // Twój adres Gmail
+        pass: process.env.EMAIL_PASS, // Wygenerowane "App Password"
       },
     });
 
-    // Ustawienia e-maila
+    // Konfiguracja wiadomości e-mail
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'danielsledz2003@gmail.com', // Adres odbiorcy
-      subject: 'Nowa wiadomość od użytkownika',
+      to: 'danielsledz2003@gmail.com',
+      subject: 'Formularz na stronie Auto-Bud',
       text: `Imię i nazwisko: ${name}\nEmail: ${email}\nTelefon: ${tel}\nWiadomość: ${message}`,
     };
 
