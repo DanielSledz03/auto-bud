@@ -58,6 +58,6 @@
   }
 
   &__button {
-    @apply w-auto min-w-[600px] max-w-[1000px] bg-red;
+    @apply flex w-full items-center justify-around bg-white px-4 py-3 text-[13px] font-semibold text-black transition duration-300 hover:bg-gray-300 md:w-[300px] xl:w-[350px] xl:text-[16px];
   }
 }

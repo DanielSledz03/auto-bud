@@ -88,7 +88,7 @@ const ServiceCard = ({
           <WhiteButton
             title="Umów wizytę"
             buttonStyles={styles.serviceCard__button}
-            href="#"
+            href="https://play.google.com/store/apps/details?id=com.companyname.icmobile"
           />
         )}
       </div>
