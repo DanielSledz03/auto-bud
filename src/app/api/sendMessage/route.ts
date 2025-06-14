@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
     // Konfiguracja wiadomości e-mail
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'danielsledz2003@gmail.com',
+      to: 'omega-trans@gazeta.pl',
       subject: 'Formularz na stronie Auto-Bud',
       text: `Imię i nazwisko: ${name}\nEmail: ${email}\nTelefon: ${tel}\nWiadomość: ${message}`,
     };
