@@ -1,4 +1,35 @@
+import type { Metadata } from 'next';
+
 import { PromotionsBanner, TextHeader } from '@/components';
+
+export const metadata: Metadata = {
+  title:
+    'Kontakt - Auto-Bud Bosch Car Service | Telefon, adres, godziny otwarcia',
+  description:
+    'Skontaktuj się z Auto-Bud Bosch Car Service. Telefon: +48 502 567 630. Lokalizacje w Rudzie Śląskiej (Godula, Bykowina) i Świętochłowicach. Umów wizytę online.',
+  keywords: [
+    'kontakt auto-bud',
+    'telefon serwis samochodowy',
+    'adres warsztat bosch',
+    'godziny otwarcia',
+    'umów wizytę',
+    'serwis samochodowy ruda śląska',
+    'serwis samochodowy świętochłowice',
+    'bosch car service kontakt',
+    'warsztat godula',
+    'warsztat bykowina',
+  ],
+  openGraph: {
+    title: 'Kontakt - Auto-Bud Bosch Car Service',
+    description:
+      'Skontaktuj się z Auto-Bud Bosch Car Service. Telefon: +48 502 567 630. Lokalizacje w Rudzie Śląskiej i Świętochłowicach.',
+    type: 'website',
+    url: 'https://www.auto-bud.com.pl/kontakt',
+  },
+  alternates: {
+    canonical: 'https://www.auto-bud.com.pl/kontakt',
+  },
+};
 
 const KontaktPage = () => {
   return (

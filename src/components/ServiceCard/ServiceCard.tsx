@@ -57,7 +57,7 @@ const ServiceCard = ({
         />
       </div>
       <div className={styles.serviceCard__content}>
-        <h5 className={styles.serviceCard__title}>{title}</h5>
+        <h3 className={styles.serviceCard__title}>{title}</h3>
         <h6 className={styles.serviceCard__subtitle}>{subtitle}</h6>
 
         <hr className={styles.serviceCard__divider} />

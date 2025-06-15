@@ -20,18 +20,22 @@ const AvailableServices = ({
 }: AvailableServicesProps) => {
   return (
     <div className={styles.availableServices}>
-      <h2 className={styles.availableServices__title}>
+      <h3 className={styles.availableServices__title}>
         <Image
           className={styles.availableServices__arrow}
           src={RedArrow}
           alt="Czerwona strzałka"
         />
         Dostępne usługi
-      </h2>
+      </h3>
 
-      <div className={styles.availableServices__services__grid}>
+      <div
+        className={styles.availableServices__services__grid}
+        role="list"
+        aria-label="Dostępne usługi"
+      >
         {isOffice && (
-          <div className={styles.availableServices__service}>
+          <div className={styles.availableServices__service} role="listitem">
             <div className={styles.availableServices__service__icon}>
               <Image
                 src={OfficeIcon}
@@ -46,7 +50,7 @@ const AvailableServices = ({
         )}
 
         {isStation && (
-          <div className={styles.availableServices__service}>
+          <div className={styles.availableServices__service} role="listitem">
             <div className={styles.availableServices__service__icon}>
               <Image src={StationIcon} alt="Stacja Diagnostyczna" />
             </div>
@@ -57,7 +61,7 @@ const AvailableServices = ({
         )}
 
         {isCarRepair && (
-          <div className={styles.availableServices__service}>
+          <div className={styles.availableServices__service} role="listitem">
             <div className={styles.availableServices__service__icon}>
               <Image src={CarRepairIcon} alt="Mechanik Samochodowy" />
             </div>

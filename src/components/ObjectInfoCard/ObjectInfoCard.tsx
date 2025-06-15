@@ -36,9 +36,9 @@ const ObjectInfoCard = ({
             <Image src={icon} alt={title} />
           </div>
 
-          <h2 className={styles['object__info__mobile__header__title']}>
+          <h3 className={styles['object__info__mobile__header__title']}>
             {title}
-          </h2>
+          </h3>
         </div>
         <div className={styles['object__info__icon__container']}>
           <div className={styles['object__info__icon']}>
@@ -46,22 +46,27 @@ const ObjectInfoCard = ({
           </div>
         </div>
         <div>
-          <h2 className={styles['object__info__title']}>{title}</h2>
+          <h3 className={styles['object__info__title']}>{title}</h3>
           <hr className={styles['object__info__divider']} />
 
           {locations && (
-            <div className={styles['object__info__location-list']}>
+            <div
+              className={styles['object__info__location-list']}
+              role="list"
+              aria-label="Lista lokalizacji"
+            >
               {locations.map(location => (
                 <div
                   key={location}
                   className={styles['object__info__location-list__item']}
+                  role="listitem"
                 >
                   <div
                     className={
                       styles['object__info__location-list__item__icon']
                     }
                   >
-                    <Image src={RedLocationPinIcon} alt="Station icon" />
+                    <Image src={RedLocationPinIcon} alt="Ikona lokalizacji" />
                   </div>
                   <p
                     className={
@@ -78,9 +83,17 @@ const ObjectInfoCard = ({
           <p className={styles['object__info__description']}>{description}</p>
         </div>
       </div>
-      <div className={styles['object__price__list']}>
+      <div
+        className={styles['object__price__list']}
+        role="list"
+        aria-label="Lista usług i cen"
+      >
         {services.slice(0, visibleObjects).map((service, index) => (
-          <div key={index} className={styles['object__price__list__item']}>
+          <div
+            key={index}
+            className={styles['object__price__list__item']}
+            role="listitem"
+          >
             <div className={styles['object__price__list__item__title']}>
               {service.name}
             </div>

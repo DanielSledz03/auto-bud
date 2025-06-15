@@ -52,7 +52,7 @@ export const PromotionsBanner = ({
             <div>
               {heading && (
                 <div className={styles.promotionsBanner__heading}>
-                  <h2>{heading}</h2>
+                  <h3>{heading}</h3>
                 </div>
               )}
               <div className={styles.promotionsBanner__title}>

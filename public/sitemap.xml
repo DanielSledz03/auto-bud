@@ -7,44 +7,51 @@
 
 <url>
   <loc>https://www.auto-bud.com.pl/</loc>
-  <lastmod>2024-07-19T19:52:39+00:00</lastmod>
+  <lastmod>2024-12-19T19:52:39+00:00</lastmod>
+  <changefreq>weekly</changefreq>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.auto-bud.com.pl/o-nas</loc>
-  <lastmod>2024-07-19T19:52:39+00:00</lastmod>
+  <lastmod>2024-12-19T19:52:39+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.auto-bud.com.pl/uslugi</loc>
-  <lastmod>2024-07-19T19:52:39+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-12-19T19:52:39+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://www.auto-bud.com.pl/kontakt</loc>
-  <lastmod>2024-07-19T19:52:39+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-12-19T19:52:39+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
 </url>
 <url>
   <loc>https://www.auto-bud.com.pl/swietochlowice</loc>
-  <lastmod>2024-07-19T19:52:39+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-12-19T19:52:39+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
 </url>
 <url>
   <loc>https://www.auto-bud.com.pl/godula</loc>
-  <lastmod>2024-07-19T19:52:39+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-12-19T19:52:39+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
 </url>
 <url>
   <loc>https://www.auto-bud.com.pl/bykowina</loc>
-  <lastmod>2024-07-19T19:52:39+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-12-19T19:52:39+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
 </url>
 <url>
   <loc>https://www.auto-bud.com.pl/wizyta</loc>
-  <lastmod>2024-07-19T19:52:39+00:00</lastmod>
+  <lastmod>2024-12-19T19:52:39+00:00</lastmod>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
-
 
 </urlset>

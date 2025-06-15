@@ -16,7 +16,7 @@ const Footer = () => {
           width={64}
           height={64}
         />
-        <h4 className={styles['footer__title']}>Autoryzowany Serwis Bosch</h4>
+        <h3 className={styles['footer__title']}>Autoryzowany Serwis Bosch</h3>
 
         <nav className={styles['footer__nav']}>
           <ul className={styles['footer__nav__list']}>
