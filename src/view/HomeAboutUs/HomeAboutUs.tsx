@@ -56,12 +56,14 @@ export const HomeAboutUs = () => {
             src={AboutUsImages}
             className={styles.aboutUs__images__image}
             alt="Okręgowa Stacja Diagnostyczna oraz Myjnia Samochodowa"
+            loading="lazy"
           />
 
           <Image
             src={AboutUsImagesDesktop}
             className={styles.aboutUs__images__image__desktop}
             alt="Okręgowa Stacja Diagnostyczna oraz Myjnia Samochodowa"
+            loading="lazy"
           />
         </div>
       </div>

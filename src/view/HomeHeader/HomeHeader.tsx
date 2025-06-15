@@ -49,6 +49,7 @@ export const HomeHeader = () => {
         alt="Mechanik w niebieskim kombinezonie pracuje nad silnikiem samochodu w nowoczesnym warsztacie"
         sizes="100vw"
         quality={85}
+        loading="eager"
       />
 
       <h1 className={styles.heading}>

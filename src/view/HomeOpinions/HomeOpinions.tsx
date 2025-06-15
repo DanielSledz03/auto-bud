@@ -84,7 +84,7 @@ export const HomeOpinions = () => {
             </div>
             <div className={styles['opinions__department-container']}>
               <h5 className={styles['opinions__department']}>
-                Opinia dotycząca:
+                Dział:
                 <p className={styles['opinions__department-bold']}>
                   {review.department}
                 </p>

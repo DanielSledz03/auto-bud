@@ -16,7 +16,7 @@ import 'lightbox.js-react/dist/index.css';
 export const metadata: Metadata = {
   title: 'Auto-Bud - Bosch Car Service',
   description:
-    'Autoryzowany serwis Bosch Car Service w Świętochłowicach oraz stacje diagnostyczne w Rudzie Śląskiej. Stacja kontroli pojazdów, warsztat samochodowy, myjnia bezdotykowa. Profesjonalne usługi motoryzacyjne.',
+    'Autoryzowany serwis Bosch Car Service w Świętochłowicach. Stacje diagnostyczne w Rudzie Śląskiej. Przeglądy, naprawy, myjnia.',
   viewport: 'width=device-width, initial-scale=1',
   themeColor: '#ffffff',
   colorScheme: 'light',
