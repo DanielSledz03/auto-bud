@@ -22,7 +22,7 @@ export const HomeAdditionalServices = () => {
       <div className={styles['home-additional-services__section']}>
         <div className={styles['home-additional-services__item']}>
           <div className={styles['home-additional-services__icon']}>
-            <Image src={CarIcon} alt="Ikona samochodu" />
+            <Image src={CarIcon} alt="Ikona samochodu" loading="lazy" />
           </div>
           <div className={styles['home-additional-services__details']}>
             <h4 className={styles['home-additional-services__service-title']}>
@@ -53,7 +53,11 @@ export const HomeAdditionalServices = () => {
       <div className={styles['home-additional-services__section']}>
         <div className={styles['home-additional-services__item']}>
           <div className={styles['home-additional-services__icon']}>
-            <Image src={RoadsideAssistIcon} alt="Ikona samochodu" />
+            <Image
+              src={RoadsideAssistIcon}
+              alt="Ikona samochodu"
+              loading="lazy"
+            />
           </div>
           <div className={styles['home-additional-services__details']}>
             <h4 className={styles['home-additional-services__service-title']}>

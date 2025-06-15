@@ -53,8 +53,8 @@ export const HomeHeader = () => {
       />
 
       <h1 className={styles.heading}>
-        Autoryzowany serwis Bosch Car Service
-        <br /> w Świętochłowicach
+        Autoryzowany
+        <br /> Bosch Car Service
       </h1>
 
       <div className={styles.location__container}>

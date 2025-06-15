@@ -23,7 +23,7 @@ export const WhiteButton = ({
   return (
     <Link
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       href={href}
       className={`${styles.button} ${buttonStyles}`}
       onClick={disabled ? e => e.preventDefault() : onClick}

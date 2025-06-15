@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 import RedArrowTopRight from '@/../public/assets/icons/redArrowTopRight.svg';
 import PromotionBannerImage from '@/images/general/index/promotionBanner.png';
@@ -70,13 +69,11 @@ export const PromotionsBanner = ({
           />
           <p className={styles.promotionsBanner__description}>{description}</p>
         </div>
-        <Link
+        <a
+          href={href}
           target="_blank"
-          rel="noreferrer"
-          href={
-            'https://play.google.com/store/apps/details?id=com.companyname.icmobile'
-          }
-          className={styles.promotionsBanner__button}
+          rel="noopener noreferrer"
+          className={styles.promotionBanner__button}
         >
           <Image
             src={RedArrowTopRight}
@@ -89,7 +86,7 @@ export const PromotionsBanner = ({
               (w aplikacji <b>Bosch Auto Planer</b>)
             </span>
           </p>
-        </Link>
+        </a>
       </div>
     </div>
   );

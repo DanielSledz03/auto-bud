@@ -65,6 +65,7 @@ const Footer = () => {
               className={styles['footer__creators__link--underline']}
               href={'https://www.drawninstars.art/'}
               target="_blank"
+              rel="noopener noreferrer"
             >
               DrawnInStars
             </Link>
@@ -75,6 +76,7 @@ const Footer = () => {
               className={styles['footer__creators__link--underline']}
               href={'https://github.com/DanielSledz03'}
               target="_blank"
+              rel="noopener noreferrer"
             >
               Daniel Śledź
             </Link>

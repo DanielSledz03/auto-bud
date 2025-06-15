@@ -16,7 +16,7 @@ import 'lightbox.js-react/dist/index.css';
 export const metadata: Metadata = {
   title: 'Auto-Bud - Bosch Car Service',
   description:
-    'Autoryzowany serwis Bosch Car Service w Świętochłowicach. Stacje diagnostyczne w Rudzie Śląskiej. Przeglądy, naprawy, myjnia.',
+    'Autoryzowany serwis Bosch Car Service w Świętochłowicach. Stacje diagnostyczne w Rudzie Śląskiej. Przeglądy, naprawy, myjnia. Serwis samochodowy Śląsk.',
   viewport: 'width=device-width, initial-scale=1',
   themeColor: '#ffffff',
   colorScheme: 'light',
@@ -314,6 +314,19 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <head>
+        <link
+          rel="preload"
+          href="/assets/images/general/bosch-logo.png"
+          as="image"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         <Script
           id="structured-data"
           type="application/ld+json"

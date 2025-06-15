@@ -22,7 +22,7 @@ export const AboutUsNumbers = () => {
       </div>
       <div className={styles['about-us-numbers__content']}>
         <div className={styles['about-us-numbers__item']}>
-          <span className={styles['about-us-numbers__number']}>18 lat</span>
+          <span className={styles['about-us-numbers__number']}>19 lat</span>
           <hr className={styles['about-us-numbers__line']} />
           <span className={styles['about-us-numbers__text']}>
             Doświadczenia w branży

@@ -98,7 +98,11 @@ const Nav = () => {
                     <Link href={url} className={styles.dropdownItemLink}>
                       <div className={styles.dropdownItemIcon}>
                         <div className={styles.dropdownItemIconWrapper}>
-                          <Image src={LocationPin} alt="Ikona lokalizacji" />
+                          <Image
+                            src={LocationPin}
+                            alt="Ikona lokalizacji"
+                            loading="lazy"
+                          />
                         </div>
                       </div>
                       <div>

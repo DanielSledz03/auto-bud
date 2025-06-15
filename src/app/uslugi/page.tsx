@@ -61,7 +61,7 @@ const Uslugi = () => (
     {services.map((props, index) => (
       <ObjectInfoCard key={index} {...props} />
     ))}
-    <LocationGallery {...galleryProps} />
+    {/* <LocationGallery {...galleryProps} /> */}
     <ServiceCard {...roadAssistanceProps} />
   </>
 );

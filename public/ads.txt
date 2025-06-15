@@ -1,0 +1,3 @@
+# Plik ads.txt dla Auto-Bud
+# Brak partnerów reklamowych na ten moment
+# Ten plik jest wymagany przez niektóre platformy reklamowe 

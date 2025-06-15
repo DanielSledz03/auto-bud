@@ -1,4 +1,5 @@
 import { PromotionsBanner } from '@/components';
+import CallToUs from '@/view/CallToUs/CallToUs';
 import {
   HomeAboutUs,
   HomeAdditionalServices,
@@ -9,7 +10,7 @@ import { HomeFAQ } from '@/view/HomeFAQ/HomeFAQ';
 
 export default function Home() {
   return (
-    <>
+    <main>
       <HomeHeader />
       <PromotionsBanner
         title="Serwis klimatyzacji"
@@ -22,6 +23,7 @@ export default function Home() {
       <HomeAdditionalServices />
       <HomeFAQ />
       <HomeOpinions />
-    </>
+      <CallToUs />
+    </main>
   );
 }
