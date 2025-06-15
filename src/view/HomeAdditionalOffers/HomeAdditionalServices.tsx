@@ -33,7 +33,10 @@ export const HomeAdditionalServices = () => {
                 styles['home-additional-services__service-description']
               }
             >
-              Potrzebujesz auta na czas naprawy?
+              Potrzebujesz auta na czas naprawy? Oferujemy samochody zastępcze,
+              abyś mógł kontynuować codzienne obowiązki podczas gdy Twoje auto
+              jest w serwisie. Nasze pojazdy są w pełni ubezpieczone i sprawne
+              technicznie.
             </p>
             <WhiteButton
               buttonStyles={styles['home-additional-services__button-desktop']}
@@ -61,7 +64,10 @@ export const HomeAdditionalServices = () => {
                 styles['home-additional-services__service-description']
               }
             >
-              Potrzebujesz pomoc na drodze?
+              Potrzebujesz pomoc na drodze? Nasza pomoc drogowa jest dostępna
+              24/7. Oferujemy holowanie, rozruch baterii, dostarczenie paliwa
+              oraz podstawową pomoc techniczną. Działamy na terenie całego
+              Śląska.
             </p>
             <WhiteButton
               buttonStyles={styles['home-additional-services__button-desktop']}

@@ -5,6 +5,7 @@ import {
   HomeHeader,
   HomeOpinions,
 } from '@/view';
+import { HomeFAQ } from '@/view/HomeFAQ/HomeFAQ';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       />
       <HomeAboutUs />
       <HomeAdditionalServices />
+      <HomeFAQ />
       <HomeOpinions />
     </>
   );

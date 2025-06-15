@@ -16,7 +16,7 @@ import 'lightbox.js-react/dist/index.css';
 export const metadata: Metadata = {
   title: 'Auto-Bud - Bosch Car Service',
   description:
-    'Odwiedź nasze stacje diagnostyczne w Rudzie Śląskiej oraz autoryzowany serwis Bosch Car Service w Świętochłowicach. Zapewniamy profesjonalne usługi motoryzacyjne.',
+    'Autoryzowany serwis Bosch Car Service w Świętochłowicach oraz stacje diagnostyczne w Rudzie Śląskiej. Stacja kontroli pojazdów, warsztat samochodowy, myjnia bezdotykowa. Profesjonalne usługi motoryzacyjne.',
   viewport: 'width=device-width, initial-scale=1',
   themeColor: '#ffffff',
   colorScheme: 'light',
@@ -35,6 +35,12 @@ export const metadata: Metadata = {
       url: './assets/images/general/icon.png',
       sizes: '32x32',
       type: 'image/png',
+    },
+    {
+      url: './assets/images/general/icon.png',
+      sizes: '180x180',
+      type: 'image/png',
+      rel: 'apple-touch-icon',
     },
   ],
   manifest: '/manifest.json',
@@ -75,7 +81,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Auto-Bud - Bosch Car Service',
     description:
-      'Odwiedź nasze stacje diagnostyczne w Rudzie Śląskiej oraz autoryzowany serwis Bosch Car Service w Świętochłowicach. Zapewniamy profesjonalne usługi motoryzacyjne.',
+      'Autoryzowany serwis Bosch Car Service w Świętochłowicach oraz stacje diagnostyczne w Rudzie Śląskiej. Zapewniamy profesjonalne usługi motoryzacyjne.',
     type: 'website',
     siteName: 'Auto-Bud - Bosch Car Service',
     url: 'https://www.auto-bud.com.pl',
@@ -94,7 +100,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Auto-Bud - Bosch Car Service',
     description:
-      'Autoryzowany serwis Bosch Car Service w Rudzie Śląskiej i Świętochłowicach',
+      'Autoryzowany serwis Bosch Car Service w Świętochłowicach oraz stacje diagnostyczne w Rudzie Śląskiej',
     images: ['./assets/images/general/icon.png'],
   },
   robots: {
@@ -136,7 +142,7 @@ export default function RootLayout({
           height: 400,
         },
         description:
-          'Autoryzowany serwis Bosch Car Service w Rudzie Śląskiej i Świętochłowicach. Stacja kontroli pojazdów, warsztat samochodowy, myjnia bezdotykowa.',
+          'Autoryzowany serwis Bosch Car Service w Świętochłowicach oraz stacje diagnostyczne w Rudzie Śląskiej. Stacja kontroli pojazdów, warsztat samochodowy, myjnia bezdotykowa.',
         telephone: '+48502567630',
         address: [
           {
@@ -155,6 +161,36 @@ export default function RootLayout({
           },
         ],
         sameAs: ['https://www.bosch.com/pl/'],
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://www.auto-bud.com.pl/#faq',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Jakie usługi oferuje Auto-Bud?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Oferujemy kompleksowe usługi motoryzacyjne: przeglądy techniczne, naprawy samochodów, wymiana oleju, wymiana klocków hamulcowych, wulkanizacja, myjnia bezdotykowa oraz pomoc drogową. W Świętochłowicach prowadzimy autoryzowany serwis Bosch Car Service.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Gdzie znajdują się wasze serwisy?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Posiadamy trzy lokalizacje: Świętochłowice (ul. Katowicka 73) - autoryzowany serwis Bosch Car Service, Ruda Śląska - Godula (ul. Szpaków 51) - stacja diagnostyczna oraz Ruda Śląska - Bykowina (ul. Szpaków 51) - stacja diagnostyczna. Wszystkie obiekty są łatwo dostępne komunikacyjnie.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Jak umówić wizytę w serwisie?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Możesz umówić wizytę telefonicznie pod numerem +48 502 567 630, przez aplikację Bosch Auto Planer lub osobiście w naszych biurach obsługi klienta. Oferujemy również możliwość rezerwacji online.',
+            },
+          },
+        ],
       },
       {
         '@type': 'LocalBusiness',
@@ -217,7 +253,7 @@ export default function RootLayout({
       {
         '@type': 'LocalBusiness',
         '@id': 'https://www.auto-bud.com.pl/godula/#localbusiness',
-        name: 'Auto-Bud Bosch Car Service Godula',
+        name: 'Auto-Bud Stacja Diagnostyczna Godula',
         image:
           'https://www.auto-bud.com.pl/assets/images/general/bosch-logo.png',
         telephone: '+48502567630',

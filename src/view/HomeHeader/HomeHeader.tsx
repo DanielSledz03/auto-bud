@@ -47,11 +47,13 @@ export const HomeHeader = () => {
         className={isDesktop ? styles.imageDesktop : styles.image}
         src={isDesktop ? HeaderImageDesktop : HeaderImageMobile}
         alt="Mechanik w niebieskim kombinezonie pracuje nad silnikiem samochodu w nowoczesnym warsztacie"
+        sizes="100vw"
+        quality={85}
       />
 
       <h1 className={styles.heading}>
-        Autoryzowany
-        <br /> Bosch Car Service
+        Autoryzowany serwis Bosch Car Service
+        <br /> w Świętochłowicach
       </h1>
 
       <div className={styles.location__container}>
