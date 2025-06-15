@@ -14,7 +14,6 @@ interface BookingFormData {
   service: string;
   visitDate: Date;
   visitTime: string;
-  // Dodaj inne pola formularza, jeśli są
 }
 
 const BookingStepOne = () => {

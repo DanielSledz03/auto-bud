@@ -36,11 +36,11 @@ interface DatePickerProps<T extends FieldValues> {
   name: Path<T>;
   control: Control<T>;
 }
+
 const ChooseTheDate = <T extends FieldValues>({
   name,
   control,
 }: DatePickerProps<T>) => {
-  const [startDate, setStartDate] = useState(() => new Date());
   const [daysToDisplay, setDaysToDisplay] = useState(7); // Domyślnie 7 dni
   const currentYear = new Date().getFullYear();
 
@@ -50,6 +50,41 @@ const ChooseTheDate = <T extends FieldValues>({
     name,
     control,
   });
+
+  // Funkcje pomocnicze - muszą być zdefiniowane przed ich użyciem
+  const isWeekend = (date: Date) => date.getDay() === 0 || date.getDay() === 6;
+
+  const isHoliday = (date: Date) => {
+    const formattedDate = date.toISOString().split('T')[0];
+    return holidays.includes(formattedDate);
+  };
+
+  const getNextBusinessDay = (currentDate: Date) => {
+    const nextDate = new Date(currentDate);
+    nextDate.setDate(currentDate.getDate() + 1);
+    while (isWeekend(nextDate) || isHoliday(nextDate)) {
+      nextDate.setDate(nextDate.getDate() + 1);
+    }
+    return nextDate;
+  };
+
+  // Funkcja do znajdowania pierwszego dnia roboczego od dzisiaj
+  const getFirstBusinessDayFromToday = () => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    // Jeśli dzisiaj jest dzień roboczy, użyj dzisiaj
+    if (!isWeekend(today) && !isHoliday(today)) {
+      return today;
+    }
+
+    // W przeciwnym razie znajdź następny dzień roboczy
+    return getNextBusinessDay(today);
+  };
+
+  const [startDate, setStartDate] = useState(() =>
+    getFirstBusinessDayFromToday(),
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -79,40 +114,40 @@ const ChooseTheDate = <T extends FieldValues>({
     return { day, dayOfWeek, month };
   };
 
-  const isWeekend = (date: Date) => date.getDay() === 0 || date.getDay() === 6;
-
-  const isHoliday = (date: Date) => {
-    const formattedDate = date.toISOString().split('T')[0];
-    return holidays.includes(formattedDate);
-  };
-
-  const getNextBusinessDay = (currentDate: Date) => {
-    const nextDate = new Date(currentDate);
-    nextDate.setDate(currentDate.getDate() + 1);
-    while (isWeekend(nextDate) || isHoliday(nextDate)) {
-      nextDate.setDate(nextDate.getDate() + 1);
+  const getPreviousBusinessDay = (currentDate: Date) => {
+    const prevDate = new Date(currentDate);
+    prevDate.setDate(currentDate.getDate() - 1);
+    while (isWeekend(prevDate) || isHoliday(prevDate)) {
+      prevDate.setDate(prevDate.getDate() - 1);
     }
-    return nextDate;
+    return prevDate;
   };
 
   const handlePrevWeek = () => {
     setStartDate(prevDate => {
       let newDate = new Date(prevDate);
       const today = new Date();
-      today.setHours(0, 0, 0, 0); // Reset czasu do początku dnia
+      today.setHours(0, 0, 0, 0);
+
+      // Przejdź o daysToDisplay dni roboczych wstecz
       for (let i = 0; i < daysToDisplay; i++) {
-        newDate = getNextBusinessDay(newDate);
+        newDate = getPreviousBusinessDay(newDate);
       }
-      return newDate < today ? today : newDate;
+
+      // Nie pozwól przejść przed dzisiaj
+      return newDate < today ? getFirstBusinessDayFromToday() : newDate;
     });
   };
 
   const handleNextWeek = () => {
     setStartDate(prevDate => {
       let newDate = new Date(prevDate);
+
+      // Przejdź o daysToDisplay dni roboczych do przodu
       for (let i = 0; i < daysToDisplay; i++) {
         newDate = getNextBusinessDay(newDate);
       }
+
       return newDate;
     });
   };
@@ -176,9 +211,7 @@ const ChooseTheDate = <T extends FieldValues>({
         </button>
       </div>
       {startDate.getFullYear() !== currentYear && (
-        <div className={styles.datePicker__month}>
-          {startDate.getFullYear()}
-        </div>
+        <div className={styles.datePicker__year}>{startDate.getFullYear()}</div>
       )}
     </div>
   );

@@ -55,7 +55,8 @@ const Footer = () => {
 
       <div className={styles['footer__creators']}>
         <p className={styles['footer__creators__copyright']}>
-          Copyright © AutoBud - Centrum Motoryzacyjne 2024
+          Copyright © AutoBud - Centrum Motoryzacyjne{' '}
+          {new Date().getFullYear()}
         </p>
         <div className={styles['footer__creators__authors']}>
           <p className={styles['footer__creators__link']}>
