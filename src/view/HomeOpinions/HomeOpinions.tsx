@@ -83,12 +83,9 @@ export const HomeOpinions = () => {
               </div>
             </div>
             <div className={styles['opinions__department-container']}>
-              <h5 className={styles['opinions__department']}>
-                Dział:
-                <p className={styles['opinions__department-bold']}>
-                  {review.department}
-                </p>
-              </h5>
+              <p className={styles['opinions__department']}>
+                {review.department}
+              </p>
             </div>
             <p className={styles['opinions__review']}>{review.review}</p>
           </div>

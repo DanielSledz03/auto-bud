@@ -49,7 +49,7 @@ const contacts = [
 const CallToUs = () => {
   return (
     <div className={styles['call-to-us']}>
-      <p className={styles['call-to-us__title']}>Masz pytania?</p>
+      <p className={styles['call-to-us__title']}>Potrzebujesz pomocy?</p>
       <h2 className={styles['call-to-us__subtitle']}>Zadzwoń do nas</h2>
 
       <hr className={styles['call-to-us__divider']} />
