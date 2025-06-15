@@ -3,14 +3,12 @@ import type { Metadata } from 'next';
 import { ObjectInfoCard, ServiceCard, TextHeader } from '@/components';
 import {
   carWashProps,
-  galleryProps,
   mechanicWorkshopProps,
   rentCarProps,
   roadAssistanceProps,
   stationControlProps,
   servicesHeader,
 } from '@/constants/services';
-import { LocationGallery } from '@/view';
 
 export const metadata: Metadata = {
   title:

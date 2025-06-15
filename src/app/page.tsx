@@ -1,11 +1,11 @@
 import { PromotionsBanner } from '@/components';
-import CallToUs from '@/view/CallToUs/CallToUs';
 import {
   HomeAboutUs,
   HomeAdditionalServices,
   HomeHeader,
   HomeOpinions,
 } from '@/view';
+import CallToUs from '@/view/CallToUs/CallToUs';
 import { HomeFAQ } from '@/view/HomeFAQ/HomeFAQ';
 
 export default function Home() {
