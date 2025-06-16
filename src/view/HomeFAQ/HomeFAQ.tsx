@@ -18,7 +18,7 @@ const faqData: FAQItem[] = [
   {
     question: 'Gdzie znajdują się wasze serwisy?',
     answer:
-      'Posiadamy trzy lokalizacje: Świętochłowice (ul. Katowicka 73) - autoryzowany serwis Bosch Car Service, Ruda Śląska - Godula (ul. Szpaków 51) - stacja diagnostyczna oraz Ruda Śląska - Bykowina (ul. Szpaków 51) - stacja diagnostyczna. Wszystkie obiekty są łatwo dostępne komunikacyjnie.',
+      'Posiadamy trzy lokalizacje: Świętochłowice (ul. Katowicka 73) - autoryzowany serwis Bosch Car Service, Ruda Śląska - Godula (ul. Stara 1) - okręgowa stacja diagnostyczna oraz Ruda Śląska - Bykowina (ul. Szpaków 51) - stacja diagnostyczna. Wszystkie obiekty są łatwo dostępne komunikacyjnie.',
   },
   {
     question: 'Jak umówić wizytę w serwisie?',
@@ -33,12 +33,12 @@ const faqData: FAQItem[] = [
   {
     question: 'Jakie są godziny otwarcia serwisów?',
     answer:
-      'Nasze serwisy są otwarte od poniedziałku do piątku w godzinach 8:00-17:00 oraz w soboty 8:00-14:00. Pomoc drogowa jest dostępna 24/7.',
+      'Nasz serwis w Świętochłowicach czynny jest od poniedziałku do piątku w godzinach 7:00–16:00. Stacja diagnostyczna działa w godzinach 7:00–19:00 oraz w soboty od 8:00 do 14:00. Stacje diagnostyczne w Rudzie Śląskiej są otwarte od poniedziałku do piątku w godzinach 7:00–19:00 oraz w soboty od 8:00 do 14:00. Pomoc drogowa dostępna jest 24/7.',
   },
   {
     question: 'Czy oferujecie samochody zastępcze?',
     answer:
-      'Tak, oferujemy samochody zastępcze dla klientów, których auta są w naprawie. Pojazdy są w pełni ubezpieczone i sprawne technicznie.',
+      'Tak, oferujemy samochód zastępczu dla klientów, których auta są w naprawie. Pojazdy są w pełni ubezpieczone i sprawne technicznie.',
   },
 ];
 
