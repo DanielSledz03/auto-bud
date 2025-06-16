@@ -1,8 +1,9 @@
 import Image from 'next/image';
 
-import RedArrowTopRight from '@/../public/assets/icons/redArrowTopRight.svg';
 import PromotionBannerImage from '@/images/general/index/promotionBanner.png';
 import PromotionBannerImageMobile from '@/images/general/index/promotionBannerMobile.png';
+
+import { WhiteButton } from '../WhiteButton/WhiteButton';
 
 import styles from './PromotionBanner.module.scss';
 
@@ -69,24 +70,11 @@ export const PromotionsBanner = ({
           />
           <p className={styles.promotionsBanner__description}>{description}</p>
         </div>
-        <a
+        <WhiteButton
+          title={title}
           href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.promotionBanner__button}
-        >
-          <Image
-            src={RedArrowTopRight}
-            alt="Czerwona strzałka"
-            className="xl:w-[14px]"
-          />
-          <p className="ml-4 flex-1 text-center font-bold">
-            Zarezerwuj wizytę <br />
-            <span>
-              (w aplikacji <b>Bosch Auto Planer</b>)
-            </span>
-          </p>
-        </a>
+          buttonStyles={styles['promotionsBanner__button']}
+        />
       </div>
     </div>
   );

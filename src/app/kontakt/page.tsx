@@ -43,7 +43,6 @@ const KontaktPage = () => {
         title="Umów wizytę"
         shorter
         href="https://play.google.com/store/apps/details?id=com.companyname.icmobile"
-        // href="/wizyta"
         description="Zarezerwuj termin już teraz i skorzystaj z naszych wyjątkowych usług. Kliknij tutaj, aby umówić wizytę i cieszyć się profesjonalną obsługą bez czekania."
       />
     </>

@@ -58,6 +58,6 @@
   }
 
   &__button {
-    @apply flex w-full items-center justify-around bg-white px-4 py-3 text-[13px] font-semibold text-black transition duration-300 hover:bg-gray-300 md:w-[300px] xl:w-[350px] xl:text-[16px];
+    @apply flex w-full max-w-[440px] items-center justify-around bg-white px-4 py-3 text-[10px] font-semibold text-black transition duration-300 hover:bg-gray-300 md:w-[350px] md:text-[13px] xl:w-full xl:text-[16px];
   }
 }

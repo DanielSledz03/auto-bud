@@ -10,10 +10,10 @@ import { HomeFAQ } from '@/view/HomeFAQ/HomeFAQ';
 
 export default function Home() {
   return (
-    <main>
+    <>
       <HomeHeader />
       <PromotionsBanner
-        title="Serwis klimatyzacji"
+        title="Zarezerwuj wizytę w aplikacji Bosch Car Planer"
         heading="Oferty sezonowe"
         price="99 zł"
         href="https://play.google.com/store/apps/details?id=com.companyname.icmobile"
@@ -24,6 +24,6 @@ export default function Home() {
       <HomeFAQ />
       <HomeOpinions />
       <CallToUs />
-    </main>
+    </>
   );
 }
