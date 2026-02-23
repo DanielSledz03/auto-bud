@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import Image, { StaticImageData } from 'next/image';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import styles from './LocationGalleru.module.scss';
 
@@ -24,8 +24,13 @@ export const LocationGallery = ({
   title,
   description,
 }: LocationGalleryProps) => {
+  const [isMounted, setIsMounted] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  const refs = useRef<(HTMLDivElement | null)[]>([]); // Initialize refs as an array
+  const refs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleDotClick = (index: number) => {
     setActiveIndex(index);
@@ -37,6 +42,34 @@ export const LocationGallery = ({
     }
   };
 
+  const galleryImages = (
+    <div className={styles['location-gallery__images']}>
+      {images.length > 0 &&
+        images.map((image, index) => (
+          <div
+            key={image.src}
+            className={styles['location-gallery__image']}
+            ref={(el: HTMLDivElement | null) => {
+              refs.current[index] = el;
+            }}
+          >
+            <Image
+              width={500}
+              height={300}
+              style={{
+                objectFit: 'cover',
+                width: '100%',
+                height: '100%',
+              }}
+              src={image.src}
+              alt="Jeden z naszych obiektów"
+              data-lightboxjs={'lightbox' + images.length}
+            />
+          </div>
+        ))}
+    </div>
+  );
+
   return (
     <div className={styles['location-gallery']}>
       <h5 className={styles['location-gallery__title']}>{title}</h5>
@@ -44,42 +77,17 @@ export const LocationGallery = ({
       <hr className={styles['location-gallery__divider']} />
 
       <div className={styles['location-gallery__gallery']}>
-        <SlideshowLightbox
-          lightboxIdentifier={'lightbox' + images.length}
-          framework="next"
-          images={images}
-        >
-          <div
-            className={styles['location-gallery__images']}
-            ref={el => {
-              if (el) refs.current.push(el);
-            }}
+        {isMounted ? (
+          <SlideshowLightbox
+            lightboxIdentifier={'lightbox' + images.length}
+            framework="next"
+            images={images}
           >
-            {images.length > 0 &&
-              images.map((image, index) => (
-                <div
-                  key={image.src}
-                  className={styles['location-gallery__image']}
-                  ref={(el: HTMLDivElement | null) => {
-                    if (el) refs.current[index] = el;
-                  }}
-                >
-                  <Image
-                    width={500}
-                    height={300}
-                    style={{
-                      objectFit: 'cover',
-                      width: '100%',
-                      height: '100%',
-                    }}
-                    src={image.src}
-                    alt="Jeden z naszych obiektów"
-                    data-lightboxjs={'lightbox' + images.length}
-                  />
-                </div>
-              ))}
-          </div>
-        </SlideshowLightbox>
+            {galleryImages}
+          </SlideshowLightbox>
+        ) : (
+          galleryImages
+        )}
       </div>
 
       <div className={styles['gallery__pagination']}>

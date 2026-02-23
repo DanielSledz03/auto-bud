@@ -33,7 +33,7 @@ const reviews = [
 ];
 
 export const HomeOpinions = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex] = useState(0);
   const opinionsRef = useRef<HTMLDivElement>(null);
   const reviewRefs = useRef<HTMLDivElement[] | null[]>([]);
 
@@ -45,10 +45,6 @@ export const HomeOpinions = () => {
       });
     }
   }, [activeIndex]);
-
-  const handleDotClick = (index: number) => {
-    setActiveIndex(index);
-  };
 
   return (
     <div className={styles['home-opinions']}>

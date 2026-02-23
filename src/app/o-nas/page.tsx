@@ -9,7 +9,7 @@ import { AboutUs, AboutUsNumbers, HomeOpinions, LocationGallery } from '@/view';
 export const metadata: Metadata = {
   title: 'O nas - Auto-Bud Bosch Car Service | Historia i doświadczenie',
   description:
-    'Poznaj historię Auto-Bud Bosch Car Service. Kompleks obiektów motoryzacyjnych w Rudzie Śląskiej i Świętochłowicach. Autoryzowany serwis Bosch z wieloletnim doświadczeniem.',
+    'Poznaj historię Auto-Bud Bosch Car Service. Kompleks obiektów motoryzacyjnych w Rudzie Śląskiej i Świętochłowicach obsługujący kierowców z Chorzowa, Katowic i całego Śląska.',
   keywords: [
     'o auto-bud',
     'historia auto-bud',
@@ -21,13 +21,17 @@ export const metadata: Metadata = {
     'doświadczenie warsztat',
     'grupa auto-bud',
     'obiekty motoryzacyjne',
+    'serwis samochodowy śląsk',
+    'serwis samochodowy chorzów',
+    'serwis samochodowy katowice',
   ],
   openGraph: {
     title: 'O nas - Auto-Bud Bosch Car Service',
     description:
-      'Poznaj historię Auto-Bud Bosch Car Service. Kompleks obiektów motoryzacyjnych w Rudzie Śląskiej i Świętochłowicach.',
+      'Historia i doświadczenie Auto-Bud Bosch Car Service dla kierowców z Rudy Śląskiej, Świętochłowic, Chorzowa i Katowic.',
     type: 'website',
     url: 'https://www.auto-bud.com.pl/o-nas',
+    locale: 'pl_PL',
   },
   alternates: {
     canonical: 'https://www.auto-bud.com.pl/o-nas',

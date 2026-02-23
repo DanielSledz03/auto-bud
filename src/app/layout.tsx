@@ -1,7 +1,7 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Poppins } from 'next/font/google';
 import Script from 'next/script';
 
@@ -11,33 +11,47 @@ import CallToUs from '@/view/CallToUs/CallToUs';
 import Footer from '@/view/Footer/Footer';
 import Menus from '@/view/Menus/Menus';
 
-import 'lightbox.js-react/dist/index.css';
+const BASE_URL = 'https://www.auto-bud.com.pl';
+const OG_IMAGE_PATH = '/assets/images/general/icon.png';
 
-export const metadata: Metadata = {
-  title: 'Auto-Bud - Bosch Car Service',
-  description:
-    'Autoryzowany serwis Bosch Car Service w Świętochłowicach. Stacje diagnostyczne w Rudzie Śląskiej. Przeglądy, naprawy, myjnia. Serwis samochodowy Śląsk.',
-  viewport: 'width=device-width, initial-scale=1',
+const areasServed = [
+  { '@type': 'City', name: 'Świętochłowice' },
+  { '@type': 'City', name: 'Ruda Śląska' },
+  { '@type': 'City', name: 'Chorzów' },
+  { '@type': 'City', name: 'Katowice' },
+  { '@type': 'AdministrativeArea', name: 'Województwo śląskie' },
+];
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
   themeColor: '#ffffff',
   colorScheme: 'light',
+};
+
+export const metadata: Metadata = {
+  title: 'Auto-Bud Bosch Car Service - Serwis samochodowy Śląsk',
+  description:
+    'Auto-Bud Bosch Car Service: serwis samochodowy, stacje kontroli pojazdów i myjnia. Obsługujemy Świętochłowice, Rudę Śląską, Chorzów, Katowice i cały Śląsk.',
+  applicationName: 'Auto-Bud Bosch Car Service',
   icons: [
     {
-      url: './assets/images/general/icon.png',
+      url: '/assets/images/general/icon.png',
       sizes: '512x512',
       type: 'image/png',
     },
     {
-      url: './assets/images/general/icon.png',
+      url: '/assets/images/general/icon.png',
       sizes: '192x192',
       type: 'image/png',
     },
     {
-      url: './assets/images/general/icon.png',
+      url: '/assets/images/general/icon.png',
       sizes: '32x32',
       type: 'image/png',
     },
     {
-      url: './assets/images/general/icon.png',
+      url: '/assets/images/general/icon.png',
       sizes: '180x180',
       type: 'image/png',
       rel: 'apple-touch-icon',
@@ -65,6 +79,13 @@ export const metadata: Metadata = {
     'przeglad godula',
     'auto serwis',
     'auto serwis bosch',
+    'serwis samochodowy chorzów',
+    'serwis samochodowy katowice',
+    'serwis samochodowy śląsk',
+    'stacja diagnostyczna śląsk',
+    'mechanik śląsk',
+    'mechanik katowice',
+    'mechanik chorzów',
   ],
   authors: [{ name: 'Auto-Bud Bosch Car Service' }],
   creator: 'Auto-Bud Bosch Car Service',
@@ -74,23 +95,23 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.auto-bud.com.pl'),
+  metadataBase: new URL(BASE_URL),
   alternates: {
-    canonical: 'https://www.auto-bud.com.pl',
+    canonical: '/',
   },
   openGraph: {
-    title: 'Auto-Bud - Bosch Car Service',
+    title: 'Auto-Bud Bosch Car Service - Serwis samochodowy Śląsk',
     description:
-      'Autoryzowany serwis Bosch Car Service w Świętochłowicach oraz stacje diagnostyczne w Rudzie Śląskiej. Zapewniamy profesjonalne usługi motoryzacyjne.',
+      'Serwis samochodowy i stacje kontroli pojazdów dla kierowców ze Świętochłowic, Rudy Śląskiej, Chorzowa, Katowic i całego Śląska.',
     type: 'website',
-    siteName: 'Auto-Bud - Bosch Car Service',
-    url: 'https://www.auto-bud.com.pl',
+    siteName: 'Auto-Bud Bosch Car Service',
+    url: BASE_URL,
     images: [
       {
-        url: './assets/images/general/icon.png',
+        url: OG_IMAGE_PATH,
         width: 500,
         height: 500,
-        alt: 'Bosch Service Logo',
+        alt: 'Auto-Bud Bosch Car Service',
         type: 'image/png',
       },
     ],
@@ -98,10 +119,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Auto-Bud - Bosch Car Service',
+    title: 'Auto-Bud Bosch Car Service - Serwis samochodowy Śląsk',
     description:
-      'Autoryzowany serwis Bosch Car Service w Świętochłowicach oraz stacje diagnostyczne w Rudzie Śląskiej',
-    images: ['./assets/images/general/icon.png'],
+      'Serwis samochodowy i stacje kontroli pojazdów na Śląsku: Świętochłowice, Ruda Śląska, Chorzów, Katowice.',
+    images: [OG_IMAGE_PATH],
   },
   robots: {
     index: true,
@@ -113,6 +134,13 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  category: 'motoryzacja',
+  other: {
+    'geo.region': 'PL-SL',
+    'geo.placename': 'Śląsk',
+    'geo.position': '50.2978;18.9175',
+    ICBM: '50.2978, 18.9175',
   },
 };
 
@@ -132,24 +160,41 @@ export default function RootLayout({
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://www.auto-bud.com.pl/#organization',
+        '@id': `${BASE_URL}/#organization`,
         name: 'Auto-Bud Bosch Car Service',
-        url: 'https://www.auto-bud.com.pl',
+        url: BASE_URL,
         logo: {
           '@type': 'ImageObject',
-          url: 'https://www.auto-bud.com.pl/assets/images/general/bosch-logo.png',
+          url: `${BASE_URL}/assets/images/general/bosch-logo.png`,
           width: 400,
           height: 400,
         },
         description:
-          'Autoryzowany serwis Bosch Car Service w Świętochłowicach oraz stacje diagnostyczne w Rudzie Śląskiej. Stacja kontroli pojazdów, warsztat samochodowy, myjnia bezdotykowa.',
+          'Serwis samochodowy i stacje kontroli pojazdów dla kierowców ze Świętochłowic, Rudy Śląskiej, Chorzowa, Katowic i całego Śląska.',
         telephone: '+48502567630',
+        contactPoint: [
+          {
+            '@type': 'ContactPoint',
+            telephone: '+48502567630',
+            contactType: 'customer service',
+            areaServed: 'PL-SL',
+            availableLanguage: ['pl'],
+          },
+        ],
+        areaServed: areasServed,
         address: [
           {
             '@type': 'PostalAddress',
             streetAddress: 'ul. Katowicka 73',
             addressLocality: 'Świętochłowice',
             postalCode: '41-600',
+            addressCountry: 'PL',
+          },
+          {
+            '@type': 'PostalAddress',
+            streetAddress: 'ul. Stara 1',
+            addressLocality: 'Ruda Śląska',
+            postalCode: '41-703',
             addressCountry: 'PL',
           },
           {
@@ -163,8 +208,58 @@ export default function RootLayout({
         sameAs: ['https://www.bosch.com/pl/'],
       },
       {
+        '@type': 'WebSite',
+        '@id': `${BASE_URL}/#website`,
+        url: BASE_URL,
+        name: 'Auto-Bud Bosch Car Service',
+        inLanguage: 'pl-PL',
+      },
+      {
+        '@type': 'Service',
+        '@id': `${BASE_URL}/#service`,
+        name: 'Serwis samochodowy i stacja kontroli pojazdów',
+        provider: {
+          '@id': `${BASE_URL}/#organization`,
+        },
+        serviceType: [
+          'Serwis samochodowy',
+          'Stacja kontroli pojazdów',
+          'Diagnostyka samochodowa',
+          'Myjnia bezdotykowa',
+          'Pomoc drogowa',
+        ],
+        areaServed: areasServed,
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Usługi Auto-Bud',
+          itemListElement: [
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Przegląd techniczny pojazdów',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Naprawa samochodów osobowych',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Myjnia bezdotykowa',
+              },
+            },
+          ],
+        },
+      },
+      {
         '@type': 'FAQPage',
-        '@id': 'https://www.auto-bud.com.pl/#faq',
+        '@id': `${BASE_URL}/#faq`,
         mainEntity: [
           {
             '@type': 'Question',
@@ -179,7 +274,7 @@ export default function RootLayout({
             name: 'Gdzie znajdują się wasze serwisy?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Posiadamy trzy lokalizacje: Świętochłowice (ul. Katowicka 73) - autoryzowany serwis Bosch Car Service, Ruda Śląska - Godula (ul. Szpaków 51) - stacja diagnostyczna oraz Ruda Śląska - Bykowina (ul. Szpaków 51) - stacja diagnostyczna. Wszystkie obiekty są łatwo dostępne komunikacyjnie.',
+              text: 'Posiadamy trzy lokalizacje: Świętochłowice (ul. Katowicka 73), Ruda Śląska - Godula (ul. Stara 1) oraz Ruda Śląska - Bykowina (ul. Szpaków 51). Obsługujemy także klientów z Chorzowa, Katowic i całego Śląska.',
             },
           },
           {
@@ -193,11 +288,10 @@ export default function RootLayout({
         ],
       },
       {
-        '@type': 'LocalBusiness',
-        '@id': 'https://www.auto-bud.com.pl/swietochlowice/#localbusiness',
+        '@type': 'AutoRepair',
+        '@id': `${BASE_URL}/swietochlowice/#localbusiness`,
         name: 'Auto-Bud Bosch Car Service Świętochłowice',
-        image:
-          'https://www.auto-bud.com.pl/assets/images/general/bosch-logo.png',
+        image: `${BASE_URL}/assets/images/general/bosch-logo.png`,
         telephone: '+48502567630',
         address: {
           '@type': 'PostalAddress',
@@ -206,19 +300,21 @@ export default function RootLayout({
           postalCode: '41-600',
           addressCountry: 'PL',
         },
+        hasMap: 'https://maps.app.goo.gl/PQVm43rL5RzVfys77',
         geo: {
           '@type': 'GeoCoordinates',
           latitude: 50.2978,
           longitude: 18.9175,
         },
-        url: 'https://www.auto-bud.com.pl/swietochlowice',
+        url: `${BASE_URL}/swietochlowice`,
         priceRange: '$$',
+        areaServed: areasServed,
         openingHoursSpecification: [
           {
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-            opens: '08:00',
-            closes: '17:00',
+            opens: '07:00',
+            closes: '19:00',
           },
           {
             '@type': 'OpeningHoursSpecification',
@@ -251,32 +347,28 @@ export default function RootLayout({
         },
       },
       {
-        '@type': 'LocalBusiness',
-        '@id': 'https://www.auto-bud.com.pl/godula/#localbusiness',
+        '@type': 'AutomotiveBusiness',
+        '@id': `${BASE_URL}/godula/#localbusiness`,
         name: 'Auto-Bud Stacja Diagnostyczna Godula',
-        image:
-          'https://www.auto-bud.com.pl/assets/images/general/bosch-logo.png',
+        image: `${BASE_URL}/assets/images/general/bosch-logo.png`,
         telephone: '+48502567630',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'ul. Szpaków 51',
+          streetAddress: 'ul. Stara 1',
           addressLocality: 'Ruda Śląska',
-          postalCode: '41-705',
+          postalCode: '41-703',
           addressCountry: 'PL',
         },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: 50.2978,
-          longitude: 18.9175,
-        },
-        url: 'https://www.auto-bud.com.pl/godula',
+        hasMap: 'https://maps.app.goo.gl/uevhCXnHGWYJm6NX8',
+        url: `${BASE_URL}/godula`,
         priceRange: '$$',
+        areaServed: areasServed,
         openingHoursSpecification: [
           {
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-            opens: '08:00',
-            closes: '17:00',
+            opens: '07:00',
+            closes: '19:00',
           },
           {
             '@type': 'OpeningHoursSpecification',
@@ -303,6 +395,52 @@ export default function RootLayout({
                 '@type': 'Service',
                 name: 'Myjnia bezdotykowa',
                 description: 'Mycie samochodów',
+              },
+            },
+          ],
+        },
+      },
+      {
+        '@type': 'AutomotiveBusiness',
+        '@id': `${BASE_URL}/bykowina/#localbusiness`,
+        name: 'Auto-Bud Stacja Diagnostyczna Bykowina',
+        image: `${BASE_URL}/assets/images/general/bosch-logo.png`,
+        telephone: '+48502567630',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ul. Szpaków 51',
+          addressLocality: 'Ruda Śląska',
+          postalCode: '41-705',
+          addressCountry: 'PL',
+        },
+        hasMap: 'https://maps.app.goo.gl/UFvFUSnpor4dTKHd6',
+        url: `${BASE_URL}/bykowina`,
+        priceRange: '$$',
+        areaServed: areasServed,
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            opens: '07:00',
+            closes: '19:00',
+          },
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: 'Saturday',
+            opens: '08:00',
+            closes: '14:00',
+          },
+        ],
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Usługi motoryzacyjne',
+          itemListElement: [
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Stacja kontroli pojazdów',
+                description: 'Badania techniczne pojazdów do 3,5 tony',
               },
             },
           ],

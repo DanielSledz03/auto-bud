@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import { PromotionsBanner } from '@/components';
 import {
   HomeAboutUs,
@@ -5,8 +7,37 @@ import {
   HomeHeader,
   HomeOpinions,
 } from '@/view';
-import CallToUs from '@/view/CallToUs/CallToUs';
 import { HomeFAQ } from '@/view/HomeFAQ/HomeFAQ';
+
+export const metadata: Metadata = {
+  title:
+    'Serwis samochodowy Śląsk - Auto-Bud Bosch Car Service | Świętochłowice, Ruda Śląska',
+  description:
+    'Auto-Bud Bosch Car Service to serwis samochodowy i stacje kontroli pojazdów dla kierowców ze Świętochłowic, Rudy Śląskiej, Chorzowa, Katowic i całego Śląska. Umów wizytę online.',
+  keywords: [
+    'serwis samochodowy śląsk',
+    'serwis samochodowy świętochłowice',
+    'serwis samochodowy ruda śląska',
+    'serwis samochodowy chorzów',
+    'serwis samochodowy katowice',
+    'bosch car service śląsk',
+    'stacja kontroli pojazdów śląsk',
+    'mechanik śląsk',
+    'mechanik katowice',
+    'mechanik chorzów',
+  ],
+  openGraph: {
+    title: 'Serwis samochodowy Śląsk - Auto-Bud Bosch Car Service',
+    description:
+      'Serwis samochodowy i stacje kontroli pojazdów dla kierowców ze Świętochłowic, Rudy Śląskiej, Chorzowa, Katowic i całego Śląska.',
+    type: 'website',
+    url: 'https://www.auto-bud.com.pl',
+    locale: 'pl_PL',
+  },
+  alternates: {
+    canonical: 'https://www.auto-bud.com.pl',
+  },
+};
 
 export default function Home() {
   return (
@@ -23,7 +54,6 @@ export default function Home() {
       <HomeAdditionalServices />
       <HomeFAQ />
       <HomeOpinions />
-      <CallToUs />
     </>
   );
 }

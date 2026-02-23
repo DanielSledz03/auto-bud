@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title:
     'Usługi - Auto-Bud Bosch Car Service | Stacja diagnostyczna, warsztat, myjnia',
   description:
-    'Kompleksowe usługi motoryzacyjne: stacja kontroli pojazdów, warsztat samochodowy, myjnia bezdotykowa, pomoc drogowa. Profesjonalny serwis Bosch w Rudzie Śląskiej i Świętochłowicach.',
+    'Kompleksowe usługi motoryzacyjne: stacja kontroli pojazdów, warsztat samochodowy, myjnia bezdotykowa i pomoc drogowa. Obsługujemy Świętochłowice, Rudę Śląską, Chorzów, Katowice i cały Śląsk.',
   keywords: [
     'usługi motoryzacyjne',
     'stacja kontroli pojazdów',
@@ -31,13 +31,17 @@ export const metadata: Metadata = {
     'świętochłowice',
     'godula',
     'bykowina',
+    'chorzów',
+    'katowice',
+    'serwis samochodowy śląsk',
   ],
   openGraph: {
     title: 'Usługi - Auto-Bud Bosch Car Service',
     description:
-      'Kompleksowe usługi motoryzacyjne: stacja kontroli pojazdów, warsztat samochodowy, myjnia bezdotykowa, pomoc drogowa.',
+      'Kompleksowe usługi motoryzacyjne dla kierowców z Rudy Śląskiej, Świętochłowic, Chorzowa, Katowic i całego Śląska.',
     type: 'website',
     url: 'https://www.auto-bud.com.pl/uslugi',
+    locale: 'pl_PL',
   },
   alternates: {
     canonical: 'https://www.auto-bud.com.pl/uslugi',

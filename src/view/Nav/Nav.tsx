@@ -94,7 +94,7 @@ const Nav = () => {
                     url: '/bykowina',
                   },
                 ].map(({ city, district, address, url }) => (
-                  <li key={city + address} className={styles.dropdownItem}>
+                  <li key={url} className={styles.dropdownItem}>
                     <Link href={url} className={styles.dropdownItemLink}>
                       <div className={styles.dropdownItemIcon}>
                         <div className={styles.dropdownItemIconWrapper}>
