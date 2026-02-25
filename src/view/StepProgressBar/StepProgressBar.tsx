@@ -13,7 +13,7 @@ const StepProgressBar = ({ activeStep }: StepProgressBarProps) => {
 
   return (
     <div className={styles.stepProgressBar}>
-      <h1 className={styles.stepProgressBar__title}>Rezerwacja</h1>
+      <h1 className={styles.stepProgressBar__title}>Zgłoś wizytę online</h1>
 
       <div className={styles.stepProgressBar__progress}>
         <div className={stepClass(1)}>

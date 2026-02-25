@@ -1,48 +1,43 @@
-import type { Metadata } from 'next';
-
 import { PromotionsBanner } from '@/components';
+import { homeFaqData } from '@/data/homeFaq';
+import { buildPageMetadata, createFaqJsonLd } from '@/lib/seo';
 import {
   HomeAboutUs,
   HomeAdditionalServices,
   HomeHeader,
   HomeOpinions,
+  ServiceArea,
 } from '@/view';
 import { HomeFAQ } from '@/view/HomeFAQ/HomeFAQ';
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title:
-    'Serwis samochodowy Śląsk - Auto-Bud Bosch Car Service | Świętochłowice, Ruda Śląska',
+    'Warsztat / Serwis samochodowy Śląsk | Bosch Car Service Auto-Bud – Świętochłowice, Ruda Śląska',
   description:
-    'Auto-Bud Bosch Car Service to serwis samochodowy i stacje kontroli pojazdów dla kierowców ze Świętochłowic, Rudy Śląskiej, Chorzowa, Katowic i całego Śląska. Umów wizytę online.',
+    'Auto-Bud Bosch Car Service: warsztat i serwis samochodowy na Śląsku. Diagnostyka, przeglądy, klimatyzacja, wymiana oleju i hamulce. Obsługujemy Świętochłowice, Katowice i okolice.',
+  path: '/',
   keywords: [
+    'warsztat samochodowy śląsk',
     'serwis samochodowy śląsk',
-    'serwis samochodowy świętochłowice',
-    'serwis samochodowy ruda śląska',
-    'serwis samochodowy chorzów',
-    'serwis samochodowy katowice',
-    'bosch car service śląsk',
-    'stacja kontroli pojazdów śląsk',
-    'mechanik śląsk',
-    'mechanik katowice',
-    'mechanik chorzów',
+    'warsztat samochodowy świętochłowice',
+    'warsztat samochodowy katowice',
+    'diagnostyka komputerowa śląsk',
+    'wymiana oleju śląsk',
+    'serwis klimatyzacji śląsk',
   ],
-  openGraph: {
-    title: 'Serwis samochodowy Śląsk - Auto-Bud Bosch Car Service',
-    description:
-      'Serwis samochodowy i stacje kontroli pojazdów dla kierowców ze Świętochłowic, Rudy Śląskiej, Chorzowa, Katowic i całego Śląska.',
-    type: 'website',
-    url: 'https://www.auto-bud.com.pl',
-    locale: 'pl_PL',
-  },
-  alternates: {
-    canonical: 'https://www.auto-bud.com.pl',
-  },
-};
+});
 
 export default function Home() {
+  const faqJsonLd = createFaqJsonLd(homeFaqData);
+
   return (
     <>
       <HomeHeader />
+      <HomeAboutUs />
+      <ServiceArea />
+      <HomeFAQ />
+      <HomeOpinions />
+      <HomeAdditionalServices />
       <PromotionsBanner
         title="Zarezerwuj wizytę w aplikacji Bosch Car Planer"
         heading="Oferty sezonowe"
@@ -50,10 +45,10 @@ export default function Home() {
         href="https://play.google.com/store/apps/details?id=com.companyname.icmobile"
         description="Skorzystaj z naszej sezonowej promocji na serwis klimatyzacji! Przy zakupie filtra kabinowego Bosch zapewniamy pełną diagnostykę i serwis klimatyzacji w Twoim aucie. Umów wizytę i ciesz się komfortową jazdą. Oferta ważna tylko przez ograniczony czas!"
       />
-      <HomeAboutUs />
-      <HomeAdditionalServices />
-      <HomeFAQ />
-      <HomeOpinions />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
     </>
   );
 }

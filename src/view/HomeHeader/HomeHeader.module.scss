@@ -1,17 +1,13 @@
 .container {
-  @apply relative mb-12 flex h-[100vh] w-full flex-col justify-end overflow-hidden md:mb-36 lg:h-[85vh] lg:px-20 lg:pt-0 xl:px-48 2xl:px-64;
+  @apply relative mb-0 flex h-[100vh] w-full flex-col justify-end overflow-hidden lg:h-[85vh] lg:px-20 lg:pt-0 xl:px-48 2xl:px-64;
 }
 
 .image {
-  @apply absolute left-0 top-[64px] z-[-300] h-full w-full bg-bottom object-cover md:top-[90px] lg:hidden;
-}
-
-.imageDesktop {
-  @apply absolute left-0 top-[80px] z-[-300] hidden h-full w-full bg-bottom object-cover md:block;
+  @apply absolute left-0 top-[64px] z-[-300] h-full w-full bg-bottom object-cover md:top-[90px] lg:top-[80px];
 }
 
 .heading {
-  @apply mb-16 px-4 text-[26px] font-[600] text-white lg:text-[48px];
+  @apply mb-4 px-4 text-[26px] font-[600] text-white lg:text-[48px];
 }
 
 .location {
@@ -25,5 +21,28 @@
 
   &__wrapper {
     @apply flex w-full flex-col lg:h-[230px] lg:flex-row;
+  }
+
+  &__serviceAreaHero {
+    @apply mb-10 flex w-full flex-col items-start px-4;
+  }
+
+  &__serviceAreaText {
+    @apply text-[14px] font-medium text-lightGray3 lg:text-[16px];
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  &__serviceAreaLinks {
+    @apply mt-2 flex flex-wrap items-center gap-2 lg:gap-3;
+  }
+
+  &__serviceAreaLink {
+    @apply inline-flex items-center text-[14px] font-semibold text-white transition-colors duration-300 hover:text-red lg:text-[15px];
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  &__serviceAreaSeparator {
+    @apply text-[12px] text-lightGray3 lg:text-[13px];
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   }
 }

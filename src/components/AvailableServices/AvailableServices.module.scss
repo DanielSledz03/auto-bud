@@ -1,5 +1,5 @@
 .availableServices {
-  @apply px-5 md:px-10 lg:px-20 lg:py-16 xl:px-48 2xl:px-64;
+  @apply mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 lg:py-8 xl:px-48 2xl:px-64;
 
   &__title {
     @apply flex items-center text-[20px] font-semibold text-darkGray lg:text-[32px];

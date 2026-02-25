@@ -49,7 +49,7 @@ export const LocationHeader = ({
 
       <div className={styles['location-header__address']}>
         <div className={styles['location-header__address--icon']}>
-          <Image src={RedLocationPinIcon} alt="Lokazliacja" />
+          <Image src={RedLocationPinIcon} alt="Lokalizacja" />
         </div>
         <div className={styles['location-header__address--text']}>
           <p className={styles['location-header__address--text--bold']}>

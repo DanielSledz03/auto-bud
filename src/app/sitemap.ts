@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://www.auto-bud.com.pl';
+import { BASE_URL } from '@/lib/seo';
 
 const routes: Array<{
   path: string;
@@ -8,7 +8,29 @@ const routes: Array<{
   priority: number;
 }> = [
   { path: '/', changeFrequency: 'weekly', priority: 1.0 },
+  { path: '/slask', changeFrequency: 'weekly', priority: 0.98 },
   { path: '/uslugi', changeFrequency: 'weekly', priority: 0.95 },
+  {
+    path: '/uslugi/diagnostyka-komputerowa',
+    changeFrequency: 'monthly',
+    priority: 0.92,
+  },
+  {
+    path: '/uslugi/serwis-klimatyzacji',
+    changeFrequency: 'monthly',
+    priority: 0.92,
+  },
+  { path: '/uslugi/wymiana-oleju', changeFrequency: 'monthly', priority: 0.92 },
+  {
+    path: '/uslugi/serwis-hamulcow',
+    changeFrequency: 'monthly',
+    priority: 0.92,
+  },
+  {
+    path: '/uslugi/przeglad-techniczny',
+    changeFrequency: 'monthly',
+    priority: 0.92,
+  },
   { path: '/swietochlowice', changeFrequency: 'weekly', priority: 0.92 },
   { path: '/godula', changeFrequency: 'weekly', priority: 0.9 },
   { path: '/bykowina', changeFrequency: 'weekly', priority: 0.9 },

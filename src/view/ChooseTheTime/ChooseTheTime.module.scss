@@ -1,74 +1,19 @@
-.datePicker {
-  @apply mt-8 w-screen border-y-[1px] border-y-lightGray2 px-5 py-12 text-center md:px-10 lg:mb-20 lg:px-20 xl:px-48 2xl:px-64;
+.timeOfDay {
+  @apply mt-0 w-screen border-b-[1px] border-b-lightGray2 px-5 py-10 text-center md:px-10 lg:px-20 xl:px-48 2xl:px-64;
 
   &__heading {
     @apply mb-5 text-[24px] font-semibold text-blue lg:text-[32px];
   }
 
-  &__timePeriod {
-    @apply mx-auto my-6 mb-12 inline-flex rounded-[5px] border border-lightGray2 bg-lightGray4;
+  &__options {
+    @apply mx-auto flex w-full max-w-[560px] gap-3;
   }
 
-  &__periodTitle {
-    @apply flex-1 cursor-pointer px-6 py-2 text-center text-lg font-semibold text-mediumGray transition-colors duration-200;
-
-    &:hover {
-      @apply text-darkGray;
-    }
-
-    &.selected {
-      @apply bg-white text-darkGray;
-    }
-
-    &:first-child {
-      @apply rounded-l-[5px];
-    }
-
-    &:last-child {
-      @apply rounded-r-[5px];
-    }
+  &__option {
+    @apply h-[56px] flex-1 cursor-pointer rounded-md border border-lightGray4 bg-white px-4 text-[18px] font-semibold text-darkGray duration-200 hover:bg-lightGray;
   }
 
-  &__timeGroup {
-    @apply flex justify-center gap-4; /* Container for time slots */
-  }
-
-  &__timeSlot {
-    @apply flex h-[70px] w-[70px] cursor-pointer items-center justify-center rounded-md border border-lightGray4 bg-white text-lg font-semibold text-darkGray duration-200 hover:bg-lightGray4;
-    &.selected {
-      @apply border-red bg-lightGray text-red; /* Selected time slot */
-    }
-  }
-
-  &__timeSlotText {
-    @apply text-center text-darkGray; /* Style for the text inside the time slot button */
-  }
-
-  &__marker {
-    @apply absolute right-[-8px] top-[-8px] flex h-[20px] w-[20px] items-center justify-center rounded-full bg-red text-sm text-white;
-  }
-
-  &__activeSlot {
-    @apply bg-red text-white; /* Highlighted active time slot */
-  }
-
-  &__dayOfWeek {
-    @apply text-sm font-semibold text-mediumGray;
-  }
-
-  &__dayNumber {
-    @apply text-[32px] font-semibold text-darkGray;
-  }
-
-  &__daySelected {
-    @apply border-red bg-lightGray;
-  }
-
-  &__month {
-    @apply mt-5 hidden text-lg font-semibold text-darkGray lg:block lg:text-[18px];
-  }
-
-  &__monthMobile {
-    @apply text-sm font-semibold text-mediumGray lg:hidden;
+  &__optionSelected {
+    @apply border-red bg-lightGray text-red;
   }
 }

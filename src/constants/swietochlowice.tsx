@@ -10,8 +10,8 @@ import OfficeMobile from '@/images/swietochlowice/officeMobile.png';
 const locationHeaderProps = {
   mobileBackgroundUrl: MobileBackground,
   desktopBackgroundUrl: DesktopBackground,
-  city: 'Świętochłowice',
-  district: 'Centrum',
+  city: 'Warsztat samochodowy Świętochłowice',
+  district: 'Bosch Car Service Auto-Bud',
   street: 'ul. Katowicka 73',
   postalCode: 'Świętochłowice 41-600',
   googleMapsLink: 'https://maps.app.goo.gl/PQVm43rL5RzVfys77',

@@ -1,9 +1,10 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { WhiteButton } from '@/components';
 import BackgroundImage from '@/images/general/index/aboutUsBackground.png';
 import AboutUsImages from '@/images/general/index/aboutUsImages.png';
-import AboutUsImagesDesktop from '@/images/general/index/aboutUsImagesDesktop.png';
+import AboutUsImagesDesktop from '@/images/general/index/aboutusdesktop.png';
 
 import styles from './HomeAboutUs.module.scss';
 
@@ -17,53 +18,80 @@ export const HomeAboutUs = () => {
       />
 
       <div className={styles.aboutUs__content}>
-        <div className={styles.aboutUs__text__wrapper}>
-          <h2 className={styles.aboutUs__title}>O nas</h2>
+        <div className={styles.aboutUs__topRow}>
+          <div className={styles.aboutUs__textWrapper}>
+            <h2 className={styles.aboutUs__title}>O nas</h2>
 
-          <hr className={styles.aboutUs__line} />
+            <hr className={styles.aboutUs__line} />
 
-          <p className={styles.aboutUs__text__bold}>
-            Grupa AUTO-BUD to kompleks obiektów motoryzacyjnych mieszczących się
-            w Rudzie Śląskiej i Świętochłowicach.
-          </p>
+            <p className={styles.aboutUs__textBold}>
+              Grupa AUTO-BUD to kompleks obiektów motoryzacyjnych mieszczących
+              się w Rudzie Śląskiej i Świętochłowicach.
+            </p>
 
-          <p className={styles.aboutUs__text}>
-            Nasza firma działa na rynku od 2006 roku i obecnie posiadamy obiekty
-            w trzech różnych lokalizacjach. W naszej ofercie znajdziesz stacje
-            diagnostyczne w Rudzie Śląskiej - Goduli oraz Bykowinie, a także
-            autoryzowany serwis Bosch Car Service w Świętochłowicach.
-            <br />
-            <br /> W Świętochłowicach mamy dwanaście bogato wyposażonych
-            stanowisk, stację diagnostyczną oraz Biuro Obsługi Klienta, gdzie
-            zawsze możesz liczyć na pomoc naszych pracowników oraz napić się
-            kawy, oczekując na swoje auto. Dostępny jest również dostęp do
-            bezpłatnej sieci Wi-Fi.
-            <br />
-            <br /> Jako autoryzowany serwis Bosch Car Service w Świętochłowicach
-            oferujemy kompleksowe usługi motoryzacyjne: przeglądy techniczne,
-            naprawy samochodów, wymiana oleju, wymiana klocków hamulcowych,
-            wulkanizacja oraz myjnia bezdotykowa. Nasze stacje kontroli pojazdów
-            są wyposażone w najnowocześniejszy sprzęt diagnostyczny, a nasi
-            mechanicy posiadają wieloletnie doświadczenie w branży
-            motoryzacyjnej.
-          </p>
+            <p className={styles.aboutUs__text}>
+              Działamy od 2006 roku i prowadzimy obiekty w trzech lokalizacjach:
+              Ruda Śląska (Godula i Bykowina) oraz Świętochłowice, gdzie
+              znajduje się autoryzowany serwis Bosch Car Service.
+            </p>
 
-          <WhiteButton title="Czytaj więcej" href="/o-nas" />
+            <p className={styles.aboutUs__text}>
+              W Świętochłowicach zapewniamy 12 stanowisk serwisowych, stację
+              diagnostyczną i Biuro Obsługi Klienta. Na miejscu możesz wygodnie
+              poczekać na auto i skorzystać z bezpłatnego Wi‑Fi.
+            </p>
+          </div>
+
+          <div className={styles.aboutUs__images}>
+            <Image
+              src={AboutUsImages}
+              className={styles.aboutUs__images__image}
+              alt="Okręgowa Stacja Diagnostyczna oraz Myjnia Samochodowa"
+              loading="lazy"
+            />
+
+            <Image
+              src={AboutUsImagesDesktop}
+              className={styles.aboutUs__images__image__desktop}
+              alt="Okręgowa Stacja Diagnostyczna oraz Myjnia Samochodowa"
+              loading="lazy"
+            />
+          </div>
         </div>
 
-        <div className={styles.aboutUs__images}>
-          <Image
-            src={AboutUsImages}
-            className={styles.aboutUs__images__image}
-            alt="Okręgowa Stacja Diagnostyczna oraz Myjnia Samochodowa"
-            loading="lazy"
-          />
+        <div className={styles.aboutUs__bottomRow}>
+          <p className={styles.aboutUs__text}>
+            Jako Bosch Car Service oferujemy przeglądy techniczne, naprawy
+            samochodów, wymianę oleju i klocków hamulcowych, wulkanizację oraz
+            myjnię bezdotykową. Pracujemy na nowoczesnym sprzęcie
+            diagnostycznym, a nasz zespół ma wieloletnie doświadczenie.
+          </p>
 
-          <Image
-            src={AboutUsImagesDesktop}
-            className={styles.aboutUs__images__image__desktop}
-            alt="Okręgowa Stacja Diagnostyczna oraz Myjnia Samochodowa"
-            loading="lazy"
+          <p className={`${styles.aboutUs__text} ${styles.aboutUs__textLast}`}>
+            Szukasz fraz typu{' '}
+            <Link href="/swietochlowice" className="font-medium text-red">
+              warsztat samochodowy Świętochłowice
+            </Link>{' '}
+            albo{' '}
+            <Link
+              href="/slask#katowice-dojazd"
+              className="font-medium text-red"
+            >
+              warsztat samochodowy Katowice
+            </Link>
+            ? Sprawdź nasze dedykowane strony lokalne i{' '}
+            <Link href="/slask" className="font-medium text-red">
+              obszar działania na Śląsku
+            </Link>
+            .
+          </p>
+        </div>
+
+        <div className={styles.aboutUs__buttonWrapper}>
+          <WhiteButton
+            title="Czytaj więcej"
+            href="/o-nas"
+            buttonStyles={styles.aboutUs__button}
           />
         </div>
       </div>

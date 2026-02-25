@@ -1,40 +1,28 @@
-import type { Metadata } from 'next';
-
 import BookingStepOne from '@/view/BookingStepOne/BookingStepOne';
-import StepProgressBar from '@/view/StepProgressBar/StepProgressBar';
+import Breadcrumbs from '@/components/Seo/Breadcrumbs';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Umów wizytę - Auto-Bud Bosch Car Service',
+export const metadata = buildPageMetadata({
+  title: 'Umów wizytę | Auto-Bud Bosch Car Service',
   description:
-    'Umów wizytę online w Auto-Bud Bosch Car Service. Serwisujemy auta klientów ze Świętochłowic, Rudy Śląskiej, Chorzowa, Katowic i całego Śląska.',
+    'Zgłoś wizytę online w Auto-Bud Bosch Car Service. Wybierz lokalizację, preferowany dzień wizyty oraz porę kontaktu.',
+  path: '/wizyta',
   keywords: [
-    'umów wizytę serwis samochodowy',
-    'rezerwacja serwisu samochodowego',
-    'bosch car service wizyta',
-    'umów wizytę świętochłowice',
-    'umów wizytę ruda śląska',
-    'umów wizytę katowice',
-    'umów wizytę chorzów',
+    'umów wizytę warsztat samochodowy',
+    'rezerwacja serwisu samochodowego śląsk',
+    'bosch car service wizyta online',
   ],
-  openGraph: {
-    title: 'Umów wizytę - Auto-Bud Bosch Car Service',
-    description:
-      'Rezerwacja terminu wizyty w Auto-Bud Bosch Car Service dla kierowców z całego Śląska.',
-    type: 'website',
-    url: 'https://www.auto-bud.com.pl/wizyta',
-    locale: 'pl_PL',
-  },
-  alternates: {
-    canonical: 'https://www.auto-bud.com.pl/wizyta',
-  },
-};
+});
 
 const WizytaPage = () => {
-  const activeStep = 1;
-
   return (
     <>
-      <StepProgressBar activeStep={activeStep} />
+      <Breadcrumbs
+        items={[
+          { name: 'Strona główna', path: '/' },
+          { name: 'Umów wizytę', path: '/wizyta' },
+        ]}
+      />
       <BookingStepOne />
     </>
   );

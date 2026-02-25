@@ -1,7 +1,5 @@
-'use client';
-
 import Image, { StaticImageData } from 'next/image';
-import { ReactNode, useState, useEffect } from 'react';
+import { ReactNode } from 'react';
 
 import ClockIcon from '@/icons/clock.svg';
 
@@ -33,27 +31,22 @@ const ServiceCard = ({
   imageAlt,
   button = false,
 }: ServiceCardProps) => {
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   return (
     <div className={styles.serviceCard}>
       <div className={styles.serviceCard__image}>
         <Image
-          className={
-            isDesktop
-              ? styles.serviceCard__image__desktop
-              : styles.serviceCard__image__mobile
-          }
-          src={isDesktop ? imageDesktop : imageMobile}
+          className={styles.serviceCard__image__mobile}
+          src={imageMobile}
           alt={imageAlt}
-          layout="responsive"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          loading="lazy"
+        />
+        <Image
+          className={styles.serviceCard__image__desktop}
+          src={imageDesktop}
+          alt={imageAlt}
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          loading="lazy"
         />
       </div>
       <div className={styles.serviceCard__content}>
@@ -65,7 +58,7 @@ const ServiceCard = ({
         {openHours && (
           <div className={styles.serviceCard__hours__container}>
             <div className={styles.serviceCard__hours__icon}>
-              <Image src={ClockIcon} alt="Zegar" layout="fixed" />
+              <Image src={ClockIcon} alt="Zegar" />
             </div>
 
             <div className={styles.serviceCard__hours}>
@@ -88,7 +81,7 @@ const ServiceCard = ({
           <WhiteButton
             title="Umów wizytę"
             buttonStyles={styles.serviceCard__button}
-            href="https://play.google.com/store/apps/details?id=com.companyname.icmobile"
+            href="/wizyta"
           />
         )}
       </div>

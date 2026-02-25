@@ -1,104 +1,154 @@
 'use client';
 
-import Image from 'next/image';
-import React, { useEffect, useState, useRef } from 'react';
-
-import OpinionsBackgroundDesktopImage from '@/images/general/index/opinionsBackgroundDesktop.png';
-import OpinionsBackgroundImage from '@/images/general/index/opinionsBackgroundMobile.png';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 import styles from './HomeOpinions.module.scss';
 
 const reviews = [
   {
-    name: 'Adam',
-    rating: 5,
+    name: 'Daniel',
+    source: 'Google',
     review:
-      'Stacja diagnostyczna Omega to profesjonalne miejsce z miłą obsługą. Szybka diagnoza i solidne naprawy w przystępnych cenach. Polecam każdemu kierowcy.',
-    department: 'Okręgowa Stacja Kontroli Pojazdów',
+      'Serwis godny polecenia! Serwisuję tutaj samochód już od 4 lat i jestem bardzo zadowolony. Obsługa na wysokim poziomie, zawsze pomocna. Warsztat jest bardzo dobrze wyposażony, a montowane części są tylko wysokiej jakości. Pozdrawiam.',
   },
   {
-    name: 'Monika',
-    rating: 5,
+    name: 'Seweryn',
+    source: 'Google',
     review:
-      'Lambda to najlepszy warsztat, z jakim miałem do czynienia. Fachowa diagnoza, ekspresowe naprawy i konkurencyjne ceny. Zawsze wracam zadowolony.',
-    department: 'Warsztat samochodowy',
+      'Wszystko w jak najlepszym porządku. Szybka, miła, a przede wszystkim profesjonalna obsługa klienta. Bardzo pozytywne doświadczenie! Mój samochód został naprawiony szybko i bezproblemowo. Mechanicy są bardzo pomocni i znają się na rzeczy. Polecam ten warsztat każdemu, kto szuka rzetelnej obsługi.',
   },
   {
-    name: 'Marek',
-    rating: 5,
+    name: 'Sebastian',
+    source: 'Google',
     review:
-      'Firma Auto-Bud jest naprawdę godna polecenia. Fachowa obsługa, terminowe naprawy i uczciwe ceny. Zawsze wracam zadowolony.',
-    department: 'Warsztat samochodowy',
+      'Serwisuję tutaj niejeden samochód już od wielu lat i za każdym razem jestem zadowolony. Montowane części zamienne są zawsze dobrej jakości i w przyzwoitej cenie. Podobnie z ceną usług - są współmierne do nakładu pracy, jaki trzeba wykonać. Czas realizacji naprawy jest szybki, chyba że pojawiają się jakieś komplikacje. Polecam!',
   },
 ];
 
 export const HomeOpinions = () => {
-  const [activeIndex] = useState(0);
-  const opinionsRef = useRef<HTMLDivElement>(null);
-  const reviewRefs = useRef<HTMLDivElement[] | null[]>([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const longestReview = reviews.reduce((longest, current) =>
+    current.review.length > longest.review.length ? current : longest,
+  );
 
   useEffect(() => {
-    if (reviewRefs.current[activeIndex] && opinionsRef.current) {
-      opinionsRef.current.scrollTo({
-        left: reviewRefs!.current[activeIndex]!.clientWidth * activeIndex,
-        behavior: 'smooth',
-      });
-    }
-  }, [activeIndex]);
+    const intervalId = window.setInterval(() => {
+      setActiveIndex(prev => (prev === reviews.length - 1 ? 0 : prev + 1));
+    }, 5000);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
+  const goToPrev = () => {
+    setActiveIndex(prev => (prev === 0 ? reviews.length - 1 : prev - 1));
+  };
+
+  const goToNext = () => {
+    setActiveIndex(prev => (prev === reviews.length - 1 ? 0 : prev + 1));
+  };
+
+  const activeReview = reviews[activeIndex];
 
   return (
-    <div className={styles['home-opinions']}>
-      <div className={styles['home-opinions__background']}>
-        <Image
-          className={styles['home-opinions__background-mobile']}
-          src={OpinionsBackgroundImage}
-          alt="Subtelne graficzne tło z poziomymi liniami"
-        />
-        <Image
-          className={styles['home-opinions__background-desktop']}
-          src={OpinionsBackgroundDesktopImage}
-          alt="Subtelne graficzne tło z poziomymi liniami"
-        />
-      </div>
-      <h2 className={styles['home-opinions__title']}>Opinie klientów</h2>
-      <p className={styles['home-opinions__subtitle']}>
-        Co klienci mówią o nas?
-      </p>
-      <hr className={styles['home-opinions__divider']} />
-      <div className={styles['opinions']} ref={opinionsRef}>
-        {reviews.map((review, index) => (
-          <div key={index} className={styles['opinions__item']}>
-            <div className={styles['opinions__rating-container']}>
-              <p className={styles['opinions__name']}>{review.name}</p>
-              <div className={styles['opinions__rating']}>
-                {[0, 1, 2, 3, 4].map(star => (
-                  <span key={star} className={styles['opinions__rating-star']}>
-                    ★
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className={styles['opinions__department-container']}>
-              <p className={styles['opinions__department']}>
-                {review.department}
-              </p>
-            </div>
-            <p className={styles['opinions__review']}>{review.review}</p>
+    <section className={styles['home-opinions']}>
+      <div className={styles['home-opinions__grid']}>
+        <div className={styles['home-opinions__content']}>
+          <p className={styles['home-opinions__label']}>Opinie</p>
+          <h2 className={styles['home-opinions__title']}>
+            Kierowcy wracają do nas po jakość i spokój
+          </h2>
+          <hr className={styles['home-opinions__divider']} />
+          <p className={styles['home-opinions__description']}>
+            Autentyczne opinie są dla nas najlepszą rekomendacją. Sprawdź
+            recenzje i podziel się własną.
+          </p>
+
+          <div className={styles['home-opinions__actions']}>
+            <Link
+              href="https://www.google.com/search?q=Auto-Bud+Bosch+Car+Service+opinie"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles['home-opinions__button']}
+            >
+              Opinie Google
+            </Link>
+            <Link
+              href="https://www.facebook.com/search/top?q=Auto-Bud%20Bosch%20Car%20Service"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles['home-opinions__button']}
+            >
+              Opinie Facebook
+            </Link>
           </div>
-        ))}
+        </div>
+
+        <article className={styles['review-card']} aria-live="polite">
+          <div className={styles['review-card__top']}>
+            <span className={styles['review-card__quote']} aria-hidden="true">
+              &#8223;
+            </span>
+
+            <div className={styles['review-card__controls']}>
+              <button
+                type="button"
+                onClick={goToPrev}
+                className={styles['review-card__arrow']}
+                aria-label="Poprzednia opinia"
+              >
+                &#8249;
+              </button>
+              <button
+                type="button"
+                onClick={goToNext}
+                className={styles['review-card__arrow']}
+                aria-label="Następna opinia"
+              >
+                &#8250;
+              </button>
+            </div>
+          </div>
+
+          <div className={styles['review-card__textWrap']}>
+            <blockquote
+              className={`${styles['review-card__text']} ${styles['review-card__text--ghost']}`}
+              aria-hidden="true"
+            >
+              &bdquo;{longestReview.review}&rdquo;
+            </blockquote>
+            <blockquote
+              key={`${activeReview.name}-${activeIndex}`}
+              className={`${styles['review-card__text']} ${styles['review-card__text--active']}`}
+            >
+              &bdquo;{activeReview.review}&rdquo;
+            </blockquote>
+          </div>
+
+          <p className={styles['review-card__author']}>
+            <span>{activeReview.name}</span>
+            <span aria-hidden="true">&#8226;</span>
+            <span>{activeReview.source}</span>
+          </p>
+
+          <div className={styles['review-card__dots']}>
+            {reviews.map((review, index) => (
+              <button
+                key={`${review.name}-${index}`}
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                aria-label={`Pokaż opinię ${index + 1}`}
+                aria-pressed={activeIndex === index}
+                className={
+                  activeIndex === index
+                    ? `${styles['review-card__dot']} ${styles['review-card__dot--active']}`
+                    : styles['review-card__dot']
+                }
+              />
+            ))}
+          </div>
+        </article>
       </div>
-      {/* <div className={styles['opinions__pagination']}>
-        {reviews.map((review, index) => (
-          <div
-            key={index}
-            className={`${styles['opinions__pagination-dot']} ${index === activeIndex ? styles['active-dot'] : ''}`}
-            onClick={() => handleDotClick(index)}
-            onKeyDown={() => handleDotClick(index)}
-            role="button"
-            tabIndex={index}
-          ></div>
-        ))}
-      </div> */}
-    </div>
+    </section>
   );
 };

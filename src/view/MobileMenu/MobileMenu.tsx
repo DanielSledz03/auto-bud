@@ -44,6 +44,16 @@ const MobileMenu = () => {
               Kontakt
             </Link>
           </li>
+          <li className={styles.menu__item}>
+            <Link onClick={toggleMenu} href="/slask">
+              Śląsk
+            </Link>
+          </li>
+          <li className={styles.menu__item}>
+            <Link onClick={toggleMenu} href="/wizyta">
+              Umów wizytę
+            </Link>
+          </li>
         </ul>
       </nav>
 
@@ -58,9 +68,13 @@ const MobileMenu = () => {
           <p className={styles.menu__buttonCall__text}>+48 502 567 630</p>
         </Link>
 
-        <div className={styles.menu__appointmentButton}>
+        <Link
+          onClick={toggleMenu}
+          href="/wizyta"
+          className={styles.menu__appointmentButton}
+        >
           <p>Umów wizytę</p>
-        </div>
+        </Link>
       </div>
     </div>
   );

@@ -1,78 +1,147 @@
 .home-opinions {
-  @apply relative mt-20 flex w-full flex-col items-start overflow-hidden px-5 pb-12 md:px-10 lg:mb-20 lg:px-20 xl:px-48 2xl:px-64;
+  @apply mt-10 w-full border-t-[1px] border-lightGray2 px-5 pb-12 pt-8 md:px-10 lg:mt-12 lg:pt-10 lg:px-20 xl:px-48 2xl:px-64;
 
-  &__background {
-    @apply absolute bottom-0 left-0 right-0 top-0 z-[5] h-full w-full bg-contain;
+  &__grid {
+    @apply grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-stretch lg:gap-10;
+  }
 
-    &-desktop {
-      @apply hidden lg:block;
-    }
+  &__content {
+    @apply flex flex-col pt-2 lg:pt-6;
+  }
 
-    &-mobile {
-      @apply block lg:hidden;
-    }
+  &__label {
+    @apply mb-1 text-[14px] text-red lg:text-[14px];
   }
 
   &__title {
-    @apply z-[10] mb-1 text-[14px] text-red lg:text-[14px];
-  }
-
-  &__subtitle {
-    @apply z-[10] text-[20px] font-semibold text-darkGray lg:text-[32px];
+    @apply mt-1 max-w-[620px] text-[20px] font-semibold leading-[1.2] text-darkGray lg:text-[32px];
   }
 
   &__divider {
-    @apply z-[10] mb-8 mt-4 w-[100px] border-[1px] border-darkGray lg:mt-4 lg:w-[130px] lg:border-[1px];
+    @apply mb-0 mt-4 w-[100px] border-[1px] border-darkGray lg:w-[130px];
+  }
+
+  &__description {
+    @apply mt-5 max-w-[640px] text-[14px] leading-[1.5] text-mediumGray2 lg:text-[18px];
+  }
+
+  &__actions {
+    @apply mt-8 flex flex-wrap gap-3;
+  }
+
+  &__button {
+    @apply rounded-full border border-lightGray10 bg-white px-6 py-2.5 text-[15px] font-medium text-darkGray transition-colors duration-300 hover:border-red hover:text-red lg:text-[17px];
   }
 }
 
-.opinions {
-  @apply z-10 flex w-full overflow-x-hidden; /* Ukrywanie poziomego przewijania */
+.review-card {
+  @apply flex h-full min-h-[360px] flex-col rounded-[20px] border border-lightGray2 bg-lightGray5 p-6 shadow-[0_4px_14px_rgba(0,0,0,0.05)] lg:p-10;
+  overflow-anchor: none;
 
-  &__item {
-    @apply mr-8 min-w-[270px] rounded-[5px] bg-white p-4 pb-8 shadow-md last:mr-0 lg:flex lg:flex-col;
-    flex: 0 0 31%; /* Każdy element zajmuje 100% szerokości kontenera */
-    box-sizing: border-box;
+  &__top {
+    @apply flex items-center justify-between;
   }
 
-  &__name {
-    @apply mb-4 mt-2 text-[20px] font-semibold text-darkGray lg:mb-0 lg:mt-0 lg:text-[24px];
+  &__quote {
+    @apply text-[42px] font-semibold leading-none text-red lg:text-[48px];
   }
 
-  &__department {
-    @apply text-[10px] font-semibold text-lightGray3 lg:text-[12px];
+  &__controls {
+    @apply flex items-center gap-3;
+  }
 
-    &-container {
-      @apply my-5 lg:w-full;
+  &__arrow {
+    @apply flex h-[38px] w-[38px] items-center justify-center rounded-full border border-lightGray10 bg-lightGray5 text-[22px] text-darkGray transition-colors duration-300 hover:border-red hover:text-red;
+  }
+
+  &__textWrap {
+    @apply relative mt-5 lg:mt-6;
+  }
+
+  &__text {
+    @apply m-0 text-[16px] font-medium leading-[1.5] text-darkGray lg:text-[22px];
+
+    &--ghost {
+      visibility: hidden;
+      pointer-events: none;
     }
 
-    &-bold {
-      @apply text-[10px] font-semibold text-darkGray lg:text-[12px];
+    &--active {
+      @apply absolute inset-0;
+      animation: reviewFadeIn 0.2s ease-out;
     }
   }
 
-  &__review {
-    @apply text-[12px] font-light italic text-darkGray lg:block lg:w-full;
-  }
+  &__author {
+    @apply mt-6 flex items-center gap-2 text-[14px] text-mediumGray2 lg:text-[16px];
 
-  &__rating {
-    &-container {
-      @apply lg:flex lg:items-center lg:justify-between;
-    }
-    &-star {
-      @apply text-xl text-red;
+    span:first-child {
+      @apply font-semibold text-darkGray;
     }
   }
 
-  &__pagination {
-    @apply z-[10] mt-8 flex w-full justify-start;
+  &__dots {
+    @apply mt-auto flex items-center gap-3 pt-8;
+  }
 
-    &-dot {
-      @apply mr-3 h-[20px] w-[20px] cursor-pointer rounded-full bg-lightGray6;
+  &__dot {
+    @apply h-[10px] w-[34px] rounded-full bg-lightGray10 transition-colors duration-300;
+
+    &--active {
+      @apply bg-red;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-opinions {
+    &__title {
+      @apply text-[20px];
     }
 
-    &-dot.active-dot {
-      @apply bg-darkGray;
+    &__description {
+      @apply text-[14px];
     }
+
+    &__button {
+      @apply text-[15px];
+    }
+  }
+
+  .review-card {
+    @apply min-h-[300px] rounded-[16px] p-5;
+
+    &__quote {
+      @apply text-[40px];
+    }
+
+    &__arrow {
+      @apply h-[36px] w-[36px] text-[20px];
+    }
+
+    &__textWrap {
+      @apply mt-4;
+    }
+
+    &__text {
+      @apply text-[16px];
+    }
+
+    &__author {
+      @apply mt-6 text-[14px];
+    }
+
+    &__dots {
+      @apply pt-6;
+    }
+  }
+}
+
+@keyframes reviewFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

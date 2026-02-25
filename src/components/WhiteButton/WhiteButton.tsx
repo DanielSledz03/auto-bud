@@ -20,10 +20,16 @@ export const WhiteButton = ({
   onClick,
   disabled,
 }: WhiteButtonProps) => {
+  const isExternal =
+    href.startsWith('http://') ||
+    href.startsWith('https://') ||
+    href.startsWith('tel:') ||
+    href.startsWith('mailto:');
+
   return (
     <Link
-      target="_blank"
-      rel="noopener noreferrer"
+      target={isExternal ? '_blank' : undefined}
+      rel={isExternal ? 'noopener noreferrer' : undefined}
       href={href}
       className={`${styles.button} ${buttonStyles}`}
       onClick={disabled ? e => e.preventDefault() : onClick}

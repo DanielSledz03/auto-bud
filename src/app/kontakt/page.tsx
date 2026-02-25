@@ -1,54 +1,105 @@
-import type { Metadata } from 'next';
+import Link from 'next/link';
 
-import { PromotionsBanner, TextHeader } from '@/components';
+import { TextHeader } from '@/components';
+import Breadcrumbs from '@/components/Seo/Breadcrumbs';
+import { businessLocations } from '@/data/businessLocations';
+import ContactWithUs from '@/form/ContactWithUs/ContactWithUs';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title:
-    'Kontakt - Auto-Bud Bosch Car Service | Telefon, adres, godziny otwarcia',
+export const metadata = buildPageMetadata({
+  title: 'Kontakt | Auto-Bud Bosch Car Service - Świętochłowice i Ruda Śląska',
   description:
-    'Skontaktuj się z Auto-Bud Bosch Car Service: +48 502 567 630. Lokalizacje w Świętochłowicach i Rudzie Śląskiej (Godula, Bykowina). Obsługujemy także Chorzów, Katowice i cały Śląsk.',
+    'Kontakt do Auto-Bud Bosch Car Service: Świętochłowice (ul. Katowicka 73), Ruda Śląska Godula (ul. Stara 1), Ruda Śląska Bykowina (ul. Szpaków 51).',
+  path: '/kontakt',
   keywords: [
     'kontakt auto-bud',
-    'telefon serwis samochodowy',
-    'adres warsztat bosch',
-    'godziny otwarcia',
-    'umów wizytę',
-    'serwis samochodowy ruda śląska',
-    'serwis samochodowy świętochłowice',
-    'bosch car service kontakt',
-    'warsztat godula',
-    'warsztat bykowina',
-    'serwis samochodowy chorzów',
-    'serwis samochodowy katowice',
-    'kontakt serwis samochodowy śląsk',
+    'warsztat samochodowy świętochłowice telefon',
+    'stacja diagnostyczna ruda śląska kontakt',
+    'umów wizytę auto-bud',
   ],
-  openGraph: {
-    title: 'Kontakt - Auto-Bud Bosch Car Service',
-    description:
-      'Kontakt do Auto-Bud Bosch Car Service w Świętochłowicach i Rudzie Śląskiej. Dojazd także z Chorzowa i Katowic.',
-    type: 'website',
-    url: 'https://www.auto-bud.com.pl/kontakt',
-    locale: 'pl_PL',
-  },
-  alternates: {
-    canonical: 'https://www.auto-bud.com.pl/kontakt',
-  },
-};
+});
 
 const KontaktPage = () => {
   return (
     <>
-      <TextHeader title="Kontakt">
-        Jesteśmy tu, aby Ci pomóc! Skontaktuj się z nami w sprawie wszelkich
-        pytań, problemów czy sugestii. <br />
-        Nasz zespół jest zawsze gotowy, aby zapewnić Ci najlepszą obsługę.
-      </TextHeader>
-      <PromotionsBanner
-        title="Umów wizytę"
-        shorter
-        href="https://play.google.com/store/apps/details?id=com.companyname.icmobile"
-        description="Zarezerwuj termin już teraz i skorzystaj z naszych wyjątkowych usług. Kliknij tutaj, aby umówić wizytę i cieszyć się profesjonalną obsługą bez czekania."
+      <Breadcrumbs
+        items={[
+          { name: 'Strona główna', path: '/' },
+          { name: 'Kontakt', path: '/kontakt' },
+        ]}
       />
+      <TextHeader title="Kontakt">
+        Masz pytania o zakres naprawy, dojazd lub najbliższy termin? Skontaktuj
+        się z nami telefonicznie albo umów wizytę online.
+      </TextHeader>
+
+      <section className="px-5 md:px-10 lg:px-20 xl:px-48 2xl:px-64">
+        <h2 className="text-[24px] font-semibold text-darkGray lg:text-[32px]">
+          Dane kontaktowe i lokalizacje
+        </h2>
+        <div className="mt-6 grid gap-4 lg:grid-cols-3">
+          {businessLocations.map(location => (
+            <article
+              key={location.id}
+              className="rounded-[10px] border border-lightGray2 p-4"
+            >
+              <h3 className="text-lg font-semibold text-darkGray">
+                {location.city}, {location.district}
+              </h3>
+              <p className="mt-3 text-sm text-mediumGray">
+                {location.fullAddress}
+              </p>
+              <p className="mt-2 text-sm text-mediumGray">
+                tel.{' '}
+                <Link
+                  href={`tel:${location.landlineE164}`}
+                  className="font-medium text-darkGray"
+                >
+                  {location.landlineDisplay}
+                </Link>
+              </p>
+              <p className="text-sm text-mediumGray">
+                kom.{' '}
+                <Link
+                  href={`tel:${location.mobileE164}`}
+                  className="font-medium text-darkGray"
+                >
+                  {location.mobileDisplay}
+                </Link>
+              </p>
+              <Link
+                href={location.mapUrl}
+                target="_blank"
+                className="mt-3 inline-block text-sm font-medium text-red"
+              >
+                Otwórz mapę
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-10 px-5 pb-4 md:px-10 lg:mt-12 lg:px-20 lg:pb-6 xl:px-48 2xl:px-64">
+        <div className="rounded-[10px] border border-lightGray2 bg-lightGray p-5 lg:flex lg:items-center lg:justify-between lg:gap-6 lg:p-6">
+          <div>
+            <h2 className="text-[22px] font-semibold text-darkGray lg:text-[28px]">
+              Wolisz zgłosić termin online?
+            </h2>
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-mediumGray lg:text-base">
+              Przejdź do formularza wizyty i zostaw preferowany dzień oraz porę
+              kontaktu. Oddzwonimy i potwierdzimy termin.
+            </p>
+          </div>
+          <Link
+            href="/wizyta"
+            className="mt-5 inline-flex rounded-md bg-darkGray px-5 py-3 text-sm font-medium text-white lg:mt-0"
+          >
+            Przejdź do formularza wizyty
+          </Link>
+        </div>
+      </section>
+
+      <ContactWithUs />
     </>
   );
 };

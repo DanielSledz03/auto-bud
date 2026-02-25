@@ -6,3 +6,4 @@ export * from './Packages/Packages';
 export * from './HomeAboutUs/HomeAboutUs';
 export * from './HomeHeader/HomeHeader';
 export * from './HomeAdditionalOffers/HomeAdditionalServices';
+export * from './ServiceArea/ServiceArea';

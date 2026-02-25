@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 import ArrowDown from '@/../public/assets/icons/arrowDown.svg';
@@ -33,15 +34,17 @@ const LocationList = () => {
 
   return (
     <div className={styles['location-list']}>
-      {locations.map((location, index) => (
-        <div key={index} className="lg:w-1/3">
-          {isWideScreen ? (
-            <div
-              role="button"
-              onKeyDown={() => toggleOpen(index)}
-              tabIndex={0}
+      {locations.map((location, index) => {
+        const shouldShowDetails = isWideScreen || openIndex === index;
+
+        return (
+          <div key={location.name} className="lg:w-1/3">
+            <button
+              type="button"
               onClick={() => toggleOpen(index)}
               className={styles['location-list__button']}
+              aria-expanded={shouldShowDetails}
+              aria-controls={`footer-location-${index}`}
             >
               <span className={styles['location-list__button-heading']}>
                 {location.name}
@@ -52,50 +55,28 @@ const LocationList = () => {
                 alt="Strzałka wskazująca w dół"
                 width={12}
                 className={
-                  openIndex === index
+                  shouldShowDetails
                     ? styles['location-list__button__icon-up']
                     : styles['location-list__button__icon-down']
                 }
               />
+            </button>
 
-              <div className={styles['location-list__details']}>
+            {shouldShowDetails && (
+              <div
+                id={`footer-location-${index}`}
+                className={styles['location-list__details']}
+              >
                 <div>{location.address}</div>
                 <div>{location.zipCode}</div>
+                <Link href={location.linkToGoogleMaps} target="_blank">
+                  Zobacz na mapie
+                </Link>
               </div>
-            </div>
-          ) : (
-            <div
-              role="button"
-              onKeyDown={() => toggleOpen(index)}
-              tabIndex={0}
-              onClick={() => toggleOpen(index)}
-              className={styles['location-list__button']}
-            >
-              <span className={styles['location-list__button-heading']}>
-                {location.name}
-              </span>
-
-              <Image
-                src={ArrowDown}
-                alt="Strzałka wskazująca w dół"
-                width={12}
-                className={
-                  openIndex === index
-                    ? styles['location-list__button__icon-up']
-                    : styles['location-list__button__icon-down']
-                }
-              />
-
-              {openIndex === index && (
-                <div className={styles['location-list__details']}>
-                  <div>{location.address}</div>
-                  <div>{location.zipCode}</div>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      ))}
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 };

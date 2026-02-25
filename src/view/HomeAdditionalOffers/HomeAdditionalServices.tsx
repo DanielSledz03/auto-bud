@@ -39,16 +39,12 @@ export const HomeAdditionalServices = () => {
               technicznie.
             </p>
             <WhiteButton
-              buttonStyles={styles['home-additional-services__button-desktop']}
+              buttonStyles={styles['home-additional-services__button']}
               title="Dowiedz się więcej"
+              href="/uslugi"
             />
           </div>
         </div>
-        <hr className={styles['home-additional-services__item-divider']} />
-        <WhiteButton
-          buttonStyles={styles['home-additional-services__button']}
-          title="Dowiedz się więcej"
-        />
       </div>
       <div className={styles['home-additional-services__section']}>
         <div className={styles['home-additional-services__item']}>
@@ -74,16 +70,12 @@ export const HomeAdditionalServices = () => {
               Śląska.
             </p>
             <WhiteButton
-              buttonStyles={styles['home-additional-services__button-desktop']}
+              buttonStyles={styles['home-additional-services__button']}
               title="Dowiedz się więcej"
+              href="/uslugi"
             />
           </div>
         </div>
-        <hr className={styles['home-additional-services__item-divider']} />
-        <WhiteButton
-          buttonStyles={styles['home-additional-services__button']}
-          title="Dowiedz się więcej"
-        />
       </div>
     </div>
   );

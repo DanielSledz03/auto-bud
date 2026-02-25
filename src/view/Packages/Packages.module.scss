@@ -1,5 +1,5 @@
 .accordion {
-  @apply mt-12 flex flex-col justify-start px-5 md:px-10 lg:mt-0 lg:px-20 lg:pb-16 lg:pt-8 xl:px-48 2xl:px-64;
+  @apply mt-10 flex flex-col justify-start px-5 md:px-10 lg:mt-12 lg:px-20 lg:pb-8 lg:pt-2 xl:px-48 2xl:px-64;
 
   &__title {
     @apply mb-1 text-[14px] text-red;

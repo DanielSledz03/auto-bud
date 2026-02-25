@@ -1,57 +1,214 @@
-import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { AvailableServices, LocationHeader, ServiceCard } from '@/components';
-import {
-  locationGalleryProps,
-  serviceCardBetaProps,
-  serviceCardOmegaProps,
-  availableServicesProps,
-  locationHeaderProps,
-} from '@/constants/godula';
-import { LocationGallery, Packages } from '@/view';
+import { LocationHeader } from '@/components';
+import Breadcrumbs from '@/components/Seo/Breadcrumbs';
+import FaqSection from '@/components/Seo/FaqSection';
+import { locationHeaderProps } from '@/constants/godula';
+import CarWashImage from '@/images/location-cards/carwash.jpg';
+import StationImage from '@/images/location-cards/station.jpg';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title:
-    'Ruda Śląska Godula - Auto-Bud Bosch Car Service | Okręgowa stacja diagnostyczna',
-  description:
-    'Auto-Bud Bosch Car Service w Rudzie Śląskiej - Goduli przy ul. Starej 1. Okręgowa stacja kontroli pojazdów, myjnia bezdotykowa i biuro obsługi. Szybki dojazd z Chorzowa i Katowic.',
-  keywords: [
-    'auto-bud godula',
-    'serwis samochodowy godula',
-    'okręgowa stacja kontroli pojazdów godula',
-    'warsztat bosch godula',
-    'przegląd techniczny godula',
-    'diagnostyka samochodowa godula',
-    'myjnia bezdotykowa godula',
-    'bosch car service godula',
-    'ul. stara 1 godula',
-    'ruda śląska godula serwis',
-    'stacja kontroli pojazdów ruda śląska',
-    'serwis samochodowy chorzów',
-    'serwis samochodowy katowice',
-  ],
-  openGraph: {
-    title: 'Ruda Śląska Godula - Auto-Bud Bosch Car Service',
+const popularServices = [
+  {
+    href: '/uslugi/przeglad-techniczny',
+    title: 'Przegląd techniczny okresowy',
     description:
-      'Okręgowa stacja kontroli pojazdów i myjnia bezdotykowa w Rudzie Śląskiej - Goduli (ul. Stara 1).',
-    type: 'website',
-    url: 'https://www.auto-bud.com.pl/godula',
-    locale: 'pl_PL',
+      'Badania okresowe i dodatkowe wykonywane w Okręgowej Stacji Kontroli Pojazdów.',
   },
-  alternates: {
-    canonical: 'https://www.auto-bud.com.pl/godula',
+  {
+    href: '/uslugi/przeglad-techniczny',
+    title: 'Przegląd techniczny pojazdów z LPG',
+    description:
+      'Wykonujemy badania techniczne aut wyposażonych w instalację gazową.',
   },
-};
+];
+
+const locationFacilities = [
+  {
+    title: 'Okręgowa stacja kontroli pojazdów - Godula',
+    description:
+      'Wykonujemy badania techniczne aut osobowych, dostawczych i pojazdów z instalacją LPG.',
+    image: StationImage,
+    imageAlt: 'Budynek stacji kontroli pojazdów Auto-Bud Godula',
+    link: '/uslugi/przeglad-techniczny',
+    linkLabel: 'Sprawdź przeglądy techniczne',
+  },
+  {
+    title: 'Myjnia bezdotykowa',
+    description:
+      'Pięć programów mycia i wygodny dojazd dla kierowców z Rudy Śląskiej, Bytomia i Chorzowa.',
+    image: CarWashImage,
+    imageAlt: 'Auto-Bud myjnia bezdotykowa w lokalizacji Godula',
+    link: '/godula',
+    linkLabel: 'Ta usługa jest dostępna na miejscu',
+  },
+];
+
+const godulaFaq = [
+  {
+    question: 'Czy w Goduli wykonujecie badania techniczne pojazdów z LPG?',
+    answer:
+      'Tak. Okręgowa stacja przy ul. Starej 1 wykonuje badania techniczne pojazdów z instalacją LPG.',
+  },
+  {
+    question: 'Jakie są godziny pracy stacji i myjni w Goduli?',
+    answer:
+      'Stacja działa od poniedziałku do piątku 07:00-19:00 oraz w soboty 08:00-14:00. Myjnia jest czynna codziennie 07:00-22:00.',
+  },
+  {
+    question: 'Czy w Goduli wykonujecie naprawy mechaniczne?',
+    answer:
+      'Nie. Lokalizacja Godula realizuje przeglądy techniczne oraz udostępnia myjnię bezdotykową.',
+  },
+];
+
+export const metadata = buildPageMetadata({
+  title:
+    'Ruda Śląska Godula - stacja diagnostyczna | Auto-Bud Bosch Car Service',
+  description:
+    'Auto-Bud Godula, ul. Stara 1: okręgowa stacja kontroli pojazdów i myjnia bezdotykowa. Wygodny dojazd z Rudy Śląskiej, Bytomia i Katowic.',
+  path: '/godula',
+  keywords: [
+    'stacja diagnostyczna godula',
+    'stacja kontroli pojazdów godula',
+    'przegląd techniczny godula',
+    'przegląd techniczny ruda śląska',
+    'myjnia bezdotykowa godula',
+  ],
+});
 
 const GodulaPage = () => {
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { name: 'Strona główna', path: '/' },
+          { name: 'Ruda Śląska Godula', path: '/godula' },
+        ]}
+      />
       <LocationHeader {...locationHeaderProps} />
-      <AvailableServices {...availableServicesProps} />
-      <ServiceCard {...serviceCardOmegaProps} />
-      <Packages />
-      <ServiceCard {...serviceCardBetaProps} />
-      <LocationGallery {...locationGalleryProps} />
+
+      <section className="mt-8 px-5 md:px-10 lg:mt-10 lg:px-20 xl:px-48 2xl:px-64">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+          Okręgowa stacja diagnostyczna Ruda Śląska Godula - najważniejsze
+          informacje
+        </h2>
+        <p className="mt-6 max-w-4xl text-sm leading-7 text-mediumGray lg:text-base">
+          Punkt Auto-Bud Godula przy ul. Starej 1 to lokalizacja dla kierowców,
+          którzy chcą szybko wykonać przegląd techniczny i skorzystać z myjni
+          bezdotykowej w jednym miejscu. Obsługujemy klientów z Rudy Śląskiej,
+          Bytomia, Chorzowa i Katowic.
+        </p>
+
+        <div className="mt-6 grid gap-4 lg:grid-cols-2">
+          <article className="rounded-[10px] border border-lightGray2 p-5">
+            <h3 className="text-lg font-semibold text-darkGray">
+              Godziny stacji
+            </h3>
+            <p className="mt-2 text-sm leading-7 text-mediumGray">
+              Poniedziałek - piątek: 07:00 - 19:00
+              <br />
+              Sobota: 08:00 - 14:00
+            </p>
+          </article>
+          <article className="rounded-[10px] border border-lightGray2 p-5">
+            <h3 className="text-lg font-semibold text-darkGray">Kontakt</h3>
+            <p className="mt-2 text-sm leading-7 text-mediumGray">
+              tel. stacjonarny:{' '}
+              <Link href="tel:+48327255888" className="text-darkGray">
+                32 72 55 888
+              </Link>
+              <br />
+              tel. komórkowy:{' '}
+              <Link href="tel:+48570190829" className="text-darkGray">
+                570 190 829
+              </Link>
+            </p>
+          </article>
+        </div>
+
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link
+            href="/wizyta"
+            className="rounded-md bg-darkGray px-5 py-3 text-sm font-medium text-white"
+          >
+            Umów wizytę online
+          </Link>
+          <Link
+            href="/uslugi/przeglad-techniczny"
+            className="rounded-md border border-lightGray2 px-5 py-3 text-sm font-medium text-darkGray"
+          >
+            Przegląd techniczny
+          </Link>
+        </div>
+      </section>
+
+      <section className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+          Najczęściej wybierane usługi w Goduli
+        </h2>
+        <div className="mt-6 grid gap-4 lg:grid-cols-2">
+          {popularServices.map(service => (
+            <Link
+              key={`${service.href}-${service.title}`}
+              href={service.href}
+              className="rounded-[10px] border border-lightGray2 p-5 transition-colors hover:border-red"
+            >
+              <h3 className="text-lg font-semibold text-darkGray">
+                {service.title}
+              </h3>
+              <p className="mt-2 text-sm leading-7 text-mediumGray">
+                {service.description}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-10 px-5 pb-8 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+          Co znajdziesz w lokalizacji Godula
+        </h2>
+        <div className="mt-6 grid gap-6 lg:grid-cols-2">
+          {locationFacilities.map(facility => (
+            <article
+              key={facility.title}
+              className="overflow-hidden rounded-[10px] border border-lightGray2"
+            >
+              <div className="relative h-48 w-full">
+                <Image
+                  src={facility.image}
+                  alt={facility.imageAlt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-lg font-semibold text-darkGray">
+                  {facility.title}
+                </h3>
+                <p className="mt-2 text-sm leading-7 text-mediumGray">
+                  {facility.description}
+                </p>
+                <Link
+                  href={facility.link}
+                  className="mt-3 inline-block text-sm font-medium text-red"
+                >
+                  {facility.linkLabel}
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <FaqSection
+        title="FAQ: stacja diagnostyczna Ruda Śląska Godula"
+        description="Najczęstsze pytania kierowców o przeglądy techniczne, kontakt i organizację wizyty."
+        items={godulaFaq}
+      />
     </>
   );
 };

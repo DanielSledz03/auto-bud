@@ -13,9 +13,8 @@ const servicesHeader = {
   title: 'Nasze usługi',
   description: (
     <>
-      Poznaj szeroką gamę naszych usług motoryzacyjnych, które zaspokoją
-      wszystkie potrzeby Twojego pojazdu.
-      <br /> Nasza oferta to synonim jakości, profesjonalizmu i zaufania.
+      Oferujemy najważniejsze usługi serwisowe i naprawcze w jednym miejscu.
+      <br /> Każde zlecenie zaczynamy od diagnostyki i jasnej wyceny.
     </>
   ),
 };
@@ -24,7 +23,7 @@ const stationControlProps = {
   title: 'Stacja Kontroli Pojazdów',
   locations: ['Ruda Śląska, Godula', 'Ruda Śląska, Bykowina', 'Świętochłowice'],
   description:
-    'Nasze Stacje Kontroli Pojazdów zlokalizowane w Rudzie Śląskiej i Świętochłowicach to miejsca, gdzie bezpieczeństwo spotyka się z precyzją. Zadbaj o swoje auto w jednym z naszych profesjonalnych punktów i podróżuj bez obaw. Okręgowa Stacja Diagnostyczna znajduję się w dzielnicy Godula',
+    'Wykonujemy badania okresowe i dodatkowe w Goduli, Bykowinie i Świętochłowicach. Okręgowa Stacja Diagnostyczna działa w dzielnicy Godula.',
   services: [
     {
       name: 'Przegląd techniczny',
@@ -38,7 +37,7 @@ const mechanicWorkshopProps = {
   title: 'Warsztat Samochodowy',
   locations: ['Świętochłowice'],
   description:
-    'Nasz warsztat samochodowy to królestwo mechaniki i nowoczesnych technologii. Powierz swoje auto w ręce naszych doświadczonych specjalistów i ciesz się bezproblemową jazdą.',
+    'Warsztat w Świętochłowicach realizuje naprawy mechaniczne, elektryczne i bieżący serwis pojazdów.',
   services: [
     {
       name: 'Przegląd techniczny',
@@ -52,7 +51,7 @@ const carWashProps = {
   title: 'Myjnia bezdotykowa',
   locations: ['Ruda Śląska, Godula'],
   description:
-    'Nasza myjnia bezdotykowa to idealne miejsce, by Twój samochód lśnił jak nowy. Szybko, skutecznie i bezpiecznie dla lakieru - oto nasza obietnica.',
+    'Myjnia bezdotykowa w Goduli pozwala szybko i bezpiecznie odświeżyć auto.',
   services: [],
   icon: CarWashIcon,
 };
@@ -60,7 +59,7 @@ const carWashProps = {
 const rentCarProps = {
   title: 'Samochód zastępczy',
   description:
-    'Nie pozwól, by naprawa samochodu pokrzyżowała Twoje plany. Skorzystaj z naszej oferty wynajmu samochodu zastępczego i ciesz się mobilnością w każdej sytuacji.',
+    'Na czas naprawy udostępniamy samochód zastępczy po wcześniejszej rezerwacji.',
   services: [
     {
       name: 'Dzień wypożyczenia',
@@ -81,11 +80,8 @@ const roadAssistanceProps = {
   subtitle: 'Pomoc drogowa 24h',
   description: (
     <>
-      Nasza usługa pomocy drogowej to profesjonalne wsparcie dostępne 24 godziny
-      na dobę, 7 dni w tygodniu. Niezależnie od sytuacji, w której się
-      znajdziesz – awaria, wypadek czy problemy z uruchomieniem pojazdu –
-      jesteśmy gotowi, aby Ci pomóc. Dzięki naszemu doświadczeniu i nowoczesnemu
-      sprzętowi, zapewniamy szybkie i skuteczne rozwiązanie problemów na drodze.
+      Pomoc drogowa działa całodobowo przy awarii, kolizji lub problemie z
+      uruchomieniem auta. Reagujemy szybko na terenie Śląska.
       <br />
       <br />
       Numer telefonu:{' '}

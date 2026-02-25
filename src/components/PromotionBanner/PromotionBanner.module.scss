@@ -1,5 +1,5 @@
 .promotionsBanner {
-  @apply mb-16 min-h-[380px] w-full overflow-hidden rounded-lg px-5 md:px-10 lg:px-20 xl:px-52 2xl:px-72;
+  @apply mb-10 min-h-[380px] w-full overflow-hidden rounded-lg px-5 md:px-10 lg:mb-12 lg:px-20 xl:px-52 2xl:px-72;
 
   &-shorter {
     @apply -mb-12;

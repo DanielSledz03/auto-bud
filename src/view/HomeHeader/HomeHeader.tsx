@@ -1,11 +1,8 @@
-'use client';
-
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 import LocationItem from '@/components/LocationItem/LocationItem';
-import HeaderImageDesktop from '@/images/general/index/headerIndexPageDesktop.png';
-import HeaderImageMobile from '@/images/general/index/headerIndexPageMobile.png';
+import HeaderImageDesktop from '@/images/general/index/header.png';
 
 import styles from './HomeHeader.module.scss';
 
@@ -31,34 +28,40 @@ const locations = [
 ];
 
 export const HomeHeader = () => {
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   return (
     <div className={styles.container}>
       <Image
         priority
-        className={isDesktop ? styles.imageDesktop : styles.image}
-        src={isDesktop ? HeaderImageDesktop : HeaderImageMobile}
+        className={styles.image}
+        src={HeaderImageDesktop}
         alt="Mechanik w niebieskim kombinezonie pracuje nad silnikiem samochodu w nowoczesnym warsztacie"
         sizes="100vw"
         quality={85}
-        loading="eager"
       />
 
       <h1 className={styles.heading}>
-        Autoryzowany
-        <br /> Bosch Car Service
+        Warsztat i serwis samochodowy na Śląsku
       </h1>
+      <div className={styles.location__serviceAreaHero}>
+        <p className={styles.location__serviceAreaText}>
+          Obsługujemy także klientów z Katowic i całego Śląska.
+        </p>
+        <div className={styles.location__serviceAreaLinks}>
+          <Link
+            className={styles.location__serviceAreaLink}
+            href="/slask#katowice-dojazd"
+          >
+            Dojazd z Katowic
+          </Link>
+          <span className={styles.location__serviceAreaSeparator}>•</span>
+          <Link className={styles.location__serviceAreaLink} href="/slask">
+            Obszar działania na Śląsku
+          </Link>
+        </div>
+      </div>
 
       <div className={styles.location__container}>
-        <p className={styles.location__text}>Wybierz lokalizację</p>
+        <p className={styles.location__text}>Wybierz lokalizację stacjonarną</p>
         <div className={styles.location__wrapper}>
           {locations.map((location, index) => (
             <LocationItem

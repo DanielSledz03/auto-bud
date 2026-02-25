@@ -41,6 +41,11 @@ const MobileMenuLocations = () => {
               Ruda Śląska, Bykowina
             </Link>
           </li>
+          <li className={styles.menu__item}>
+            <Link onClick={handleClick} href="/slask">
+              Śląsk
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>

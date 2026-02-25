@@ -1,5 +1,5 @@
 .location-header {
-  @apply relative mb-10 mt-[100px] min-h-[410px] w-full overflow-hidden rounded-[10px] px-10 py-6 md:mt-[120px] md:px-20 lg:mb-0 lg:mt-[50px] lg:min-h-[300px] lg:px-32 lg:py-24 xl:px-64 2xl:px-80;
+  @apply relative mb-6 mt-6 min-h-[410px] w-full overflow-hidden rounded-[10px] px-6 py-6 md:mt-8 md:px-12 lg:mb-8 lg:mt-10 lg:min-h-[300px] lg:px-24 lg:py-16 xl:px-52 2xl:px-64;
 
   &__background {
     @apply absolute bottom-0 left-0 right-0 top-0 z-[-1] h-full w-full overflow-hidden rounded-[10px] bg-cover bg-center bg-no-repeat px-5 md:px-10 lg:px-20 lg:py-16 xl:px-48 2xl:px-64;

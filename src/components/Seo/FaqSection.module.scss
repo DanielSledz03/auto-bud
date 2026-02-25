@@ -1,12 +1,12 @@
 .faq {
-  @apply relative mt-20 flex w-full flex-col items-start overflow-hidden px-5 pb-12 md:px-10 lg:mb-20 lg:px-20 xl:px-48 2xl:px-64;
+  @apply relative mt-10 flex w-full flex-col items-start overflow-hidden px-5 pb-4 md:px-10 lg:mt-12 lg:pb-6 lg:px-20 xl:px-48 2xl:px-64;
 
   &__header {
     @apply flex w-full flex-col items-start justify-start;
   }
 
   &__title {
-    @apply mb-1 text-[14px] text-red lg:text-[14px];
+    @apply mb-1 text-[14px] text-red;
   }
 
   &__subtitle {
@@ -14,15 +14,20 @@
   }
 
   &__divider {
-    @apply mb-8 mt-4 w-[100px] border-[1px] border-darkGray lg:mt-4 lg:w-[130px] lg:border-[1px];
+    @apply mb-0 mt-4 w-[100px] border-[1px] border-darkGray lg:w-[130px];
+  }
+
+  &__description {
+    @apply mt-5 max-w-4xl text-[14px] leading-7 text-mediumGray lg:text-base;
   }
 
   &__list {
-    @apply flex w-full flex-col gap-4 lg:mt-2;
+    @apply mt-8 flex w-full flex-col gap-4 lg:mt-6;
   }
 
   &__item {
     @apply w-full overflow-hidden rounded-[5px] bg-white shadow-[5px_5px_5px_5px_rgba(0,0,0,0.05)];
+    overflow-anchor: none;
   }
 
   &__question {
@@ -38,8 +43,8 @@
   }
 
   &__answer {
-    @apply bg-white px-4 pb-4 pt-0 lg:px-6 lg:pb-6;
-    animation: slideDown 0.3s ease-out;
+    @apply bg-white px-4 pb-4 pt-3 lg:px-6 lg:pb-6 lg:pt-4;
+    animation: fadeIn 0.2s ease-out;
 
     p {
       @apply m-0 max-w-none text-[12px] leading-6 text-darkGray lg:text-[14px] lg:leading-7;
@@ -49,14 +54,12 @@
   }
 }
 
-@keyframes slideDown {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
