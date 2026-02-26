@@ -25,9 +25,9 @@ export const HomeAdditionalServices = () => {
             <Image src={CarIcon} alt="Ikona samochodu" loading="lazy" />
           </div>
           <div className={styles['home-additional-services__details']}>
-            <h4 className={styles['home-additional-services__service-title']}>
+            <h3 className={styles['home-additional-services__service-title']}>
               Samochód zastępczy
-            </h4>
+            </h3>
             <p
               className={
                 styles['home-additional-services__service-description']
@@ -56,9 +56,9 @@ export const HomeAdditionalServices = () => {
             />
           </div>
           <div className={styles['home-additional-services__details']}>
-            <h4 className={styles['home-additional-services__service-title']}>
+            <h3 className={styles['home-additional-services__service-title']}>
               Pomoc drogowa
-            </h4>
+            </h3>
             <p
               className={
                 styles['home-additional-services__service-description']

@@ -20,11 +20,11 @@ const LocationItem = ({
 }: LocationItemProps) => {
   return (
     <Link href={url} className={styles.location__item__container}>
-      <h5 className={styles.location__item__heading}>
+      <p className={styles.location__item__heading}>
         {heading}{' '}
         <span className={styles.location__item__heading__span}>{heading2}</span>
-      </h5>
-      <h4 className={styles.location__item__heading2}>{heading2}</h4>
+      </p>
+      <p className={styles.location__item__heading2}>{heading2}</p>
 
       {details.map((detail, index) => (
         <p key={index} className={styles.location__item__text}>

@@ -46,9 +46,9 @@ const CallToUs = () => {
                     {contact.branch}
                   </p>
                 )}
-                <h6 className={styles['call-to-us__address']}>
+                <p className={styles['call-to-us__address']}>
                   {contact.address}
-                </h6>
+                </p>
               </div>
             </div>
             <div className={styles['call-to-us__contact']}>
@@ -56,14 +56,14 @@ const CallToUs = () => {
                 <Image src={PhoneRed} alt="Ikona telefonu" />
               </div>
               <div className={styles['call-to-us__location-info']}>
-                <h6 className={styles['call-to-us__address']}>
+                <p className={styles['call-to-us__address']}>
                   tel.{' '}
                   <span className={styles['call-to-us__address--bold']}>
                     {contact.phone}
                   </span>
-                </h6>
+                </p>
 
-                <h6 className={styles['call-to-us__address']}>
+                <p className={styles['call-to-us__address']}>
                   {contact.mobile && (
                     <>
                       kom.{' '}
@@ -72,7 +72,7 @@ const CallToUs = () => {
                       </span>
                     </>
                   )}
-                </h6>
+                </p>
 
                 <br />
 

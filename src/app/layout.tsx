@@ -1,4 +1,4 @@
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleTagManager } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
@@ -21,6 +21,7 @@ const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   variable: '--font-poppins',
 });
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -134,7 +135,7 @@ export default function RootLayout({
         </main>
         <Footer />
       </body>
-      <GoogleAnalytics gaId={'GTM-MHHH4XVH'} />
+      {GTM_ID ? <GoogleTagManager gtmId={GTM_ID} /> : null}
       <Analytics />
       <SpeedInsights />
     </html>
