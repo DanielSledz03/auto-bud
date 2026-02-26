@@ -2,15 +2,15 @@
   @apply relative mt-10 w-full px-5 pb-6 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64;
 
   &__title {
-    @apply mb-1 text-[14px] text-red;
+    @apply mb-1 text-sm text-red;
   }
 
   &__subtitle {
-    @apply text-[20px] font-semibold text-darkGray lg:text-[32px];
+    @apply text-xl font-semibold text-darkGray lg:text-3xl;
   }
 
   &__description {
-    @apply mt-5 max-w-[950px] text-[14px] leading-[1.6] text-mediumGray2 lg:text-[18px];
+    @apply mt-5 max-w-[950px] text-xs leading-[1.6] text-mediumGray2 lg:text-base;
   }
 
   &__divider {
@@ -21,8 +21,16 @@
     @apply mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5;
   }
 
+  &__quickLinks {
+    @apply mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2;
+  }
+
   &__cityLink {
-    @apply flex min-h-[48px] items-center justify-center rounded-full border border-lightGray10 bg-white px-4 py-2 text-center text-[14px] font-medium leading-tight text-darkGray transition-colors duration-300 hover:border-red hover:text-red lg:text-[16px];
+    @apply flex min-h-[48px] items-center justify-center rounded-full border border-lightGray10 bg-white px-4 py-2 text-center text-sm font-medium leading-tight text-darkGray transition-colors duration-300 hover:border-red hover:text-red lg:text-base;
+
+    &--city {
+      @apply px-2 text-[13px] sm:px-3 sm:text-sm md:whitespace-nowrap lg:text-sm 2xl:text-base;
+    }
   }
 
   &__servicesBox {
@@ -30,14 +38,26 @@
   }
 
   &__servicesTitle {
-    @apply text-[18px] font-semibold text-darkGray lg:text-[24px];
+    @apply text-lg font-semibold text-darkGray lg:text-2xl;
   }
 
   &__servicesList {
-    @apply mt-4 flex flex-wrap gap-3;
+    @apply mt-4 grid gap-3;
+
+    &--four {
+      @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-4;
+    }
+
+    &--three {
+      @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+    }
+
+    &--two {
+      @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-2;
+    }
   }
 
   &__serviceLink {
-    @apply rounded-md border border-lightGray2 bg-lightGray5 px-4 py-2 text-[14px] text-darkGray transition-colors duration-300 hover:border-red hover:text-red;
+    @apply flex min-h-[46px] w-full items-center justify-center rounded-md border border-lightGray2 bg-lightGray5 px-4 py-2 text-center text-sm text-darkGray transition-colors duration-300 hover:border-red hover:text-red;
   }
 }

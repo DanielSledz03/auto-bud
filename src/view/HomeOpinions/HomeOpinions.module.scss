@@ -10,11 +10,11 @@
   }
 
   &__label {
-    @apply mb-1 text-[14px] text-red lg:text-[14px];
+    @apply mb-1 text-sm text-red lg:text-sm;
   }
 
   &__title {
-    @apply mt-1 max-w-[620px] text-[20px] font-semibold leading-[1.2] text-darkGray lg:text-[32px];
+    @apply mt-1 max-w-[620px] text-xl font-semibold leading-[1.2] text-darkGray lg:text-3xl;
   }
 
   &__divider {
@@ -22,7 +22,7 @@
   }
 
   &__description {
-    @apply mt-5 max-w-[640px] text-[14px] leading-[1.5] text-mediumGray2 lg:text-[18px];
+    @apply mt-5 max-w-[640px] text-sm leading-[1.5] text-mediumGray2 lg:text-lg;
   }
 
   &__actions {
@@ -30,7 +30,7 @@
   }
 
   &__button {
-    @apply rounded-full border border-lightGray10 bg-white px-6 py-2.5 text-[15px] font-medium text-darkGray transition-colors duration-300 hover:border-red hover:text-red lg:text-[17px];
+    @apply rounded-full border border-lightGray10 bg-white px-6 py-2.5 text-base font-medium text-darkGray transition-colors duration-300 hover:border-red hover:text-red lg:text-lg;
   }
 }
 
@@ -43,7 +43,7 @@
   }
 
   &__quote {
-    @apply text-[42px] font-semibold leading-none text-red lg:text-[48px];
+    @apply text-4xl font-semibold leading-none text-red lg:text-5xl;
   }
 
   &__controls {
@@ -51,7 +51,7 @@
   }
 
   &__arrow {
-    @apply flex h-[38px] w-[38px] items-center justify-center rounded-full border border-lightGray10 bg-lightGray5 text-[22px] text-darkGray transition-colors duration-300 hover:border-red hover:text-red;
+    @apply flex h-[38px] w-[38px] items-center justify-center rounded-full border border-lightGray10 bg-lightGray5 text-2xl text-darkGray transition-colors duration-300 hover:border-red hover:text-red;
   }
 
   &__textWrap {
@@ -59,7 +59,7 @@
   }
 
   &__text {
-    @apply m-0 text-[16px] font-medium leading-[1.5] text-darkGray lg:text-[22px];
+    @apply m-0 text-sm font-medium leading-[1.6] text-darkGray lg:text-lg;
 
     &--ghost {
       visibility: hidden;
@@ -73,7 +73,7 @@
   }
 
   &__author {
-    @apply mt-6 flex items-center gap-2 text-[14px] text-mediumGray2 lg:text-[16px];
+    @apply mt-6 flex items-center gap-2 text-sm text-mediumGray2 lg:text-base;
 
     span:first-child {
       @apply font-semibold text-darkGray;
@@ -96,15 +96,15 @@
 @media (max-width: 1024px) {
   .home-opinions {
     &__title {
-      @apply text-[20px];
+      @apply text-xl;
     }
 
     &__description {
-      @apply text-[14px];
+      @apply text-sm;
     }
 
     &__button {
-      @apply text-[15px];
+      @apply text-base;
     }
   }
 
@@ -112,11 +112,11 @@
     @apply min-h-[300px] rounded-[16px] p-5;
 
     &__quote {
-      @apply text-[40px];
+      @apply text-4xl;
     }
 
     &__arrow {
-      @apply h-[36px] w-[36px] text-[20px];
+      @apply h-[36px] w-[36px] text-xl;
     }
 
     &__textWrap {
@@ -124,11 +124,11 @@
     }
 
     &__text {
-      @apply text-[16px];
+      @apply text-sm;
     }
 
     &__author {
-      @apply mt-6 text-[14px];
+      @apply mt-6 text-sm;
     }
 
     &__dots {

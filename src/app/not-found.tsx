@@ -1,4 +1,14 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '404 - Nie znaleziono strony | Auto-Bud Bosch Car Service',
+  description: 'Strona, której szukasz, nie istnieje lub została przeniesiona.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function NotFound() {
   return (

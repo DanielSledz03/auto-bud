@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   description:
     'Auto-Bud Bosch Car Service: warsztat i serwis samochodowy na Śląsku. Lokalizacje w Świętochłowicach oraz Rudzie Śląskiej (Godula, Bykowina).',
   applicationName: SITE_NAME,
-  alternates: {
-    canonical: '/',
-  },
   manifest: '/manifest.json',
   icons: {
     icon: [
@@ -115,19 +112,6 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-        <link
-          rel="preload"
-          href="/assets/images/general/index/headerIndexPageDesktop.png"
-          as="image"
-        />
         <Script
           id="organization-structured-data"
           type="application/ld+json"

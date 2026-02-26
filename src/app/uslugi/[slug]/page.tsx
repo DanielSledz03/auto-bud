@@ -259,11 +259,7 @@ export async function generateMetadata({
   const service = servicesBySlug[slug];
 
   if (!service) {
-    return buildPageMetadata({
-      title: 'Usługa | Auto-Bud Bosch Car Service',
-      description: 'Strona usługi Auto-Bud Bosch Car Service.',
-      path: '/uslugi',
-    });
+    notFound();
   }
 
   return buildPageMetadata({
@@ -326,7 +322,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       </section>
 
       <section className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Co obejmuje usługa
         </h2>
         <ul className="mt-6 grid gap-3 text-sm leading-7 text-mediumGray lg:grid-cols-2 lg:text-base">
@@ -342,7 +338,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         id="cennik"
         className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64"
       >
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Cennik orientacyjny
         </h2>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-mediumGray lg:text-base">
@@ -377,7 +373,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       </section>
 
       <section className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Powiązane usługi
         </h2>
         <div className="mt-6 flex flex-wrap gap-3">
