@@ -7,9 +7,10 @@ import ContactWithUs from '@/form/ContactWithUs/ContactWithUs';
 import { buildPageMetadata } from '@/lib/seo';
 
 export const metadata = buildPageMetadata({
-  title: 'Kontakt | Auto-Bud Bosch Car Service - Świętochłowice i Ruda Śląska',
+  title:
+    'Kontakt i lokalizacje | Auto-Bud Bosch Car Service - Świętochłowice, Ruda Śląska',
   description:
-    'Kontakt do Auto-Bud Bosch Car Service: Świętochłowice (ul. Katowicka 73), Ruda Śląska Godula (ul. Stara 1), Ruda Śląska Bykowina (ul. Szpaków 51).',
+    'Kontakt do Auto-Bud Bosch Car Service: ul. Katowicka 73, 41-600 Świętochłowice; ul. Stara 1, 41-703 Ruda Śląska (Godula); ul. Szpaków 51, 41-705 Ruda Śląska (Bykowina).',
   path: '/kontakt',
   keywords: [
     'kontakt auto-bud',
@@ -34,7 +35,7 @@ const KontaktPage = () => {
       </TextHeader>
 
       <section className="px-5 md:px-10 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-[24px] font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Dane kontaktowe i lokalizacje
         </h2>
         <div className="mt-6 grid gap-4 lg:grid-cols-3">
@@ -82,7 +83,7 @@ const KontaktPage = () => {
       <section className="mt-10 px-5 pb-4 md:px-10 lg:mt-12 lg:px-20 lg:pb-6 xl:px-48 2xl:px-64">
         <div className="rounded-[10px] border border-lightGray2 bg-lightGray p-5 lg:flex lg:items-center lg:justify-between lg:gap-6 lg:p-6">
           <div>
-            <h2 className="text-[22px] font-semibold text-darkGray lg:text-[28px]">
+            <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
               Wolisz zgłosić termin online?
             </h2>
             <p className="mt-3 max-w-3xl text-sm leading-7 text-mediumGray lg:text-base">
@@ -95,6 +96,32 @@ const KontaktPage = () => {
             className="mt-5 inline-flex rounded-md bg-darkGray px-5 py-3 text-sm font-medium text-white lg:mt-0"
           >
             Przejdź do formularza wizyty
+          </Link>
+        </div>
+      </section>
+
+      <section className="px-5 pb-4 md:px-10 lg:px-20 lg:pb-6 xl:px-48 2xl:px-64">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
+          Najczęściej wybierane strony lokalne
+        </h2>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <Link
+            href="/mechanik-swietochlowice"
+            className="rounded-md border border-lightGray2 px-4 py-2 text-sm text-darkGray hover:text-red"
+          >
+            Mechanik Świętochłowice
+          </Link>
+          <Link
+            href="/stacja-diagnostyczna-ruda-slaska"
+            className="rounded-md border border-lightGray2 px-4 py-2 text-sm text-darkGray hover:text-red"
+          >
+            Stacja diagnostyczna Ruda Śląska
+          </Link>
+          <Link
+            href="/uslugi"
+            className="rounded-md border border-lightGray2 px-4 py-2 text-sm text-darkGray hover:text-red"
+          >
+            Usługi i cennik
           </Link>
         </div>
       </section>

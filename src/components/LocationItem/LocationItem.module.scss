@@ -5,14 +5,14 @@
     }
 
     &__heading {
-      @apply text-[20px] font-semibold text-white;
+      @apply text-xl font-semibold text-white;
     }
 
     &__heading {
-      @apply text-[20px] font-semibold text-white;
+      @apply text-xl font-semibold text-white;
 
       &__span {
-        @apply text-[20px] font-semibold text-white lg:hidden;
+        @apply text-xl font-semibold text-white lg:hidden;
       }
     }
 
@@ -21,7 +21,7 @@
     }
 
     &__text {
-      @apply mt-2 text-[12px] text-lightGray3 lg:block lg:w-full;
+      @apply mt-2 text-xs text-lightGray3 lg:block lg:w-full;
     }
 
     &__button {

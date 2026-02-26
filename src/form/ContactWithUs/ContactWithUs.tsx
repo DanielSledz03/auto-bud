@@ -159,20 +159,25 @@ const ContactWithUs = () => {
             </p>
           </div>
         </div>
-        <div
-          onClick={() => setIsCheckboxChecked(!isCheckboxChecked)}
-          onKeyDown={() => setIsCheckboxChecked(!isCheckboxChecked)}
-          role="button"
-          tabIndex={0}
-          className={styles['form__checkbox-container']}
-        >
-          <div className={styles['form__checkbox']}>
-            <div
-              className={`${styles['form__checkbox-inner']} ${isCheckboxChecked ? styles['form__checkbox-checked'] : ''}`}
-            />
-          </div>
-
-          <label className={styles['form__statue-text']} htmlFor="statue">
+        <div className={styles['form__checkbox-container']}>
+          <input
+            id="consent"
+            name="consent"
+            type="checkbox"
+            checked={isCheckboxChecked}
+            onChange={e => setIsCheckboxChecked(e.target.checked)}
+            className="sr-only"
+          />
+          <label
+            className={styles['form__statue-text']}
+            htmlFor="consent"
+            aria-label="Akceptuję regulamin oraz politykę prywatności strony"
+          >
+            <span className={styles['form__checkbox']} aria-hidden="true">
+              <span
+                className={`${styles['form__checkbox-inner']} ${isCheckboxChecked ? styles['form__checkbox-checked'] : ''}`}
+              />
+            </span>
             Akceptuję regulamin oraz politykę prywatności strony
             <span className={styles['form__label-required']}>*</span>
           </label>

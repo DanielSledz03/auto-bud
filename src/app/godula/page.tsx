@@ -7,9 +7,15 @@ import FaqSection from '@/components/Seo/FaqSection';
 import { locationHeaderProps } from '@/constants/godula';
 import CarWashImage from '@/images/location-cards/carwash.jpg';
 import StationImage from '@/images/location-cards/station.jpg';
-import { buildPageMetadata } from '@/lib/seo';
+import { buildPageMetadata, createLocationJsonLd } from '@/lib/seo';
 
 const popularServices = [
+  {
+    href: '/stacja-diagnostyczna-ruda-slaska',
+    title: 'Stacja diagnostyczna Ruda Śląska',
+    description:
+      'Porównaj lokalizacje Godula i Bykowina oraz wybierz dogodny punkt badania technicznego.',
+  },
   {
     href: '/uslugi/przeglad-techniczny',
     title: 'Przegląd techniczny okresowy',
@@ -45,6 +51,15 @@ const locationFacilities = [
   },
 ];
 
+const serviceAreaLinks = [
+  { href: '/slask#ruda-slaska', label: 'Ruda Śląska' },
+  { href: '/slask#bytom', label: 'Bytom' },
+  { href: '/slask#chorzow', label: 'Chorzów' },
+  { href: '/slask#katowice', label: 'Katowice' },
+  { href: '/slask#zabrze', label: 'Zabrze' },
+  { href: '/slask#swietochlowice', label: 'Świętochłowice' },
+];
+
 const godulaFaq = [
   {
     question: 'Czy w Goduli wykonujecie badania techniczne pojazdów z LPG?',
@@ -65,20 +80,24 @@ const godulaFaq = [
 
 export const metadata = buildPageMetadata({
   title:
-    'Ruda Śląska Godula - stacja diagnostyczna | Auto-Bud Bosch Car Service',
+    'Stacja diagnostyczna Ruda Śląska (Godula) | Auto-Bud Bosch Car Service',
   description:
-    'Auto-Bud Godula, ul. Stara 1: okręgowa stacja kontroli pojazdów i myjnia bezdotykowa. Wygodny dojazd z Rudy Śląskiej, Bytomia i Katowic.',
+    'Auto-Bud, ul. Stara 1: okręgowa stacja kontroli pojazdów w Rudzie Śląskiej (Godula), przeglądy techniczne i myjnia bezdotykowa.',
   path: '/godula',
   keywords: [
-    'stacja diagnostyczna godula',
-    'stacja kontroli pojazdów godula',
+    'stacja diagnostyczna ruda śląska godula',
+    'stacja kontroli pojazdów ruda śląska godula',
+    'okręgowa stacja kontroli pojazdów ruda śląska',
     'przegląd techniczny godula',
     'przegląd techniczny ruda śląska',
+    'stacja kontroli pojazdów ruda slaska',
     'myjnia bezdotykowa godula',
   ],
 });
 
 const GodulaPage = () => {
+  const localBusinessJsonLd = createLocationJsonLd('godula');
+
   return (
     <>
       <Breadcrumbs
@@ -90,7 +109,7 @@ const GodulaPage = () => {
       <LocationHeader {...locationHeaderProps} />
 
       <section className="mt-8 px-5 md:px-10 lg:mt-10 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Okręgowa stacja diagnostyczna Ruda Śląska Godula - najważniejsze
           informacje
         </h2>
@@ -98,7 +117,8 @@ const GodulaPage = () => {
           Punkt Auto-Bud Godula przy ul. Starej 1 to lokalizacja dla kierowców,
           którzy chcą szybko wykonać przegląd techniczny i skorzystać z myjni
           bezdotykowej w jednym miejscu. Obsługujemy klientów z Rudy Śląskiej,
-          Bytomia, Chorzowa i Katowic.
+          Bytomia, Chorzowa i Katowic. Na badanie techniczne podjeżdżasz bez
+          wcześniejszego umawiania.
         </p>
 
         <div className="mt-6 grid gap-4 lg:grid-cols-2">
@@ -130,10 +150,11 @@ const GodulaPage = () => {
 
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
-            href="/wizyta"
+            href="https://maps.app.goo.gl/uevhCXnHGWYJm6NX8"
+            target="_blank"
             className="rounded-md bg-darkGray px-5 py-3 text-sm font-medium text-white"
           >
-            Umów wizytę online
+            Dojazd do stacji
           </Link>
           <Link
             href="/uslugi/przeglad-techniczny"
@@ -145,7 +166,7 @@ const GodulaPage = () => {
       </section>
 
       <section className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Najczęściej wybierane usługi w Goduli
         </h2>
         <div className="mt-6 grid gap-4 lg:grid-cols-2">
@@ -166,8 +187,30 @@ const GodulaPage = () => {
         </div>
       </section>
 
+      <section className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
+          Obsługujemy Śląsk
+        </h2>
+        <p className="mt-4 max-w-4xl text-sm leading-7 text-mediumGray lg:text-base">
+          Stacja diagnostyczna w Goduli jest wygodna dla kierowców z Rudy
+          Śląskiej oraz sąsiednich miast. Na przegląd techniczny przyjeżdżasz
+          bez umawiania, bezpośrednio w godzinach pracy stacji.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-2">
+          {serviceAreaLinks.map(link => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="rounded-md border border-lightGray2 px-4 py-2 text-sm text-darkGray hover:text-red"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <section className="mt-10 px-5 pb-8 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Co znajdziesz w lokalizacji Godula
         </h2>
         <div className="mt-6 grid gap-6 lg:grid-cols-2">
@@ -206,9 +249,17 @@ const GodulaPage = () => {
 
       <FaqSection
         title="FAQ: stacja diagnostyczna Ruda Śląska Godula"
-        description="Najczęstsze pytania kierowców o przeglądy techniczne, kontakt i organizację wizyty."
+        description="Najczęstsze pytania kierowców o przeglądy techniczne, kontakt i zakres badań."
         items={godulaFaq}
       />
+      {localBusinessJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd),
+          }}
+        />
+      )}
     </>
   );
 };

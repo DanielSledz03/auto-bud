@@ -204,7 +204,7 @@ const services: ServiceEntry[] = [
     intro:
       'Wykonujemy okresowe badania techniczne pojazdów osobowych i dostawczych zgodnie z obowiązującymi przepisami.',
     localContext:
-      'Do wyboru masz trzy lokalizacje na Śląsku, dzięki czemu łatwo dopasujesz punkt do miejsca zamieszkania.',
+      'Do wyboru masz trzy lokalizacje na Śląsku, dzięki czemu łatwo dopasujesz punkt do miejsca zamieszkania. Na przegląd techniczny podjeżdżasz bez wcześniejszego umawiania.',
     benefits: [
       'Badania okresowe i dodatkowe zgodne z zakresem uprawnień stacji.',
       'Sprawna obsługa i jasna informacja o stanie technicznym pojazdu.',
@@ -227,7 +227,7 @@ const services: ServiceEntry[] = [
       {
         question: 'Czy muszę się wcześniej umówić?',
         answer:
-          'Dla wygody rekomendujemy wcześniejszy kontakt telefoniczny lub rezerwację online.',
+          'Nie. Na przegląd techniczny nie trzeba się wcześniej umawiać. Wystarczy podjechać na dowolną stację Auto-Bud w godzinach pracy.',
       },
     ],
     keywords: [
@@ -277,6 +277,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   if (!service) {
     notFound();
   }
+  const isTechnicalInspection = service.slug === 'przeglad-techniczny';
 
   return (
     <>
@@ -301,10 +302,14 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
-            href="/wizyta"
+            href={
+              isTechnicalInspection
+                ? '/stacja-diagnostyczna-ruda-slaska'
+                : '/wizyta'
+            }
             className="rounded-md bg-darkGray px-5 py-3 text-sm font-medium text-white"
           >
-            Umów wizytę
+            {isTechnicalInspection ? 'Wybierz stację i podjedź' : 'Umów wizytę'}
           </Link>
           <Link
             href="/kontakt"
@@ -313,10 +318,14 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             Kontakt i telefony
           </Link>
           <Link
-            href="/slask#katowice-dojazd"
+            href={
+              isTechnicalInspection
+                ? '/stacja-diagnostyczna-ruda-slaska#lokalizacje-stacji'
+                : '/slask#katowice-dojazd'
+            }
             className="rounded-md border border-lightGray2 px-5 py-3 text-sm font-medium text-darkGray"
           >
-            Obsługa Katowic
+            {isTechnicalInspection ? 'Godula i Bykowina' : 'Obsługa Katowic'}
           </Link>
         </div>
       </section>

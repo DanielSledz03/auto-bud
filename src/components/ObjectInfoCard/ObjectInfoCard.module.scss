@@ -9,7 +9,7 @@
         @apply flex items-center justify-start lg:hidden;
 
         &__title {
-          @apply ml-6 w-[60%] text-[20px] font-semibold leading-[30px] text-darkGray;
+          @apply ml-6 w-[60%] text-xl font-semibold leading-[30px] text-darkGray;
         }
 
         &__icon {
@@ -19,7 +19,7 @@
     }
 
     &__title {
-      @apply hidden text-[32px] font-semibold text-darkGray lg:block;
+      @apply hidden text-3xl font-semibold text-darkGray lg:block;
     }
 
     &__icon {
@@ -45,13 +45,13 @@
         }
 
         &__title {
-          @apply text-[14px] text-darkGray;
+          @apply text-sm text-darkGray;
         }
       }
     }
 
     &__description {
-      @apply mt-6 text-[12px] text-darkGray lg:w-[100%] lg:text-[14px];
+      @apply mt-6 text-xs text-darkGray lg:w-[100%] lg:text-sm;
     }
   }
 
@@ -62,16 +62,16 @@
       @apply mb-1 mt-2 flex w-[100%] items-center justify-between rounded-[10px] bg-lightGray5 px-3 py-2 lg:px-5 lg:py-4;
 
       &__title {
-        @apply text-[14px] font-semibold text-darkGray;
+        @apply text-sm font-semibold text-darkGray;
       }
 
       &__price {
-        @apply text-[18px] font-semibold text-red;
+        @apply text-lg font-semibold text-red;
       }
     }
 
     &__button {
-      @apply mt-4 flex h-[50px] w-[100%] items-center justify-center rounded-[10px] bg-darkGray py-2 text-[18px] font-semibold text-white;
+      @apply mt-4 flex h-[50px] w-[100%] items-center justify-center rounded-[10px] bg-darkGray py-2 text-lg font-semibold text-white;
     }
   }
 }

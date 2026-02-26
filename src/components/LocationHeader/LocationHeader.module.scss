@@ -14,11 +14,11 @@
   }
 
   &__title {
-    @apply z-[10] text-[30px] font-semibold text-darkGray lg:text-[45px];
+    @apply z-[10] text-3xl font-semibold text-darkGray lg:text-5xl;
   }
 
   &__subtitle {
-    @apply z-[10] text-[20px] font-semibold text-red lg:text-[32px];
+    @apply z-[10] text-xl font-semibold text-red lg:text-3xl;
   }
 
   &__address {

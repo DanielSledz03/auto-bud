@@ -2,11 +2,11 @@
   @apply mt-10 flex flex-col justify-start px-5 md:px-10 lg:mt-12 lg:px-20 lg:pb-8 lg:pt-2 xl:px-48 2xl:px-64;
 
   &__title {
-    @apply mb-1 text-[14px] text-red;
+    @apply mb-1 text-sm text-red;
   }
 
   &__subtitle {
-    @apply mb-6 text-[20px] font-semibold text-darkGray lg:text-[32px];
+    @apply mb-6 text-xl font-semibold text-darkGray lg:text-3xl;
   }
 
   &__sections {
@@ -22,11 +22,11 @@
   }
 
   &__sectionTitle {
-    @apply flex w-full items-center justify-start text-[20px] font-semibold text-darkGray lg:text-[24px];
+    @apply flex w-full items-center justify-start text-xl font-semibold text-darkGray lg:text-2xl;
   }
 
   &__header {
-    @apply flex w-full cursor-pointer items-center justify-start text-[20px] font-semibold text-darkGray lg:cursor-default;
+    @apply flex w-full cursor-pointer items-center justify-start text-xl font-semibold text-darkGray lg:cursor-default;
   }
 
   &__arrow {
@@ -59,7 +59,7 @@
     }
 
     li {
-      @apply relative mb-2 pl-6 text-[12px] text-gray-700 last:mb-0 lg:text-sm;
+      @apply relative mb-2 pl-6 text-xs text-gray-700 last:mb-0 lg:text-sm;
     }
 
     li::before {

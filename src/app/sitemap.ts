@@ -32,8 +32,18 @@ const routes: Array<{
     priority: 0.92,
   },
   { path: '/swietochlowice', changeFrequency: 'weekly', priority: 0.92 },
+  {
+    path: '/mechanik-swietochlowice',
+    changeFrequency: 'weekly',
+    priority: 0.93,
+  },
   { path: '/godula', changeFrequency: 'weekly', priority: 0.9 },
   { path: '/bykowina', changeFrequency: 'weekly', priority: 0.9 },
+  {
+    path: '/stacja-diagnostyczna-ruda-slaska',
+    changeFrequency: 'weekly',
+    priority: 0.92,
+  },
   { path: '/kontakt', changeFrequency: 'monthly', priority: 0.88 },
   { path: '/wizyta', changeFrequency: 'weekly', priority: 0.86 },
   { path: '/o-nas', changeFrequency: 'monthly', priority: 0.8 },

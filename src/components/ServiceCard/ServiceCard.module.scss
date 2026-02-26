@@ -18,11 +18,11 @@
   }
 
   &__title {
-    @apply mt-10 text-[14px] text-red lg:mt-0;
+    @apply mt-10 text-sm text-red lg:mt-0;
   }
 
   &__subtitle {
-    @apply mt-1 text-[20px] font-semibold text-darkGray lg:text-[32px];
+    @apply mt-1 text-xl font-semibold text-darkGray lg:text-3xl;
   }
 
   &__divider {
@@ -39,7 +39,7 @@
     }
 
     &__open {
-      @apply text-[14px] text-mediumGray last:mt-1;
+      @apply text-sm text-mediumGray last:mt-1;
 
       &__time {
         @apply text-darkGray;
@@ -48,7 +48,7 @@
   }
 
   &__description {
-    @apply mt-8 text-[12px] text-mediumGray2 lg:text-[14px];
+    @apply mt-8 text-xs text-mediumGray2 lg:text-sm;
   }
 
   &__button {

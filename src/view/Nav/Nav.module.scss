@@ -105,19 +105,19 @@
 }
 
 .dropdownItemCity {
-  @apply text-[18px] font-semibold;
+  @apply text-lg font-semibold;
 }
 
 .dropdownItemDistrict {
-  @apply text-[14px] font-semibold;
+  @apply text-sm font-semibold;
 }
 
 .dropdownItemaAddress {
-  @apply text-[14px] text-mediumGray;
+  @apply text-sm text-mediumGray;
 }
 
 .dropdownItemAddress {
-  @apply text-[14px] text-mediumGray;
+  @apply text-sm text-mediumGray;
 }
 
 .dropdownItemIcon {

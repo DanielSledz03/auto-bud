@@ -2,7 +2,7 @@
   @apply mt-0 w-screen border-b-[1px] border-b-lightGray2 px-5 py-10 text-center md:px-10 lg:px-20 xl:px-48 2xl:px-64;
 
   &__heading {
-    @apply mb-5 text-[24px] font-semibold text-blue lg:text-[32px];
+    @apply mb-5 text-2xl font-semibold text-blue lg:text-3xl;
   }
 
   &__options {
@@ -10,7 +10,7 @@
   }
 
   &__option {
-    @apply h-[56px] flex-1 cursor-pointer rounded-md border border-lightGray4 bg-white px-4 text-[18px] font-semibold text-darkGray duration-200 hover:bg-lightGray;
+    @apply h-[56px] flex-1 cursor-pointer rounded-md border border-lightGray4 bg-white px-4 text-lg font-semibold text-darkGray duration-200 hover:bg-lightGray;
   }
 
   &__optionSelected {

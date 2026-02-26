@@ -43,7 +43,7 @@ const serviceCardGammaProps = {
       <br />
       Stacja Kontroli Pojazdów Gamma prowadzi również liczne akcje zapewniające
       możliwość bezpłatnego sprawdzenia samochodu. Dbamy bowiem o bezpieczeństwo
-      naszych klientów przez cały rok, a nie tylko pordczas obowiązkowego
+      naszych klientów przez cały rok, a nie tylko podczas obowiązkowego
       przeglądu technicznego wpisywanego do dowodu. Podczas naszych akcji wielu
       kierowców uniknęło poważnych awarii dzięki wczesnemu zdiagnozowaniu
       usterki, tym samym zapewniając sobie i innym większe bezpieczeństwo

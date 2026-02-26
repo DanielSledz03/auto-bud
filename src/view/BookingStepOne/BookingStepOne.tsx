@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import Select from '@/components/Select/Select';
+import { bookingServiceNames } from '@/constants/serviceCatalog';
 import { workshopPricing } from '@/constants/workshopPricing';
 import { businessLocations } from '@/data/businessLocations';
 
@@ -53,21 +54,66 @@ interface SubmittedReservationData {
 const REQUIRED_FIELD_MESSAGE = 'To pole jest wymagane';
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const buildServiceId = (serviceName: string) =>
+const normalizeServiceName = (serviceName: string) =>
   serviceName
     .toLowerCase()
     .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[\u0300-\u036f]/g, '');
+
+const buildServiceId = (serviceName: string) =>
+  normalizeServiceName(serviceName)
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '');
 
+const EXCLUDED_BOOKING_SERVICE_PATTERNS = [
+  'przeglady okresowe',
+  'przeglad okresowy',
+  'przeglad techniczny',
+  'badanie techniczne',
+  'pomoc drogowa 24h',
+  'pomoc 24h',
+];
+
+const isExcludedBookingService = (serviceName: string) => {
+  const normalizedServiceName = normalizeServiceName(serviceName);
+
+  return EXCLUDED_BOOKING_SERVICE_PATTERNS.some(pattern =>
+    normalizedServiceName.includes(pattern),
+  );
+};
+
+const dedupeServiceOptions = (services: ServiceOption[]) => {
+  const seen = new Set<string>();
+
+  return services.filter(service => {
+    const key = buildServiceId(service.name);
+    if (seen.has(key)) {
+      return false;
+    }
+    seen.add(key);
+    return true;
+  });
+};
+
+const catalogServiceOptions: ServiceOption[] = bookingServiceNames.map(
+  serviceName => ({
+    id: `katalog-${buildServiceId(serviceName)}`,
+    name: serviceName,
+  }),
+);
+
+const pricingServiceOptions: ServiceOption[] = workshopPricing
+  .filter(item => !item.service.toLowerCase().includes('roboczogodzina'))
+  .map(item => ({
+    id: `cennik-${buildServiceId(item.service)}`,
+    name: item.service,
+  }));
+
 const baseServiceOptions: ServiceOption[] = [
-  ...workshopPricing
-    .filter(item => !item.service.toLowerCase().includes('roboczogodzina'))
-    .map(item => ({
-      id: `cennik-${buildServiceId(item.service)}`,
-      name: item.service,
-    })),
+  ...dedupeServiceOptions([
+    ...catalogServiceOptions,
+    ...pricingServiceOptions,
+  ]).filter(service => !isExcludedBookingService(service.name)),
   { id: 'inne', name: 'Inne' },
 ];
 

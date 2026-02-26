@@ -38,7 +38,7 @@
   }
 
   &__title {
-    @apply text-xl font-semibold text-white lg:pb-2.5 lg:text-[32px];
+    @apply text-xl font-semibold text-white lg:pb-2.5 lg:text-3xl;
   }
 
   &__price {
@@ -58,6 +58,6 @@
   }
 
   &__button {
-    @apply flex w-full max-w-[440px] items-center justify-around bg-white px-4 py-3 text-[10px] font-semibold text-black transition duration-300 hover:bg-gray-300 md:w-[350px] md:text-[13px] xl:w-full xl:text-[16px];
+    @apply flex w-full max-w-[440px] items-center justify-around bg-white px-4 py-3 text-2xs font-semibold text-black transition duration-300 hover:bg-gray-300 md:w-[350px] md:text-sm xl:w-full xl:text-base;
   }
 }

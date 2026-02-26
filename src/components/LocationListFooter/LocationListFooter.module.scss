@@ -1,10 +1,10 @@
 .location-list {
-  @apply pb-3 mb-10 lg:pl-16 lg:flex-1 lg:flex lg:flex-row lg:w-full lg:items-center xl:pl-24 2xl:pl-32;
+  @apply mb-10 w-full pb-3 lg:flex lg:w-full lg:flex-1 lg:flex-row lg:items-center lg:pl-16 xl:pl-24 2xl:pl-32;
   &__button {
-    @apply flex cursor-pointer flex-row flex-wrap justify-between border-b border-gray-300 bg-transparent py-2.5 text-left lg:flex-col lg:border-none;
+    @apply flex w-full cursor-pointer flex-row flex-wrap justify-between border-b border-gray-300 bg-transparent py-2.5 text-left lg:flex-col lg:border-none;
 
     &-heading {
-      @apply text-[14px] font-bold text-black h-min;
+      @apply text-sm font-bold text-black h-min;
     }
 
     &__icon {
@@ -21,7 +21,7 @@
   }
 
   &__details {
-    @apply py-4 text-mediumGray text-[14px] font-medium w-full;
+    @apply py-4 text-mediumGray text-sm font-medium w-full;
   }
 
   &__hours {

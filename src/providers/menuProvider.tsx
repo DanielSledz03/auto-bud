@@ -5,14 +5,18 @@ interface MenuContextType {
   isMenuOpen: boolean;
   isMenuLocationOpen: boolean;
   toggleMenu: () => void;
-  toggleMenuLocation: () => void;
+  openMenuLocation: () => void;
+  closeMenuLocation: () => void;
+  closeMenu: () => void;
 }
 
 const MenuContext = createContext<MenuContextType>({
   isMenuOpen: false,
   isMenuLocationOpen: false,
   toggleMenu: () => {},
-  toggleMenuLocation: () => {},
+  openMenuLocation: () => {},
+  closeMenuLocation: () => {},
+  closeMenu: () => {},
 });
 
 export const useMenu = () => useContext(MenuContext);
@@ -26,16 +30,40 @@ export const MenuProvider = ({ children }: MenuProviderProps) => {
   const [isMenuLocationOpen, setIsMenuLocationOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(prevState => !prevState);
+    setIsMenuOpen(prevState => {
+      const nextState = !prevState;
+
+      if (!nextState) {
+        setIsMenuLocationOpen(false);
+      }
+
+      return nextState;
+    });
   };
 
-  const toggleMenuLocation = () => {
-    setIsMenuLocationOpen(prevState => !prevState);
+  const openMenuLocation = () => {
+    setIsMenuLocationOpen(true);
+  };
+
+  const closeMenuLocation = () => {
+    setIsMenuLocationOpen(false);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    setIsMenuLocationOpen(false);
   };
 
   return (
     <MenuContext.Provider
-      value={{ isMenuOpen, toggleMenu, toggleMenuLocation, isMenuLocationOpen }}
+      value={{
+        isMenuOpen,
+        isMenuLocationOpen,
+        toggleMenu,
+        openMenuLocation,
+        closeMenuLocation,
+        closeMenu,
+      }}
     >
       {children}
     </MenuContext.Provider>

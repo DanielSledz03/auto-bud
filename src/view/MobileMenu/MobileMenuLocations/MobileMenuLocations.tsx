@@ -1,17 +1,18 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
+import ArrowRed from '@/icons/redArrowDown.svg';
 import { useMenu } from '@/providers/menuProvider';
 
 import styles from './MobileMenuLocations.module.scss';
 
 const MobileMenuLocations = () => {
-  const { isMenuLocationOpen, toggleMenuLocation, toggleMenu } = useMenu();
+  const { isMenuLocationOpen, closeMenuLocation, closeMenu } = useMenu();
 
-  const handleClick = () => {
-    toggleMenuLocation();
-    toggleMenu();
+  const handleLocationClick = () => {
+    closeMenu();
   };
 
   return (
@@ -22,27 +23,42 @@ const MobileMenuLocations = () => {
           : `${styles.menu}`
       }
     >
-      <p className={styles.menu__title}>Miasta</p>
+      <div className={styles.menu__header}>
+        <button
+          type="button"
+          onClick={closeMenuLocation}
+          className={styles.menu__back}
+          aria-label="Powrót do głównego menu"
+        >
+          <Image
+            src={ArrowRed}
+            alt=""
+            aria-hidden="true"
+            className={styles.menu__backIcon}
+          />
+        </button>
+        <p className={styles.menu__title}>Miasta</p>
+      </div>
       <nav className={styles.menu__nav}>
         <ul className={styles.menu__list}>
           <li className={styles.menu__item}>
-            <Link onClick={handleClick} href="/swietochlowice">
+            <Link onClick={handleLocationClick} href="/swietochlowice">
               Świętochłowice
             </Link>
           </li>
 
           <li className={styles.menu__item}>
-            <Link onClick={handleClick} href="/godula">
+            <Link onClick={handleLocationClick} href="/godula">
               Ruda Śląska, Godula
             </Link>
           </li>
           <li className={styles.menu__item}>
-            <Link onClick={handleClick} href="/bykowina">
+            <Link onClick={handleLocationClick} href="/bykowina">
               Ruda Śląska, Bykowina
             </Link>
           </li>
           <li className={styles.menu__item}>
-            <Link onClick={handleClick} href="/slask">
+            <Link onClick={handleLocationClick} href="/slask">
               Śląsk
             </Link>
           </li>

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <section className="mt-8 px-5 pb-12 text-darkGray md:px-10 lg:mt-10 lg:px-20 xl:px-48 2xl:px-64">
+    <section className="px-5 pb-12 pt-[84px] text-darkGray md:px-10 md:pt-[116px] lg:px-20 lg:pt-[102px] xl:px-48 2xl:px-64">
       <p className="text-sm font-medium text-red">Błąd 404</p>
       <h1 className="mt-2 text-3xl font-semibold lg:text-5xl">
         Nie znaleziono strony

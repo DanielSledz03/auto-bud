@@ -1,10 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { AboutGalleryPreview } from '@/components/AboutGalleryPreview/AboutGalleryPreview';
 import Breadcrumbs from '@/components/Seo/Breadcrumbs';
 import FaqSection from '@/components/Seo/FaqSection';
-import CarWashImage from '@/images/location-cards/carwash.jpg';
-import MechanicImage from '@/images/location-cards/mechanic.jpg';
+import CarWashClassicImage from '@/images/location-cards/carwash.jpg';
+import CarWashImage from '@/images/location-cards/godula-stacja.jpg';
+import MechanicImage from '@/images/location-cards/godula.jpg';
+import MechanicClassicImage from '@/images/location-cards/mechanic.jpg';
+import OfficeImage from '@/images/location-cards/office.jpg';
 import StationImage from '@/images/location-cards/station.jpg';
 import WorkshopImage from '@/images/location-cards/workshop.jpg';
 import GalleryImage1 from '@/images/godula/gallery/1.jpg';
@@ -28,10 +32,6 @@ const companyMetrics = [
   {
     value: '12',
     label: 'stanowisk serwisowych w Świętochłowicach',
-  },
-  {
-    value: '25000+',
-    label: 'obsłużonych klientów rocznie',
   },
 ];
 
@@ -85,6 +85,49 @@ const locationCards = [
     image: StationImage,
     imageAlt: 'Stacja kontroli pojazdów Auto-Bud Bykowina',
     linkLabel: 'Przejdź do lokalizacji Bykowina',
+  },
+];
+
+const aboutGalleryImages = [
+  {
+    src: WorkshopImage,
+    alt: 'Warsztat samochodowy Auto-Bud w Świętochłowicach',
+  },
+  {
+    src: StationImage,
+    alt: 'Stacja kontroli pojazdów Auto-Bud w Bykowinie',
+  },
+  {
+    src: OfficeImage,
+    alt: 'Biuro obsługi klienta Auto-Bud',
+  },
+  {
+    src: CarWashImage,
+    alt: 'Stacja diagnostyczna Auto-Bud w Goduli',
+  },
+  {
+    src: MechanicImage,
+    alt: 'Obiekt Auto-Bud w Rudzie Śląskiej',
+  },
+  {
+    src: CarWashClassicImage,
+    alt: 'Myjnia samochodowa Auto-Bud',
+  },
+  {
+    src: MechanicClassicImage,
+    alt: 'Mechanik Auto-Bud podczas naprawy pojazdu',
+  },
+  {
+    src: GalleryImage1,
+    alt: 'Galeria Auto-Bud - zdjęcie 1',
+  },
+  {
+    src: GalleryImage2,
+    alt: 'Galeria Auto-Bud - zdjęcie 2',
+  },
+  {
+    src: GalleryImage3,
+    alt: 'Galeria Auto-Bud - zdjęcie 3',
   },
 ];
 
@@ -180,10 +223,10 @@ const ONasPage = () => {
       </section>
 
       <section className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Auto-Bud w liczbach
         </h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {companyMetrics.map(metric => (
             <article
               key={metric.label}
@@ -213,7 +256,7 @@ const ONasPage = () => {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+            <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
               Jak pracujemy i co nas wyróżnia
             </h2>
             <p className="mt-5 text-sm leading-7 text-mediumGray lg:text-base">
@@ -249,7 +292,7 @@ const ONasPage = () => {
       </section>
 
       <section className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Nasze lokalizacje na Śląsku
         </h2>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-mediumGray lg:text-base">
@@ -261,7 +304,7 @@ const ONasPage = () => {
           {locationCards.map(location => (
             <article
               key={location.href}
-              className="overflow-hidden rounded-[10px] border border-lightGray2"
+              className="flex h-full flex-col overflow-hidden rounded-[10px] border border-lightGray2"
             >
               <div className="relative h-48 w-full">
                 <Image
@@ -272,7 +315,7 @@ const ONasPage = () => {
                   sizes="(max-width: 1024px) 100vw, 33vw"
                 />
               </div>
-              <div className="p-5">
+              <div className="flex flex-1 flex-col p-5">
                 <h3 className="text-lg font-semibold text-darkGray">
                   {location.title}
                 </h3>
@@ -281,7 +324,7 @@ const ONasPage = () => {
                 </p>
                 <Link
                   href={location.href}
-                  className="mt-3 inline-block text-sm font-medium text-red"
+                  className="mt-auto pt-3 text-sm font-medium text-red"
                 >
                   {location.linkLabel}
                 </Link>
@@ -292,76 +335,63 @@ const ONasPage = () => {
       </section>
 
       <section className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
-          Najczęściej wybierane usługi
-        </h2>
-        <div className="mt-6 flex flex-wrap gap-3">
-          {popularServiceLinks.map(link => (
-            <Link
-              key={link.href + link.label}
-              href={link.href}
-              className="rounded-md border border-lightGray2 px-4 py-2 text-sm text-darkGray transition-colors hover:border-red hover:text-red"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="mt-10 px-5 pb-8 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-        <div className="rounded-[10px] border border-lightGray2 bg-lightGray p-5 lg:flex lg:items-center lg:justify-between lg:gap-6 lg:p-6">
-          <div>
-            <h2 className="text-[22px] font-semibold text-darkGray lg:text-[28px]">
-              Szukasz sprawdzonego serwisu na Śląsku?
-            </h2>
-            <p className="mt-3 max-w-3xl text-sm leading-7 text-mediumGray lg:text-base">
-              Umów termin online lub skontaktuj się z nami telefonicznie.
-              Dopasujemy lokalizację i zakres usługi do Twojego auta.
-            </p>
-          </div>
-          <div className="mt-5 flex flex-wrap gap-3 lg:mt-0">
-            <Link
-              href="/uslugi"
-              className="rounded-md border border-lightGray2 bg-white px-5 py-3 text-sm font-medium text-darkGray"
-            >
-              Zobacz usługi
-            </Link>
-            <Link
-              href="/wizyta"
-              className="rounded-md bg-darkGray px-5 py-3 text-sm font-medium text-white"
-            >
-              Umów wizytę
-            </Link>
+        <div className="rounded-[10px] border border-lightGray2 bg-white p-5 shadow-[5px_5px_5px_5px_rgba(0,0,0,0.05)] lg:p-6">
+          <h2 className="text-lg font-semibold text-darkGray lg:text-2xl">
+            Najczęściej wybierane usługi
+          </h2>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {popularServiceLinks.map(link => (
+              <Link
+                key={link.href + link.label}
+                href={link.href}
+                className="flex min-h-[46px] w-full items-center justify-center rounded-md border border-lightGray2 bg-lightGray5 px-4 py-2 text-center text-sm text-darkGray transition-colors duration-300 hover:border-red hover:text-red"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="mt-10 px-5 pb-8 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <div className="rounded-[10px] border border-lightGray2 bg-lightGray p-5 lg:p-6">
+          <div className="lg:flex lg:items-end lg:justify-between lg:gap-6">
+            <div>
+              <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
+                Szukasz sprawdzonego serwisu na Śląsku?
+              </h2>
+              <p className="mt-3 max-w-3xl text-sm leading-7 text-mediumGray lg:text-base">
+                Umów termin online lub skontaktuj się z nami telefonicznie.
+                Dopasujemy lokalizację i zakres usługi do Twojego auta.
+              </p>
+            </div>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row lg:mt-0 lg:flex-shrink-0 lg:flex-nowrap">
+              <Link
+                href="/uslugi"
+                className="inline-flex w-full items-center justify-center rounded-md border border-lightGray2 bg-white px-5 py-3 text-sm font-medium text-darkGray transition-colors duration-300 hover:border-red hover:text-red sm:w-auto sm:min-w-[190px]"
+              >
+                Zobacz usługi
+              </Link>
+              <Link
+                href="/wizyta"
+                className="inline-flex w-full items-center justify-center rounded-md bg-darkGray px-5 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-red sm:w-auto sm:min-w-[190px]"
+              >
+                Umów wizytę
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-10 px-5 pb-8 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Galeria Auto-Bud
         </h2>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-mediumGray lg:text-base">
           Zobacz nasze obiekty i zaplecze techniczne. Zdjęcia przedstawiają
           lokalizacje, w których na co dzień obsługujemy kierowców.
         </p>
-        <div className="mt-6 grid gap-4 lg:grid-cols-3">
-          {[GalleryImage1, GalleryImage2, GalleryImage3].map((image, index) => (
-            <article
-              key={image.src}
-              className="overflow-hidden rounded-[10px] border border-lightGray2"
-            >
-              <div className="relative h-56 w-full">
-                <Image
-                  src={image}
-                  alt={`Obiekt Auto-Bud - zdjęcie ${index + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 33vw"
-                />
-              </div>
-            </article>
-          ))}
-        </div>
+        <AboutGalleryPreview images={aboutGalleryImages} />
       </section>
 
       <HomeOpinions />

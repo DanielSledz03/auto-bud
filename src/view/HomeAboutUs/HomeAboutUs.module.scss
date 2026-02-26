@@ -14,7 +14,7 @@
   }
 
   &__title {
-    @apply z-10 text-xl font-semibold text-darkGray lg:text-[32px];
+    @apply z-10 text-xl font-semibold text-darkGray lg:text-3xl;
   }
 
   &__line {
@@ -22,11 +22,11 @@
   }
 
   &__text {
-    @apply mb-4 text-left text-[13px] leading-[1.7] text-darkGray lg:text-[15px];
+    @apply mb-4 text-left text-sm leading-[1.7] text-darkGray lg:text-base;
   }
 
   &__textBold {
-    @apply mb-5 text-[13px] font-semibold leading-[1.6] text-darkGray lg:text-[15px];
+    @apply mb-5 text-sm font-semibold leading-[1.6] text-darkGray lg:text-base;
   }
 
   &__textLast {
@@ -38,7 +38,7 @@
   }
 
   &__button {
-    @apply mt-0;
+    @apply mt-0 border border-lightGray2;
   }
 
   &__bottomRow {

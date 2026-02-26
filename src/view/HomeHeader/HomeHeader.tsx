@@ -34,7 +34,7 @@ export const HomeHeader = () => {
         priority
         className={styles.image}
         src={HeaderImageDesktop}
-        alt="Mechanik w niebieskim kombinezonie pracuje nad silnikiem samochodu w nowoczesnym warsztacie"
+        alt="Samochód marki Jeep podczas ustawiania zbieznosci kol w naszej stacji kontroli pojazdow w swietochlowicach"
         sizes="100vw"
         quality={85}
       />

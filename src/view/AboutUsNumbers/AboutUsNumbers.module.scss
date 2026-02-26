@@ -22,7 +22,7 @@
   }
 
   &__number {
-    @apply mb-0 pt-0 text-[60px] font-semibold leading-[75px] text-darkGray lg:text-[80px] lg:leading-[105px];
+    @apply mb-0 pt-0 text-6xl font-semibold leading-[75px] text-darkGray lg:text-7xl lg:leading-[105px];
   }
 
   &__line {
@@ -30,6 +30,6 @@
   }
 
   &__text {
-    @apply text-[14px] text-red;
+    @apply text-sm text-red;
   }
 }

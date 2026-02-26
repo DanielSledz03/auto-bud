@@ -6,11 +6,11 @@
   }
 
   &__title {
-    @apply mb-1 text-[14px] text-red;
+    @apply mb-1 text-sm text-red;
   }
 
   &__subtitle {
-    @apply text-[20px] font-semibold text-darkGray lg:text-[32px];
+    @apply text-xl font-semibold text-darkGray lg:text-3xl;
   }
 
   &__divider {
@@ -39,11 +39,11 @@
 
   &__service {
     &-title {
-      @apply text-[20px] font-semibold text-darkGray lg:text-[22px];
+      @apply text-xl font-semibold text-darkGray lg:text-2xl;
     }
 
     &-description {
-      @apply mt-3 text-[14px] leading-[1.6] text-mediumGray2 lg:text-[15px];
+      @apply mt-3 text-sm leading-[1.6] text-mediumGray2 lg:text-base;
     }
   }
 

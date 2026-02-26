@@ -19,7 +19,7 @@ const cityDescriptions: Record<string, string> = {
   Bytom:
     'Dla kierowców z Bytomia wygodnym punktem jest Ruda Śląska Godula oraz Świętochłowice.',
   Zabrze:
-    'Wielu klientów z Zabrza wybiera przeglądy i naprawy planowane z wyprzedzeniem online.',
+    'Wielu klientów z Zabrza wybiera naprawy i serwis planowane z wyprzedzeniem online.',
   Mikołów:
     'Obsługujemy także kierowców z Mikołowa, szczególnie w zakresie diagnostyki i serwisu okresowego.',
   Mysłowice:
@@ -123,7 +123,7 @@ export default function SlaskPage() {
       </section>
 
       <section className="mt-10 px-5 pb-4 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Obsługiwane miasta
         </h2>
         <div className="mt-6 grid gap-4 lg:grid-cols-2">
@@ -146,7 +146,7 @@ export default function SlaskPage() {
         id="katowice-dojazd"
         className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64"
       >
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Warsztat samochodowy Katowice - obsługa klientów z Katowic i okolic
         </h2>
         <p className="mt-6 max-w-4xl text-sm leading-7 text-mediumGray lg:text-base">
@@ -224,7 +224,7 @@ export default function SlaskPage() {
       </section>
 
       <section className="mt-10 px-5 pb-8 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Przydatne linki do usług
         </h2>
         <div className="mt-6 flex flex-wrap gap-3">

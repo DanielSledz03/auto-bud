@@ -6,9 +6,15 @@ import Breadcrumbs from '@/components/Seo/Breadcrumbs';
 import FaqSection from '@/components/Seo/FaqSection';
 import { locationHeaderProps } from '@/constants/bykowina';
 import StationImage from '@/images/location-cards/station.jpg';
-import { buildPageMetadata } from '@/lib/seo';
+import { buildPageMetadata, createLocationJsonLd } from '@/lib/seo';
 
 const popularServices = [
+  {
+    href: '/stacja-diagnostyczna-ruda-slaska',
+    title: 'Stacja diagnostyczna Ruda Śląska',
+    description:
+      'Sprawdź różnice między punktami Godula i Bykowina oraz wybierz dogodną lokalizację.',
+  },
   {
     href: '/uslugi/przeglad-techniczny',
     title: 'Przegląd techniczny okresowy',
@@ -35,6 +41,15 @@ const locationFacilities = [
   },
 ];
 
+const serviceAreaLinks = [
+  { href: '/slask#ruda-slaska', label: 'Ruda Śląska' },
+  { href: '/slask#swietochlowice', label: 'Świętochłowice' },
+  { href: '/slask#chorzow', label: 'Chorzów' },
+  { href: '/slask#katowice', label: 'Katowice' },
+  { href: '/slask#bytom', label: 'Bytom' },
+  { href: '/slask#zabrze', label: 'Zabrze' },
+];
+
 const bykowinaFaq = [
   {
     question: 'Czy w Bykowinie wykonujecie przegląd auta z instalacją LPG?',
@@ -47,27 +62,31 @@ const bykowinaFaq = [
       'Nie. Lokalizacja Bykowina realizuje wyłącznie badania i przeglądy techniczne.',
   },
   {
-    question: 'Jak umówić wizytę w stacji Bykowina?',
+    question: 'Czy na badanie w Bykowinie trzeba umawiać się wcześniej?',
     answer:
-      'Najwygodniej przez formularz online lub telefonicznie. Dzięki temu szybciej dopasujemy termin i zakres usługi.',
+      'Nie. Na przegląd techniczny możesz podjechać bez umawiania w godzinach pracy stacji.',
   },
 ];
 
 export const metadata = buildPageMetadata({
   title:
-    'Ruda Śląska Bykowina - stacja kontroli pojazdów | Auto-Bud Bosch Car Service',
+    'Stacja kontroli pojazdów Ruda Śląska (Bykowina) | Auto-Bud Bosch Car Service',
   description:
-    'Stacja kontroli pojazdów Auto-Bud w Rudzie Śląskiej (Bykowina), ul. Szpaków 51. Badania techniczne i obsługa kierowców z całego Śląska.',
+    'Auto-Bud, ul. Szpaków 51: stacja diagnostyczna i stacja kontroli pojazdów w Rudzie Śląskiej (Bykowina). Badania techniczne aut i LPG.',
   path: '/bykowina',
   keywords: [
+    'stacja diagnostyczna bykowina',
     'stacja kontroli pojazdów bykowina',
     'przegląd techniczny bykowina',
     'stacja diagnostyczna ruda śląska',
+    'stacja kontroli pojazdów ruda slaska',
     'auto-bud bykowina',
   ],
 });
 
 const BykowinaPage = () => {
+  const localBusinessJsonLd = createLocationJsonLd('bykowina');
+
   return (
     <>
       <Breadcrumbs
@@ -79,14 +98,15 @@ const BykowinaPage = () => {
       <LocationHeader {...locationHeaderProps} />
 
       <section className="mt-8 px-5 md:px-10 lg:mt-10 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Stacja kontroli pojazdów Ruda Śląska Bykowina - najważniejsze
           informacje
         </h2>
         <p className="mt-6 max-w-4xl text-sm leading-7 text-mediumGray lg:text-base">
           Lokalizacja Auto-Bud Bykowina przy ul. Szpaków 51 obsługuje kierowców
           z Rudy Śląskiej, Chorzowa i Katowic. To punkt nastawiony na szybkie
-          badania techniczne oraz sprawną obsługę kierowców.
+          badania techniczne oraz sprawną obsługę kierowców. Na badanie
+          techniczne podjeżdżasz bez wcześniejszego umawiania.
         </p>
 
         <div className="mt-6 grid gap-4 lg:grid-cols-2">
@@ -118,10 +138,11 @@ const BykowinaPage = () => {
 
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
-            href="/wizyta"
+            href="https://maps.app.goo.gl/UFvFUSnpor4dTKHd6"
+            target="_blank"
             className="rounded-md bg-darkGray px-5 py-3 text-sm font-medium text-white"
           >
-            Umów wizytę online
+            Dojazd do stacji
           </Link>
           <Link
             href="/uslugi/przeglad-techniczny"
@@ -133,7 +154,7 @@ const BykowinaPage = () => {
       </section>
 
       <section className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Najczęściej wybierane usługi w Bykowinie
         </h2>
         <div className="mt-6 grid gap-4 lg:grid-cols-2">
@@ -154,8 +175,29 @@ const BykowinaPage = () => {
         </div>
       </section>
 
+      <section className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
+          Obsługujemy Śląsk
+        </h2>
+        <p className="mt-4 max-w-4xl text-sm leading-7 text-mediumGray lg:text-base">
+          Kierowcy z południowej części Rudy Śląskiej i okolic wybierają punkt
+          Bykowina ze względu na szybkie badania techniczne i dogodny dojazd.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-2">
+          {serviceAreaLinks.map(link => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="rounded-md border border-lightGray2 px-4 py-2 text-sm text-darkGray hover:text-red"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <section className="mt-10 px-5 pb-8 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Co znajdziesz w lokalizacji Bykowina
         </h2>
         <div className="mt-6 grid max-w-3xl gap-6">
@@ -194,9 +236,17 @@ const BykowinaPage = () => {
 
       <FaqSection
         title="FAQ: stacja diagnostyczna Ruda Śląska Bykowina"
-        description="Najczęstsze pytania kierowców dotyczące badań technicznych i umawiania wizyty."
+        description="Najczęstsze pytania kierowców dotyczące badań technicznych i kontaktu."
         items={bykowinaFaq}
       />
+      {localBusinessJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd),
+          }}
+        />
+      )}
     </>
   );
 };

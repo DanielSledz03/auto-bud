@@ -2,11 +2,11 @@
   @apply flex flex-col items-center pb-12;
 
   &__stepOneDescription {
-    @apply mt-0 w-full max-w-[570px];
+    @apply mt-0 w-full max-w-[570px] px-5 md:px-10 lg:px-0;
   }
 
   &__stepOneDescriptionHint {
-    @apply mt-2 pl-1 text-[13px] text-mediumGray;
+    @apply mt-2 px-1 text-sm text-mediumGray;
   }
 
   &__stepOneTextarea {
@@ -18,7 +18,7 @@
   }
 
   &__stepOneHint {
-    @apply mt-5 px-5 text-center text-[14px] text-mediumGray md:px-10 lg:px-20 xl:px-48 2xl:px-64;
+    @apply mt-5 px-5 text-center text-sm text-mediumGray md:px-10 lg:px-20 xl:px-48 2xl:px-64;
   }
 
   &__stepTwo {
@@ -26,7 +26,7 @@
   }
 
   &__stepTitle {
-    @apply mb-8 text-center text-[24px] font-semibold text-blue lg:text-[32px];
+    @apply mb-8 text-center text-2xl font-semibold text-blue lg:text-3xl;
   }
 
   &__formGrid {
@@ -42,7 +42,7 @@
   }
 
   &__fieldLabel {
-    @apply mb-1 pl-1 text-[14px] text-darkGray;
+    @apply mb-1 px-1 text-sm font-medium text-darkGray;
 
     span {
       @apply text-red;
@@ -50,11 +50,11 @@
   }
 
   &__input {
-    @apply h-[52px] rounded-md border border-lightGray3 bg-white px-4 text-[15px] text-darkGray outline-none duration-200 placeholder:text-mediumGray focus:border-darkGray;
+    @apply h-[52px] rounded-md border border-lightGray3 bg-white px-4 text-base text-darkGray outline-none duration-200 placeholder:text-mediumGray focus:border-darkGray;
   }
 
   &__textarea {
-    @apply min-h-[120px] rounded-md border border-lightGray3 bg-white p-4 text-[15px] text-darkGray outline-none duration-200 placeholder:text-mediumGray focus:border-darkGray;
+    @apply min-h-[120px] rounded-md border border-lightGray3 bg-white p-4 text-base text-darkGray outline-none duration-200 placeholder:text-mediumGray focus:border-darkGray;
   }
 
   &__inputError {
@@ -62,11 +62,11 @@
   }
 
   &__errorMessage {
-    @apply mt-1 pl-1 text-[13px] text-red;
+    @apply mt-1 px-1 text-sm text-red;
   }
 
   &__globalError {
-    @apply mt-8 text-center text-[14px] font-semibold text-red;
+    @apply mt-8 text-center text-sm font-semibold text-red;
   }
 
   &__stepTwoActions {
@@ -74,11 +74,11 @@
   }
 
   &__primaryButton {
-    @apply h-[52px] min-w-[180px] rounded-md bg-red px-6 text-[16px] font-semibold text-white duration-200 hover:opacity-90 disabled:cursor-not-allowed disabled:bg-lightGray3;
+    @apply h-[52px] min-w-[180px] rounded-md bg-red px-6 text-base font-semibold text-white duration-200 hover:opacity-90 disabled:cursor-not-allowed disabled:bg-lightGray3;
   }
 
   &__secondaryButton {
-    @apply h-[52px] min-w-[180px] rounded-md border border-lightGray3 bg-white px-6 text-[16px] font-semibold text-darkGray duration-200 hover:bg-lightGray;
+    @apply h-[52px] min-w-[180px] rounded-md border border-lightGray3 bg-white px-6 text-base font-semibold text-darkGray duration-200 hover:bg-lightGray;
   }
 
   &__stepThree {
@@ -86,7 +86,7 @@
   }
 
   &__thankYouText {
-    @apply mx-auto mb-8 max-w-[760px] text-center text-[18px] text-darkGray;
+    @apply mx-auto mb-8 max-w-[760px] text-center text-lg text-darkGray;
   }
 
   &__summaryGrid {
@@ -97,11 +97,11 @@
     @apply rounded-md border border-lightGray4 bg-lightGray5 p-5;
 
     h3 {
-      @apply mb-3 text-[18px] font-semibold text-darkGray;
+      @apply mb-3 text-lg font-semibold text-darkGray;
     }
 
     p {
-      @apply mb-1 text-[15px] text-darkGray last:mb-0;
+      @apply mb-1 text-base text-darkGray last:mb-0;
     }
   }
 

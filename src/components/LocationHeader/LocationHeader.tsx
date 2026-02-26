@@ -35,11 +35,15 @@ export const LocationHeader = ({
           className={styles['location-header__background--mobile']}
           src={mobileBackgroundUrl}
           alt={imageAlt}
+          sizes="100vw"
+          priority
         />
         <Image
           className={styles['location-header__background--desktop']}
           src={desktopBackgroundUrl}
           alt={imageAlt}
+          sizes="100vw"
+          priority
         />
       </div>
       <h1 className={styles['location-header__title']}>{city}</h1>

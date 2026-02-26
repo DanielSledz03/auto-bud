@@ -1,9 +1,9 @@
 .select {
-  @apply relative mb-7 w-full lg:w-[570px];
+  @apply relative mb-7 w-full px-5 md:px-10 lg:w-[570px] lg:px-0;
   position: relative;
 
   &__box {
-    @apply relative z-[1] mt-1 flex min-h-[60px] w-full appearance-none items-center justify-between rounded-md border border-lightGray4 bg-lightGray5 px-4 py-2 text-[#969696] shadow-sm focus:outline-none focus:ring-2;
+    @apply relative z-[1] mt-1 flex min-h-[60px] w-full appearance-none items-center justify-between rounded-md border border-lightGray4 bg-lightGray5 px-4 py-3 text-base text-[#969696] shadow-sm focus:outline-none focus:ring-2;
   }
 
   &__box-icon {
@@ -19,15 +19,15 @@
   }
 
   &__label {
-    @apply block pl-2 text-[14px];
+    @apply block px-1 text-sm font-medium text-darkGray;
   }
 
   &__dropdown {
-    @apply absolute top-full z-10 mt-1 max-h-[200px] w-full overflow-y-auto rounded border border-solid border-[#ccc] bg-white shadow-lg;
+    @apply absolute left-0 right-0 top-full z-10 mt-1 max-h-[220px] w-full overflow-y-auto overflow-x-hidden rounded border border-solid border-[#ccc] bg-white shadow-lg;
   }
 
   &__option {
-    @apply cursor-pointer px-4 py-2 hover:bg-lightGray5;
+    @apply cursor-pointer break-words px-4 py-3 hover:bg-lightGray5;
 
     &__placeholder {
       @apply text-[#969696];
@@ -39,6 +39,6 @@
   }
 
   &__container {
-    @apply relative;
+    @apply relative w-full;
   }
 }

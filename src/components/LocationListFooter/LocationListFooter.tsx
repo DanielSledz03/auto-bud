@@ -38,7 +38,7 @@ const LocationList = () => {
         const shouldShowDetails = isWideScreen || openIndex === index;
 
         return (
-          <div key={location.name} className="lg:w-1/3">
+          <div key={location.name} className="w-full lg:w-1/3">
             <button
               type="button"
               onClick={() => toggleOpen(index)}

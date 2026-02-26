@@ -106,23 +106,23 @@ const Select = <T extends FieldValues>({
             </div>
           )}
         </div>
+        {isOpen && (
+          <div className={styles['select__dropdown']}>
+            {options.map(option => (
+              <div
+                key={option.value}
+                className={`${styles['select__option']} `}
+                onClick={() => handleOptionClick(option.value)}
+                onKeyDown={() => handleOptionClick(option.value)}
+                role="button"
+                tabIndex={0}
+              >
+                {option.label}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
-      {isOpen && (
-        <div className={styles['select__dropdown']}>
-          {options.map(option => (
-            <div
-              key={option.value}
-              className={`${styles['select__option']} `}
-              onClick={() => handleOptionClick(option.value)}
-              onKeyDown={() => handleOptionClick(option.value)}
-              role="button"
-              tabIndex={0}
-            >
-              {option.label}
-            </div>
-          ))}
-        </div>
-      )}
     </div>
   );
 };

@@ -8,9 +8,10 @@ import { locationHeaderProps } from '@/constants/swietochlowice';
 import MechanicImage from '@/images/location-cards/mechanic.jpg';
 import OfficeImage from '@/images/location-cards/office.jpg';
 import WorkshopImage from '@/images/location-cards/workshop.jpg';
-import { buildPageMetadata } from '@/lib/seo';
+import { buildPageMetadata, createLocationJsonLd } from '@/lib/seo';
 
 const quickServiceLinks = [
+  { href: '/mechanik-swietochlowice', label: 'Mechanik Świętochłowice' },
   { href: '/uslugi/przeglad-techniczny', label: 'Przeglądy techniczne' },
   { href: '/uslugi/diagnostyka-komputerowa', label: 'Diagnostyka' },
   { href: '/uslugi/wymiana-oleju', label: 'Wymiana oleju' },
@@ -71,6 +72,15 @@ const locationFacilities = [
   },
 ];
 
+const serviceAreaLinks = [
+  { href: '/slask#swietochlowice', label: 'Świętochłowice' },
+  { href: '/slask#ruda-slaska', label: 'Ruda Śląska' },
+  { href: '/slask#chorzow', label: 'Chorzów' },
+  { href: '/slask#katowice', label: 'Katowice' },
+  { href: '/slask#siemianowice-slaskie', label: 'Siemianowice Śląskie' },
+  { href: '/slask#bytom', label: 'Bytom' },
+];
+
 const swietochlowiceFaq = [
   {
     question: 'Czy wykonujecie wszystkie naprawy samochodowe?',
@@ -95,13 +105,17 @@ const swietochlowiceFaq = [
 ];
 
 export const metadata = buildPageMetadata({
-  title: 'Warsztat samochodowy Świętochłowice | Bosch Car Service Auto-Bud',
+  title:
+    'Mechanik i warsztat samochodowy Świętochłowice | Bosch Car Service Auto-Bud',
   description:
-    'Auto-Bud Świętochłowice, ul. Katowicka 73: pełny zakres napraw mechanicznych i elektrycznych, przeglądy techniczne oraz wycena przed naprawą.',
+    'Auto-Bud Bosch Car Service, ul. Katowicka 73: mechanik i warsztat samochodowy w Świętochłowicach, przeglądy techniczne, diagnostyka i naprawa auta na Śląsku.',
   path: '/swietochlowice',
   keywords: [
+    'mechanik świętochłowice',
+    'mechanik swietochlowice',
     'warsztat samochodowy świętochłowice',
     'serwis samochodowy świętochłowice',
+    'naprawa auta świętochłowice',
     'naprawa samochodów świętochłowice',
     'wymiana silnika świętochłowice',
     'remont silnika świętochłowice',
@@ -113,6 +127,8 @@ export const metadata = buildPageMetadata({
 });
 
 const SwietochlowicePage = () => {
+  const localBusinessJsonLd = createLocationJsonLd('swietochlowice');
+
   return (
     <>
       <Breadcrumbs
@@ -124,7 +140,7 @@ const SwietochlowicePage = () => {
       <LocationHeader {...locationHeaderProps} />
 
       <section className="mt-8 px-5 md:px-10 lg:mt-10 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Warsztat samochodowy Świętochłowice - najważniejsze informacje
         </h2>
         <p className="mt-6 max-w-4xl text-sm leading-7 text-mediumGray lg:text-base">
@@ -192,7 +208,7 @@ const SwietochlowicePage = () => {
       </section>
 
       <section className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Zakres napraw w serwisie
         </h2>
         <div className="mt-6 grid gap-4 lg:grid-cols-2">
@@ -212,8 +228,30 @@ const SwietochlowicePage = () => {
         </div>
       </section>
 
+      <section className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
+          Obsługujemy Śląsk
+        </h2>
+        <p className="mt-4 max-w-4xl text-sm leading-7 text-mediumGray lg:text-base">
+          Z warsztatu w Świętochłowicach korzystają kierowcy z okolicznych miast
+          i dzielnic. Jeśli dojeżdżasz spoza miasta, sprawdź dojazd i wybierz
+          dogodny termin wizyty.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-2">
+          {serviceAreaLinks.map(link => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="rounded-md border border-lightGray2 px-4 py-2 text-sm text-darkGray hover:text-red"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <section className="mt-10 px-5 pb-8 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-        <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+        <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Co znajdziesz w tej lokalizacji
         </h2>
         <div className="mt-6 grid gap-6 lg:grid-cols-3">
@@ -255,6 +293,14 @@ const SwietochlowicePage = () => {
         description="Najczęstsze pytania kierowców dotyczące napraw, wyceny i wizyty w serwisie."
         items={swietochlowiceFaq}
       />
+      {localBusinessJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd),
+          }}
+        />
+      )}
     </>
   );
 };

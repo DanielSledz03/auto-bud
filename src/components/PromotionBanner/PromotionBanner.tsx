@@ -40,11 +40,13 @@ export const PromotionsBanner = ({
             src={PromotionBannerImage}
             alt="Mechanik przegląda samochód od spodu"
             className={styles.promotionsBanner__image}
+            sizes="(max-width: 1024px) 100vw, 40vw"
           />
           <Image
             src={PromotionBannerImageMobile}
             alt="Mechanik przegląda samochód od spodu"
             className={styles.promotionsBanner__image__mobile}
+            sizes="100vw"
           />
         </div>
         <div className={styles.promotionsBanner__content}>

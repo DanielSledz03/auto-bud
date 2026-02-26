@@ -6,7 +6,7 @@ import ImageMobile from '@/images/swietochlowice/MechanicMobile.png';
 const locationHeaderProps = {
   mobileBackgroundUrl: MobileBackground,
   desktopBackgroundUrl: DesktopBackground,
-  city: 'Ruda Śląska',
+  city: 'Stacja kontroli pojazdów Ruda Śląska',
   district: 'Bykowina',
   street: 'ul. Szpaków 51',
   postalCode: 'Ruda Śląska 41-705',

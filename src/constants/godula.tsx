@@ -14,7 +14,7 @@ import UEGraphic from '@/images/godula/ue.png';
 const locationHeaderProps = {
   mobileBackgroundUrl: MobileBackground,
   desktopBackgroundUrl: DesktopBackground,
-  city: 'Ruda Śląska',
+  city: 'Stacja diagnostyczna Ruda Śląska',
   district: 'Godula',
   street: 'ul. Stara 1',
   postalCode: 'Ruda Śląska 41-703',
@@ -83,7 +83,7 @@ const serviceCardBetaProps = {
       Przed pierwszym myciem zapoznaj się z Regulaminem.
       <br />
       <br />
-      <p className="text-[10px] italic">
+      <p className="text-2xs italic">
         PROJEKT WSPÓŁFINANSOWANY PRZEZ UNIĘ EUROPEJSKĄ Z EUROPEJSKIEGO FUNDUSZU
         ROZWOJU REGIONALNEGO W RAMACH REGIONALNEGO PROGRAMU OPERACYJNEGO
         WOJEWODZTWA ŚLĄSKIEGO NA LATA 2007-2013. Regionalny Program Operacyjny

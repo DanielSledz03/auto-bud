@@ -1,12 +1,22 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
+    fontSize: {
+      '2xs': ['var(--font-size-2xs)', { lineHeight: '1.2' }],
+      xs: ['var(--font-size-xs)', { lineHeight: '1.4' }],
+      sm: ['var(--font-size-sm)', { lineHeight: '1.45' }],
+      base: ['var(--font-size-base)', { lineHeight: '1.5' }],
+      lg: ['var(--font-size-lg)', { lineHeight: '1.55' }],
+      xl: ['var(--font-size-xl)', { lineHeight: '1.4' }],
+      '2xl': ['var(--font-size-2xl)', { lineHeight: '1.3' }],
+      '3xl': ['var(--font-size-3xl)', { lineHeight: '1.25' }],
+      '4xl': ['var(--font-size-4xl)', { lineHeight: '1.2' }],
+      '5xl': ['var(--font-size-5xl)', { lineHeight: '1.1' }],
+      '6xl': ['var(--font-size-6xl)', { lineHeight: '1.1' }],
+      '7xl': ['var(--font-size-7xl)', { lineHeight: '1.1' }],
+    },
     extend: {
       colors: {
         white: '#FFFFFF',

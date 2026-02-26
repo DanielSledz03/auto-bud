@@ -7,7 +7,7 @@ import { useMenu } from '@/providers/menuProvider';
 import styles from './MobileMenu.module.scss';
 
 const MobileMenu = () => {
-  const { isMenuOpen, toggleMenu, toggleMenuLocation } = useMenu();
+  const { isMenuOpen, openMenuLocation, closeMenu } = useMenu();
 
   return (
     <div
@@ -18,14 +18,14 @@ const MobileMenu = () => {
       <nav className={styles.menu__nav}>
         <ul className={styles.menu__list}>
           <li className={styles.menu__item}>
-            <Link onClick={toggleMenu} href="/o-nas">
+            <Link onClick={closeMenu} href="/o-nas">
               O nas
             </Link>
           </li>
           <li className={styles.menu__item}>
             <div
-              onClick={toggleMenuLocation}
-              onKeyDown={toggleMenuLocation}
+              onClick={openMenuLocation}
+              onKeyDown={openMenuLocation}
               role="button"
               tabIndex={0}
               aria-label="Miasta"
@@ -35,22 +35,17 @@ const MobileMenu = () => {
             </div>
           </li>
           <li className={styles.menu__item}>
-            <Link onClick={toggleMenu} href="/uslugi">
+            <Link onClick={closeMenu} href="/uslugi">
               Usługi
             </Link>
           </li>
           <li className={styles.menu__item}>
-            <Link onClick={toggleMenu} href="/kontakt">
+            <Link onClick={closeMenu} href="/kontakt">
               Kontakt
             </Link>
           </li>
           <li className={styles.menu__item}>
-            <Link onClick={toggleMenu} href="/slask">
-              Śląsk
-            </Link>
-          </li>
-          <li className={styles.menu__item}>
-            <Link onClick={toggleMenu} href="/wizyta">
+            <Link onClick={closeMenu} href="/wizyta">
               Umów wizytę
             </Link>
           </li>
@@ -69,7 +64,7 @@ const MobileMenu = () => {
         </Link>
 
         <Link
-          onClick={toggleMenu}
+          onClick={closeMenu}
           href="/wizyta"
           className={styles.menu__appointmentButton}
         >

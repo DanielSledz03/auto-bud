@@ -37,8 +37,9 @@ export const HomeAboutUs = () => {
 
             <p className={styles.aboutUs__text}>
               W Świętochłowicach zapewniamy 12 stanowisk serwisowych, stację
-              diagnostyczną i Biuro Obsługi Klienta. Na miejscu możesz wygodnie
-              poczekać na auto i skorzystać z bezpłatnego Wi‑Fi.
+              diagnostyczną oraz Biuro Obsługi Klienta. Na miejscu możesz
+              wygodnie usiąść, wypić kawę, poczekać na auto i skorzystać z
+              bezpłatnego Wi-Fi.
             </p>
           </div>
 
@@ -46,14 +47,14 @@ export const HomeAboutUs = () => {
             <Image
               src={AboutUsImages}
               className={styles.aboutUs__images__image}
-              alt="Okręgowa Stacja Diagnostyczna oraz Myjnia Samochodowa"
+              alt="Stacja Diagnostyczna oraz Myjnia Samochodowa"
               loading="lazy"
             />
 
             <Image
               src={AboutUsImagesDesktop}
               className={styles.aboutUs__images__image__desktop}
-              alt="Okręgowa Stacja Diagnostyczna oraz Myjnia Samochodowa"
+              alt="Okręgowa Stacja Diagnostyczna oraz Myjnia Samochodowa w Swietochlowicach"
               loading="lazy"
             />
           </div>
@@ -61,25 +62,26 @@ export const HomeAboutUs = () => {
 
         <div className={styles.aboutUs__bottomRow}>
           <p className={styles.aboutUs__text}>
-            Jako Bosch Car Service oferujemy przeglądy techniczne, naprawy
-            samochodów, wymianę oleju i klocków hamulcowych, wulkanizację oraz
-            myjnię bezdotykową. Pracujemy na nowoczesnym sprzęcie
-            diagnostycznym, a nasz zespół ma wieloletnie doświadczenie.
+            Jako firma oferujemy przeglądy techniczne, naprawy samochodów,
+            wymianę oleju i klocków hamulcowych, wulkanizację oraz myjnię
+            bezdotykową. Pracujemy na nowoczesnym sprzęcie diagnostycznym, a
+            nasz zespół ma wieloletnie doświadczenie.
           </p>
 
           <p className={`${styles.aboutUs__text} ${styles.aboutUs__textLast}`}>
-            Szukasz fraz typu{' '}
+            Jesteś ze Świętochłowic albo dojeżdżasz z Katowic? Zobacz nasze
+            informacje lokalne:{' '}
             <Link href="/swietochlowice" className="font-medium text-red">
-              warsztat samochodowy Świętochłowice
-            </Link>{' '}
-            albo{' '}
+              Świętochłowice
+            </Link>
+            {', '}
             <Link
               href="/slask#katowice-dojazd"
               className="font-medium text-red"
             >
-              warsztat samochodowy Katowice
-            </Link>
-            ? Sprawdź nasze dedykowane strony lokalne i{' '}
+              dojazd z Katowic
+            </Link>{' '}
+            oraz{' '}
             <Link href="/slask" className="font-medium text-red">
               obszar działania na Śląsku
             </Link>

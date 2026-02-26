@@ -12,7 +12,7 @@ const Footer = () => {
       <div>
         <Image
           src={BoschLogo}
-          alt="Logo Bosch Car Sevice"
+          alt="Logo Bosch Car Service"
           width={64}
           height={64}
         />
@@ -37,6 +37,16 @@ const Footer = () => {
             </li>
             <li>
               <Link href="/uslugi">Usługi</Link>
+            </li>
+            <li>
+              <Link href="/mechanik-swietochlowice">
+                Mechanik Świętochłowice
+              </Link>
+            </li>
+            <li>
+              <Link href="/stacja-diagnostyczna-ruda-slaska">
+                Stacja diagnostyczna Ruda Śląska
+              </Link>
             </li>
             <li>
               <Link href="/slask">Śląsk</Link>

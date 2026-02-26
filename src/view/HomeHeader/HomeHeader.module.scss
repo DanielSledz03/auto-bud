@@ -7,7 +7,7 @@
 }
 
 .heading {
-  @apply mb-4 px-4 text-[26px] font-[600] text-white lg:text-[48px];
+  @apply mb-4 px-4 text-2xl font-[600] text-white lg:whitespace-nowrap lg:text-4xl;
 }
 
 .location {
@@ -28,7 +28,7 @@
   }
 
   &__serviceAreaText {
-    @apply text-[14px] font-medium text-lightGray3 lg:text-[16px];
+    @apply text-sm font-medium text-lightGray3 lg:text-base;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   }
 
@@ -37,12 +37,12 @@
   }
 
   &__serviceAreaLink {
-    @apply inline-flex items-center text-[14px] font-semibold text-white transition-colors duration-300 hover:text-red lg:text-[15px];
+    @apply inline-flex items-center text-sm font-semibold text-white transition-colors duration-300 hover:text-red lg:text-base;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   }
 
   &__serviceAreaSeparator {
-    @apply text-[12px] text-lightGray3 lg:text-[13px];
+    @apply text-xs text-lightGray3 lg:text-sm;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   }
 }

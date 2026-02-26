@@ -9,13 +9,14 @@ import {
   roadAssistanceProps,
   stationControlProps,
 } from '@/constants/services';
+import { serviceCatalog, serviceLinks } from '@/constants/serviceCatalog';
 import { workshopPricing } from '@/constants/workshopPricing';
 import { buildPageMetadata } from '@/lib/seo';
 
 export const metadata = buildPageMetadata({
-  title: 'Usługi serwisu samochodowego | Auto-Bud Bosch Car Service',
+  title: 'Usługi serwisu samochodowego Śląsk | Auto-Bud Bosch Car Service',
   description:
-    'Usługi Auto-Bud: diagnostyka, serwis klimatyzacji, wymiana oleju, hamulce, przeglądy techniczne i orientacyjny cennik.',
+    'Usługi Auto-Bud Bosch Car Service: diagnostyka, naprawa auta, serwis klimatyzacji, olej, hamulce i przeglądy techniczne w Świętochłowicach oraz Rudzie Śląskiej.',
   path: '/uslugi',
   keywords: [
     'serwis samochodowy usługi',
@@ -31,6 +32,8 @@ export const metadata = buildPageMetadata({
     'wulkanizacja śląsk',
     'cennik warsztatu samochodowego śląsk',
     'cennik napraw samochodowych świętochłowice',
+    'naprawa auta śląsk',
+    'serwis samochodowy śląsk',
   ],
 });
 
@@ -41,77 +44,26 @@ const services = [
   rentCarProps,
 ];
 
-const serviceLinks = [
+const locationLinks = [
   {
-    href: '/uslugi/diagnostyka-komputerowa',
-    label: 'Diagnostyka komputerowa',
-    description: 'Sprawdzenie błędów i parametrów pracy podzespołów.',
+    href: '/swietochlowice',
+    label: 'Mechanik i warsztat - Świętochłowice',
   },
   {
-    href: '/uslugi/serwis-klimatyzacji',
-    label: 'Serwis klimatyzacji',
-    description: 'Kontrola układu, odgrzybianie i uzupełnienie czynnika.',
+    href: '/godula',
+    label: 'Stacja diagnostyczna - Ruda Śląska Godula',
   },
   {
-    href: '/uslugi/wymiana-oleju',
-    label: 'Wymiana oleju i filtrów',
-    description: 'Podstawowy serwis eksploatacyjny zgodny z zaleceniami.',
+    href: '/bykowina',
+    label: 'Stacja kontroli pojazdów - Ruda Śląska Bykowina',
   },
   {
-    href: '/uslugi/serwis-hamulcow',
-    label: 'Serwis hamulców',
-    description: 'Kontrola i wymiana klocków, tarcz oraz płynu hamulcowego.',
+    href: '/mechanik-swietochlowice',
+    label: 'Landing: mechanik Świętochłowice',
   },
   {
-    href: '/uslugi/przeglad-techniczny',
-    label: 'Przegląd techniczny',
-    description: 'Badania okresowe i dodatkowe na naszych stacjach kontroli.',
-  },
-];
-
-const serviceCatalog = [
-  {
-    title: 'Obsługa okresowa',
-    items: [
-      { name: 'Przeglądy okresowe', href: '/uslugi/przeglad-techniczny' },
-      { name: 'Badanie techniczne', href: '/uslugi/przeglad-techniczny' },
-      { name: 'Kontrola przed trasą', href: '/wizyta' },
-      { name: 'Wymiana oleju i filtrów', href: '/uslugi/wymiana-oleju' },
-    ],
-  },
-  {
-    title: 'Naprawy mechaniczne',
-    items: [
-      { name: 'Naprawy silnika', href: '/wizyta' },
-      { name: 'Wymiana sprzęgła i rozrządu', href: '/wizyta' },
-      { name: 'Naprawy zawieszenia i układu kierowniczego', href: '/wizyta' },
-      {
-        name: 'Serwis hamulców (klocki, tarcze, płyn)',
-        href: '/uslugi/serwis-hamulcow',
-      },
-    ],
-  },
-  {
-    title: 'Elektryka i elektronika',
-    items: [
-      {
-        name: 'Diagnostyka komputerowa',
-        href: '/uslugi/diagnostyka-komputerowa',
-      },
-      { name: 'Naprawy instalacji elektrycznych', href: '/wizyta' },
-      { name: 'Serwis systemów bezpieczeństwa', href: '/wizyta' },
-      { name: 'Kalibracja ADAS', href: '/wizyta' },
-    ],
-  },
-  {
-    title: 'Usługi dodatkowe',
-    items: [
-      { name: 'Wymiana opon i wulkanizacja', href: '/wizyta' },
-      { name: 'Geometria kół', href: '/wizyta' },
-      { name: 'Serwis klimatyzacji', href: '/uslugi/serwis-klimatyzacji' },
-      { name: 'Samochód zastępczy', href: '/wizyta' },
-      { name: 'Pomoc drogowa 24h', href: '/kontakt' },
-    ],
+    href: '/stacja-diagnostyczna-ruda-slaska',
+    label: 'Landing: stacja diagnostyczna Ruda Śląska',
   },
 ];
 
@@ -135,7 +87,7 @@ const Uslugi = () => (
     </section>
 
     <section className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-      <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+      <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
         Najczęściej wyszukiwane usługi
       </h2>
       <div className="mt-5 grid gap-4 lg:grid-cols-2">
@@ -162,7 +114,7 @@ const Uslugi = () => (
     </section>
 
     <section className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64">
-      <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+      <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
         Zakres usług
       </h2>
       <p className="mt-4 max-w-4xl text-sm leading-7 text-mediumGray lg:text-base">
@@ -207,6 +159,17 @@ const Uslugi = () => (
           techniczne realizujemy w Goduli, Bykowinie i Świętochłowicach.
           Dodatkowo w Goduli działa myjnia bezdotykowa.
         </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {locationLinks.map(link => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="rounded-md border border-lightGray2 px-3 py-2 text-sm text-darkGray hover:text-red"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -214,7 +177,7 @@ const Uslugi = () => (
       id="cennik"
       className="mt-10 px-5 md:px-10 lg:mt-12 lg:px-20 xl:px-48 2xl:px-64"
     >
-      <h2 className="text-2xl font-semibold text-darkGray lg:text-[32px]">
+      <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
         Cennik orientacyjny
       </h2>
       <p className="mt-4 max-w-4xl text-sm leading-7 text-mediumGray lg:text-base">

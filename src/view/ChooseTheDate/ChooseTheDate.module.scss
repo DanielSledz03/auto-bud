@@ -2,11 +2,19 @@
   @apply mt-8 w-screen border-y-[1px] border-y-lightGray2 px-5 py-10 text-center md:px-10 lg:px-20 xl:px-48 2xl:px-64;
 
   &__heading {
-    @apply mb-5 text-[24px] font-semibold text-blue lg:text-[32px];
+    @apply mb-5 text-2xl font-semibold text-blue lg:text-3xl;
   }
 
   &__navigation {
-    @apply mx-auto flex w-full max-w-[900px] items-center gap-2;
+    @apply mx-auto w-full max-w-[900px] items-center gap-2;
+  }
+
+  &__navigation--mobile {
+    @apply flex lg:hidden;
+  }
+
+  &__navigation--desktop {
+    @apply hidden lg:flex;
   }
 
   &__button {
@@ -35,7 +43,7 @@
   }
 
   &__dayNumber {
-    @apply mt-1 text-[32px] font-semibold text-darkGray;
+    @apply mt-1 text-3xl font-semibold text-darkGray;
   }
 
   &__daySelected {
@@ -43,6 +51,6 @@
   }
 
   &__monthLabel {
-    @apply mt-6 text-lg font-semibold text-darkGray lg:text-[22px];
+    @apply mt-6 text-lg font-semibold text-darkGray lg:text-2xl;
   }
 }

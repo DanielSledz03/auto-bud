@@ -6,11 +6,11 @@
   }
 
   &__title {
-    @apply mb-1 text-[14px] text-red;
+    @apply mb-1 text-sm text-red;
   }
 
   &__subtitle {
-    @apply text-[20px] font-semibold text-darkGray lg:text-[32px];
+    @apply text-xl font-semibold text-darkGray lg:text-3xl;
   }
 
   &__divider {
@@ -18,7 +18,7 @@
   }
 
   &__description {
-    @apply mt-5 max-w-4xl text-[14px] leading-7 text-mediumGray lg:text-base;
+    @apply mt-5 max-w-4xl text-sm leading-7 text-mediumGray lg:text-base;
   }
 
   &__list {
@@ -31,11 +31,11 @@
   }
 
   &__question {
-    @apply flex w-full cursor-pointer items-center justify-between border-none bg-white p-4 text-left text-[14px] font-semibold text-darkGray transition-colors duration-200 lg:p-6 lg:text-[16px];
+    @apply flex w-full cursor-pointer items-center justify-between border-none bg-white p-4 text-left text-sm font-semibold text-darkGray transition-colors duration-200 lg:p-6 lg:text-base;
   }
 
   &__icon {
-    @apply ml-4 text-[20px] font-bold text-red lg:text-[24px];
+    @apply ml-4 text-xl font-bold text-red lg:text-2xl;
   }
 
   &__separator {
@@ -47,7 +47,7 @@
     animation: fadeIn 0.2s ease-out;
 
     p {
-      @apply m-0 max-w-none text-[12px] leading-6 text-darkGray lg:text-[14px] lg:leading-7;
+      @apply m-0 max-w-none text-xs leading-6 text-darkGray lg:text-sm lg:leading-7;
       word-wrap: break-word;
       hyphens: auto;
     }
@@ -66,19 +66,19 @@
 @media (max-width: 768px) {
   .faq {
     &__question {
-      @apply p-3 text-[13px];
+      @apply p-3 text-sm;
     }
 
     &__answer {
       @apply px-3 pb-3;
 
       p {
-        @apply text-[11px];
+        @apply text-xs;
       }
     }
 
     &__icon {
-      @apply ml-3 text-[18px];
+      @apply ml-3 text-lg;
     }
   }
 }

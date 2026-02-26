@@ -6,7 +6,7 @@
   }
 
   &__header {
-    @apply text-[20px] font-semibold text-darkGray;
+    @apply text-xl font-semibold text-darkGray;
   }
 
   &__line {
@@ -14,11 +14,11 @@
   }
 
   &__subtitle {
-    @apply text-[24px] text-darkGray;
+    @apply text-2xl text-darkGray;
   }
 
   &__text {
-    @apply mt-4 text-[12px] text-mediumGray;
+    @apply mt-4 text-xs text-mediumGray;
   }
 
   &__image {
