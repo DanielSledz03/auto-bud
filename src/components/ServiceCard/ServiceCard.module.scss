@@ -1,6 +1,30 @@
 .serviceCard {
   @apply mt-10 px-5 md:px-10 lg:mt-12 lg:flex lg:justify-between lg:px-20 lg:py-10 xl:px-48 2xl:px-64;
 
+  &--compactTop {
+    @apply mt-8 flex flex-col pt-0 lg:mt-6 lg:flex-row lg:py-0;
+
+    .serviceCard__content {
+      @apply order-1;
+    }
+
+    .serviceCard__image {
+      @apply order-2 mt-6 lg:order-none lg:mt-0 lg:min-h-[340px] xl:-ml-28;
+    }
+
+    .serviceCard__image__desktop {
+      @apply lg:h-[320px] lg:-left-4 lg:translate-y-0 xl:-left-6 xl:translate-y-0 2xl:translate-y-0;
+    }
+
+    .serviceCard__title {
+      @apply mt-0;
+    }
+
+    .serviceCard__description {
+      @apply mt-5;
+    }
+  }
+
   &__content {
     @apply w-full lg:flex lg:w-[50%] lg:flex-col lg:justify-center;
   }

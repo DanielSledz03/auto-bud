@@ -5,6 +5,7 @@ import { LocationHeader } from '@/components';
 import Breadcrumbs from '@/components/Seo/Breadcrumbs';
 import FaqSection from '@/components/Seo/FaqSection';
 import { locationHeaderProps } from '@/constants/swietochlowice';
+import HandWashImage from '@/images/location-cards/hand-wash.jpg';
 import MechanicImage from '@/images/location-cards/mechanic.jpg';
 import OfficeImage from '@/images/location-cards/office.jpg';
 import WorkshopImage from '@/images/location-cards/workshop.jpg';
@@ -12,6 +13,10 @@ import { buildPageMetadata, createLocationJsonLd } from '@/lib/seo';
 
 const quickServiceLinks = [
   { href: '/mechanik-swietochlowice', label: 'Mechanik Świętochłowice' },
+  {
+    href: '/uslugi/mycie-reczne-swietochlowice',
+    label: 'Mycie ręczne Świętochłowice',
+  },
   { href: '/uslugi/przeglad-techniczny', label: 'Przeglądy techniczne' },
   { href: '/uslugi/diagnostyka-komputerowa', label: 'Diagnostyka' },
   { href: '/uslugi/wymiana-oleju', label: 'Wymiana oleju' },
@@ -69,6 +74,15 @@ const locationFacilities = [
     imageAlt: 'Biuro obsługi klienta Auto-Bud',
     link: '/kontakt',
     linkLabel: 'Dane kontaktowe',
+  },
+  {
+    title: 'Mycie ręczne',
+    description:
+      'Nowa usługa mycia ręcznego samochodu dostępna w lokalizacji Świętochłowice.',
+    image: HandWashImage,
+    imageAlt: 'Mycie ręczne samochodu w lokalizacji Auto-Bud Świętochłowice',
+    link: '/uslugi/mycie-reczne-swietochlowice',
+    linkLabel: 'Zobacz usługę mycia ręcznego',
   },
 ];
 
@@ -146,8 +160,8 @@ const SwietochlowicePage = () => {
         <p className="mt-6 max-w-4xl text-sm leading-7 text-mediumGray lg:text-base">
           Auto-Bud Bosch Car Service przy ul. Katowickiej 73 obsługuje kierowców
           ze Świętochłowic, Katowic, Chorzowa i Rudy Śląskiej. Na miejscu
-          działają stacja kontroli pojazdów, warsztat oraz biuro obsługi
-          klienta.
+          działają stacja kontroli pojazdów, warsztat, biuro obsługi klienta
+          oraz usługa mycia ręcznego.
         </p>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-mediumGray lg:text-base">
           Wykonujemy pełny zakres napraw mechanicznych i elektrycznych. Nie
@@ -254,11 +268,11 @@ const SwietochlowicePage = () => {
         <h2 className="text-2xl font-semibold text-darkGray lg:text-3xl">
           Co znajdziesz w tej lokalizacji
         </h2>
-        <div className="mt-6 grid gap-6 lg:grid-cols-3">
+        <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {locationFacilities.map(facility => (
             <article
               key={facility.title}
-              className="overflow-hidden rounded-[10px] border border-lightGray2"
+              className="flex h-full flex-col overflow-hidden rounded-[10px] border border-lightGray2"
             >
               <div className="relative h-48 w-full">
                 <Image
@@ -266,19 +280,19 @@ const SwietochlowicePage = () => {
                   alt={facility.imageAlt}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                 />
               </div>
-              <div className="p-5">
+              <div className="flex flex-1 flex-col p-5">
                 <h3 className="text-lg font-semibold text-darkGray">
                   {facility.title}
                 </h3>
-                <p className="mt-2 text-sm leading-7 text-mediumGray">
+                <p className="mt-2 flex-1 text-sm leading-7 text-mediumGray">
                   {facility.description}
                 </p>
                 <Link
                   href={facility.link}
-                  className="mt-3 inline-block text-sm font-medium text-red"
+                  className="mt-4 inline-block text-sm font-medium text-red"
                 >
                   {facility.linkLabel}
                 </Link>

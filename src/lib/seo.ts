@@ -78,6 +78,12 @@ const locationOfferCatalog: Record<BusinessLocation['id'], ServiceOffer[]> = {
       path: '/uslugi/przeglad-techniczny',
       description: 'Badania techniczne pojazdów osobowych i dostawczych.',
     },
+    {
+      name: 'Mycie ręczne samochodu',
+      path: '/uslugi/mycie-reczne-swietochlowice',
+      description:
+        'Mycie ręczne i pielęgnacja wnętrza samochodu w lokalizacji Świętochłowice.',
+    },
   ],
   godula: [
     {
@@ -93,7 +99,7 @@ const locationOfferCatalog: Record<BusinessLocation['id'], ServiceOffer[]> = {
     },
     {
       name: 'Myjnia bezdotykowa',
-      path: '/godula',
+      path: '/uslugi/myjnia-ruda-slaska-godula',
       description: 'Myjnia bezdotykowa dostępna codziennie w punkcie Godula.',
     },
   ],

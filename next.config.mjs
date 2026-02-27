@@ -28,6 +28,11 @@ const nextConfig = {
         destination: '/stacja-diagnostyczna-ruda-slaska',
         permanent: true,
       },
+      {
+        source: '/uslugi/mycie-reczne-ruda-slaska-godula',
+        destination: '/uslugi/mycie-reczne-swietochlowice',
+        permanent: true,
+      },
     ];
   },
 };

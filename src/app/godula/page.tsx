@@ -23,6 +23,12 @@ const popularServices = [
       'Badania okresowe i dodatkowe wykonywane w Okręgowej Stacji Kontroli Pojazdów.',
   },
   {
+    href: '/uslugi/myjnia-ruda-slaska-godula',
+    title: 'Myjnia bezdotykowa Ruda Śląska Godula',
+    description:
+      'Osobna podstrona usługi z informacjami o myjni bezdotykowej i lokalizacji.',
+  },
+  {
     href: '/uslugi/przeglad-techniczny',
     title: 'Przegląd techniczny pojazdów z LPG',
     description:
@@ -46,8 +52,8 @@ const locationFacilities = [
       'Pięć programów mycia i wygodny dojazd dla kierowców z Rudy Śląskiej, Bytomia i Chorzowa.',
     image: CarWashImage,
     imageAlt: 'Auto-Bud myjnia bezdotykowa w lokalizacji Godula',
-    link: '/godula',
-    linkLabel: 'Ta usługa jest dostępna na miejscu',
+    link: '/uslugi/myjnia-ruda-slaska-godula',
+    linkLabel: 'Zobacz podstronę myjni',
   },
 ];
 
@@ -92,6 +98,7 @@ export const metadata = buildPageMetadata({
     'przegląd techniczny ruda śląska',
     'stacja kontroli pojazdów ruda slaska',
     'myjnia bezdotykowa godula',
+    'myjnia ruda śląska',
   ],
 });
 
@@ -161,6 +168,12 @@ const GodulaPage = () => {
             className="rounded-md border border-lightGray2 px-5 py-3 text-sm font-medium text-darkGray"
           >
             Przegląd techniczny
+          </Link>
+          <Link
+            href="/uslugi/myjnia-ruda-slaska-godula"
+            className="rounded-md border border-lightGray2 px-5 py-3 text-sm font-medium text-darkGray"
+          >
+            Myjnia bezdotykowa Godula
           </Link>
         </div>
       </section>

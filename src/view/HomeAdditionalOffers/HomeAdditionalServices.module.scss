@@ -1,5 +1,5 @@
 .home-additional-services {
-  @apply mt-10 flex flex-col px-5 pb-12 md:px-10 lg:mt-12 lg:flex-row lg:flex-wrap lg:justify-between lg:px-20 xl:px-48 2xl:px-64;
+  @apply mt-10 flex flex-col px-5 pb-12 md:px-10 lg:mt-12 lg:flex-row lg:flex-wrap lg:justify-between lg:gap-y-4 lg:px-20 xl:px-48 2xl:px-64;
 
   &__header {
     @apply flex w-full flex-col items-start justify-start;

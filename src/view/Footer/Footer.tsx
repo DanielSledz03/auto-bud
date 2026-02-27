@@ -2,69 +2,115 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import BoschLogo from '@/../public/assets/images/general/bosch-logo.png';
-import LocationList from '@/components/LocationListFooter/LocationListFooter';
+import { locations } from '@/data/locationsFooter';
 
 import styles from './Footer.module.scss';
+
+const pageLinks = [
+  { href: '/', label: 'Strona główna' },
+  { href: '/o-nas', label: 'O nas' },
+  { href: '/swietochlowice', label: 'Świętochłowice' },
+  { href: '/godula', label: 'Ruda Śląska - Godula' },
+  { href: '/bykowina', label: 'Ruda Śląska - Bykowina' },
+  { href: '/mechanik-swietochlowice', label: 'Mechanik Świętochłowice' },
+  {
+    href: '/stacja-diagnostyczna-ruda-slaska',
+    label: 'Stacja diagnostyczna Ruda Śląska',
+  },
+  { href: '/slask', label: 'Śląsk' },
+  { href: '/kontakt', label: 'Kontakt' },
+  { href: '/wizyta', label: 'Umów wizytę' },
+];
+
+const serviceLinks = [
+  { href: '/uslugi', label: 'Wszystkie usługi' },
+  { href: '/uslugi/przeglad-techniczny', label: 'Przegląd techniczny' },
+  {
+    href: '/uslugi/diagnostyka-komputerowa',
+    label: 'Diagnostyka komputerowa',
+  },
+  { href: '/uslugi/wymiana-oleju', label: 'Wymiana oleju' },
+  { href: '/uslugi/serwis-hamulcow', label: 'Serwis hamulców' },
+  { href: '/uslugi/serwis-klimatyzacji', label: 'Serwis klimatyzacji' },
+  {
+    href: '/uslugi/myjnia-ruda-slaska-godula',
+    label: 'Myjnia bezdotykowa Godula',
+  },
+  {
+    href: '/uslugi/mycie-reczne-swietochlowice',
+    label: 'Mycie ręczne Świętochłowice',
+  },
+];
 
 const Footer = () => {
   return (
     <footer className={styles['footer']}>
-      <div>
-        <Image
-          src={BoschLogo}
-          alt="Logo Bosch Car Service"
-          width={64}
-          height={64}
-        />
-        <h3 className={styles['footer__title']}>Autoryzowany Serwis Bosch</h3>
+      <div className={styles['footer__main']}>
+        <div className={styles['footer__brand']}>
+          <Image
+            src={BoschLogo}
+            alt="Logo Bosch Car Service"
+            width={64}
+            height={64}
+          />
+          <h3 className={styles['footer__title']}>Autoryzowany Serwis Bosch</h3>
+          <p className={styles['footer__description']}>
+            Auto-Bud Bosch Car Service: stacja diagnostyczna, warsztat, myjnia
+            bezdotykowa i mycie ręczne.
+          </p>
+        </div>
 
-        <nav className={styles['footer__nav']}>
-          <ul className={styles['footer__nav__list']}>
-            <li>
-              <Link href="/">Strona Główna</Link>
-            </li>
-            <li>
-              <Link href="/o-nas">O nas</Link>
-            </li>
-            <li>
-              <Link href="/swietochlowice">Świętochłowice</Link>
-            </li>
-            <li>
-              <Link href="/godula">Ruda Śląska - Godula</Link>
-            </li>
-            <li>
-              <Link href="/bykowina">Ruda Śląska - Bykowina</Link>
-            </li>
-            <li>
-              <Link href="/uslugi">Usługi</Link>
-            </li>
-            <li>
-              <Link href="/mechanik-swietochlowice">
-                Mechanik Świętochłowice
-              </Link>
-            </li>
-            <li>
-              <Link href="/stacja-diagnostyczna-ruda-slaska">
-                Stacja diagnostyczna Ruda Śląska
-              </Link>
-            </li>
-            <li>
-              <Link href="/slask">Śląsk</Link>
-            </li>
-            <li>
-              <Link href="/kontakt">Kontakt</Link>
-            </li>
-            <li>
-              <Link href="/wizyta">Umów wizytę</Link>
-            </li>
+        <nav className={styles['footer__section']} aria-label="Strony">
+          <h4 className={styles['footer__heading']}>Strony</h4>
+          <ul className={styles['footer__links']}>
+            {pageLinks.map(link => (
+              <li key={link.href}>
+                <Link href={link.href} className={styles['footer__link']}>
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
+
+        <nav className={styles['footer__section']} aria-label="Usługi">
+          <h4 className={styles['footer__heading']}>Usługi</h4>
+          <ul className={styles['footer__links']}>
+            {serviceLinks.map(link => (
+              <li key={link.href}>
+                <Link href={link.href} className={styles['footer__link']}>
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <section className={styles['footer__locations']}>
+          <h4 className={styles['footer__heading']}>Lokalizacje</h4>
+          <ul className={styles['footer__locationList']}>
+            {locations.map(location => (
+              <li
+                key={location.name}
+                className={styles['footer__locationItem']}
+              >
+                <p className={styles['footer__locationName']}>
+                  {location.name}
+                </p>
+                <p>{location.address}</p>
+                <p>{location.zipCode}</p>
+                <Link
+                  href={location.linkToGoogleMaps}
+                  target="_blank"
+                  className={styles['footer__mapLink']}
+                >
+                  Zobacz na mapie
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
       </div>
-      <hr className={styles['footer__hr']} />
-
-      <LocationList />
-
-      <hr className={styles['footer__hr--second']} />
 
       <div className={styles['footer__creators']}>
         <p className={styles['footer__creators__copyright']}>

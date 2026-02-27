@@ -21,9 +21,15 @@ export const serviceLinks: ServiceLink[] = [
     description: 'Sprawdzenie błędów i parametrów pracy podzespołów.',
   },
   {
-    href: '/uslugi/serwis-klimatyzacji',
-    label: 'Serwis klimatyzacji',
-    description: 'Kontrola układu, odgrzybianie i uzupełnienie czynnika.',
+    href: '/mechanik-swietochlowice',
+    label: 'Naprawy mechaniczne i elektryczne',
+    description:
+      'Kompleksowe naprawy warsztatowe w Świętochłowicach: silnik, zawieszenie i elektryka.',
+  },
+  {
+    href: '/uslugi/przeglad-techniczny',
+    label: 'Przegląd techniczny',
+    description: 'Badania okresowe i dodatkowe na naszych stacjach kontroli.',
   },
   {
     href: '/uslugi/wymiana-oleju',
@@ -31,14 +37,26 @@ export const serviceLinks: ServiceLink[] = [
     description: 'Podstawowy serwis eksploatacyjny zgodny z zaleceniami.',
   },
   {
+    href: '/uslugi/serwis-klimatyzacji',
+    label: 'Serwis klimatyzacji',
+    description: 'Kontrola układu, odgrzybianie i uzupełnienie czynnika.',
+  },
+  {
     href: '/uslugi/serwis-hamulcow',
     label: 'Serwis hamulców',
     description: 'Kontrola i wymiana klocków, tarcz oraz płynu hamulcowego.',
   },
   {
-    href: '/uslugi/przeglad-techniczny',
-    label: 'Przegląd techniczny',
-    description: 'Badania okresowe i dodatkowe na naszych stacjach kontroli.',
+    href: '/uslugi/myjnia-ruda-slaska-godula',
+    label: 'Myjnia bezdotykowa Ruda Śląska',
+    description:
+      'Myjnia bezdotykowa Auto-Bud w Rudzie Śląskiej (Godula), czynna codziennie.',
+  },
+  {
+    href: '/uslugi/mycie-reczne-swietochlowice',
+    label: 'Mycie ręczne samochodu',
+    description:
+      'Nowa usługa w Świętochłowicach: mycie ręczne, czyszczenie wnętrza i renowacja.',
   },
 ];
 
@@ -79,6 +97,14 @@ export const serviceCatalog: ServiceCatalogGroup[] = [
   {
     title: 'Usługi dodatkowe',
     items: [
+      {
+        name: 'Myjnia bezdotykowa - Ruda Śląska Godula',
+        href: '/uslugi/myjnia-ruda-slaska-godula',
+      },
+      {
+        name: 'Mycie ręczne samochodu - Świętochłowice',
+        href: '/uslugi/mycie-reczne-swietochlowice',
+      },
       { name: 'Wymiana opon i wulkanizacja', href: '/wizyta' },
       { name: 'Geometria kół', href: '/wizyta' },
       { name: 'Serwis klimatyzacji', href: '/uslugi/serwis-klimatyzacji' },

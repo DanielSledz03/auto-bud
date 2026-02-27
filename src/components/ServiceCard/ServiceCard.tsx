@@ -19,6 +19,7 @@ interface ServiceCardProps {
   imageDesktop: StaticImageData;
   imageAlt: string;
   button?: boolean;
+  compactTopSpacing?: boolean;
 }
 
 const ServiceCard = ({
@@ -30,9 +31,14 @@ const ServiceCard = ({
   imageDesktop,
   imageAlt,
   button = false,
+  compactTopSpacing = false,
 }: ServiceCardProps) => {
   return (
-    <div className={styles.serviceCard}>
+    <div
+      className={`${styles.serviceCard} ${
+        compactTopSpacing ? styles['serviceCard--compactTop'] : ''
+      }`}
+    >
       <div className={styles.serviceCard__image}>
         <Image
           className={styles.serviceCard__image__mobile}

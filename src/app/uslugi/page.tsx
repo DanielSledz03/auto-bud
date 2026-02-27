@@ -30,6 +30,8 @@ export const metadata = buildPageMetadata({
     'wymiana silnika śląsk',
     'elektryk samochodowy śląsk',
     'wulkanizacja śląsk',
+    'myjnia ruda śląska',
+    'mycie ręczne świętochłowice',
     'cennik warsztatu samochodowego śląsk',
     'cennik napraw samochodowych świętochłowice',
     'naprawa auta śląsk',
@@ -52,6 +54,14 @@ const locationLinks = [
   {
     href: '/godula',
     label: 'Stacja diagnostyczna - Ruda Śląska Godula',
+  },
+  {
+    href: '/uslugi/myjnia-ruda-slaska-godula',
+    label: 'Myjnia bezdotykowa - Ruda Śląska Godula',
+  },
+  {
+    href: '/uslugi/mycie-reczne-swietochlowice',
+    label: 'Mycie ręczne - Świętochłowice',
   },
   {
     href: '/bykowina',
@@ -214,7 +224,7 @@ const Uslugi = () => (
     {services.map((props, index) => (
       <ObjectInfoCard key={index} {...props} />
     ))}
-    <ServiceCard {...roadAssistanceProps} />
+    <ServiceCard {...roadAssistanceProps} compactTopSpacing />
   </>
 );
 

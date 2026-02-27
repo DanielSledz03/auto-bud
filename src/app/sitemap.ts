@@ -31,6 +31,16 @@ const routes: Array<{
     changeFrequency: 'monthly',
     priority: 0.92,
   },
+  {
+    path: '/uslugi/myjnia-ruda-slaska-godula',
+    changeFrequency: 'monthly',
+    priority: 0.92,
+  },
+  {
+    path: '/uslugi/mycie-reczne-swietochlowice',
+    changeFrequency: 'monthly',
+    priority: 0.92,
+  },
   { path: '/swietochlowice', changeFrequency: 'weekly', priority: 0.92 },
   {
     path: '/mechanik-swietochlowice',

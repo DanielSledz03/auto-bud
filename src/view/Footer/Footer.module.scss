@@ -1,37 +1,67 @@
 .footer {
-  @apply bg-lightGray px-5 pb-12 pt-12 font-poppins text-sm font-bold text-black md:px-10 lg:flex lg:flex-row lg:flex-wrap lg:px-20 lg:pb-0 xl:px-48 2xl:px-64;
+  @apply bg-lightGray px-5 pb-6 pt-10 font-poppins text-sm text-mediumGray md:px-10 lg:px-20 xl:px-48 2xl:px-64;
+
+  &__main {
+    @apply grid gap-8 md:grid-cols-2 xl:grid-cols-[1.1fr_1fr_1fr_1.45fr];
+  }
+
+  &__brand {
+    @apply max-w-sm;
+  }
 
   &__title {
-    @apply mt-5 w-[100px] text-sm font-bold;
+    @apply mt-4 text-sm font-bold text-black;
   }
 
-  &__nav {
-    &__list {
-      @apply mt-4;
-
-      li {
-        @apply mb-2 text-sm font-medium text-mediumGray;
-      }
-    }
+  &__description {
+    @apply mt-3 text-sm leading-6;
   }
 
-  &__hr {
-    @apply my-10 border-lightGray2 lg:hidden;
+  &__section {
+    @apply min-w-0;
+  }
 
-    &--second {
-      @apply mb-10 mt-0;
-    }
+  &__heading {
+    @apply text-sm font-bold text-black;
+  }
+
+  &__links {
+    @apply mt-4 space-y-2;
+  }
+
+  &__link {
+    @apply text-sm font-medium text-mediumGray transition-colors hover:text-red;
+  }
+
+  &__locations {
+    @apply md:col-span-2 xl:col-span-1;
+  }
+
+  &__locationList {
+    @apply mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-1;
+  }
+
+  &__locationItem {
+    @apply rounded-[10px] border border-lightGray2 p-3;
+  }
+
+  &__locationName {
+    @apply mb-1 text-sm font-bold text-black;
+  }
+
+  &__mapLink {
+    @apply mt-2 inline-block text-sm font-medium text-mediumGray underline transition-colors hover:text-red;
   }
 
   &__creators {
-    @apply text-center text-xs font-medium text-mediumGray lg:mt-8 lg:flex lg:w-full lg:flex-row lg:items-center lg:justify-between lg:border-t lg:border-t-white lg:py-4;
+    @apply mt-8 border-t border-lightGray2 pt-4 text-xs font-medium text-mediumGray md:flex md:items-center md:justify-between;
 
     &__copyright {
-      @apply mb-4 lg:mb-0;
+      @apply mb-2 md:mb-0;
     }
 
     &__link {
-      @apply mb-1 lg:mb-0 lg:mr-5;
+      @apply mb-1 md:mb-0;
 
       &--underline {
         @apply underline;
@@ -39,7 +69,7 @@
     }
 
     &__authors {
-      @apply lg:flex lg:flex-row lg:items-center lg:justify-center;
+      @apply md:flex md:flex-row md:items-center md:gap-5;
     }
   }
 }

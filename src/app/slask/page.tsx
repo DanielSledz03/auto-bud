@@ -258,6 +258,18 @@ export default function SlaskPage() {
           >
             Przegląd techniczny
           </Link>
+          <Link
+            href="/uslugi/myjnia-ruda-slaska-godula"
+            className="rounded-md border border-lightGray2 px-4 py-2 text-sm text-darkGray hover:text-red"
+          >
+            Myjnia bezdotykowa Godula
+          </Link>
+          <Link
+            href="/uslugi/mycie-reczne-swietochlowice"
+            className="rounded-md border border-lightGray2 px-4 py-2 text-sm text-darkGray hover:text-red"
+          >
+            Mycie ręczne Świętochłowice
+          </Link>
         </div>
       </section>
 

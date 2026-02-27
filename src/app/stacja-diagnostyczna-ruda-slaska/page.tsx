@@ -154,6 +154,12 @@ export default function StacjaDiagnostycznaRudaSlaskaPage() {
                 Strona lokalizacji Godula
               </Link>
               <Link
+                href="/uslugi/myjnia-ruda-slaska-godula"
+                className="rounded-md border border-lightGray2 px-4 py-2 text-sm text-darkGray hover:text-red"
+              >
+                Myjnia bezdotykowa Godula
+              </Link>
+              <Link
                 href="https://maps.app.goo.gl/uevhCXnHGWYJm6NX8"
                 target="_blank"
                 className="rounded-md border border-lightGray2 px-4 py-2 text-sm text-darkGray hover:text-red"
