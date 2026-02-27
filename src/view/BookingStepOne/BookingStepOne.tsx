@@ -70,6 +70,7 @@ const EXCLUDED_BOOKING_SERVICE_PATTERNS = [
   'przeglad okresowy',
   'przeglad techniczny',
   'badanie techniczne',
+  'myjnia bezdotykowa',
   'pomoc drogowa 24h',
   'pomoc 24h',
 ];
