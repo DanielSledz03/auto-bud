@@ -24,12 +24,7 @@ const stationControlProps = {
   locations: ['Ruda Śląska, Godula', 'Ruda Śląska, Bykowina', 'Świętochłowice'],
   description:
     'Wykonujemy badania okresowe i dodatkowe w Goduli, Bykowinie i Świętochłowicach. Okręgowa Stacja Diagnostyczna działa w dzielnicy Godula.',
-  services: [
-    {
-      name: 'Przegląd techniczny',
-      price: '98 zł',
-    },
-  ],
+  services: [],
   icon: StationIcon,
 };
 
@@ -38,12 +33,7 @@ const mechanicWorkshopProps = {
   locations: ['Świętochłowice'],
   description:
     'Warsztat w Świętochłowicach realizuje naprawy mechaniczne, elektryczne i bieżący serwis pojazdów.',
-  services: [
-    {
-      name: 'Przegląd techniczny',
-      price: '100 zł',
-    },
-  ],
+  services: [],
   icon: MechanicIcon,
 };
 
@@ -60,12 +50,7 @@ const rentCarProps = {
   title: 'Samochód zastępczy',
   description:
     'Na czas naprawy udostępniamy samochód zastępczy po wcześniejszej rezerwacji.',
-  services: [
-    {
-      name: 'Dzień wypożyczenia',
-      price: '80 zł',
-    },
-  ],
+  services: [],
   icon: RentCarIcon,
 };
 
