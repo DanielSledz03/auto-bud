@@ -1,6 +1,5 @@
 import { PromotionsBanner } from '@/components';
-import { homeFaqData } from '@/data/homeFaq';
-import { buildPageMetadata, createFaqJsonLd } from '@/lib/seo';
+import { buildPageMetadata } from '@/lib/seo';
 import {
   HomeAboutUs,
   HomeAdditionalServices,
@@ -28,8 +27,6 @@ export const metadata = buildPageMetadata({
 });
 
 export default function Home() {
-  const faqJsonLd = createFaqJsonLd(homeFaqData);
-
   return (
     <>
       <HomeHeader />
@@ -44,10 +41,6 @@ export default function Home() {
         price="99 zł"
         href="https://play.google.com/store/apps/details?id=com.companyname.icmobile"
         description="Skorzystaj z naszej sezonowej promocji na serwis klimatyzacji! Przy zakupie filtra kabinowego Bosch zapewniamy pełną diagnostykę i serwis klimatyzacji w Twoim aucie. Umów wizytę i ciesz się komfortową jazdą. Oferta ważna tylko przez ograniczony czas!"
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
     </>
   );
