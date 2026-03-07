@@ -3,6 +3,21 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/obiekty/bykowina/:path*',
+        destination: '/bykowina',
+        permanent: true,
+      },
+      {
+        source: '/obiekty/godula/:path*',
+        destination: '/godula',
+        permanent: true,
+      },
+      {
+        source: '/obiekty/swietochlowice/:path*',
+        destination: '/swietochlowice',
+        permanent: true,
+      },
+      {
         source: '/mechanik-swietochlwoice',
         destination: '/mechanik-swietochlowice',
         permanent: true,
