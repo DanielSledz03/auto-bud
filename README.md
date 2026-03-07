@@ -1,166 +1,106 @@
-# Auto-Bud - Bosch Car Service 🚗
+# Auto-Bud
 
-[![Next.js](https://img.shields.io/badge/Next.js-14.2.13-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.13-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+Strona firmowa Auto-Bud Bosch Car Service dla lokalizacji w Rudzie Śląskiej i Świętochłowicach. Projekt działa na Next.js App Router, jest wdrażany na Vercel i zawiera bieżącą konfigurację SEO pod domenę `https://www.auto-bud.com.pl`.
 
-Professional automotive service website for Auto-Bud - Bosch Car Service, serving customers in Ruda Śląska and Świętochłowice, Poland.
+## Stack
 
-## 🚀 Features
+- Next.js 16.1.6
+- React 19
+- TypeScript 5
+- Tailwind CSS 3.4
+- Nodemailer
+- Vercel Analytics
+- Vercel Speed Insights
 
-- **Modern Design**: Clean, responsive interface built with Tailwind CSS
-- **Performance Optimized**: Built with Next.js 14 for optimal performance
-- **SEO Friendly**: Optimized meta tags and structured data
-- **Contact Integration**: Email functionality with MailerSend and Resend
-- **Analytics**: Google Analytics and Vercel Analytics integration
-- **Image Optimization**: Lightbox gallery for service showcases
-- **Form Handling**: React Hook Form for contact forms
-- **Type Safety**: Full TypeScript implementation
+## Zakres projektu
 
-## 🛠️ Tech Stack
+- strony lokalizacji: `/swietochlowice`, `/godula`, `/bykowina`
+- landingi lokalne: `/slask`, `/mechanik-swietochlowice`, `/stacja-diagnostyczna-ruda-slaska`
+- katalog usług oparty o route `src/app/uslugi/[slug]/page.tsx`
+- formularz kontaktowy i formularz zgłoszenia wizyty
+- generowane `robots.txt` i `sitemap.xml`
+- metadata, canonicale i JSON-LD dla stron SEO
 
-- **Framework**: Next.js 14.2.13
-- **Language**: TypeScript 5
-- **Styling**: Tailwind CSS 3.4.13
-- **Forms**: React Hook Form 7.53.0
-- **Email**: MailerSend, Resend, Nodemailer
-- **Analytics**: Google Analytics, Vercel Analytics
-- **Gallery**: Lightbox.js React
-- **Linting**: ESLint with TypeScript support
-- **Formatting**: Prettier
+## Wymagania
 
-## 📁 Project Structure
+- Node.js w aktualnej wersji LTS zgodnej z Next.js 16
+- npm
 
-```
-src/
-├── app/                 # Next.js app router pages
-│   ├── api/            # API routes
-│   ├── bykowina/       # Location-specific pages
-│   ├── godula/         # Location-specific pages
-│   ├── kontakt/        # Contact page
-│   ├── o-nas/          # About us page
-│   ├── swietochlowice/ # Location-specific pages
-│   ├── uslugi/         # Services page
-│   └── wizyta/         # Appointment page
-├── components/         # Reusable UI components
-├── constants/          # Application constants
-├── data/              # Static data and content
-├── form/              # Form components
-├── providers/         # Context providers
-└── view/              # Page-specific view components
+## Uruchomienie lokalne
+
+```bash
+git clone https://github.com/DanielSledz03/auto-bud.git
+cd auto-bud
+npm install
 ```
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm, yarn, pnpm, or bun
-
-### Installation
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/yourusername/auto-bud.git
-   cd auto-bud
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   # or
-   bun install
-   ```
-
-3. **Run the development server**
-
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   # or
-   bun dev
-   ```
-
-4. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
-
-## 📝 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-
-## 🎨 Customization
-
-### Environment Variables
-
-Create a `.env.local` file in the root directory:
+Utwórz `.env.local`:
 
 ```env
-# Email Configuration
-MAILERSEND_API_KEY=your_mailersend_api_key
-RESEND_API_KEY=your_resend_api_key
-
-# Analytics
-NEXT_PUBLIC_GA_ID=your_google_analytics_id
+EMAIL_USER=twoj-adres@gmail.com
+EMAIL_PASS=twoje-haslo-aplikacji-gmail
+NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
 ```
 
-### Styling
+`NEXT_PUBLIC_GTM_ID` jest opcjonalne. `EMAIL_USER` i `EMAIL_PASS` są wymagane przez endpointy formularzy w `src/app/api/sendMessage/route.ts` oraz `src/app/api/reservation-request/route.ts`.
 
-The project uses Tailwind CSS for styling. Custom styles can be added in:
+Start lokalnie:
 
-- `src/app/globals.css` - Global styles
-- `tailwind.config.ts` - Tailwind configuration
+```bash
+npm run dev
+```
 
-## 🌐 Services Offered
+Aplikacja będzie dostępna pod `http://localhost:3000`.
 
-- **Vehicle Diagnostics**: Professional diagnostic services
-- **Oil Changes**: Regular maintenance and oil changes
-- **Tire Services**: Tire replacement and balancing
-- **Brake Services**: Brake pad replacement and maintenance
-- **Air Conditioning**: AC service and maintenance
-- **General Repairs**: Comprehensive automotive repairs
+## Skrypty
 
-## 📍 Locations
+- `npm run dev` - tryb developerski
+- `npm run build` - build produkcyjny
+- `npm run start` - uruchomienie buildu produkcyjnego
+- `npm run lint` - lint całego projektu
 
-- **Ruda Śląska**: Multiple service locations
-- **Świętochłowice**: Bosch Car Service authorized center
-- **Godula**: Diagnostic station
-- **Bykowina**: Service center
+## SEO i domeny
 
-## 🤝 Contributing
+- Canonical host: `https://www.auto-bud.com.pl`
+- `auto-bud.com.pl` oraz `m.auto-bud.com.pl` są przekierowywane do wariantu `www` na poziomie Vercel
+- `src/proxy.ts` odpowiada za:
+  - usuwanie trailing slash
+  - czyszczenie parametru `yandex-source`
+  - redirect `/katowice` -> `/slask`
+  - redirecty starych adresów `/obiekty/...` do aktualnych stron lokalizacji
+- `next.config.mjs` zawiera dodatkowe redirecty literówek i nagłówki `X-Robots-Tag: noindex` dla `manifest.json` oraz `/_next/static/*`
+- `src/app/robots.ts` generuje `robots.txt`
+- `src/app/sitemap.ts` generuje `sitemap.xml`
+- wspólny helper metadata i danych strukturalnych znajduje się w `src/lib/seo.ts`
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## Deployment
 
-## 📄 License
+- projekt jest podpięty do Vercel przez `.vercel/project.json`
+- branch produkcyjny: `main`
+- push na `main` uruchamia deployment na Vercel
+- po zmianach SEO warto uruchomić lokalnie:
 
-This project is private and proprietary. All rights reserved.
+```bash
+npm run lint
+npm run build
+```
 
-## 📞 Contact
+## Kluczowe pliki
 
-**Auto-Bud - Bosch Car Service**
+- `next.config.mjs`
+- `src/proxy.ts`
+- `src/lib/seo.ts`
+- `src/app/layout.tsx`
+- `src/app/robots.ts`
+- `src/app/sitemap.ts`
+- `src/app/api/sendMessage/route.ts`
+- `src/app/api/reservation-request/route.ts`
 
-- Website: [www.auto-bud.com.pl](https://www.auto-bud.com.pl)
-- Locations: Ruda Śląska, Świętochłowice, Godula, Bykowina
+## Dodatkowa dokumentacja
 
----
+- `SEO_IMPLEMENTATION_NOTES.md`
+- `SEO_AUDIT.md`
 
-<div align="center">
-  <p>Built with ❤️ for Auto-Bud customers</p>
-  <p>Professional automotive services in Silesia, Poland</p>
-</div>
+## Repozytorium
+
+Repo jest prywatny. Główne repo GitHub: `DanielSledz03/auto-bud`.
