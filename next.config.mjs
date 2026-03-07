@@ -1,6 +1,28 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   skipTrailingSlashRedirect: true,
+  async headers() {
+    return [
+      {
+        source: '/manifest.json',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex',
+          },
+        ],
+      },
+      {
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex',
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       {
