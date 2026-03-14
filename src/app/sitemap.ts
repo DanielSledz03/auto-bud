@@ -63,7 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
   return routes.map(route => ({
-    url: `${BASE_URL}${route.path}`,
+    url: route.path === '/' ? BASE_URL : `${BASE_URL}${route.path}`,
     lastModified,
     changeFrequency: route.changeFrequency,
     priority: route.priority,

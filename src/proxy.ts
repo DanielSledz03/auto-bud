@@ -1,7 +1,27 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
-const TRACKING_QUERY_PARAMS = new Set(['yandex-source']);
+const CANONICAL_HOST = 'www.auto-bud.com.pl';
+const PRODUCTION_HOSTS = new Set([
+  'auto-bud.com.pl',
+  'www.auto-bud.com.pl',
+  'm.auto-bud.com.pl',
+]);
+const TRACKING_QUERY_PARAMS = new Set([
+  'dclid',
+  'fbclid',
+  'gbraid',
+  'gclid',
+  'gclsrc',
+  'mc_cid',
+  'mc_eid',
+  'msclkid',
+  'wbraid',
+  'yclid',
+  'yandex-source',
+  'ysclid',
+]);
+const TRACKING_QUERY_PARAM_PREFIXES = ['utm_'];
 const LEGACY_LOCATION_REDIRECTS = new Map([
   ['/obiekty/bykowina', '/bykowina'],
   ['/obiekty/godula', '/godula'],
@@ -19,58 +39,69 @@ const normalizeTrailingSlash = (pathname: string) =>
     ? pathname.replace(/\/+$/, '')
     : pathname;
 
-const createRedirectUrl = (request: NextRequest, pathname: string) => {
-  const redirectUrl = new URL(request.url);
-
-  redirectUrl.pathname = pathname;
-
-  return redirectUrl;
-};
+const isTrackingParam = (param: string) =>
+  TRACKING_QUERY_PARAMS.has(param) ||
+  TRACKING_QUERY_PARAM_PREFIXES.some(prefix => param.startsWith(prefix));
 
 export function proxy(request: NextRequest) {
   const url = request.nextUrl.clone();
+
+  if (isStaticAssetRequest(url.pathname)) {
+    return NextResponse.next();
+  }
+
+  let normalizedPathname = url.pathname;
+  let shouldRedirect = false;
 
   for (const [legacyPrefix, destination] of LEGACY_LOCATION_REDIRECTS) {
     if (
       url.pathname === legacyPrefix ||
       url.pathname.startsWith(`${legacyPrefix}/`)
     ) {
-      const redirectUrl = createRedirectUrl(request, destination);
-      redirectUrl.search = '';
-
-      return NextResponse.redirect(redirectUrl, 301);
+      normalizedPathname = destination;
+      url.search = '';
+      shouldRedirect = true;
+      break;
     }
   }
 
-  if (url.pathname === '/katowice' || url.pathname === '/katowice/') {
-    return NextResponse.redirect(createRedirectUrl(request, '/slask'), 301);
-  }
+  if (
+    normalizedPathname === '/katowice' ||
+    normalizedPathname === '/katowice/'
+  ) {
+    normalizedPathname = '/slask';
+    shouldRedirect = true;
+  } else {
+    const pathnameWithoutTrailingSlash =
+      normalizeTrailingSlash(normalizedPathname);
 
-  if (isStaticAssetRequest(url.pathname)) {
-    return NextResponse.next();
-  }
-
-  let shouldRedirect = false;
-
-  TRACKING_QUERY_PARAMS.forEach(param => {
-    if (url.searchParams.has(param)) {
-      url.searchParams.delete(param);
+    if (pathnameWithoutTrailingSlash !== normalizedPathname) {
+      normalizedPathname = pathnameWithoutTrailingSlash;
       shouldRedirect = true;
     }
-  });
+  }
 
-  const normalizedPathname = normalizeTrailingSlash(url.pathname);
-
-  if (normalizedPathname !== url.pathname) {
+  if (PRODUCTION_HOSTS.has(url.hostname) && url.hostname !== CANONICAL_HOST) {
+    url.hostname = CANONICAL_HOST;
     shouldRedirect = true;
   }
 
+  if (PRODUCTION_HOSTS.has(url.hostname) && url.protocol !== 'https:') {
+    url.protocol = 'https:';
+    shouldRedirect = true;
+  }
+
+  for (const param of [...url.searchParams.keys()]) {
+    if (isTrackingParam(param)) {
+      url.searchParams.delete(param);
+      shouldRedirect = true;
+    }
+  }
+
   if (shouldRedirect) {
-    const redirectUrl = createRedirectUrl(request, normalizedPathname);
+    url.pathname = normalizedPathname;
 
-    redirectUrl.search = url.search;
-
-    return NextResponse.redirect(redirectUrl, 301);
+    return NextResponse.redirect(url, 301);
   }
 
   return NextResponse.next();
